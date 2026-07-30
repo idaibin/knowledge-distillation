@@ -1,0 +1,21 @@
+metadata:
+  id: replace-me
+  title: Replace me
+  domain: replace-me
+  ir_version: "0.1"
+  created_at: "YYYY-MM-DD"
+status:
+  maturity: draft
+sources: []
+boundary:
+  include: []
+  exclude: []
+principles: []
+frameworks: []
+anti_patterns: []
+open_questions: []
+artifact:
+  requested_level: auto
+  selected_level: level_1
+  rationale: Replace me
+

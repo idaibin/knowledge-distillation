@@ -1,0 +1,4 @@
+interface:
+  display_name: "Knowledge Distillation"
+  short_description: "Compile human expertise into reusable AI knowledge assets"
+  default_prompt: "Use $knowledge-distillation to turn this source into a validated Knowledge IR and the appropriate reusable artifact."

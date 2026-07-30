@@ -1,0 +1,111 @@
+metadata:
+  id: repo-review-methodology
+  title: Repository Review Methodology
+  domain: software-engineering
+  ir_version: "0.1"
+  created_at: "2026-07-30"
+
+status:
+  maturity: draft
+
+sources:
+  - id: personal-review-workflow
+    type: experience
+    reference: Personal repository review workflow
+    authors: [daibin]
+    access: private
+
+boundary:
+  include:
+    - Fixed review basis
+    - Evidence-backed findings
+    - Validation scope reporting
+  exclude:
+    - Language syntax tutorials
+    - Unrequested implementation changes
+
+principles:
+  - id: PR-01
+    name: Fixed review basis
+    statement: A formal review must identify the immutable code basis it evaluates.
+    evidence:
+      - type: experience
+        source_ref: personal-review-workflow
+        locator: fixed-basis review practice
+        note: Derived from repeated repository delivery and review work.
+
+frameworks:
+  - id: FW-01
+    name: Evidence-backed repository review
+    problem: Produce findings that remain reproducible after the review ends.
+    steps:
+      - id: 1
+        action: Record the repository root, branch, and target commit or diff range.
+        check: Confirm the basis will not move during the review.
+      - id: 2
+        action: Trace changed behavior through the relevant contracts and tests.
+        check: Separate verified behavior from inference and untested risk.
+      - id: 3
+        action: Report only actionable findings with precise locations and impact.
+        check: Ensure every finding can be reproduced from the fixed basis.
+    boundaries:
+      - Does not authorize edits, commits, pushes, or publication.
+      - Build success proves only the build path that ran.
+    evidence:
+      - type: experience
+        source_ref: personal-review-workflow
+        locator: fixed-basis review practice
+
+anti_patterns:
+  - id: AP-01
+    name: Floating-scope review
+    symptom: The reviewed branch changes while findings are being formed.
+    correction: Freeze a commit or diff range and restart affected checks if it changes.
+    evidence:
+      - type: experience
+        source_ref: personal-review-workflow
+        locator: review basis failures
+
+open_questions:
+  - Which repository-specific severity policy should override the default labels?
+
+artifact:
+  requested_level: auto
+  selected_level: level_4
+  rationale: The source defines a stable trigger, ordered workflow, boundaries, outputs, and testable behavior.
+
+executable:
+  trigger:
+    when:
+      - The user asks for a repository or fixed-diff review.
+    do_not_trigger_when:
+      - The user asks only for implementation without review.
+  inputs:
+    required:
+      - repository_path
+      - review_basis
+    optional:
+      - severity_policy
+  workflow:
+    steps:
+      - Fix the repository and diff basis.
+      - Inspect relevant contracts, implementation, and tests.
+      - Validate suspected issues against the fixed basis.
+      - Report findings first, then gaps and residual risks.
+  outputs:
+    format: Markdown review report
+    required_sections:
+      - Findings
+      - Verification
+      - Residual risks
+  constraints:
+    - Do not modify the repository during a review-only request.
+    - Do not claim runtime verification from static analysis alone.
+  validation:
+    tests:
+      - name: missing fixed basis
+        input: Review a branch without identifying a commit or diff range.
+        expected_behavior:
+          - Mark the review basis as not fixed.
+          - Avoid presenting findings as final fixed-basis conclusions.
+
