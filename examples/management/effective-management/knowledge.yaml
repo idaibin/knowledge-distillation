@@ -1,0 +1,69 @@
+metadata:
+  id: effective-management-example
+  title: Outcome-Oriented Management Diagnosis
+  domain: management
+  ir_version: "0.1"
+  created_at: "2026-07-30"
+status:
+  maturity: draft
+sources:
+  - id: illustrative-management-synthesis
+    type: other
+    reference: Original illustrative synthesis for this repository
+    authors: [daibin]
+    access: public
+boundary:
+  include:
+    - Diagnosing repeated delivery delays
+    - Outcome, ownership, resources, and feedback checks
+  exclude:
+    - Employment-law advice
+    - Clinical or personality diagnosis
+principles:
+  - id: PR-01
+    name: Diagnose the system before the person
+    statement: Repeated delivery problems should be checked against goals, ownership, resources, and feedback before assigning individual blame.
+    evidence:
+      - type: inference
+        source_ref: illustrative-management-synthesis
+        locator: repository example design
+        note: Original framework synthesized for demonstration; not attributed to a named author.
+frameworks:
+  - id: FW-01
+    name: Four-part delay diagnosis
+    problem: Determine why a team repeatedly misses delivery commitments.
+    steps:
+      - id: 1
+        action: Restate the expected outcome and deadline.
+        check: Can responsible people explain the same measurable result?
+      - id: 2
+        action: Identify one accountable owner and decision rights.
+        check: Is ownership singular enough to resolve tradeoffs?
+      - id: 3
+        action: Compare required work with skills, capacity, and dependencies.
+        check: Is the plan feasible with current constraints?
+      - id: 4
+        action: Inspect feedback cadence and escalation latency.
+        check: Are problems surfaced early enough to change the plan?
+    boundaries:
+      - Use observable work evidence, not personality labels.
+      - Escalate legal, safety, harassment, or health issues to qualified processes.
+    evidence:
+      - type: inference
+        source_ref: illustrative-management-synthesis
+        locator: repository example design
+anti_patterns:
+  - id: AP-01
+    name: Motivation-first diagnosis
+    symptom: Delay is attributed to attitude before goals, workload, dependencies, and feedback are checked.
+    correction: Run the system diagnosis and collect observable evidence first.
+    evidence:
+      - type: inference
+        source_ref: illustrative-management-synthesis
+        locator: repository example design
+open_questions:
+  - What organization-specific escalation and labor policies apply?
+artifact:
+  requested_level: auto
+  selected_level: level_3
+  rationale: The material supports a bounded diagnostic framework but lacks a validated Agent trigger and behavioral test suite.

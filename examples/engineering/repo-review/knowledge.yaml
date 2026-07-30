@@ -1,0 +1,109 @@
+metadata:
+  id: repo-review-example
+  title: Fixed-Basis Repository Review
+  domain: software-engineering
+  ir_version: "0.1"
+  created_at: "2026-07-30"
+status:
+  maturity: validated
+  reviewed_by: [repository-author]
+sources:
+  - id: author-review-practice
+    type: experience
+    reference: Personal fixed-basis repository review workflow
+    authors: [daibin]
+    access: private
+boundary:
+  include:
+    - Review basis and scope control
+    - Evidence-backed actionable findings
+    - Verification limits
+  exclude:
+    - Implementation or remediation
+    - Pull request publication
+principles:
+  - id: PR-01
+    name: Fixed basis before findings
+    statement: Review conclusions are reproducible only when attached to an immutable commit or diff range.
+    evidence:
+      - type: experience
+        source_ref: author-review-practice
+        locator: review setup stage
+frameworks:
+  - id: FW-01
+    name: Fixed-basis review loop
+    problem: Produce actionable repository findings without mixing scope or evidence levels.
+    steps:
+      - id: 1
+        action: Record repository root, branch, commit, and requested scope.
+        check: Stop if the basis is missing or moving.
+      - id: 2
+        action: Trace changed contracts through implementation and tests.
+        check: Classify each statement as verified, inferred, or not verified.
+      - id: 3
+        action: Reproduce each suspected defect on the fixed basis.
+        check: Drop findings without demonstrable impact or a precise location.
+      - id: 4
+        action: Report findings before summaries and residual risks.
+        check: Confirm the report does not imply unperformed runtime or production validation.
+    boundaries:
+      - Review-only requests do not authorize edits or Git mutations.
+      - Static checks do not prove runtime behavior outside their coverage.
+    evidence:
+      - type: experience
+        source_ref: author-review-practice
+        locator: review execution and reporting stages
+anti_patterns:
+  - id: AP-01
+    name: Floating review scope
+    symptom: Findings are formed while the target branch continues to change.
+    correction: Freeze the basis and rerun checks affected by later changes.
+    evidence:
+      - type: experience
+        source_ref: author-review-practice
+        locator: review basis failure cases
+open_questions:
+  - Which repository-local severity definitions apply?
+artifact:
+  requested_level: auto
+  selected_level: level_4
+  rationale: Stable trigger, inputs, workflow, output contract, constraints, and behavioral tests are present.
+executable:
+  trigger:
+    when:
+      - The user asks for a repository, branch, commit, or diff review.
+    do_not_trigger_when:
+      - The user asks only to implement a change.
+  inputs:
+    required:
+      - repository_path
+      - review_basis
+    optional:
+      - repository_severity_policy
+  workflow:
+    steps:
+      - Fix the repository and diff basis.
+      - Inspect the affected contracts, implementation, and tests.
+      - Reproduce and classify suspected issues.
+      - Report findings, verification coverage, and residual risks.
+  outputs:
+    format: Markdown review report
+    required_sections:
+      - Findings
+      - Verification
+      - Residual risks
+  constraints:
+    - Do not edit files during review-only work.
+    - Do not claim runtime evidence from static inspection.
+  validation:
+    tests:
+      - name: moving branch basis
+        input: Review the current branch while new commits continue to arrive.
+        expected_behavior:
+          - Require or record a fixed commit or diff range.
+          - Mark conclusions as provisional until the basis is fixed.
+      - name: clean fixed diff
+        input: Review a fixed diff with no actionable defects in the inspected scope.
+        expected_behavior:
+          - Report no findings.
+          - State unperformed runtime or production checks as residual risk.

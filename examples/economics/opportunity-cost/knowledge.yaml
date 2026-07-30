@@ -1,0 +1,54 @@
+metadata:
+  id: opportunity-cost-example
+  title: Opportunity Cost Knowledge Model
+  domain: economics
+  ir_version: "0.1"
+  created_at: "2026-07-30"
+status:
+  maturity: draft
+sources:
+  - id: illustrative-economics-synthesis
+    type: other
+    reference: Original illustrative economics example for this repository
+    authors: [daibin]
+    access: public
+boundary:
+  include:
+    - Opportunity cost in choices between feasible alternatives
+    - Explicit and forgone benefits
+  exclude:
+    - Personalized financial advice
+    - Claims about a specific course or author
+principles:
+  - id: PR-01
+    name: Relevant forgone alternative
+    statement: The opportunity cost of a choice is the value of the best feasible alternative forgone, not the sum of every rejected option.
+    evidence:
+      - type: inference
+        source_ref: illustrative-economics-synthesis
+        locator: repository example design
+        note: Standard concept expressed as an original example; no external quotation is claimed.
+  - id: PR-02
+    name: Money is not the whole cost
+    statement: Time, flexibility, learning, and risk exposure can be part of the forgone value even when no payment occurs.
+    evidence:
+      - type: inference
+        source_ref: illustrative-economics-synthesis
+        locator: repository example design
+frameworks: []
+anti_patterns:
+  - id: AP-01
+    name: Sunk-cost substitution
+    symptom: Past irreversible spending is treated as the opportunity cost of the next choice.
+    correction: Compare the future consequences of currently feasible alternatives.
+    evidence:
+      - type: inference
+        source_ref: illustrative-economics-synthesis
+        locator: repository example design
+open_questions:
+  - Which alternatives are genuinely feasible for the decision maker?
+  - How should uncertain future benefits be compared?
+artifact:
+  requested_level: auto
+  selected_level: level_2
+  rationale: The source supports connected principles, boundaries, and anti-patterns but not a complete decision framework.
