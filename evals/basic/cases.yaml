@@ -24,4 +24,3 @@ negative_mutations:
     base: examples/engineering/repo-review/knowledge.yaml
     mutation: non_contiguous_steps
     expected_error: steps ids must be contiguous from 1
-

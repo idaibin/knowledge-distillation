@@ -25,4 +25,3 @@ Use a source excerpt with:
 ## Automatic Guards
 
 `scripts/validate_ir.py` must reject undeclared `source_ref` values and missing evidence locators.
-

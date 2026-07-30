@@ -23,4 +23,3 @@ Use source material describing a recurring operational problem, several diagnost
 - Checks merely restate actions.
 - Framework applies to every problem in the domain.
 - Uncertainty is removed to make the artifact look complete.
-

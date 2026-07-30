@@ -21,4 +21,3 @@ Verify that a proposed Level 4 artifact changes Agent behavior in an observable,
 - Repeated runs on the fixed cases preserve the same decisions even if wording varies.
 
 Passing a structural validator is necessary but not sufficient for `status.maturity: executable`.
-
