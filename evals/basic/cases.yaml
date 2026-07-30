@@ -1,0 +1,27 @@
+positive:
+  - name: canonical schema example
+    path: schemas/knowledge.example.yaml
+    expected_level: level_4
+  - name: engineering executable skill
+    path: examples/engineering/repo-review/knowledge.yaml
+    expected_level: level_4
+  - name: management framework
+    path: examples/management/effective-management/knowledge.yaml
+    expected_level: level_3
+  - name: economics model
+    path: examples/economics/opportunity-cost/knowledge.yaml
+    expected_level: level_2
+negative_mutations:
+  - name: dangling source reference
+    base: schemas/knowledge.example.yaml
+    mutation: dangling_source_ref
+    expected_error: source_ref is not declared
+  - name: level four without executable contract
+    base: examples/management/effective-management/knowledge.yaml
+    mutation: level_4_without_executable
+    expected_error: level_4 requires executable
+  - name: non-contiguous framework steps
+    base: examples/engineering/repo-review/knowledge.yaml
+    mutation: non_contiguous_steps
+    expected_error: steps ids must be contiguous from 1
+

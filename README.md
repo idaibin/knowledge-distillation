@@ -47,6 +47,12 @@ Validate an IR instance locally:
 python3 scripts/validate_ir.py schemas/knowledge.example.yaml
 ```
 
+Run deterministic positive and negative contract cases:
+
+```bash
+python3 scripts/run_basic_evals.py
+```
+
 The validator uses Python 3 and PyYAML. The schema is JSON Schema 2020-12 expressed as YAML.
 
 ## Repository Layout
