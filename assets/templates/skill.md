@@ -20,4 +20,3 @@ Return {{ output format and required sections }}.
 ## Validation
 
 Run {{ behavioral tests or deterministic validator }} and report gaps.
-

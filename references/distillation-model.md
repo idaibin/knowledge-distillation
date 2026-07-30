@@ -45,4 +45,3 @@ Compile Level 4 only when the knowledge supports:
 - output contract;
 - constraints and stop conditions;
 - behavioral tests with observable expectations.
-

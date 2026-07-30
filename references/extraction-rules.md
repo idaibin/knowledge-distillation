@@ -42,4 +42,3 @@ For long material:
 5. Build frameworks only after cross-chunk consolidation.
 
 Never claim full-source coverage when only excerpts or selected chapters were processed.
-

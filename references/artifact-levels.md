@@ -36,4 +36,3 @@ Level 4 is invalid when:
 ## Auto Selection
 
 Evaluate from Level 4 downward and select the highest fully supported level, but prefer the lower level whenever a required field is inferred, unstable, or untested. Record the rationale.
-

@@ -23,4 +23,3 @@
 ## Source trace
 
 {{ source reference and locator; avoid unnecessary quotation }}
-

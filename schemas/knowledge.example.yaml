@@ -108,4 +108,3 @@ executable:
         expected_behavior:
           - Mark the review basis as not fixed.
           - Avoid presenting findings as final fixed-basis conclusions.
-

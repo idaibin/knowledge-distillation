@@ -38,4 +38,3 @@ Run structural validation first, then evaluate meaning.
 - `reviewed`: a human or independent review confirms source fidelity.
 - `validated`: relevant basic evals pass on a fixed artifact.
 - `executable`: Level 4 behavioral tests pass; record the model/tool version and test basis outside the IR if those details are run-specific.
-

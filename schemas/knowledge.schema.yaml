@@ -205,4 +205,3 @@ $defs:
                 name: {type: string, minLength: 1}
                 input: {type: string, minLength: 1}
                 expected_behavior: {$ref: "#/$defs/nonEmptyStrings"}
-
