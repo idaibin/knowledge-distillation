@@ -40,6 +40,6 @@ Decide what an agent may persist, which scope owns it, how it is updated and for
 
 ## Fixed experiment trace
 
-- `experiments/ai-capability-clusters/memory/README.md` — recorded local mock/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `5e95e63482a181efe20009cc0d5f6bf9dff35137c0fb8b62c897c4d42f63f13f`; `runs/treatment.json` SHA-256 `274041d7d308c82f9d5c32551a2e632f8894625bc69f25d78dac4bbfed0f778f`. This independently verifies only the fixed mock/fixture lifecycle contract, not a Mem0/LangGraph runtime or production isolation.
+- [ai-handbook memory experiment](https://github.com/idaibin/ai-handbook/blob/main/experiments/ai-capability-clusters/memory/README.md) — recorded local mock/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `5e95e63482a181efe20009cc0d5f6bf9dff35137c0fb8b62c897c4d42f63f13f`; `runs/treatment.json` SHA-256 `274041d7d308c82f9d5c32551a2e632f8894625bc69f25d78dac4bbfed0f778f`. This independently verifies only the fixed mock/fixture lifecycle contract, not a Mem0/LangGraph runtime or production isolation.
 
 This is a Level 3 draft. Fixed-commit source claims do not verify a selected backend's extraction quality, isolation, or deletion behavior; it is not Level 4 or a Skill.

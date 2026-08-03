@@ -24,7 +24,7 @@ sources:
     access: public
   - id: local-fixed-experiment
     type: observation
-    reference: experiments/ai-capability-clusters/evaluation-observability/README.md
+    reference: https://github.com/idaibin/ai-handbook/blob/main/experiments/ai-capability-clusters/evaluation-observability/README.md
     authors: [local]
     access: internal
 usage:

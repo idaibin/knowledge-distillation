@@ -40,6 +40,6 @@ Decide whether a target corpus and query workload justify supplementing simple R
 
 ## Fixed experiment trace
 
-- `experiments/ai-capability-clusters/rag-graphrag/README.md` — recorded local mock/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `47527ac8de3bbf9d93b99df590ed195ffdb8a218e960affb389896f2067f6888`; `runs/treatment.json` SHA-256 `8965588dee0335c28e39729969490199cd76f9b3af98ec2789f0124850f5d505`. This independently verifies only the fixed mock/fixture comparison, not an upstream retriever, model, target corpus, or production behavior.
+- [ai-handbook RAG/GraphRAG experiment](https://github.com/idaibin/ai-handbook/blob/main/experiments/ai-capability-clusters/rag-graphrag/README.md) — recorded local mock/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `47527ac8de3bbf9d93b99df590ed195ffdb8a218e960affb389896f2067f6888`; `runs/treatment.json` SHA-256 `8965588dee0335c28e39729969490199cd76f9b3af98ec2789f0124850f5d505`. This independently verifies only the fixed mock/fixture comparison, not an upstream retriever, model, target corpus, or production behavior.
 
 This is a Level 3 draft: target-corpus quality, metrics, and cost remain unverified; it is not Level 4 or a Skill.

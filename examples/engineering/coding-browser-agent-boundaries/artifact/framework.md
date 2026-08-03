@@ -50,6 +50,6 @@ OpenHands 固定提交说明 dockerless Agent Server 可访问 host filesystem�
 
 ## Fixed experiment trace
 
-- `experiments/ai-capability-clusters/coding-browser-agent/README.md` — recorded local mock/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `c1219ecbfb673bb5ea495b7f6d53bb44bdd703a07a7f5565fdaa51118bf23bdc`; `runs/treatment.json` SHA-256 `e0cccaf14627f6b9676ce6a73330d6f3fe10b5d1f5eaff5138fe70ee64eed2a9`. It independently verifies only the mock workspace/DOM fixture policy, approval, diff, DOM, and receipt contract, not a real browser, workspace, credential, sandbox, or production behavior.
+- [ai-handbook coding/browser experiment](https://github.com/idaibin/ai-handbook/blob/main/experiments/ai-capability-clusters/coding-browser-agent/README.md) — recorded local mock/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `c1219ecbfb673bb5ea495b7f6d53bb44bdd703a07a7f5565fdaa51118bf23bdc`; `runs/treatment.json` SHA-256 `e0cccaf14627f6b9676ce6a73330d6f3fe10b5d1f5eaff5138fe70ee64eed2a9`. It independently verifies only the mock workspace/DOM fixture policy, approval, diff, DOM, and receipt contract, not a real browser, workspace, credential, sandbox, or production behavior.
 
 以上 source trace 只支持边界和能力描述。当前为 Level 3 draft，绝非 Level 4 或 Skill；真实 diff/test/DOM/receipt/revoke 仍需运行时验证。

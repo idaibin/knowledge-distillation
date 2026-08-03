@@ -39,6 +39,6 @@ Choose conversation ownership and establish guardrail, checkpoint, interrupt/res
 
 ## Fixed experiment trace
 
-- `experiments/ai-capability-clusters/agent-runtime-orchestration/README.md` — recorded local mock/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `b222ad858f0d4f9521423475d270584ec41cb9090b921f31a709041819d1e0a9`; `runs/treatment.json` SHA-256 `e69292f90a5810b5a19e2f66edfa56e07900fd040558621a67b5c205e50ee94d`. This independently verifies only the fixed mock/fixture contract, not an upstream runtime or production behavior.
+- [ai-handbook runtime experiment](https://github.com/idaibin/ai-handbook/blob/main/experiments/ai-capability-clusters/agent-runtime-orchestration/README.md) — recorded local mock/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `b222ad858f0d4f9521423475d270584ec41cb9090b921f31a709041819d1e0a9`; `runs/treatment.json` SHA-256 `e69292f90a5810b5a19e2f66edfa56e07900fd040558621a67b5c205e50ee94d`. This independently verifies only the fixed mock/fixture contract, not an upstream runtime or production behavior.
 
 This is a Level 3 draft: source descriptions and the ordered local method are distinct. Idempotency fencing, real-provider behavior, and deployment security remain unverified; this is not Level 4 or a Skill.

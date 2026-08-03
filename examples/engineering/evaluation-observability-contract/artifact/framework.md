@@ -51,6 +51,6 @@ Langfuse 的 traces/observations、DeepEval 的 tool-use metric、Promptfoo 的 
 
 ## Fixed experiment trace
 
-- `experiments/ai-capability-clusters/evaluation-observability/README.md` — recorded local mock/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `61f013c7589899cc22dcf2a4f2010c3161e3c79518ea31967222c4a9d60491aa`; `runs/treatment.json` SHA-256 `80b185220eb3bd57ed66db55fd4048c56b1db44eb1fdfcb79c648f5f48ffc2be`. It independently verifies only the JSON/fixture handling of three axes and `unknown`, not real telemetry, an evaluator, provider, or production security behavior.
+- [ai-handbook evaluation/observability experiment](https://github.com/idaibin/ai-handbook/blob/main/experiments/ai-capability-clusters/evaluation-observability/README.md) — recorded local mock/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `61f013c7589899cc22dcf2a4f2010c3161e3c79518ea31967222c4a9d60491aa`; `runs/treatment.json` SHA-256 `80b185220eb3bd57ed66db55fd4048c56b1db44eb1fdfcb79c648f5f48ffc2be`. It independently verifies only the JSON/fixture handling of three axes and `unknown`, not real telemetry, an evaluator, provider, or production security behavior.
 
 以上 source trace 不替代运行时验证；当前仅可交付 Level 3 draft contract/framework，绝非 Level 4 或 Skill。

@@ -51,6 +51,6 @@ MCP servers 固定提交的 README 明确其为教育性 reference implementatio
 
 ## Fixed experiment trace
 
-- `experiments/ai-capability-clusters/mcp-tools/README.md` — recorded local fake-server/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `1fc1868772343d2e27788e7cf611fa17dd0a13cf9364c5e61cf70741a33ec52f`; `runs/treatment.json` SHA-256 `38874556525b09a4faf68e2d441c4c8e3cb62b4385890ec684efaf384a57b3df`. It independently verifies only the fake-server/fixture receipt, readback, and revoke contract, not real MCP, identity, network, or production behavior.
+- [ai-handbook MCP experiment](https://github.com/idaibin/ai-handbook/blob/main/experiments/ai-capability-clusters/mcp-tools/README.md) — recorded local fake-server/fixture observation: `python3 run_experiment.py`; `runs/baseline.json` SHA-256 `1fc1868772343d2e27788e7cf611fa17dd0a13cf9364c5e61cf70741a33ec52f`; `runs/treatment.json` SHA-256 `38874556525b09a4faf68e2d441c4c8e3cb62b4385890ec684efaf384a57b3df`. It independently verifies only the fake-server/fixture receipt, readback, and revoke contract, not real MCP, identity, network, or production behavior.
 
 以上 source trace 仅支持发现、身份、账号范围、隔离与策略分支。当前为 Level 3 draft，绝非 Level 4 或 Skill；真实 receipt/readback/revoke 仍待运行时验证。
