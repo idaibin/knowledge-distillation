@@ -7,6 +7,15 @@ metadata:
 status:
   maturity: draft
 sources: []
+usage:
+  purpose: personal_learning
+  visibility: private
+  source_retention: locators_only
+  publication_review: required
+  publication_constraints:
+    - no_source_text
+    - no_source_substitute_positioning
+    - review_cumulative_coverage
 boundary:
   include: []
   exclude: []
@@ -18,3 +27,4 @@ artifact:
   requested_level: auto
   selected_level: level_1
   rationale: Replace me
+  render_targets: [card]

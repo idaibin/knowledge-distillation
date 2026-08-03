@@ -1,0 +1,133 @@
+metadata:
+  id: ai-agent-learning-engineering-map
+  title: Evidence-Driven AI Agent Learning Map
+  domain: ai-engineering
+  ir_version: "0.1"
+  created_at: "2026-07-31"
+status:
+  maturity: draft
+sources:
+  - id: agent-learning-hub
+    type: repository
+    reference: https://github.com/datawhalechina/Agent-Learning-Hub
+    authors: [datawhalechina]
+    access: public
+  - id: ai-agents-from-zero
+    type: repository
+    reference: https://github.com/didilili/ai-agents-from-zero
+    authors: [didilili]
+    access: public
+  - id: personal-ai-learning-conversation
+    type: other
+    reference: Referenced ChatGPT conversation AI学习路径与应用
+    authors: [daibin]
+    access: private
+usage:
+  purpose: personal_learning
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
+  notes: Public output must link to sources and must not claim that unexecuted examples were verified.
+boundary:
+  include:
+    - Agent engineering learning sequence
+    - Source routing by intended output
+    - Skills and evaluation as reusable assets
+  exclude:
+    - Complete copies of external tutorials
+    - Claims that every linked course or example was completed
+    - Vector database or RAG infrastructure before a demonstrated retrieval need
+principles:
+  - id: PR-01
+    name: Learn through verifiable outputs
+    statement: Each learning stage should end in a runnable artifact or an explicit engineering decision, not only reading notes.
+    evidence:
+      - type: citation
+        verification_status: source_supported
+        source_ref: agent-learning-hub
+        locator: README Learning Todo List and Project Ladder
+  - id: PR-02
+    name: Route sources by role
+    statement: Use a curated roadmap to choose and gate topics, and use a tutorial repository as an implementation lab rather than duplicating both into parallel notes.
+    evidence:
+      - type: inference
+        verification_status: source_supported
+        source_ref: agent-learning-hub
+        locator: README How To Use and staged outputs
+        note: Combined with the tutorial structure of ai-agents-from-zero.
+      - type: inference
+        verification_status: source_supported
+        source_ref: ai-agents-from-zero
+        locator: README tutorial outline and runnable projects
+  - id: PR-03
+    name: Distill proven practice before adding infrastructure
+    statement: Personal review evidence should first become a pattern and fixed benchmark; RAG, memory, and autonomous knowledge agents remain pull-based extensions.
+    evidence:
+      - type: experience
+        verification_status: source_supported
+        source_ref: personal-ai-learning-conversation
+        locator: frozen first-phase direction and Definition of Done
+frameworks:
+  - id: FW-01
+    name: Learning-to-asset loop
+    problem: Convert a rapidly changing collection of AI material into durable engineering capability without building a link archive.
+    steps:
+      - id: 1
+        action: Choose a real work problem and define its acceptance evidence.
+        check: A failed result would be able to change the next decision.
+      - id: 2
+        action: Pull only the source sections needed to explain or solve that problem.
+        check: Each material claim has a source and locator.
+      - id: 3
+        action: Produce the lowest sufficient asset such as a map, pattern, experiment, or Skill.
+        check: The artifact has an owner, boundary, and validation method.
+      - id: 4
+        action: Run the artifact on a fixed case and record failures and adjudication.
+        check: Unsupported findings and unperformed validation remain visible.
+      - id: 5
+        action: Promote a lesson into a reusable rule only after it improves another case.
+        check: The rule has cross-case evidence rather than a single anecdote.
+    boundaries:
+      - External repositories are inputs, not authority over local contracts.
+      - Tutorial completion claims require actually running the relevant examples.
+    evidence:
+      - type: inference
+        verification_status: source_supported
+        source_ref: agent-learning-hub
+        locator: README Stage 5 and Stage 7
+      - type: experience
+        verification_status: source_supported
+        source_ref: personal-ai-learning-conversation
+        locator: asset-driven and benchmark-first decisions
+anti_patterns:
+  - id: AP-01
+    name: Parallel note duplication
+    symptom: The same Agent, RAG, memory, MCP, or Skills concept is summarized once per source.
+    correction: Keep one concept owner and record each source as evidence or an alternative implementation path.
+    evidence:
+      - type: inference
+        verification_status: source_supported
+        source_ref: ai-agents-from-zero
+        locator: README technology stack and tutorial outline
+      - type: inference
+        verification_status: source_supported
+        source_ref: agent-learning-hub
+        locator: README Learning Todo List
+  - id: AP-02
+    name: Infrastructure-first knowledge base
+    symptom: Vector storage, RAG, or autonomous ingestion is built before a concrete retrieval failure exists.
+    correction: Keep Markdown, YAML, schemas, and fixed experiments as the default; add retrieval infrastructure only when measured need justifies it.
+    evidence:
+      - type: experience
+        verification_status: source_supported
+        source_ref: personal-ai-learning-conversation
+        locator: first-phase exclusions
+open_questions:
+  - Which real rustzen-admin review case should become the first stable benchmark?
+  - Which Python experiment from ai-agents-from-zero is worth running after the review benchmark closes?
+artifact:
+  requested_level: auto
+  selected_level: level_3
+  rationale: The sources support a decision framework and boundaries, but not an autonomous executable learning Skill.
+  render_targets: [model, framework]

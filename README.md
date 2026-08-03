@@ -22,7 +22,7 @@ Knowledge IR instance (knowledge.yaml)
 └──────────┴───────────────┴────────────────────┴──────────────────┘
 ```
 
-`auto` selects the lowest level supported by the IR. Level 4 is never the default.
+`auto` selects the highest level supported by the evidence. Output rendering is independent: a Level 2 model can still render as a card. Level 4 is never the default.
 
 ## What It Does
 
@@ -31,6 +31,8 @@ Knowledge IR instance (knowledge.yaml)
 - Separates principles, decision frameworks, anti-patterns, boundaries, and unresolved questions.
 - Validates structural and semantic requirements before rendering.
 - Keeps knowledge transformation separate from scraping, visual design, publishing, and growth operations.
+- Keeps paid or private raw sources out of public repositories and external review payloads.
+- Reviews cumulative coverage and source-substitution risk before publishing a series derived from licensed or private material.
 
 ## Quick Start
 
@@ -38,7 +40,7 @@ Install the repository as an Agent Skill, then invoke it with a source:
 
 ```text
 Use $knowledge-distillation to turn these course notes into a traceable
-Knowledge IR and select the lowest sufficient artifact level.
+Knowledge IR and select the highest fully supported knowledge level.
 ```
 
 Validate an IR instance locally:
@@ -47,13 +49,20 @@ Validate an IR instance locally:
 python3 scripts/validate_ir.py schemas/knowledge.example.yaml
 ```
 
+Optionally run the standards-based JSON Schema validator installed with Homebrew:
+
+```bash
+brew install check-jsonschema
+check-jsonschema --schemafile schemas/knowledge.schema.yaml schemas/knowledge.example.yaml
+```
+
 Run deterministic positive and negative contract cases:
 
 ```bash
 python3 scripts/run_basic_evals.py
 ```
 
-The validator uses Python 3 and PyYAML. The schema is JSON Schema 2020-12 expressed as YAML.
+The repository validator uses Python 3 and PyYAML for semantic guards. `check-jsonschema` independently verifies the JSON Schema 2020-12 contract expressed as YAML.
 
 ## Repository Layout
 

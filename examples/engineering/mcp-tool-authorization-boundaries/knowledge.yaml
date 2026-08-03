@@ -1,0 +1,183 @@
+metadata:
+  id: mcp-tool-authorization-boundaries
+  title: MCP Tool Authorization Boundaries
+  domain: ai-engineering
+  ir_version: "0.1"
+  created_at: "2026-08-03"
+status:
+  maturity: draft
+sources:
+  - id: mcp-servers
+    type: repository
+    reference: https://github.com/modelcontextprotocol/servers/tree/76d64c822f5125032f89eb71dbdb94e42b434821
+    authors: [Model Context Protocol]
+    access: public
+  - id: composio
+    type: repository
+    reference: https://github.com/ComposioHQ/composio/tree/f1c1aa5613c2464aa8a53420d2357617a4d8bf2f
+    authors: [Composio]
+    access: public
+  - id: local-fixed-experiment
+    type: observation
+    reference: experiments/ai-capability-clusters/mcp-tools/README.md
+    authors: [local]
+    access: internal
+usage:
+  purpose: product_development
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
+  notes: Fixed upstream sources plus an already run local mock/fixture observation support this draft; real provider, runtime, MCP, memory, backend, telemetry, browser, filesystem, and production behavior remain unverified.
+boundary:
+  include:
+    - Binding MCP or Composio tool discovery and execution to an explicit principal, session, account, and target
+    - Per-call authorization, least-privilege isolation, and side-effect classification
+    - Postcondition evidence and revocation as local controls to verify
+  exclude:
+    - Treating a connected account, endpoint, or sandbox as proof of user authorization
+    - Claims that receipt, readback, or revocation are implemented by the pinned sources
+    - Production security certification, tenant isolation, or live provider behavior
+principles:
+  - id: PR-01
+    name: Discovery is not authorization
+    statement: Tool discovery or an available MCP endpoint identifies capabilities, but a call is permitted only after binding the request to a principal, session, account, target, arguments, and side-effect class.
+    evidence:
+      - type: inference
+        source_ref: mcp-servers
+        locator: "commit=76d64c822f5125032f89eb71dbdb94e42b434821; path=README.md; blob=fe5351a890ab80f6d49b2b50f1e0732224313b24; locator=#Using an MCP Client; #Creating Your Own Server"
+        verification_status: unverified
+        note: The README describes reference servers and explicit client paths while warning that they are educational, not production-ready.
+      - type: inference
+        source_ref: composio
+        locator: "commit=f1c1aa5613c2464aa8a53420d2357617a4d8bf2f; path=ts/docs/core-concepts.md; blob=35ae0a07d6086859d29e4f18ee582e7f551d27e5; locator=#User IDs; #Tools; #Connected Accounts"
+        verification_status: unverified
+        note: Composio documents userId context for execution and authorization and distinguishes individual and organization connections.
+  - id: PR-02
+    name: Principal and account scope must be explicit
+    statement: Use a stable production principal and the correct user or organization account scope; a default or mismatched identity can expose another user's data.
+    evidence:
+      - type: citation
+        source_ref: composio
+        locator: "commit=f1c1aa5613c2464aa8a53420d2357617a4d8bf2f; path=ts/docs/core-concepts.md; blob=35ae0a07d6086859d29e4f18ee582e7f551d27e5; locator=### Critical Security Considerations; ### The `default` User ID; ### Production User IDs"
+        verification_status: source_supported
+      - type: inference
+        source_ref: composio
+        locator: "commit=f1c1aa5613c2464aa8a53420d2357617a4d8bf2f; path=docs/content/docs/security/overview.mdx; blob=13a2a857a5812911509ea12ba150bfb638012343; locator=## Isolation and access control"
+        verification_status: unverified
+        note: Project and organization isolation claims motivate, but do not prove, a local authorization gate.
+  - id: PR-03
+    name: Isolation limits blast radius, not intent
+    statement: Tool allowlists, sandbox settings, filesystem paths, and network or account restrictions reduce reachable effects but do not replace per-call authorization or prove service-side enforcement.
+    evidence:
+      - type: citation
+        source_ref: composio
+        locator: "commit=f1c1aa5613c2464aa8a53420d2357617a4d8bf2f; path=python/composio/core/models/tool_router.py; blob=2994995ea41e0c1f366a3affde988a5aa1e51f33; locator=symbol:ToolRouterSandboxConfig; symbol:ToolRouterPreloadConfig; symbol:_apply_session_preset_defaults"
+        verification_status: source_supported
+      - type: inference
+        source_ref: mcp-servers
+        locator: "commit=76d64c822f5125032f89eb71dbdb94e42b434821; path=src/fetch/src/mcp_server_fetch/server.py; blob=b42c7b1f6b7ce1fea6b50a5a4554f3436cb36131; locator=symbol:check_may_autonomously_fetch_url; symbol:serve"
+        verification_status: unverified
+        note: Robots checks and caller options demonstrate a policy boundary, not complete authorization or SSRF protection.
+frameworks:
+  - id: FW-01
+    name: MCP tool authorization and postcondition gate
+    problem: Decide whether one discovered MCP or Composio tool call may execute, and whether its intended effect is evidenced and authority is removed afterward.
+    steps:
+      - id: 1
+        action: Freeze the requested operation, side-effect class, principal, session, account or organization, target resource, data scope, arguments, and requested duration.
+        check: If any identity, target, scope, or side-effect field is absent or ambiguous, stop before discovery or execution.
+      - id: 2
+        action: Discover only the MCP server/tool or Composio toolkit needed for the frozen operation; record source, tool version, transport, and session identifier.
+        check: The discovered capability maps to the declared operation and no broader toolkit, account, or endpoint is silently selected.
+      - id: 3
+        action: Validate principal-to-session-to-account binding and target authorization, including stable production userId or permitted organization scope.
+        check: A default, foreign, expired, or mismatched identity is rejected; adjacent account and target probes remain denied.
+      - id: 4
+        action: "Apply least-privilege isolation: explicit tool/toolkit allowlist, filesystem or repository paths, network/domain limits, credential scope, sandbox/proxy setting, and argument schema."
+        check: The proposed call fits every allowlist and the worst reachable effect is within the accepted blast radius; configuration-only controls are labeled unverified until exercised.
+      - id: 5
+        action: Classify the call as read-only, local write, external write, privileged, destructive, or irreversible, then obtain approval immediately before any consequential call not already authorized with exact target and arguments.
+        check: Approval names principal, session, account, target, arguments, side effects, and expiry; stale or broader approval is rejected.
+      - id: 6
+        action: Execute once with a per-call idempotency or run identifier and capture the tool result, error, request parameters, and any external receipt.
+        check: Missing, contradictory, or source-only receipt evidence is recorded as unknown rather than success.
+      - id: 7
+        action: Read back the intended target postcondition through an independent query and compare it with the frozen expected state.
+        check: A mismatch, partial update, or unavailable readback blocks completion and triggers containment; success text alone never closes the gate.
+      - id: 8
+        action: Revoke temporary session, account connection, token, mount, proxy permission, or browser access and record residual side effects and expiry.
+        check: A subsequent authorization probe cannot reuse completed-task authority; if revoke behavior is unavailable, leave status unknown and stop publication.
+    boundaries:
+      - The pinned MCP repository calls its servers educational reference implementations and does not establish production security.
+      - Composio type or session configuration does not prove service-side enforcement, tenant isolation, or application authorization.
+      - Receipt, readback, and revocation are local control hypotheses in this framework; the listed sources do not provide runtime evidence for them.
+      - A sandbox, robots policy, or allowlist limits blast radius but does not authorize external writes, purchases, deletion, publication, or messages.
+    evidence:
+      - type: inference
+        source_ref: mcp-servers
+        locator: "commit=76d64c822f5125032f89eb71dbdb94e42b434821; path=README.md; blob=fe5351a890ab80f6d49b2b50f1e0732224313b24; locator=#Using an MCP Client; #Creating Your Own Server"
+        verification_status: unverified
+      - type: inference
+        source_ref: mcp-servers
+        locator: "commit=76d64c822f5125032f89eb71dbdb94e42b434821; path=src/fetch/tests/test_server.py; blob=96c1cb38c7b4eae0870f89066faec2697c980434; locator=TestCheckMayAutonomouslyFetchUrl; TestFetchUrl"
+        verification_status: unverified
+      - type: inference
+        source_ref: composio
+        locator: "commit=f1c1aa5613c2464aa8a53420d2357617a4d8bf2f; path=README.md; blob=951b2ead521096752f9df74f1b06fb97c24e53cd; locator=#Quickstart; #Providers"
+        verification_status: unverified
+      - type: inference
+        source_ref: composio
+        locator: "commit=f1c1aa5613c2464aa8a53420d2357617a4d8bf2f; path=python/composio/core/models/tool_router.py; blob=2994995ea41e0c1f366a3affde988a5aa1e51f33; locator=symbol:ToolRouterSandboxConfig; symbol:_apply_session_preset_defaults"
+        verification_status: unverified
+      - type: inference
+        source_ref: composio
+        locator: "commit=f1c1aa5613c2464aa8a53420d2357617a4d8bf2f; path=ts/docs/core-concepts.md; blob=35ae0a07d6086859d29e4f18ee582e7f551d27e5; locator=### Critical Security Considerations; ### Connected Accounts"
+        verification_status: unverified
+      - type: inference
+        source_ref: mcp-servers
+        locator: "commit=76d64c822f5125032f89eb71dbdb94e42b434821; path=src/fetch/src/mcp_server_fetch/server.py; blob=b42c7b1f6b7ce1fea6b50a5a4554f3436cb36131; locator=symbol:serve"
+        verification_status: unverified
+        note: Receipt, independent readback, and revocation are not stated in this source; they are explicit local checks to implement or test.
+      - type: observation
+        source_ref: local-fixed-experiment
+        locator: "README.md; command: python3 run_experiment.py; baseline SHA-256=1fc1868772343d2e27788e7cf611fa17dd0a13cf9364c5e61cf70741a33ec52f; treatment SHA-256=38874556525b09a4faf68e2d441c4c8e3cb62b4385890ec684efaf384a57b3df; oracle_pass=true (script exits 0 only after fixed oracle and negative checks); fake-server/fixture bounded"
+        verification_status: independently_verified
+anti_patterns:
+  - id: AP-01
+    name: Discovered means allowed
+    symptom: The agent executes any tool returned by discovery or any connected endpoint without a principal, target, or per-call authorization record.
+    correction: Re-run the binding and approval gates; deny if any field is missing or broader than the frozen request.
+    evidence:
+      - type: inference
+        source_ref: composio
+        locator: "commit=f1c1aa5613c2464aa8a53420d2357617a4d8bf2f; path=README.md; blob=951b2ead521096752f9df74f1b06fb97c24e53cd; locator=#Quickstart"
+        verification_status: unverified
+  - id: AP-02
+    name: Default identity in multi-user execution
+    symptom: A default or reused userId/session is used for more than one real principal or organization.
+    correction: Require a stable unique production identifier and verify account scope before the call; deny on mismatch.
+    evidence:
+      - type: citation
+        source_ref: composio
+        locator: "commit=f1c1aa5613c2464aa8a53420d2357617a4d8bf2f; path=ts/docs/core-concepts.md; blob=35ae0a07d6086859d29e4f18ee582e7f551d27e5; locator=### The `default` User ID; ### Production User IDs"
+        verification_status: source_supported
+  - id: AP-03
+    name: Success response closes the task
+    symptom: A successful-looking tool response is accepted without an independent receipt, target readback, or authority revocation.
+    correction: Mark the outcome unknown, attempt independent postcondition verification and revocation, and preserve unresolved side effects.
+    evidence:
+      - type: inference
+        source_ref: mcp-servers
+        locator: "commit=76d64c822f5125032f89eb71dbdb94e42b434821; path=README.md; blob=fe5351a890ab80f6d49b2b50f1e0732224313b24; locator=#Creating Your Own Server"
+        verification_status: unverified
+        note: The source warns reference implementations need adopter safeguards but does not specify receipt/readback/revoke behavior.
+open_questions:
+  - Which MCP transports and Composio session APIs expose durable receipts that can be independently read back?
+  - What authorization service proves principal-to-account and target permissions in the deployment?
+  - Which temporary authorities can be revoked deterministically, and how are residual external side effects reconciled?
+artifact:
+  requested_level: level_3
+  selected_level: level_3
+  rationale: This Level 3 draft combines fixed-source capability and boundary descriptions with an ordered local method independently verified only against a fixed fake-server/fixture oracle. It does not prove a real MCP server, identity provider, concurrent session, network, or production behavior and is not Level 4 or a Skill.
+  render_targets: [model, framework]

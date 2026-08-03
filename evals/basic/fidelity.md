@@ -24,4 +24,4 @@ Use a source excerpt with:
 
 ## Automatic Guards
 
-`scripts/validate_ir.py` must reject undeclared `source_ref` values and missing evidence locators.
+`scripts/validate_ir.py` must reject undeclared `source_ref` values, missing evidence locators, missing verification status, and licensed/private inputs without minimum publication constraints.

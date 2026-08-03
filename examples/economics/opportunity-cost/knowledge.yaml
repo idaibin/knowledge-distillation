@@ -12,6 +12,11 @@ sources:
     reference: Original illustrative economics example for this repository
     authors: [daibin]
     access: public
+usage:
+  purpose: product_development
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: not_required
 boundary:
   include:
     - Opportunity cost in choices between feasible alternatives
@@ -25,6 +30,7 @@ principles:
     statement: The opportunity cost of a choice is the value of the best feasible alternative forgone, not the sum of every rejected option.
     evidence:
       - type: inference
+        verification_status: unverified
         source_ref: illustrative-economics-synthesis
         locator: repository example design
         note: Standard concept expressed as an original example; no external quotation is claimed.
@@ -33,6 +39,7 @@ principles:
     statement: Time, flexibility, learning, and risk exposure can be part of the forgone value even when no payment occurs.
     evidence:
       - type: inference
+        verification_status: unverified
         source_ref: illustrative-economics-synthesis
         locator: repository example design
 frameworks: []
@@ -43,6 +50,7 @@ anti_patterns:
     correction: Compare the future consequences of currently feasible alternatives.
     evidence:
       - type: inference
+        verification_status: unverified
         source_ref: illustrative-economics-synthesis
         locator: repository example design
 open_questions:
@@ -52,3 +60,4 @@ artifact:
   requested_level: auto
   selected_level: level_2
   rationale: The source supports connected principles, boundaries, and anti-patterns but not a complete decision framework.
+  render_targets: [model]

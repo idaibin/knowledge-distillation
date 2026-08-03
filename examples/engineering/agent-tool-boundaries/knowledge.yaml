@@ -1,0 +1,188 @@
+metadata:
+  id: agent-tool-boundaries
+  title: Agent Tool Authorization and Execution Boundaries
+  domain: ai-engineering
+  ir_version: "0.1"
+  created_at: "2026-07-31"
+status:
+  maturity: draft
+sources:
+  - id: mcp-reference-servers
+    type: repository
+    reference: https://github.com/modelcontextprotocol/servers/tree/76d64c822f5125032f89eb71dbdb94e42b434821
+    authors: [Model Context Protocol]
+    access: public
+  - id: composio
+    type: repository
+    reference: https://github.com/ComposioHQ/composio/tree/f1c1aa5613c2464aa8a53420d2357617a4d8bf2f
+    authors: [Composio]
+    access: public
+  - id: browser-use
+    type: repository
+    reference: https://github.com/browser-use/browser-use/tree/f0aa3a8bb03779c71a5aa262d389e3bfe6b77cdc
+    authors: [Browser Use]
+    access: public
+  - id: openhands
+    type: repository
+    reference: https://github.com/OpenHands/OpenHands/tree/2feab551c4c12130c126159e1a0bd56753e2968f
+    authors: [OpenHands]
+    access: public
+  - id: pydantic-ai
+    type: repository
+    reference: https://github.com/pydantic/pydantic-ai/tree/6e96a74cd2229d1dbe5bb2f71db8732159804b15
+    authors: [Pydantic]
+    access: public
+usage:
+  purpose: personal_learning
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
+  notes: Public repository descriptions are used as source-supported capability and risk evidence; no production security claim is independently verified.
+boundary:
+  include:
+    - Selecting authorization and execution boundaries for agent tools
+    - Separating tool discovery, identity, approval, sandboxing, and result verification
+    - Designing stop conditions for external or destructive actions
+  exclude:
+    - Claiming that MCP or any tool framework is secure by default
+    - Recommending a vendor or hosted service without task-specific evaluation
+    - Treating a sandbox as sufficient authorization for external side effects
+principles:
+  - id: PR-01
+    name: Capability is not authorization
+    statement: Making a tool available to an agent does not prove that the current user, session, arguments, target, or side effect is authorized.
+    evidence:
+      - type: inference
+        source_ref: composio
+        locator: README.md lines 27-38 and 55-57 — per-user sessions, authentication, and session-scoped tools
+        verification_status: source_supported
+      - type: inference
+        source_ref: pydantic-ai
+        locator: README.md — Why use Pydantic AI item 8, Human-in-the-Loop Tool Approval
+        verification_status: source_supported
+        note: Approval may depend on tool arguments, history, or user preferences, showing that availability and authorization are distinct decisions.
+  - id: PR-02
+    name: Discovery scope and permission scope are separate
+    statement: Runtime tool discovery can reduce context load, but the allowed toolkits, connected accounts, credentials, and targets still require explicit restriction.
+    evidence:
+      - type: inference
+        source_ref: composio
+        locator: README.md lines 96-98 — meta tools and session restrictions
+        verification_status: source_supported
+  - id: PR-03
+    name: Execution boundary controls blast radius
+    statement: Code or browser agents should receive only the filesystem, browser profile, network, credentials, and process access required for the task.
+    evidence:
+      - type: citation
+        source_ref: openhands
+        locator: README.md — Quickstart Option 1 warning and Option 2 Docker Sandbox
+        verification_status: source_supported
+      - type: inference
+        source_ref: browser-use
+        locator: README.md — What can Browser Use do? and FAQ How do I handle authentication?
+        verification_status: source_supported
+        note: Browser actions and reuse of authenticated profiles enlarge the reachable side-effect and identity boundary.
+  - id: PR-04
+    name: Reference implementation is not production assurance
+    statement: Example servers and integrations require a threat model, safeguards, and task-level verification before production use.
+    evidence:
+      - type: citation
+        source_ref: mcp-reference-servers
+        locator: README.md — warning before Reference Servers
+        verification_status: source_supported
+frameworks:
+  - id: FW-01
+    name: Tool action authorization gate
+    problem: Decide whether an agent may invoke a local or external tool without confusing technical reachability with user authority or safe execution.
+    steps:
+      - id: 1
+        action: Classify the proposed action as read-only, local mutation, external mutation, privileged, destructive, or difficult to reverse.
+        check: The classification describes the actual side effect and target, not only the tool name.
+      - id: 2
+        action: Resolve the acting principal, user intent, allowed target, data boundary, and required credentials before exposing the tool.
+        check: Missing identity, target, or authority blocks the action rather than being inferred from availability.
+      - id: 3
+        action: Restrict the session to the minimum toolkits, accounts, directories, domains, and arguments required for the task.
+        check: A denied adjacent target demonstrates that the restriction is effective.
+      - id: 4
+        action: Select the execution boundary that limits filesystem, process, browser-profile, network, and secret exposure.
+        check: The documented worst-case compromise remains within the accepted task scope.
+      - id: 5
+        action: Require explicit approval immediately before consequential actions whose exact target or arguments were not already authorized.
+        check: Approval displays the concrete action, target, and material consequence; stale or broader approval is rejected.
+      - id: 6
+        action: "Local synthesis hypothesis: execute once, capture the tool result and an external receipt where available, then read back the intended state instead of trusting a success message."
+        check: "Local synthesis hypothesis: post-action evidence identifies what changed and exposes partial failure or ambiguity."
+      - id: 7
+        action: "Local synthesis hypothesis: revoke temporary credentials, sessions, mounts, or browser access and record unresolved side effects."
+        check: "Local synthesis hypothesis: later runs cannot silently inherit authority that belonged only to the completed task."
+    boundaries:
+      - A sandbox limits local blast radius but does not authorize messages, purchases, publication, deletion, or production changes.
+      - Type or schema validation checks arguments, not user authority or factual correctness.
+      - Read-only discovery may proceed only inside the resources placed in scope; broad credential or profile access still needs a boundary decision.
+      - No framework README independently verifies production security for the user's environment.
+    evidence:
+      - type: inference
+        source_ref: mcp-reference-servers
+        locator: README.md — warning and Filesystem/Git reference-server descriptions
+        verification_status: source_supported
+      - type: inference
+        source_ref: composio
+        locator: README.md lines 27-38, 55-57, and 96-98
+        verification_status: source_supported
+      - type: inference
+        source_ref: browser-use
+        locator: README.md — browser actions and authentication FAQ
+        verification_status: source_supported
+      - type: inference
+        source_ref: openhands
+        locator: README.md — Quickstart sandbox options
+        verification_status: source_supported
+      - type: inference
+        source_ref: pydantic-ai
+        locator: README.md — Human-in-the-Loop Tool Approval
+        verification_status: source_supported
+      - type: inference
+        source_ref: mcp-reference-servers
+        locator: "Local synthesis hypothesis for steps 6-7; the listed README sections do not directly specify post-action receipt, readback, or revocation rules."
+        verification_status: unverified
+        note: "Receipt/readback/revocation are task-level controls to test locally, not source-supported requirements from this source set."
+anti_patterns:
+  - id: AP-01
+    name: Connected means permitted
+    symptom: An agent invokes any connected tool because authentication or an MCP endpoint exists.
+    correction: Bind each invocation to a principal, allowed target, concrete arguments, side-effect class, and current approval.
+    evidence:
+      - type: inference
+        source_ref: composio
+        locator: README.md lines 55-57 and 96-98 — session-scoped tools and configurable restrictions
+        verification_status: source_supported
+  - id: AP-02
+    name: Sandbox as universal permission
+    symptom: A container or VM is treated as permission to perform any external action reachable from it.
+    correction: Use isolation for blast-radius control and a separate authorization gate for external state changes.
+    evidence:
+      - type: inference
+        source_ref: openhands
+        locator: README.md — Quickstart Option 1 warning and Option 2 Docker Sandbox
+        verification_status: source_supported
+  - id: AP-03
+    name: Success response as completion evidence
+    symptom: A tool return value is accepted without reading back the target state or recording partial side effects.
+    correction: "Local synthesis hypothesis: capture a receipt and independently verify the intended postcondition when the action is material."
+    evidence:
+      - type: inference
+        source_ref: pydantic-ai
+        locator: README.md — Human-in-the-Loop Tool Approval and Fully Type-safe sections
+        verification_status: unverified
+        note: "Approval and type validation constrain different preconditions; neither source claims postcondition verification. This is a local synthesis hypothesis requiring task-level validation."
+open_questions:
+  - Which existing local Skills already implement every gate, and where do behavioral tests show gaps?
+  - Which actions need per-call approval versus task-level authorization in the user's normal workflows?
+  - How should external receipts be normalized without persisting secrets or private content?
+artifact:
+  requested_level: auto
+  selected_level: level_3
+  rationale: The sources support authorization, scope, execution-boundary, and approval concepts. Post-action receipt/readback/revocation are explicitly unverified local synthesis hypotheses, and cross-tool behavioral tests have not established a stable executable Skill contract.
+  render_targets: [model, framework]

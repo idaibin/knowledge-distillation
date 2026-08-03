@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import copy
+import shutil
+import subprocess
 import sys
 import tempfile
 from pathlib import Path
@@ -14,18 +16,39 @@ from validate_ir import ValidationError, validate
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SCHEMA = ROOT / "schemas" / "knowledge.schema.yaml"
 
 
 def mutate(data: dict, name: str) -> None:
     if name == "dangling_source_ref":
         data["principles"][0]["evidence"][0]["source_ref"] = "missing-source"
+    elif name == "missing_verification_status":
+        data["principles"][0]["evidence"][0].pop("verification_status", None)
+    elif name == "missing_licensed_publication_constraints":
+        data["usage"].pop("publication_constraints", None)
     elif name == "level_4_without_executable":
         data["artifact"]["selected_level"] = "level_4"
         data.pop("executable", None)
+    elif name == "skill_target_below_level_4":
+        data["artifact"]["selected_level"] = "level_3"
+        data["artifact"]["render_targets"] = ["skill"]
     elif name == "non_contiguous_steps":
         data["frameworks"][0]["steps"][1]["id"] = 9
     else:
         raise ValueError(f"unknown mutation: {name}")
+
+
+def schema_rejects(path: Path) -> tuple[bool, str]:
+    checker = shutil.which("check-jsonschema")
+    if checker is None:
+        return False, "check-jsonschema is required for cross-validator cases"
+    result = subprocess.run(
+        [checker, "--schemafile", str(SCHEMA), str(path)],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    return result.returncode != 0, result.stdout + result.stderr
 
 
 def main() -> int:
@@ -62,6 +85,10 @@ def main() -> int:
                     )
             else:
                 failures.append(f"{case['name']}: invalid mutation passed validation")
+            if case.get("cross_validator") == "check-jsonschema":
+                rejected, detail = schema_rejects(Path(handle.name))
+                if not rejected:
+                    failures.append(f"{case['name']}: check-jsonschema accepted invalid mutation: {detail}")
 
     if failures:
         for failure in failures:

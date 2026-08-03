@@ -12,6 +12,11 @@ sources:
     reference: Original illustrative synthesis for this repository
     authors: [daibin]
     access: public
+usage:
+  purpose: product_development
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: not_required
 boundary:
   include:
     - Diagnosing repeated delivery delays
@@ -25,6 +30,7 @@ principles:
     statement: Repeated delivery problems should be checked against goals, ownership, resources, and feedback before assigning individual blame.
     evidence:
       - type: inference
+        verification_status: unverified
         source_ref: illustrative-management-synthesis
         locator: repository example design
         note: Original framework synthesized for demonstration; not attributed to a named author.
@@ -50,6 +56,7 @@ frameworks:
       - Escalate legal, safety, harassment, or health issues to qualified processes.
     evidence:
       - type: inference
+        verification_status: unverified
         source_ref: illustrative-management-synthesis
         locator: repository example design
 anti_patterns:
@@ -59,6 +66,7 @@ anti_patterns:
     correction: Run the system diagnosis and collect observable evidence first.
     evidence:
       - type: inference
+        verification_status: unverified
         source_ref: illustrative-management-synthesis
         locator: repository example design
 open_questions:
@@ -67,3 +75,4 @@ artifact:
   requested_level: auto
   selected_level: level_3
   rationale: The material supports a bounded diagnostic framework but lacks a validated Agent trigger and behavioral test suite.
+  render_targets: [framework]

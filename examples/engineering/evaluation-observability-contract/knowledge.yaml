@@ -1,0 +1,195 @@
+metadata:
+  id: evaluation-observability-contract
+  title: Evaluation and Observability Contract
+  domain: ai-engineering
+  ir_version: "0.1"
+  created_at: "2026-08-03"
+status:
+  maturity: draft
+sources:
+  - id: deepeval
+    type: repository
+    reference: https://github.com/confident-ai/deepeval/tree/0d100e37d4263f208488f3c13e15561bce3b694f
+    authors: [Confident AI]
+    access: public
+  - id: langfuse-langfuse
+    type: repository
+    reference: https://github.com/langfuse/langfuse/tree/314804b5c68d42bc742505c7b2552298bfe0ca88
+    authors: [Langfuse]
+    access: public
+  - id: promptfoo-promptfoo
+    type: repository
+    reference: https://github.com/promptfoo/promptfoo/tree/82ca3c24ec445cf1734face46042c187b659b954
+    authors: [Promptfoo]
+    access: public
+  - id: local-fixed-experiment
+    type: observation
+    reference: experiments/ai-capability-clusters/evaluation-observability/README.md
+    authors: [local]
+    access: internal
+usage:
+  purpose: product_development
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
+  notes: Fixed upstream sources plus an already run local mock/fixture observation support this draft; real provider, runtime, MCP, memory, backend, telemetry, browser, filesystem, and production behavior remain unverified.
+boundary:
+  include:
+    - Separating outcome, process, and security axes for agent evaluation
+    - Trace and observation normalization as evidence inputs, not correctness oracles
+    - Explicit unknown handling, independent ground truth, regression, and red-team branches
+  exclude:
+    - Treating complete traces, metric availability, or planned smoke tests as proof of correctness
+    - Combining outcome, process, and security into one unqualified score
+    - Claims about provider, cloud, retention, privacy, calibration, or production performance not independently tested
+principles:
+  - id: PR-01
+    name: Trace is diagnostic evidence, not an oracle
+    statement: Traces and observations can reconstruct inputs, retrieval, tools, and agent actions, but correctness must be decided against a frozen task contract and independent adjudication.
+    evidence:
+      - type: inference
+        source_ref: langfuse-langfuse
+        locator: "commit=314804b5c68d42bc742505c7b2552298bfe0ca88; path=README.md; blob=aa96cd81580a43260174793e63561d5a490055f9; locator=#core-features"
+        verification_status: unverified
+        note: Langfuse lists traces and evaluation options as separate capabilities.
+      - type: citation
+        source_ref: deepeval
+        locator: "commit=0d100e37d4263f208488f3c13e15561bce3b694f; path=docs/content/docs/(concepts)/(test-cases)/evaluation-test-cases.mdx; blob=798fa752cf5abba9d3fd592cfe4a111c37eab8a6; locator=## LLM Test Case; ### Actual Output; ### Expected Output; ### Tools Called"
+        verification_status: source_supported
+  - id: PR-02
+    name: Three axes answer different questions
+    statement: Evaluate task outcome, execution process, and security exposure as separate axes; a pass on one axis cannot substitute for a failure or unknown on another.
+    evidence:
+      - type: inference
+        source_ref: deepeval
+        locator: "commit=0d100e37d4263f208488f3c13e15561bce3b694f; path=deepeval/metrics/tool_use/tool_use.py; blob=6ccd80ad4dab0d4b05fa45dceab3fc01a3a091a8; locator=symbol:ToolUseMetric; symbol:_get_argument_correctness_score; symbol:_get_tool_selection_score"
+        verification_status: unverified
+        note: The metric separates tool selection and argument correctness, which supports process decomposition but does not itself supply a security score.
+      - type: inference
+        source_ref: promptfoo-promptfoo
+        locator: "commit=82ca3c24ec445cf1734face46042c187b659b954; path=README.md; blob=9ffb6e9e61e099eea702427f963afa1c2b3ce7ef; locator=#what-can-you-do-with-promptfoo; # Quick Start"
+        verification_status: unverified
+        note: Promptfoo presents evaluation and red-teaming as distinct workflows.
+  - id: PR-03
+    name: Unknown is a first-class result
+    statement: If ground truth, trace normalization, evaluator execution, provider output, or security evidence is missing or contradictory, record the axis as unknown and block improvement or completion claims.
+    evidence:
+      - type: citation
+        source_ref: promptfoo-promptfoo
+        locator: "commit=82ca3c24ec445cf1734face46042c187b659b954; path=docs/plans/smoke-tests.md; blob=362f02183744b706aa933428556d26d2e783b535; locator=### 1. CLI Binary Tests; #### 1.7 Exit Codes; #### 1.12 Resume and Retry Flags"
+        verification_status: source_supported
+      - type: inference
+        source_ref: langfuse-langfuse
+        locator: "commit=314804b5c68d42bc742505c7b2552298bfe0ca88; path=packages/shared/src/features/evals/observationForEval.test.ts; blob=9270a89a0e454fc69aac89d4ce1f3a4534b4e84d; locator=#zipObservationToolCalls"
+        verification_status: unverified
+        note: Normalization fallback behavior motivates preserving unknown rather than coercing malformed observation data into a pass.
+frameworks:
+  - id: FW-01
+    name: Outcome-process-security evaluation contract
+    problem: Determine whether an agent change improved the frozen task while preserving process quality and security, without mistaking a trace or one metric for an oracle.
+    steps:
+      - id: 1
+        action: "Freeze the case basis: task, inputs, expected outcome, allowed actions, forbidden actions, adjudication rubric, and baseline/treatment variable."
+        check: A blinded reviewer can score the final artifact without knowing which treatment produced it; missing ground truth stops the run.
+      - id: 2
+        action: "Define three independent score records: outcome (task contract), process (tool/plan/argument/path quality), and security (policy violations, unsafe exposure, or adversarial success)."
+        check: Each axis has its own evidence, threshold, and failure semantics; no aggregate can hide an unknown or security failure.
+      - id: 3
+        action: Capture one run identity containing input, output, trace/observations, retrieval, tool calls, errors, timing, cost, evaluator version, and provider configuration.
+        check: Trace coverage is sufficient for diagnosis and replay, or the missing segment is explicitly unknown; trace completeness is not scored as correctness.
+      - id: 4
+        action: Normalize observations into evaluator inputs, retaining malformed or missing fields and their provenance.
+        check: Paired tool names/arguments parse correctly; malformed JSON follows a declared fallback and cannot silently become a pass.
+      - id: 5
+        action: Score outcome against independent expected output or human adjudication, score process using tool selection/argument/path checks, and score security with adversarial or policy cases.
+        check: Record pass, fail, or unknown per axis with reasons and source/run locators; a complete trace alone cannot produce outcome pass.
+      - id: 6
+        action: Run fixed regression cases and a separate risk-appropriate red-team/security set, preserving exit codes and provider/config errors.
+        check: Functional regression and security results remain separate; config/provider/test-plan failures are unknown rather than green.
+      - id: 7
+        action: Compare baseline and treatment only after all required axes are adjudicated, then report deltas, unknowns, and adverse regressions.
+        check: Any unknown, unresolved evaluator disagreement, or security regression blocks a general improvement claim and Skill promotion.
+    boundaries:
+      - Langfuse traces and observations provide diagnostic and normalization inputs; they do not establish correctness, retention, or privacy for a deployment.
+      - DeepEval metric availability and generated judge scores do not prove calibration or task correctness; model and threshold configuration remain material.
+      - Promptfoo's smoke-test plan and CLI registration are plans/contracts, not recorded passing runtime results.
+      - Security passes do not establish outcome correctness, and outcome passes do not establish safe behavior.
+    evidence:
+      - type: inference
+        source_ref: langfuse-langfuse
+        locator: "commit=314804b5c68d42bc742505c7b2552298bfe0ca88; path=README.md; blob=aa96cd81580a43260174793e63561d5a490055f9; locator=#core-features"
+        verification_status: unverified
+      - type: inference
+        source_ref: langfuse-langfuse
+        locator: "commit=314804b5c68d42bc742505c7b2552298bfe0ca88; path=.agents/ARCHITECTURE_PRINCIPLES.md; blob=b4b5d324a77d651c104d778e1a80fbfb6318611c; locator=#principles"
+        verification_status: unverified
+      - type: citation
+        source_ref: langfuse-langfuse
+        locator: "commit=314804b5c68d42bc742505c7b2552298bfe0ca88; path=packages/shared/src/features/evals/observationForEval.test.ts; blob=9270a89a0e454fc69aac89d4ce1f3a4534b4e84d; locator=#zipObservationToolCalls"
+        verification_status: source_supported
+      - type: inference
+        source_ref: deepeval
+        locator: "commit=0d100e37d4263f208488f3c13e15561bce3b694f; path=docs/content/docs/(concepts)/(test-cases)/evaluation-test-cases.mdx; blob=798fa752cf5abba9d3fd592cfe4a111c37eab8a6; locator=## LLM Test Case; ### Expected Output; ### Tools Called"
+        verification_status: unverified
+      - type: inference
+        source_ref: deepeval
+        locator: "commit=0d100e37d4263f208488f3c13e15561bce3b694f; path=deepeval/metrics/tool_use/tool_use.py; blob=6ccd80ad4dab0d4b05fa45dceab3fc01a3a091a8; locator=symbol:ToolUseMetric.measure; symbol:_get_argument_correctness_score; symbol:_get_tool_selection_score"
+        verification_status: unverified
+      - type: inference
+        source_ref: promptfoo-promptfoo
+        locator: "commit=82ca3c24ec445cf1734face46042c187b659b954; path=SECURITY.md; blob=59590f12d7bc7242a71d306969b07f2b8411c96d; locator=#security-model"
+        verification_status: unverified
+      - type: citation
+        source_ref: promptfoo-promptfoo
+        locator: "commit=82ca3c24ec445cf1734face46042c187b659b954; path=docs/plans/smoke-tests.md; blob=362f02183744b706aa933428556d26d2e783b535; locator=### 1. CLI Binary Tests; #### 1.7 Exit Codes; #### 1.12 Resume and Retry Flags"
+        verification_status: source_supported
+      - type: inference
+        source_ref: promptfoo-promptfoo
+        locator: "commit=82ca3c24ec445cf1734face46042c187b659b954; path=src/main.ts; blob=84a88f46048964acdecb4853ee68dd8cb7501e50; locator=async function main(); EvalRunError; shutdownGracefully"
+        verification_status: unverified
+      - type: observation
+        source_ref: local-fixed-experiment
+        locator: "README.md; command: python3 run_experiment.py; baseline SHA-256=61f013c7589899cc22dcf2a4f2010c3161e3c79518ea31967222c4a9d60491aa; treatment SHA-256=80b185220eb3bd57ed66db55fd4048c56b1db44eb1fdfcb79c648f5f48ffc2be; oracle_pass=true (script exits 0 only after fixed oracle and negative checks); JSON/fixture bounded"
+        verification_status: independently_verified
+anti_patterns:
+  - id: AP-01
+    name: Trace equals truth
+    symptom: A complete-looking trace or normalized observation is reported as proof that the final answer or action was correct.
+    correction: Score outcome against frozen ground truth and use traces only to diagnose process and missing evidence.
+    evidence:
+      - type: inference
+        source_ref: langfuse-langfuse
+        locator: "commit=314804b5c68d42bc742505c7b2552298bfe0ca88; path=README.md; blob=aa96cd81580a43260174793e63561d5a490055f9; locator=#core-features"
+        verification_status: unverified
+  - id: AP-02
+    name: One score hides three axes
+    symptom: Outcome, process, and security are averaged into one pass/fail and a security failure or unknown disappears.
+    correction: Emit three axis records and block aggregate claims when any required axis is unknown or unsafe.
+    evidence:
+      - type: inference
+        source_ref: deepeval
+        locator: "commit=0d100e37d4263f208488f3c13e15561bce3b694f; path=deepeval/metrics/tool_use/tool_use.py; blob=6ccd80ad4dab0d4b05fa45dceab3fc01a3a091a8; locator=symbol:_get_argument_correctness_score; symbol:_get_tool_selection_score"
+        verification_status: unverified
+      - type: inference
+        source_ref: promptfoo-promptfoo
+        locator: "commit=82ca3c24ec445cf1734face46042c187b659b954; path=README.md; blob=9ffb6e9e61e099eea702427f963afa1c2b3ce7ef; locator=#what-can-you-do-with-promptfoo"
+        verification_status: unverified
+  - id: AP-03
+    name: Planned test equals passing test
+    symptom: A smoke-test matrix, CLI registration, or provider option is cited as a successful runtime evaluation.
+    correction: Record command output, environment, provider/config status, and exit code; otherwise mark the axis unknown.
+    evidence:
+      - type: citation
+        source_ref: promptfoo-promptfoo
+        locator: "commit=82ca3c24ec445cf1734face46042c187b659b954; path=docs/plans/smoke-tests.md; blob=362f02183744b706aa933428556d26d2e783b535; locator=### 1. CLI Binary Tests"
+        verification_status: source_supported
+open_questions:
+  - Which independent ground-truth and adjudication process is authoritative for each product task?
+  - How are evaluator model drift, provider failures, and malformed observations represented in long-lived comparisons?
+  - Which security cases and thresholds are sufficient before a rule can be promoted across heterogeneous tasks?
+artifact:
+  requested_level: level_3
+  selected_level: level_3
+  rationale: This Level 3 draft combines fixed-source capability and boundary descriptions with an ordered local method independently verified only against a fixed JSON/fixture oracle. It does not prove a real evaluator, telemetry backend, provider, security event, or production behavior and is not Level 4 or a Skill.
+  render_targets: [model, framework]

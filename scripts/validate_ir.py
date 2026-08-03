@@ -13,8 +13,15 @@ import yaml
 
 
 LEVELS = {"level_1", "level_2", "level_3", "level_4"}
+RENDER_TARGETS = {"card", "model", "framework", "skill"}
 MATURITY = {"draft", "reviewed", "validated", "executable"}
 EVIDENCE_TYPES = {"citation", "experience", "observation", "inference"}
+SOURCE_ACCESS = {"public", "private", "licensed", "internal", "unknown"}
+VERIFICATION_STATUSES = {"source_supported", "independently_verified", "unverified"}
+PUBLICATION_CONSTRAINTS = {
+    "no_source_text", "no_source_substitute_positioning",
+    "review_cumulative_coverage", "transform_source_specific_titles"
+}
 
 
 class ValidationError(Exception):
@@ -36,6 +43,8 @@ def validate_evidence(items: Any, source_ids: set[str], path: str) -> None:
         current = f"{path}[{index}]"
         require(isinstance(item, dict), f"{current} must be an object")
         require(item.get("type") in EVIDENCE_TYPES, f"{current}.type is invalid")
+        require(item.get("verification_status") in VERIFICATION_STATUSES,
+                f"{current}.verification_status is invalid")
         require(item.get("source_ref") in source_ids, f"{current}.source_ref is not declared")
         require(bool(item.get("locator")), f"{current}.locator is required")
 
@@ -45,7 +54,7 @@ def validate(path: Path) -> dict[str, Any]:
     require(isinstance(data, dict), "document root must be an object")
 
     required = {
-        "metadata", "status", "sources", "boundary", "principles", "frameworks",
+        "metadata", "status", "sources", "usage", "boundary", "principles", "frameworks",
         "anti_patterns", "open_questions", "artifact"
     }
     missing = sorted(required - data.keys())
@@ -72,7 +81,42 @@ def validate(path: Path) -> dict[str, Any]:
         require(source_id not in source_ids, f"duplicate source id: {source_id}")
         require(bool(source.get("type")) and bool(source.get("reference")),
                 f"sources[{index}].type and reference are required")
+        require(source.get("access") in SOURCE_ACCESS,
+                f"sources[{index}].access is required and must be valid")
         source_ids.add(source_id)
+
+    usage = data["usage"]
+    require(isinstance(usage, dict), "usage must be an object")
+    require(usage.get("purpose") in {"personal_learning", "internal_training", "product_development", "public_content", "other"},
+            "usage.purpose is invalid")
+    require(usage.get("visibility") in {"private", "internal", "public"},
+            "usage.visibility is invalid")
+    require(usage.get("source_retention") in {"none", "locators_only", "transformed_notes", "full_source"},
+            "usage.source_retention is invalid")
+    require(usage.get("publication_review") in {"not_required", "required", "blocked"},
+            "usage.publication_review is invalid")
+    constraints = usage.get("publication_constraints", [])
+    require(isinstance(constraints, list), "usage.publication_constraints must be a list")
+    require(set(constraints) <= PUBLICATION_CONSTRAINTS,
+            "usage.publication_constraints contains an invalid value")
+    require(len(constraints) == len(set(constraints)),
+            "usage.publication_constraints must be unique")
+    restricted_source = any(source.get("access") in {"licensed", "private", "internal", "unknown"} for source in sources)
+    if restricted_source:
+        required_constraints = {"no_source_text", "no_source_substitute_positioning"}
+        require(required_constraints <= set(constraints),
+                "licensed/private/internal sources require publication safety constraints")
+    serialized_restricted_source = any(
+        source.get("access") in {"licensed", "unknown"}
+        or (
+            source.get("access") in {"private", "internal"}
+            and source.get("type") in {"book", "course", "transcript"}
+        )
+        for source in sources
+    )
+    if serialized_restricted_source:
+        require("review_cumulative_coverage" in constraints,
+                "licensed or private serialized sources require cumulative coverage review")
 
     boundary = data["boundary"]
     require(isinstance(boundary, dict), "boundary must be an object")
@@ -103,6 +147,11 @@ def validate(path: Path) -> dict[str, Any]:
     selected = artifact.get("selected_level")
     require(selected in LEVELS, "artifact.selected_level is invalid")
     require(bool(artifact.get("rationale")), "artifact.rationale is required")
+    render_targets = non_empty_list(artifact.get("render_targets"), "artifact.render_targets")
+    require(set(render_targets) <= RENDER_TARGETS, "artifact.render_targets contains an invalid target")
+    require(len(render_targets) == len(set(render_targets)), "artifact.render_targets must be unique")
+    require(selected == "level_4" or "skill" not in render_targets,
+            "skill render target requires selected_level level_4")
 
     executable = data.get("executable")
     if selected == "level_4" or status.get("maturity") == "executable":

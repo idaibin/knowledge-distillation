@@ -16,6 +16,8 @@ Do not acquire sources outside the user's authorization. Do not bypass authentic
 
 Assign every source a stable `sources[].id`. Point evidence to that ID and a useful locator such as a section, page, timestamp, repository path, dated observation, or named workflow stage.
 
+Treat `evidence.type` as claim origin and `evidence.verification_status` as verification state. A course locator can make a claim `source_supported`; it does not make the claim `independently_verified`. Use `unverified` when the source-to-claim mapping itself has not been checked.
+
 Use excerpts only when necessary and keep them short. If an exact quotation was not verified, omit `excerpt` and paraphrase in the claim.
 
 ## Filter Noise
@@ -42,3 +44,16 @@ For long material:
 5. Build frameworks only after cross-chunk consolidation.
 
 Never claim full-source coverage when only excerpts or selected chapters were processed.
+
+## Licensed and Private Sources
+
+For paid courses, internal SOPs, private notes, and authenticated pages:
+
+- set the source access accurately;
+- keep raw text outside public repositories;
+- retain locators and transformed notes instead of full transcripts whenever possible;
+- mark public-content publication review as required unless reuse rights are confirmed;
+- send external reviewers only transformed claims, boundaries, and card drafts—not the raw licensed source;
+- preserve a coverage manifest so a five-item batch is not mistaken for a complete course.
+- require publication constraints that prohibit source text and source-substitute positioning, and review cumulative coverage across batches before public release;
+- transform source-specific lesson titles and ordering when public packaging would otherwise reconstruct the paid course.

@@ -1,0 +1,161 @@
+metadata:
+  id: rag-graphrag-decision
+  title: Deciding When Simple RAG Needs GraphRAG
+  domain: ai-engineering
+  ir_version: "0.1"
+  created_at: "2026-08-03"
+status:
+  maturity: draft
+sources:
+  - id: llama-index
+    type: repository
+    reference: https://github.com/run-llama/llama_index/tree/c864fcfa2c1d1f987ccdbcdab7b18e395c01ba86
+    authors: [LlamaIndex]
+    access: public
+  - id: graphrag
+    type: repository
+    reference: https://github.com/microsoft/graphrag/tree/14a00ad88fc33cf2b52f4f113f25807556f8e25e
+    authors: [Microsoft]
+    access: public
+  - id: local-fixed-experiment
+    type: observation
+    reference: experiments/ai-capability-clusters/rag-graphrag/README.md
+    authors: [local]
+    access: internal
+usage:
+  purpose: product_development
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
+  notes: Fixed upstream sources plus an already run local mock/fixture observation support this draft; real provider, runtime, MCP, memory, backend, telemetry, browser, filesystem, and production behavior remain unverified.
+boundary:
+  include:
+    - Distinguishing a direct vector/query-engine RAG path from graph extraction and community-report paths
+    - Measuring retrieval coverage, answer faithfulness, and query relevance before changing architecture
+    - Piloting GraphRAG only when query structure and evidence gaps justify its extra indexing work
+  exclude:
+    - Universal quality, cost, latency, or security claims for either architecture
+    - Treating a graph with nonempty entities or relationships as factually correct
+    - Replacing target-corpus evaluation with framework documentation or vendor examples
+principles:
+  - id: PR-01
+    name: Upgrade for an evidence-shaped query need
+    statement: Keep simple RAG when retrieved context can answer the target query with adequate coverage and faithfulness; consider GraphRAG when multi-hop relationships, corpus-wide synthesis, or repeated retrieval gaps are demonstrated.
+    evidence:
+      - type: inference
+        source_ref: llama-index
+        locator: "commit c864fcfa2c1d1f987ccdbcdab7b18e395c01ba86; path docs/src/content/docs/framework/getting_started/concepts.mdx; blob 6b2a4bc56bfd92552c188458ebf4c9434762139d; ## Agentic Applications; ## Agents; ## Retrieval Augmented Generation (RAG)"
+        verification_status: unverified
+        note: local synthesis
+      - type: citation
+        source_ref: graphrag
+        locator: "commit 14a00ad88fc33cf2b52f4f113f25807556f8e25e; path docs/index/architecture.md; blob c5d86938fe5ac6c9ddc912072c3e25b2a2a9eafd; # Indexing Architecture; ## Knowledge Model; ## Workflows"
+        verification_status: source_supported
+  - id: PR-02
+    name: Coverage and faithfulness are separate gates
+    statement: A response should be checked both for whether relevant evidence was retrieved and for whether its claims are supported by that evidence; one score cannot stand in for the other.
+    evidence:
+      - type: citation
+        source_ref: llama-index
+        locator: "commit c864fcfa2c1d1f987ccdbcdab7b18e395c01ba86; path docs/src/content/docs/framework/module_guides/evaluating/usage_pattern.md; blob 7c07cccf6aad0a2fb9f5cc56f105e92818952cef; ## Evaluating Response Faithfulness (i.e. Hallucination); ## Evaluating Query + Response Relevancy"
+        verification_status: source_supported
+  - id: PR-03
+    name: Graph extraction success is not answer truth
+    statement: A completed graph-extraction pipeline or nonempty entities and relationships establishes pipeline output, not factual accuracy; provenance and target-corpus evaluation remain necessary.
+    evidence:
+      - type: citation
+        source_ref: graphrag
+        locator: "commit 14a00ad88fc33cf2b52f4f113f25807556f8e25e; path packages/graphrag/graphrag/index/workflows/extract_graph.py; blob dc86b180fc870a9fc8f2d456236cb8d4ec907262; run_workflow; extract_graph; get_summarized_entities_relationships"
+        verification_status: source_supported
+      - type: citation
+        source_ref: graphrag
+        locator: "commit 14a00ad88fc33cf2b52f4f113f25807556f8e25e; path RAI_TRANSPARENCY.md; blob 1a789aede716938549844fbbf74ede0646828896; ## What are the limitations of GraphRAG?"
+        verification_status: source_supported
+frameworks:
+  - id: FW-01
+    name: Retrieval-to-GraphRAG escalation gate
+    problem: Decide whether a target corpus and query workload justify replacing or supplementing simple RAG with the more expensive GraphRAG indexing and synthesis path.
+    steps:
+      - id: 1
+        action: Freeze the corpus, query classes, answer contract, provenance requirement, latency/cost envelope, and a small adjudicated test set.
+        check: If no representative target-domain questions or gold/reference evidence exists, stop and label the decision not_verified.
+      - id: 2
+        action: Run the simplest RAG baseline and retain retrieved contexts, response, query, latency, and cost for each test item.
+        check: Score retrieval coverage/relevance and response faithfulness separately; unknown or incomparable evaluator fields block an upgrade claim.
+      - id: 3
+        action: "Classify the residual failures: missing local passages, multi-hop relationship traversal, corpus-wide synthesis, conflicting provenance, or ordinary generation error."
+        check: If failures are ordinary retrieval/chunking/query issues, tune the simple path first; proceed only when graph-shaped failures recur.
+      - id: 4
+        action: Estimate GraphRAG indexing inputs and cost, then pilot its extraction, embeddings, community/report generation, and provenance on the small target-domain set.
+        check: Confirm entities/relationships and reports are nonempty and traceable, while treating that as pipeline readiness rather than factual validation.
+      - id: 5
+        action: Compare simple RAG and GraphRAG on the same questions using coverage, faithfulness, relevance, latency, indexing cost, and human provenance inspection.
+        check: Choose GraphRAG only if the graph-shaped cases gain material evidence coverage/faithfulness within the accepted cost and latency envelope; otherwise retain simple RAG.
+      - id: 6
+        action: Record the decision, rejected alternatives, unresolved corpus risks, and a rollback path.
+        check: A missing reproducible metric, human review, or target-corpus trace keeps the result provisional and blocks broad generalization.
+    boundaries:
+      - GraphRAG README calls the code a demonstration and warns indexing can be expensive; prompt tuning may be needed.
+      - LlamaIndex evaluator examples use LLM judges and do not prove calibration on a target dataset.
+      - GraphRAG guidance expects trusted users, domain-expert analysis, and provenance tracing.
+      - No source here supplies a universal threshold for when GraphRAG wins.
+    evidence:
+      - type: citation
+        source_ref: llama-index
+        locator: "commit c864fcfa2c1d1f987ccdbcdab7b18e395c01ba86; path llama-index-core/llama_index/core/query_engine/retriever_query_engine.py; blob 907d391048d1d636b24ceb3c1dc0feee5e6682ed; RetrieverQueryEngine.retrieve; RetrieverQueryEngine.synthesize; RetrieverQueryEngine._query"
+        verification_status: source_supported
+      - type: citation
+        source_ref: llama-index
+        locator: "commit c864fcfa2c1d1f987ccdbcdab7b18e395c01ba86; path docs/src/content/docs/framework/module_guides/evaluating/usage_pattern.md; blob 7c07cccf6aad0a2fb9f5cc56f105e92818952cef; ## Using BaseEvaluator; ## Batch Evaluation"
+        verification_status: source_supported
+      - type: citation
+        source_ref: graphrag
+        locator: "commit 14a00ad88fc33cf2b52f4f113f25807556f8e25e; path docs/index/architecture.md; blob c5d86938fe5ac6c9ddc912072c3e25b2a2a9eafd; ## Workflows; ## LLM Caching"
+        verification_status: source_supported
+      - type: citation
+        source_ref: graphrag
+        locator: "commit 14a00ad88fc33cf2b52f4f113f25807556f8e25e; path RAI_TRANSPARENCY.md; blob 1a789aede716938549844fbbf74ede0646828896; ## How was GraphRAG evaluated?; ## What operational factors and settings allow for effective and responsible use?"
+        verification_status: source_supported
+      - type: observation
+        source_ref: local-fixed-experiment
+        locator: "README.md; command: python3 run_experiment.py; baseline SHA-256=47527ac8de3bbf9d93b99df590ed195ffdb8a218e960affb389896f2067f6888; treatment SHA-256=8965588dee0335c28e39729969490199cd76f9b3af98ec2789f0124850f5d505; oracle_pass=true (recorded as runs/treatment.json passed_oracle: true); mock/fixture bounded"
+        verification_status: independently_verified
+anti_patterns:
+  - id: AP-01
+    name: Graph novelty as justification
+    symptom: A graph is introduced because it is more sophisticated, without a recurring query failure that simple RAG cannot address.
+    correction: Freeze a baseline and require graph-shaped residual failures plus target-corpus evidence gains before escalation.
+    evidence:
+      - type: inference
+        source_ref: graphrag
+        locator: "commit 14a00ad88fc33cf2b52f4f113f25807556f8e25e; path README.md; blob b17d46fdaff576147051eedef932d5992392bbe7; ## Overview; ## Repository Guidance"
+        verification_status: unverified
+        note: The source warns of demonstration status and indexing cost; the anti-pattern correction is a local synthesis.
+  - id: AP-02
+    name: One evaluator number as truth
+    symptom: A single relevance, coverage, or faithfulness score is used as proof of architecture superiority.
+    correction: Report coverage, faithfulness, relevance, cost/latency, and human provenance inspection separately.
+    evidence:
+      - type: citation
+        source_ref: llama-index
+        locator: "commit c864fcfa2c1d1f987ccdbcdab7b18e395c01ba86; path docs/src/content/docs/framework/module_guides/evaluating/usage_pattern.md; blob 7c07cccf6aad0a2fb9f5cc56f105e92818952cef; ## Evaluating Response Faithfulness (i.e. Hallucination); ## Evaluating Query + Response Relevancy"
+        verification_status: source_supported
+  - id: AP-03
+    name: Nonempty graph equals factual graph
+    symptom: Entity and relationship rows are treated as verified facts without provenance review.
+    correction: Preserve extraction provenance, inspect target-domain examples, and keep factual quality not_verified until adjudicated.
+    evidence:
+      - type: citation
+        source_ref: graphrag
+        locator: "commit 14a00ad88fc33cf2b52f4f113f25807556f8e25e; path packages/graphrag/graphrag/index/workflows/extract_graph.py; blob dc86b180fc870a9fc8f2d456236cb8d4ec907262; extract_graph; get_summarized_entities_relationships"
+        verification_status: source_supported
+open_questions:
+  - What coverage and faithfulness thresholds are acceptable for this product's query mix and risk class?
+  - Does GraphRAG improve multi-hop or global-synthesis cases after prompt tuning on the target corpus?
+  - Which evaluator judge, human adjudication protocol, and provenance trace are stable enough for a repeatable comparison?
+artifact:
+  requested_level: level_3
+  selected_level: level_3
+  rationale: This Level 3 draft combines fixed-source capability and boundary descriptions with an ordered local method independently verified only against a fixed mock/fixture oracle. It does not prove a real retriever, model, runtime, target corpus, or production behavior and is not Level 4 or a Skill.
+  render_targets: [model, framework]

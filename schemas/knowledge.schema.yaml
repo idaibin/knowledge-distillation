@@ -4,7 +4,7 @@ title: Knowledge Distillation IR
 description: Contract for traceable, reusable knowledge assets.
 type: object
 additionalProperties: false
-required: [metadata, status, sources, boundary, principles, frameworks, anti_patterns, open_questions, artifact]
+required: [metadata, status, sources, usage, boundary, principles, frameworks, anti_patterns, open_questions, artifact]
 properties:
   metadata:
     type: object
@@ -32,7 +32,7 @@ properties:
     items:
       type: object
       additionalProperties: false
-      required: [id, type, reference]
+      required: [id, type, reference, access]
       properties:
         id: {type: string, pattern: "^[A-Za-z0-9._-]+$"}
         type: {enum: [book, course, article, paper, transcript, sop, experience, observation, repository, other]}
@@ -41,6 +41,21 @@ properties:
           type: array
           items: {type: string, minLength: 1}
         access: {enum: [public, private, licensed, internal, unknown]}
+  usage:
+    type: object
+    additionalProperties: false
+    required: [purpose, visibility, source_retention, publication_review]
+    properties:
+      purpose: {enum: [personal_learning, internal_training, product_development, public_content, other]}
+      visibility: {enum: [private, internal, public]}
+      source_retention: {enum: [none, locators_only, transformed_notes, full_source]}
+      publication_review: {enum: [not_required, required, blocked]}
+      publication_constraints:
+        type: array
+        uniqueItems: true
+        items:
+          enum: [no_source_text, no_source_substitute_positioning, review_cumulative_coverage, transform_source_specific_titles]
+      notes: {type: string}
   boundary:
     type: object
     additionalProperties: false
@@ -63,11 +78,16 @@ properties:
   artifact:
     type: object
     additionalProperties: false
-    required: [requested_level, selected_level, rationale]
+    required: [requested_level, selected_level, rationale, render_targets]
     properties:
       requested_level: {enum: [auto, level_1, level_2, level_3, level_4]}
       selected_level: {enum: [level_1, level_2, level_3, level_4]}
       rationale: {type: string, minLength: 1}
+      render_targets:
+        type: array
+        minItems: 1
+        uniqueItems: true
+        items: {enum: [card, model, framework, skill]}
   executable:
     $ref: "#/$defs/executable"
 allOf:
@@ -89,6 +109,17 @@ allOf:
           properties:
             selected_level: {const: level_4}
       required: [executable]
+  - if:
+      properties:
+        artifact:
+          properties:
+            render_targets:
+              contains: {const: skill}
+    then:
+      properties:
+        artifact:
+          properties:
+            selected_level: {const: level_4}
 $defs:
   nonEmptyStrings:
     type: array
@@ -98,11 +129,12 @@ $defs:
   evidence:
     type: object
     additionalProperties: false
-    required: [type, source_ref, locator]
+    required: [type, source_ref, locator, verification_status]
     properties:
       type: {enum: [citation, experience, observation, inference]}
       source_ref: {type: string, minLength: 1}
       locator: {type: string, minLength: 1}
+      verification_status: {enum: [source_supported, independently_verified, unverified]}
       excerpt: {type: string}
       note: {type: string}
   principle:

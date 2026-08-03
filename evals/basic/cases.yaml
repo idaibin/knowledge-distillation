@@ -16,10 +16,23 @@ negative_mutations:
     base: schemas/knowledge.example.yaml
     mutation: dangling_source_ref
     expected_error: source_ref is not declared
+  - name: missing verification status
+    base: schemas/knowledge.example.yaml
+    mutation: missing_verification_status
+    expected_error: verification_status is invalid
+  - name: missing licensed-source publication constraints
+    base: schemas/knowledge.example.yaml
+    mutation: missing_licensed_publication_constraints
+    expected_error: licensed/private/internal sources require publication safety constraints
   - name: level four without executable contract
     base: examples/management/effective-management/knowledge.yaml
     mutation: level_4_without_executable
     expected_error: level_4 requires executable
+  - name: skill target below level four
+    base: examples/management/effective-management/knowledge.yaml
+    mutation: skill_target_below_level_4
+    expected_error: skill render target requires selected_level level_4
+    cross_validator: check-jsonschema
   - name: non-contiguous framework steps
     base: examples/engineering/repo-review/knowledge.yaml
     mutation: non_contiguous_steps

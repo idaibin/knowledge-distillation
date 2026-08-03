@@ -1,0 +1,148 @@
+metadata:
+  id: agent-runtime-orchestration
+  title: Agent Runtime Control, Guardrails, and Resumable Execution
+  domain: ai-engineering
+  ir_version: "0.1"
+  created_at: "2026-08-03"
+status:
+  maturity: draft
+sources:
+  - id: openai-agents-python
+    type: repository
+    reference: https://github.com/openai/openai-agents-python/tree/000a96b602889b00f7cfaa210c41e1a74be65272
+    authors: [OpenAI]
+    access: public
+  - id: langgraph
+    type: repository
+    reference: https://github.com/langchain-ai/langgraph/tree/b2926a0ff9589c28c7e01fe7cdbb337b86d5a4b4
+    authors: [LangChain]
+    access: public
+  - id: local-fixed-experiment
+    type: observation
+    reference: experiments/ai-capability-clusters/agent-runtime-orchestration/README.md
+    authors: [local]
+    access: internal
+usage:
+  purpose: product_development
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
+  notes: Fixed upstream sources plus an already run local mock/fixture observation support this draft; real provider, runtime, MCP, memory, backend, telemetry, browser, filesystem, and production behavior remain unverified.
+boundary:
+  include:
+    - Assigning conversation control between a manager and specialist agents
+    - Guardrail timing and scope around agent and function-tool execution
+    - Checkpoint, interrupt, resume, retry, and idempotency decisions for stateful runs
+  exclude:
+    - Claiming provider, sandbox, security, or side-effect correctness without local tests
+    - Treating an interrupt or checkpoint as transactional exactly-once execution
+    - Selecting a topology solely from framework feature lists
+principles:
+  - id: PR-01
+    name: Control ownership is an explicit runtime choice
+    statement: Keep a central manager when one conversation owner must coordinate specialists; use a handoff only when conversation control should move to the specialist.
+    evidence:
+      - type: citation
+        source_ref: openai-agents-python
+        locator: "commit 000a96b602889b00f7cfaa210c41e1a74be65272; path docs/agents.md; blob f5946643bb73a35ec5082351ff305bb44082d0f7; # Agents; ## Multi-agent system design patterns"
+        verification_status: source_supported
+  - id: PR-02
+    name: Guardrail coverage follows execution boundaries
+    statement: Agent-level input/output guardrails cover the first and final agents, while function-tool guardrails surround configured function-tool calls; delegated or hosted paths need separate coverage checks.
+    evidence:
+      - type: citation
+        source_ref: openai-agents-python
+        locator: "commit 000a96b602889b00f7cfaa210c41e1a74be65272; path docs/guardrails.md; blob 5caa814c3e9abdd7385bd2ac457eae7d9b859e52; # Guardrails; ## Workflow boundaries; ## Tool guardrails"
+        verification_status: source_supported
+  - id: PR-03
+    name: Resume re-executes work unless side effects are made safe
+    statement: A LangGraph interrupt resumes by re-executing the node from its start, so external effects must be idempotent or fenced independently of the checkpoint.
+    evidence:
+      - type: citation
+        source_ref: langgraph
+        locator: "commit b2926a0ff9589c28c7e01fe7cdbb337b86d5a4b4; path libs/langgraph/langgraph/types.py; blob ac9aa9b00565ec20476b4d00a3847f6b7e8fda34; symbol:interrupt"
+        verification_status: source_supported
+      - type: inference
+        source_ref: langgraph
+        locator: "commit b2926a0ff9589c28c7e01fe7cdbb337b86d5a4b4; path libs/langgraph/langgraph/types.py; blob ac9aa9b00565ec20476b4d00a3847f6b7e8fda34; symbol:interrupt"
+        verification_status: unverified
+        note: Idempotency fencing is a design consequence to test in the application; the source does not prove user side-effect safety.
+frameworks:
+  - id: FW-01
+    name: Control-and-resume runtime gate
+    problem: Decide who owns agent conversation control and how a run is guarded, checkpointed, interrupted, resumed, and prevented from duplicating side effects.
+    steps:
+      - id: 1
+        action: "Write the run contract: conversation owner, specialist boundaries, allowed tools, maximum turns, approval points, and consequential side effects."
+        check: If one owner must retain the conversation, choose manager-as-tools; if control must transfer, choose a handoff; if neither is explicit, stop.
+      - id: 2
+        action: Map every input, output, and function-tool boundary to its guardrail and timing mode.
+        check: Confirm first-agent input, final-agent output, and each configured function tool are covered; if a hosted tool or handoff is uncovered, add a separate control or stop.
+      - id: 3
+        action: Select a persistence mode and checkpointer for runs that can pause, fail, or outlive one invocation.
+        check: Confirm the chosen durability mode and checkpointer satisfy the required resume point; otherwise downgrade to a non-resumable run and disclose the loss.
+      - id: 4
+        action: Place interruptible approval before the consequential operation and record the state needed to resume.
+        check: On resume, verify that the approval is still for the same target and arguments; reject stale or broadened approval.
+      - id: 5
+        action: Make every external side effect idempotent with a stable operation key, or move it after a durable approval/checkpoint boundary.
+        check: Replay the resumed node against a duplicate request; if it can create a second effect or its postcondition cannot be checked, stop before enabling resume.
+      - id: 6
+        action: Run bounded failure drills for guardrail trip, max-turn exhaustion, checkpoint loss, timeout, interrupt, and retry.
+        check: Each drill has an observable stop, refusal, or explicit degraded result; an untested path remains not_verified.
+    boundaries:
+      - The OpenAI Agents tests use FakeModel and do not establish real-provider safety, latency, or sandbox containment.
+      - LangGraph interrupt requires a checkpointer and re-executes the node; it is not an exactly-once transaction boundary.
+      - Cooperative timeout may be delayed by CPU-bound or synchronous work.
+      - Persistence and memory features do not define a correct application state schema or business approval policy.
+    evidence:
+      - type: citation
+        source_ref: openai-agents-python
+        locator: "commit 000a96b602889b00f7cfaa210c41e1a74be65272; path src/agents/run.py; blob d0e3f9ee5668e4daeaf7183290739c49b98958e3; symbol:Runner.run; symbol:Runner.run_sync; symbol:AgentRunner.run_streamed"
+        verification_status: source_supported
+      - type: citation
+        source_ref: openai-agents-python
+        locator: "commit 000a96b602889b00f7cfaa210c41e1a74be65272; path tests/test_guardrails.py; blob 49ed36faa502f1e6d7d7f8effcd8f44ec0e63fa7; test_blocking_guardrail_prevents_agent_execution"
+        verification_status: source_supported
+      - type: citation
+        source_ref: langgraph
+        locator: "commit b2926a0ff9589c28c7e01fe7cdbb337b86d5a4b4; path libs/langgraph/langgraph/types.py; blob ac9aa9b00565ec20476b4d00a3847f6b7e8fda34; symbol:Durability; symbol:interrupt; symbol:TimeoutPolicy"
+        verification_status: source_supported
+      - type: citation
+        source_ref: langgraph
+        locator: "commit b2926a0ff9589c28c7e01fe7cdbb337b86d5a4b4; path libs/langgraph/langgraph/pregel/main.py; blob f4ca480244718a9c0b3cf20a8238bf1306664c87; symbol:Pregel.ainvoke"
+        verification_status: source_supported
+      - type: observation
+        source_ref: local-fixed-experiment
+        locator: "README.md; command: python3 run_experiment.py; baseline SHA-256=b222ad858f0d4f9521423475d270584ec41cb9090b921f31a709041819d1e0a9; treatment SHA-256=e69292f90a5810b5a19e2f66edfa56e07900fd040558621a67b5c205e50ee94d; oracle_pass=true (recorded as runs/treatment.json passed_oracle: true); mock/fixture bounded"
+        verification_status: independently_verified
+anti_patterns:
+  - id: AP-01
+    name: Guardrail illusion
+    symptom: A first-agent input guardrail is treated as if it surrounds every handoff and tool call.
+    correction: Enumerate execution boundaries and add function-tool or workflow-level checks for uncovered paths.
+    evidence:
+      - type: citation
+        source_ref: openai-agents-python
+        locator: "commit 000a96b602889b00f7cfaa210c41e1a74be65272; path docs/guardrails.md; blob 5caa814c3e9abdd7385bd2ac457eae7d9b859e52; ## Workflow boundaries; ## Tool guardrails"
+        verification_status: source_supported
+  - id: AP-02
+    name: Checkpoint equals exactly once
+    symptom: A resumed interrupt is allowed to repeat a payment, message, deletion, or other external write.
+    correction: Use an idempotency key or durable postcondition fence and test duplicate resume before enabling the path.
+    evidence:
+      - type: inference
+        source_ref: langgraph
+        locator: "commit b2926a0ff9589c28c7e01fe7cdbb337b86d5a4b4; path libs/langgraph/langgraph/types.py; blob ac9aa9b00565ec20476b4d00a3847f6b7e8fda34; symbol:interrupt"
+        verification_status: unverified
+        note: The duplicate-effect correction is an application control inferred from documented node re-execution.
+open_questions:
+  - Which checkpointer and external-effect store provide the required durability and idempotency guarantees in the target deployment?
+  - Have real-provider, timeout, cancellation, and approval-replay drills passed for the chosen graph and agent topology?
+  - Which handoff or hosted-tool paths remain outside the tested guardrail envelope?
+artifact:
+  requested_level: level_3
+  selected_level: level_3
+  rationale: This Level 3 draft combines fixed-source capability and boundary descriptions with an ordered local method independently verified only against a fixed mock/fixture oracle. It does not prove a real provider, runtime, deployment, or production behavior and is not Level 4 or a Skill.
+  render_targets: [model, framework]

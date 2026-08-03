@@ -1,0 +1,181 @@
+metadata:
+  id: evaluation-driven-agent-workflow
+  title: Evaluation-Driven Agent Learning Workflow
+  domain: ai-engineering
+  ir_version: "0.1"
+  created_at: "2026-07-31"
+status:
+  maturity: draft
+sources:
+  - id: openai-agents-python
+    type: repository
+    reference: https://github.com/openai/openai-agents-python/tree/000a96b602889b00f7cfaa210c41e1a74be65272
+    authors: [OpenAI]
+    access: public
+  - id: langgraph
+    type: repository
+    reference: https://github.com/langchain-ai/langgraph/tree/b2926a0ff9589c28c7e01fe7cdbb337b86d5a4b4
+    authors: [LangChain]
+    access: public
+  - id: deepeval
+    type: repository
+    reference: https://github.com/confident-ai/deepeval/tree/0d100e37d4263f208488f3c13e15561bce3b694f
+    authors: [Confident AI]
+    access: public
+  - id: langfuse
+    type: repository
+    reference: https://github.com/langfuse/langfuse/tree/314804b5c68d42bc742505c7b2552298bfe0ca88
+    authors: [Langfuse]
+    access: public
+  - id: promptfoo
+    type: repository
+    reference: https://github.com/promptfoo/promptfoo/tree/82ca3c24ec445cf1734face46042c187b659b954
+    authors: [Promptfoo]
+    access: public
+usage:
+  purpose: personal_learning
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
+  notes: Repository descriptions support this decision framework; they do not independently verify product claims or local runtime behavior.
+boundary:
+  include:
+    - Selecting the minimum agent runtime needed for a fixed task
+    - Separating traces, outcome evaluation, regression testing, and security testing
+    - Promoting learned rules only after repeated evidence on fixed cases
+  exclude:
+    - Declaring one agent framework universally superior
+    - Treating vendor benchmarks or repository stars as independent verification
+    - Installing or changing a Skill before cross-case lift is demonstrated
+principles:
+  - id: PR-01
+    name: Runtime and evidence are separate decisions
+    statement: Choose tools, handoffs, state, and human approval from task requirements, then establish correctness with a separate evaluation contract.
+    evidence:
+      - type: inference
+        source_ref: openai-agents-python
+        locator: README.md — Core concepts
+        verification_status: source_supported
+        note: The runtime exposes agents, tools, guardrails, handoffs, sessions, human-in-the-loop, and tracing as distinct concepts.
+      - type: inference
+        source_ref: deepeval
+        locator: README.md — Agentic metrics
+        verification_status: source_supported
+        note: Outcome and process metrics are evaluated separately from the agent runtime.
+  - id: PR-02
+    name: Persistent workflows need resumable state
+    statement: Long-running or interruptible agent work requires explicit state persistence and a defined resume path; a prompt alone is not durable control flow.
+    evidence:
+      - type: citation
+        source_ref: langgraph
+        locator: README.md — Why use LangGraph? — Durable execution and human-in-the-loop
+        verification_status: source_supported
+  - id: PR-03
+    name: Traces diagnose but do not prove correctness
+    statement: Trace capture explains model, retrieval, tool, and agent actions, while datasets and explicit evaluators decide whether the result met the frozen task contract.
+    evidence:
+      - type: inference
+        source_ref: langfuse
+        locator: README.md — Observability / Evaluations / Datasets / Prompt Management
+        verification_status: source_supported
+        note: The source presents traces, evaluations, and datasets as separate capabilities.
+  - id: PR-04
+    name: Reliability and security are distinct axes
+    statement: Passing functional regression cases does not replace adversarial or red-team checks, and security checks do not establish task correctness.
+    evidence:
+      - type: inference
+        source_ref: promptfoo
+        locator: README.md — CI/CD integration and red teaming
+        verification_status: source_supported
+frameworks:
+  - id: FW-01
+    name: Fixed-basis agent learning loop
+    problem: Turn changing AI repositories and local task experience into reusable practice without confusing popularity, traces, or one successful run with evidence of improvement.
+    steps:
+      - id: 1
+        action: Freeze the task basis, scope, expected outcomes, failure conditions, and adjudication rules before selecting a framework.
+        check: Another reviewer can score the same output without seeing which method produced it.
+      - id: 2
+        action: Select the smallest runtime whose tools, state, handoff, approval, and durability capabilities cover the frozen task.
+        check: Every selected capability maps to a task requirement; unused infrastructure is excluded.
+      - id: 3
+        action: Capture source locators, runtime inputs, outputs, tool events, errors, cost, and timing under one run identity.
+        check: The result is replayable or its non-deterministic boundary is explicit.
+      - id: 4
+        action: Score task completion, tool correctness, false positives, false negatives, and actionability against the frozen ground truth.
+        check: Unknown or unadjudicated results block claims of improvement.
+      - id: 5
+        action: Run regression cases and a separate risk-appropriate red-team pass.
+        check: Functional and security results remain separately reported.
+      - id: 6
+        action: Promote a rule into a Skill candidate only after it produces repeated lift without unacceptable regressions on at least two heterogeneous cases.
+        check: The candidate has a stable trigger, inputs, workflow, constraints, outputs, tests, and rollback path.
+    boundaries:
+      - README claims are source-supported descriptions, not local runtime verification.
+      - Framework choice must follow the task contract rather than repository popularity.
+      - A single case can justify a case result, not a general Skill rule.
+      - Provider or evaluator agreement is not a substitute for frozen human ground truth.
+    evidence:
+      - type: inference
+        source_ref: openai-agents-python
+        locator: README.md — Core concepts
+        verification_status: source_supported
+      - type: inference
+        source_ref: langgraph
+        locator: README.md — Why use LangGraph?
+        verification_status: source_supported
+      - type: inference
+        source_ref: deepeval
+        locator: README.md — Agentic metrics
+        verification_status: source_supported
+      - type: inference
+        source_ref: langfuse
+        locator: README.md — Observability / Evaluations / Datasets / Prompt Management
+        verification_status: source_supported
+      - type: inference
+        source_ref: promptfoo
+        locator: README.md — CI/CD integration and red teaming
+        verification_status: source_supported
+anti_patterns:
+  - id: AP-01
+    name: Popularity as proof
+    symptom: A high Star count or broad adoption is cited as evidence that a framework is correct for the current problem.
+    correction: Use popularity only for discovery; require a fixed source locator, task fit, boundary, and experiment evidence before adoption.
+    evidence:
+      - type: observation
+        source_ref: openai-agents-python
+        locator: GitHub repository metadata checked 2026-07-31 and README.md — Core concepts
+        verification_status: source_supported
+        note: Repository metadata and documented capability are different evidence types.
+  - id: AP-02
+    name: Trace equals truth
+    symptom: A complete trace is treated as proof that the final answer or action was correct.
+    correction: Use traces for diagnosis and score outcomes against an independent dataset or ground truth.
+    evidence:
+      - type: inference
+        source_ref: langfuse
+        locator: README.md — Observability / Evaluations / Datasets
+        verification_status: source_supported
+  - id: AP-03
+    name: Single-case Skill promotion
+    symptom: A prompt or rule that worked once is installed as a mandatory Skill workflow.
+    correction: Keep it as a Level 3 framework or experiment candidate until heterogeneous cases show repeatable lift and no unacceptable regression.
+    evidence:
+      - type: inference
+        source_ref: deepeval
+        locator: README.md — Datasets and agentic metrics
+        verification_status: source_supported
+      - type: inference
+        source_ref: promptfoo
+        locator: README.md — Test cases and CI/CD integration
+        verification_status: source_supported
+open_questions:
+  - Can a generic interface-closure knowledge packet improve recall on Case 003 without lowering precision?
+  - Which second heterogeneous task family should be used before any Skill promotion decision?
+  - Which source claims require local reproduction before selecting a runtime dependency?
+artifact:
+  requested_level: auto
+  selected_level: level_3
+  rationale: The pinned repositories support a traceable decision framework, but current local benchmarks show no cross-case lift and therefore do not justify an executable Skill.
+  render_targets: [model, framework]

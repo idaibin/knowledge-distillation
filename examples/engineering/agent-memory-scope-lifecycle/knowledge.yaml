@@ -1,0 +1,165 @@
+metadata:
+  id: agent-memory-scope-lifecycle
+  title: Agent State, Transcript, and Long-Term Memory Scope Lifecycle
+  domain: ai-engineering
+  ir_version: "0.1"
+  created_at: "2026-08-03"
+status:
+  maturity: draft
+sources:
+  - id: mem0
+    type: repository
+    reference: https://github.com/mem0ai/mem0/tree/760dca6f391277d79c3c7d2096c1bf1d037526c3
+    authors: [Mem0]
+    access: public
+  - id: langgraph
+    type: repository
+    reference: https://github.com/langchain-ai/langgraph/tree/b2926a0ff9589c28c7e01fe7cdbb337b86d5a4b4
+    authors: [LangChain]
+    access: public
+  - id: local-fixed-experiment
+    type: observation
+    reference: experiments/ai-capability-clusters/memory/README.md
+    authors: [local]
+    access: internal
+usage:
+  purpose: product_development
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
+  notes: Fixed upstream sources plus an already run local mock/fixture observation support this draft; real provider, runtime, MCP, memory, backend, telemetry, browser, filesystem, and production behavior remain unverified.
+boundary:
+  include:
+    - Separating workflow state, transcript/raw content, and durable memory by purpose and retention
+    - Choosing user, session, agent, run, or graph-thread scope and filtering retrieval accordingly
+    - Updating, deduplicating, redacting, forgetting, and auditing memory without storing secrets
+  exclude:
+    - Claiming a particular backend provides tenant isolation, deletion guarantees, or recall quality without tests
+    - Treating a checkpoint as a long-term memory policy
+    - Persisting raw credentials, tokens, or unredacted sensitive data
+principles:
+  - id: PR-01
+    name: State, transcript, and memory have different jobs
+    statement: Keep workflow state for resumption, transcript/raw content for the conversation record, and durable memory for selected reusable facts; do not let one store silently become the others.
+    evidence:
+      - type: citation
+        source_ref: mem0
+        locator: "commit 760dca6f391277d79c3c7d2096c1bf1d037526c3; path docs/core-concepts/how-it-works.mdx; blob 55cc2c1cf1985e1dd6b7d62e30929115bc856589; ## Messages vs memories; ## Two phases: extraction and retrieval"
+        verification_status: source_supported
+      - type: inference
+        source_ref: langgraph
+        locator: "commit b2926a0ff9589c28c7e01fe7cdbb337b86d5a4b4; path README.md; blob 97c31e9cb4d8fe56be8d768ce3eb5e22400e897e; ## Why use LangGraph?"
+        verification_status: unverified
+        note: LangGraph presents durable execution and short-/long-term memory as capabilities; the three-store separation is an application synthesis.
+  - id: PR-02
+    name: Scope is part of the memory key
+    statement: Retrieval must carry caller-provided identity filters such as user_id, agent_id, or run_id; otherwise memories from different scopes can mix.
+    evidence:
+      - type: citation
+        source_ref: mem0
+        locator: "commit 760dca6f391277d79c3c7d2096c1bf1d037526c3; path docs/core-concepts/how-it-works.mdx; blob 55cc2c1cf1985e1dd6b7d62e30929115bc856589; ## Where memories live; ## Build against this flow"
+        verification_status: source_supported
+      - type: citation
+        source_ref: mem0
+        locator: "commit 760dca6f391277d79c3c7d2096c1bf1d037526c3; path mem0/memory/main.py; blob 4aac8f8e55f4a19d87687839c5d5b0ca85346f9a; symbol:_IDENTITY_KEYS; symbol:_validate_search_params"
+        verification_status: source_supported
+  - id: PR-03
+    name: Memory writes are a controlled lifecycle
+    statement: A memory write should select or extract durable facts, deduplicate/embed them, apply scope filters, and reject sensitive fields; raw transcript retention is an explicit alternative rather than a default assumption.
+    evidence:
+      - type: citation
+        source_ref: mem0
+        locator: "commit 760dca6f391277d79c3c7d2096c1bf1d037526c3; path docs/core-concepts/how-it-works.mdx; blob 55cc2c1cf1985e1dd6b7d62e30929115bc856589; ## Two phases: extraction and retrieval"
+        verification_status: source_supported
+      - type: citation
+        source_ref: mem0
+        locator: "commit 760dca6f391277d79c3c7d2096c1bf1d037526c3; path mem0/memory/main.py; blob 4aac8f8e55f4a19d87687839c5d5b0ca85346f9a; symbol:_SENSITIVE_FIELDS_EXACT; symbol:_strip_identity_keys"
+        verification_status: source_supported
+frameworks:
+  - id: FW-01
+    name: Scoped memory lifecycle gate
+    problem: Decide what agent information may persist, where it belongs, how it is updated and forgotten, and how retrieval avoids scope or sensitive-data leakage.
+    steps:
+      - id: 1
+        action: Classify each datum as ephemeral workflow state, transcript/raw content, or durable reusable memory, and record purpose and retention.
+        check: If purpose, retention, or deletion owner is missing, keep it ephemeral and stop persistence.
+      - id: 2
+        action: Choose the narrowest identity scope (run/thread, session, user, agent, or graph/application) and make the identity part of the storage and query contract.
+        check: A retrieval request without the required user_id, agent_id, run_id, or equivalent filter is rejected rather than broadened.
+      - id: 3
+        action: On write, extract only the durable fact set, deduplicate/embed as configured, attach provenance and expiry/deletion metadata, and retain raw content only under an explicit policy.
+        check: Secrets, credentials, tokens, and unredacted sensitive fields are removed or the write is refused; extraction quality remains not_verified until tested.
+      - id: 4
+        action: On read, apply scope filters before ranking and return memory with provenance and freshness state to the caller.
+        check: Cross-scope fixtures return no records; invalid or empty queries and out-of-range thresholds are rejected.
+      - id: 5
+        action: "Apply update and forgetting events: supersede stale facts, delete or tombstone requested records, expire temporary memory, and clear transcript/state stores on their own schedules."
+        check: A post-forgetting read and backup/index audit show the item is no longer returned; if backend deletion semantics are unknown, report not_verified and do not promise erasure.
+      - id: 6
+        action: Review memory accuracy, token cost, latency, scope leakage, sensitive-data rejection, and deletion behavior with fixed fixtures.
+        check: Separate quality, cost, latency, and security/deletion outcomes; any unrun backend or provider path remains not_verified.
+    boundaries:
+      - Mem0 documents user, session, and agent scopes, while caller-provided filters are required to avoid cross-scope mixing.
+      - Inference-enabled Mem0 stores extracted memories rather than a verbatim transcript; raw-content mode is an explicit alternative.
+      - The Mem0 evaluation document separates accuracy, context-token cost, and latency; benchmark scores are not proof of OSS reproduction.
+      - LangGraph durability and memory capabilities do not define the application's schema, retention, or deletion guarantee.
+    evidence:
+      - type: citation
+        source_ref: mem0
+        locator: "commit 760dca6f391277d79c3c7d2096c1bf1d037526c3; path README.md; blob 9a81e74effacbd7433e91b6c1fcc907f110d4773; #Introduction; Quickstart Guide; #Basic Usage"
+        verification_status: source_supported
+      - type: citation
+        source_ref: mem0
+        locator: "commit 760dca6f391277d79c3c7d2096c1bf1d037526c3; path docs/core-concepts/memory-evaluation.mdx; blob e265abf61da815e6155bb1f9a980eeaa24f9b7eb; ## Why Memory Evaluation Matters; ## Performance Summary"
+        verification_status: source_supported
+      - type: citation
+        source_ref: mem0
+        locator: "commit 760dca6f391277d79c3c7d2096c1bf1d037526c3; path mem0/memory/main.py; blob 4aac8f8e55f4a19d87687839c5d5b0ca85346f9a; symbol:_SENSITIVE_FIELDS_EXACT; symbol:_validate_search_params"
+        verification_status: source_supported
+      - type: citation
+        source_ref: langgraph
+        locator: "commit b2926a0ff9589c28c7e01fe7cdbb337b86d5a4b4; path README.md; blob 97c31e9cb4d8fe56be8d768ce3eb5e22400e897e; ## Why use LangGraph?"
+        verification_status: source_supported
+      - type: observation
+        source_ref: local-fixed-experiment
+        locator: "README.md; command: python3 run_experiment.py; baseline SHA-256=5e95e63482a181efe20009cc0d5f6bf9dff35137c0fb8b62c897c4d42f63f13f; treatment SHA-256=274041d7d308c82f9d5c32551a2e632f8894625bc69f25d78dac4bbfed0f778f; oracle_pass=true (recorded as runs/treatment.json passed_oracle: true); mock/fixture bounded"
+        verification_status: independently_verified
+anti_patterns:
+  - id: AP-01
+    name: Transcript as memory
+    symptom: Every message or checkpoint is copied into long-term retrieval without a purpose, scope, expiry, or sensitive-data filter.
+    correction: Classify storage roles, extract only durable facts, and retain raw content only under an explicit policy.
+    evidence:
+      - type: citation
+        source_ref: mem0
+        locator: "commit 760dca6f391277d79c3c7d2096c1bf1d037526c3; path docs/core-concepts/how-it-works.mdx; blob 55cc2c1cf1985e1dd6b7d62e30929115bc856589; ## Messages vs memories; ## Two phases: extraction and retrieval"
+        verification_status: source_supported
+  - id: AP-02
+    name: Scope-free recall
+    symptom: A search omits identity filters or silently widens them when no result is found.
+    correction: Require caller-provided identity keys and reject missing or invalid scope parameters.
+    evidence:
+      - type: citation
+        source_ref: mem0
+        locator: "commit 760dca6f391277d79c3c7d2096c1bf1d037526c3; path mem0/memory/main.py; blob 4aac8f8e55f4a19d87687839c5d5b0ca85346f9a; symbol:_IDENTITY_KEYS; symbol:_validate_search_params"
+        verification_status: source_supported
+  - id: AP-03
+    name: Deletion claim without readback
+    symptom: An application reports memory forgotten after a delete call without checking indexes, backups, or subsequent scoped retrieval.
+    correction: Perform post-forgetting readback and backend-specific audit; keep erasure not_verified when semantics are unknown.
+    evidence:
+      - type: inference
+        source_ref: mem0
+        locator: "commit 760dca6f391277d79c3c7d2096c1bf1d037526c3; path docs/core-concepts/how-it-works.mdx; blob 55cc2c1cf1985e1dd6b7d62e30929115bc856589; ## Where memories live"
+        verification_status: unverified
+        note: Readback and backup audit are local lifecycle controls; the cited source does not prove deletion semantics.
+open_questions:
+  - Which stores hold copies of a memory and what are their deletion, tombstone, backup, and index-compaction semantics?
+  - What retention and forgetting policy applies to each workflow state, transcript, and durable-memory scope?
+  - Have cross-scope, sensitive-field, stale-fact, and deletion fixtures passed for the chosen Mem0 and LangGraph configuration?
+artifact:
+  requested_level: level_3
+  selected_level: level_3
+  rationale: This Level 3 draft combines fixed-source capability and boundary descriptions with an ordered local method independently verified only against a fixed mock/fixture oracle. It does not prove a real memory runtime, classifier, storage isolation, or production behavior and is not Level 4 or a Skill.
+  render_targets: [model, framework]

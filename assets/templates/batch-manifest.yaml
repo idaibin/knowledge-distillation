@@ -1,0 +1,18 @@
+batch:
+  id: replace-me
+  title: Replace me
+  source_access: licensed
+  requested_range: Replace me
+  coverage: Replace me
+  cumulative_public_coverage: Replace me
+  publication_status: private
+  raw_source_retained: false
+items:
+  - id: replace-me
+    title: Replace me
+    locator: Replace me
+    url: Replace me
+    extraction_status: pending
+    ir_path: Replace me
+    selected_level: level_1
+    render_targets: [card]

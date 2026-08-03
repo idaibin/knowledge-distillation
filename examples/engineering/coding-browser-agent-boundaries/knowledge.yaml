@@ -1,0 +1,179 @@
+metadata:
+  id: coding-browser-agent-boundaries
+  title: Coding and Browser Agent Boundaries
+  domain: ai-engineering
+  ir_version: "0.1"
+  created_at: "2026-08-03"
+status:
+  maturity: draft
+sources:
+  - id: openhands-openhands
+    type: repository
+    reference: https://github.com/OpenHands/OpenHands/tree/2feab551c4c12130c126159e1a0bd56753e2968f
+    authors: [OpenHands]
+    access: public
+  - id: browser-use-browser-use
+    type: repository
+    reference: https://github.com/browser-use/browser-use/tree/f0aa3a8bb03779c71a5aa262d389e3bfe6b77cdc
+    authors: [Browser Use]
+    access: public
+  - id: local-fixed-experiment
+    type: observation
+    reference: experiments/ai-capability-clusters/coding-browser-agent/README.md
+    authors: [local]
+    access: internal
+usage:
+  purpose: product_development
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
+  notes: Fixed upstream sources plus an already run local mock/fixture observation support this draft; real provider, runtime, MCP, memory, backend, telemetry, browser, filesystem, and production behavior remain unverified.
+boundary:
+  include:
+    - Scoping coding/browser agent workspace, profile, network, credentials, tools, and action budget
+    - Requiring mutation approval and diff/test/DOM/receipt evidence before completion
+    - Separating local or Docker isolation from authorization and task correctness
+  exclude:
+    - Treating a Docker mount, browser session, API key, or agent constructor as sufficient permission
+    - Claiming live browser, repository, provider, authentication, or sandbox enforcement
+    - Treating a generated diff or success text as proof without tests, DOM state, and receipt evidence
+principles:
+  - id: PR-01
+    name: Workspace and profile are explicit security boundaries
+    statement: A coding/browser run must bind the agent to an approved workspace, browser profile, network and credential scope; dockerless or mounted access defines reachable state, not permission to mutate it.
+    evidence:
+      - type: citation
+        source_ref: openhands-openhands
+        locator: "commit=2feab551c4c12130c126159e1a0bd56753e2968f; path=README.md; blob=973cbf183baa9a25e4d17bb09679b45baa82d668; locator=#architecture"
+        verification_status: source_supported
+      - type: citation
+        source_ref: openhands-openhands
+        locator: "commit=2feab551c4c12130c126159e1a0bd56753e2968f; path=docs/SELF_HOSTING.md; blob=7b8cc1281a8ffc1d97a78d101ad9b4f9a40611b6; locator=## 2. Secure the machine; ## 3. Run Agent Canvas; Session API key"
+        verification_status: source_supported
+  - id: PR-02
+    name: Action budget and approval precede mutation
+    statement: Browser and coding agents expose tools, timeouts, failure limits, and command/file adapters, but consequential mutations require an exact target, bounded action budget, and approval before execution.
+    evidence:
+      - type: citation
+        source_ref: browser-use-browser-use
+        locator: "commit=f0aa3a8bb03779c71a5aa262d389e3bfe6b77cdc; path=browser_use/agent/service.py; blob=4bee7b6dffe9c45fec47740a6e5326a2c1dd534f; locator=symbol:Agent"
+        verification_status: source_supported
+      - type: inference
+        source_ref: openhands-openhands
+        locator: "commit=2feab551c4c12130c126159e1a0bd56753e2968f; path=src/api/runtime-service/agent-server-runtime-service.ts; blob=83d45845c5d2350397dd674b410d6147f6947013; locator=symbol:AgentServerRuntimeService"
+        verification_status: unverified
+        note: The adapter routes commands and cwd but is not a command allowlist or sandbox; approval and budget are local controls.
+  - id: PR-03
+    name: Completion requires independent artifact evidence
+    statement: Agent success is complete only when the requested mutation is represented by an expected diff or DOM state, tests or browser assertions pass, and a receipt identifies the run and target; any missing proof is unknown.
+    evidence:
+      - type: inference
+        source_ref: openhands-openhands
+        locator: "commit=2feab551c4c12130c126159e1a0bd56753e2968f; path=__tests__/api/runtime-service/agent-server-runtime-service.test.ts; blob=e37bdb3b653220fbdf1e7d38d69b704983e00feb; locator=describe(\"AgentServerRuntimeService.executeCommand\""
+        verification_status: unverified
+        note: Mocked routing tests demonstrate contract checks but do not establish real command authorization; diff/test/receipt completion remains a local contract.
+      - type: citation
+        source_ref: browser-use-browser-use
+        locator: "commit=f0aa3a8bb03779c71a5aa262d389e3bfe6b77cdc; path=README.md; blob=4eec68396b2cfe2f81cb0ebae79930d123baaf9e; locator=#what-can-browser-use-do"
+        verification_status: source_supported
+        note: The README lists browser actions and QA examples, not proof of a particular DOM result.
+frameworks:
+  - id: FW-01
+    name: Coding/browser agent mutation boundary
+    problem: Decide whether a coding or browser agent may act and whether its requested change is complete without leaking authority or mistaking agent success for proof.
+    steps:
+      - id: 1
+        action: Freeze task intent, approved repository/workspace, browser profile/context, network destinations, credential classes, allowed tools, mutation classes, action/time/failure budgets, and expected diff or DOM postcondition.
+        check: A missing or ambiguous workspace, profile, network, credential, target, or budget stops the run before agent start.
+      - id: 2
+        action: "Choose the narrowest runtime and isolation: Docker/project mount or equivalent workspace, explicit browser session/profile, domain allowlist, secret injection boundary, and command/file adapter."
+        check: The reachable filesystem, process, browser state, and network are enumerated; isolation is recorded separately from authorization.
+      - id: 3
+        action: Configure agent tools, skills, model, timeouts, max_failures, and action budget; disable unneeded tools and prevent profile or credential reuse across tasks.
+        check: Every enabled capability maps to the frozen task; budget exhaustion, watchdog, or profile mismatch causes a hard stop.
+      - id: 4
+        action: Before each consequential command, file write, form submission, navigation with side effects, or credential use, present the exact target, arguments, expected mutation, and remaining budget for approval.
+        check: Approval is current, target-specific, and non-transferable; deny adjacent paths, domains, profiles, or mutation classes.
+      - id: 5
+        action: Execute within budget and capture command/browser events, selected profile, URL/DOM selectors, credential handles (not secret values), errors, and an immutable run identifier.
+        check: A timeout, failure-limit hit, navigation or target drift, or redacted/missing event changes the branch to stopped or unknown.
+      - id: 6
+        action: For coding, inspect the scoped diff and run targeted tests; for browser work, assert the expected DOM/state and capture a non-sensitive receipt or screenshot reference.
+        check: Diff is limited to approved files, tests/DOM assertions pass against the frozen postcondition, and receipt binds to run, target, and timestamp.
+      - id: 7
+        action: Revoke temporary credentials, sessions, mounts, browser profile access, and network exceptions; summarize residual process, file, remote, or account side effects.
+        check: A follow-up probe cannot reuse the completed run's authority; unavailable revoke or missing postcondition evidence yields unknown, not success.
+    boundaries:
+      - OpenHands documents that dockerless Agent Server can access the host filesystem and network; a project mount narrows scope but still grants mounted access.
+      - OpenHands routing adapters and browser-use constructor controls do not prove command allowlists, browser isolation, credential safety, or successful execution.
+      - Browser-use open-source and hosted-cloud capabilities are different; cloud proxy, CAPTCHA, integrations, and persistent state cannot be attributed to local OSS.
+      - Diff, test, DOM, and receipt completion checks are task-level controls; the listed sources do not report a live run or revocation behavior.
+    evidence:
+      - type: inference
+        source_ref: openhands-openhands
+        locator: "commit=2feab551c4c12130c126159e1a0bd56753e2968f; path=docs/architecture.md; blob=14bbf01fcd05a7d1518b541cae8d15778167d866; locator=#system-boundaries"
+        verification_status: unverified
+      - type: citation
+        source_ref: openhands-openhands
+        locator: "commit=2feab551c4c12130c126159e1a0bd56753e2968f; path=docs/SELF_HOSTING.md; blob=7b8cc1281a8ffc1d97a78d101ad9b4f9a40611b6; locator=## 2. Secure the machine; Session API key"
+        verification_status: source_supported
+      - type: inference
+        source_ref: openhands-openhands
+        locator: "commit=2feab551c4c12130c126159e1a0bd56753e2968f; path=src/api/runtime-service/agent-server-runtime-service.ts; blob=83d45845c5d2350397dd674b410d6147f6947013; locator=symbol:AgentServerRuntimeService"
+        verification_status: unverified
+      - type: inference
+        source_ref: browser-use-browser-use
+        locator: "commit=f0aa3a8bb03779c71a5aa262d389e3bfe6b77cdc; path=browser_use/agent/service.py; blob=4bee7b6dffe9c45fec47740a6e5326a2c1dd534f; locator=symbol:Agent"
+        verification_status: unverified
+      - type: citation
+        source_ref: browser-use-browser-use
+        locator: "commit=f0aa3a8bb03779c71a5aa262d389e3bfe6b77cdc; path=README.md; blob=4eec68396b2cfe2f81cb0ebae79930d123baaf9e; locator=#python-library-the-easiest-way-to-automate-the-web; # Open Source vs Cloud"
+        verification_status: source_supported
+      - type: inference
+        source_ref: browser-use-browser-use
+        locator: "commit=f0aa3a8bb03779c71a5aa262d389e3bfe6b77cdc; path=README.md; blob=4eec68396b2cfe2f81cb0ebae79930d123baaf9e; locator=#what-can-browser-use-do"
+        verification_status: unverified
+        note: Diff/test/DOM/receipt and revoke are local completion controls; the fixed local mock postcondition is independently verified, while no real browser session or upstream runtime postcondition was run.
+      - type: observation
+        source_ref: local-fixed-experiment
+        locator: "README.md; command: python3 run_experiment.py; baseline SHA-256=c1219ecbfb673bb5ea495b7f6d53bb44bdd703a07a7f5565fdaa51118bf23bdc; treatment SHA-256=e0cccaf14627f6b9676ce6a73330d6f3fe10b5d1f5eaff5138fe70ee64eed2a9; oracle_pass=true (script exits 0 only after fixed oracle and negative checks); mock workspace/DOM fixture bounded"
+        verification_status: independently_verified
+anti_patterns:
+  - id: AP-01
+    name: Mount or profile means permission
+    symptom: A mounted repository, active browser profile, or available API key is treated as authorization to read or mutate everything reachable.
+    correction: Enumerate workspace/profile/network/credential scope and require target-specific approval before mutation.
+    evidence:
+      - type: citation
+        source_ref: openhands-openhands
+        locator: "commit=2feab551c4c12130c126159e1a0bd56753e2968f; path=README.md; blob=973cbf183baa9a25e4d17bb09679b45baa82d668; locator=#architecture"
+        verification_status: source_supported
+  - id: AP-02
+    name: Constructor controls equal safety
+    symptom: max_failures, timeout, task, tools, or browser session arguments are cited as proof that the agent is isolated or safe.
+    correction: Verify runtime enforcement, budget exhaustion, profile/domain boundaries, and denied adjacent actions; otherwise mark unverified.
+    evidence:
+      - type: citation
+        source_ref: browser-use-browser-use
+        locator: "commit=f0aa3a8bb03779c71a5aa262d389e3bfe6b77cdc; path=browser_use/agent/service.py; blob=4bee7b6dffe9c45fec47740a6e5326a2c1dd534f; locator=symbol:Agent"
+        verification_status: source_supported
+  - id: AP-03
+    name: Diff or browser success equals completion
+    symptom: A generated diff, form submission, or success message is accepted without targeted tests/DOM assertion, receipt, and authority cleanup.
+    correction: Require independent postcondition evidence and revoke temporary authority; report unknown when any proof is missing.
+    evidence:
+      - type: inference
+        source_ref: openhands-openhands
+        locator: "commit=2feab551c4c12130c126159e1a0bd56753e2968f; path=__tests__/api/runtime-service/agent-server-runtime-service.test.ts; blob=e37bdb3b653220fbdf1e7d38d69b704983e00feb; locator=describe(\"AgentServerRuntimeService.executeCommand\""
+        verification_status: unverified
+        note: The pinned tests are mocked and were not run; they do not prove a real postcondition or receipt.
+open_questions:
+  - Which workspace, browser profile, domain, and credential broker enforce target-specific authorization at runtime?
+  - What immutable receipt format binds a code diff or DOM mutation to the approved run and postcondition?
+  - Which revocation and cleanup probes are reliable for local and hosted agent modes?
+artifact:
+  requested_level: level_3
+  selected_level: level_3
+  rationale: This Level 3 draft combines fixed-source capability and boundary descriptions with an ordered local method independently verified only against a fixed mock workspace/DOM fixture oracle. It does not prove a real browser, workspace, provider, credential, sandbox, or production behavior and is not Level 4 or a Skill.
+  render_targets: [model, framework]

@@ -13,6 +13,12 @@ sources:
     reference: Personal fixed-basis repository review workflow
     authors: [daibin]
     access: private
+usage:
+  purpose: product_development
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
 boundary:
   include:
     - Review basis and scope control
@@ -27,6 +33,7 @@ principles:
     statement: Review conclusions are reproducible only when attached to an immutable commit or diff range.
     evidence:
       - type: experience
+        verification_status: source_supported
         source_ref: author-review-practice
         locator: review setup stage
 frameworks:
@@ -51,6 +58,7 @@ frameworks:
       - Static checks do not prove runtime behavior outside their coverage.
     evidence:
       - type: experience
+        verification_status: source_supported
         source_ref: author-review-practice
         locator: review execution and reporting stages
 anti_patterns:
@@ -60,6 +68,7 @@ anti_patterns:
     correction: Freeze the basis and rerun checks affected by later changes.
     evidence:
       - type: experience
+        verification_status: source_supported
         source_ref: author-review-practice
         locator: review basis failure cases
 open_questions:
@@ -68,6 +77,7 @@ artifact:
   requested_level: auto
   selected_level: level_4
   rationale: Stable trigger, inputs, workflow, output contract, constraints, and behavioral tests are present.
+  render_targets: [skill]
 executable:
   trigger:
     when:

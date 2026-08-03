@@ -15,6 +15,14 @@ sources:
     authors: [daibin]
     access: private
 
+usage:
+  purpose: product_development
+  visibility: private
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
+  notes: Example output may be published only after removing private workflow details.
+
 boundary:
   include:
     - Fixed review basis
@@ -30,6 +38,7 @@ principles:
     statement: A formal review must identify the immutable code basis it evaluates.
     evidence:
       - type: experience
+        verification_status: source_supported
         source_ref: personal-review-workflow
         locator: fixed-basis review practice
         note: Derived from repeated repository delivery and review work.
@@ -53,6 +62,7 @@ frameworks:
       - Build success proves only the build path that ran.
     evidence:
       - type: experience
+        verification_status: source_supported
         source_ref: personal-review-workflow
         locator: fixed-basis review practice
 
@@ -63,6 +73,7 @@ anti_patterns:
     correction: Freeze a commit or diff range and restart affected checks if it changes.
     evidence:
       - type: experience
+        verification_status: source_supported
         source_ref: personal-review-workflow
         locator: review basis failures
 
@@ -73,6 +84,7 @@ artifact:
   requested_level: auto
   selected_level: level_4
   rationale: The source defines a stable trigger, ordered workflow, boundaries, outputs, and testable behavior.
+  render_targets: [skill]
 
 executable:
   trigger:
