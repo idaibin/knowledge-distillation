@@ -1,0 +1,68 @@
+schema_version: story-card-text-html-reconciliation/v1
+story_id: riverbend-farm-rule-adaptation
+reconciled_at: "2026-08-10"
+scope: bounded_story_text_html_review_and_local_reconciliation
+formal: false
+
+basis_before_html_fix:
+  story_html_sha256: 48994f6d858f48e74ff26f4440824fe63cf8539b5dc6cb552ac2b55852c71bce
+  final_checkpoint_sha256: 9e2dab660ecf06b318ce7b827da3cdf1e6cdecf7906c1c10113b024d815277fb
+  final_manifest_sha256: 25ad97c50a8bd7e999ebe5a6f4133f9496a7a6e90617d009317f852370e8c985
+  story_sha256: 2a2a784bf04b8e4093bda5bd03f347a46ea9112a2ab5039c8f375a445497254b
+  text_layer_sha256: 9b093d8b04760d18ab32afcbf1d94975f22d9bec4259901f4c5fbb3f2451947d
+  storyboard_sha256: 752dd09d53c093c15452a4cec4438448215bea2ffddd7e11b8581c07be6ca330
+  card_plan_sha256: d2d168cd4ec5bf4f6c8efd1a0925f83cfc53923c04f10aa7315633fc4327d535
+  visual_plan_sha256: 9bebb2ecf3ef249d3d5b4daa6aa66f7af353d697534a22622e46de1b572b9bc9
+  continuity_ledger_sha256: de5eb1fc807cf2ee199aa971a7a3f6a4548bccdbb9572945cdcdf7034c26320f
+  image_hashes_unchanged: true
+
+zcode:
+  provider: ZCode
+  session_id: sess_2dbb632e-fe9c-4669-aba4-0472c446ea99
+  round_id: riverbend-farm-rule-adaptation-zcode-text-html-r2
+  operation_ids:
+    submit: riverbend-farm-rule-adaptation:zcode:r2:text-html:submit-review
+    capture: riverbend-farm-rule-adaptation:zcode:r2:text-html:capture-response
+  trace_id: 11d8612d-201d-4655-9309-9c80ed5c21cf
+  turn_id: turn_d76812d4-e32d-463a-a9d8-5d7eb06d4c1f
+  prompt_path: review-control/zcode-text-html-review-2026-08-10-riverbend-prompt.md
+  response_path: review-control/zcode-text-html-review-2026-08-10-riverbend.md
+  response_sha256: ae1debd95fbf5154732b8fbaf9992483f9039c3f5595b3f3458c9857762d3465
+  submit_count: 1
+  retry_or_resend: false
+  completion: captured_projection_idle
+  verdict: accept_with_conditions_text_html_only
+  pixels: Not verified
+  live_mobile_render: Not verified
+
+findings:
+  visible_narrator_label:
+    zcode_priority: P3
+    status: fixed_locally
+    location: final/story.html:48-54
+    action: removed_visible_strong_旁白_prefix_from_all_seven_narration_paragraphs
+    verification: no_visible_旁白_text; html_narration_count=7; text_layer_match=7_of_7
+  story_sequence_and_lifecycle:
+    zcode_result: no_finding
+    status: verified_local
+    verification: cards_1_to_7_and_fence_buffer_lifecycle_match_across_story_text_storyboard_plan_visual_and_continuity
+  reviewer_task_label_mismatch:
+    zcode_priority: P2
+    status: retained_as_provenance_gap_not_rewritten
+    location: review-control/independent-final-review-a.yaml:4; review-control/independent-final-review-b.yaml:4
+    evidence: both_records_story_id_matches; reviewer_task_labels_name_lesson_005; records_have_no_explicit_lesson_id_field
+    adopted: false
+    rationale: historical_reviewer_task_identifiers_are_preserved; changing_them_would_falsify_provenance
+    remaining_risk: lesson_004_coverage_of_those_historical_reviews_is_not_verified_from_task_labels_alone
+  planning_hash_cross_reference:
+    zcode_priority: P3
+    status: rejected_as_non_defect_after_local_rehash
+    verification: storyboard_card_plan_visual_plan_continuity_ledger_hashes_match_current_basis_declarations
+
+post_fix_basis:
+  story_html_sha256: 890ccf691c2a9b6caa1d42729de5f97f225c384a91a4fc62611d9dfdef882a50
+  final_manifest_sha256: d375c87d1ecc9a2b163896736fef23374d6abb90a690f3b06364fd75602e87f4
+  content_checkpoint_sha256: ba24f8d2d4c14b4b773958b9b6c5b0f0b36a8eefd665ef0a86960e9d9c098083
+  production_package_sha256: 872a225558f113ff101a084e10d24962988dd18f9fdcc36218dc9ca1fe2ee0a6
+  image_hashes_unchanged: pass_7_of_7
+  formal: false

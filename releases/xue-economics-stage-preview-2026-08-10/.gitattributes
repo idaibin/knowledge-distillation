@@ -1,0 +1,2 @@
+# Source snapshots are byte-faithful; preserve their existing blank EOF lines.
+packages/** whitespace=-blank-at-eof

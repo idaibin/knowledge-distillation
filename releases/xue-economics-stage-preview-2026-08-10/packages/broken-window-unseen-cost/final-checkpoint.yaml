@@ -1,0 +1,146 @@
+schema_version: story-card-checkpoint/v1
+story_id: broken-window-unseen-cost
+stage: zcode_text_review_pass_chatgpt_review_pending
+status: zcode_text_review_pass_chatgpt_review_pending
+knowledge_basis:
+  lesson_id: "003"
+  maturity: validated
+  sha256: f7ee9d8e0aa75a84abddf7ed8c67cc8cfc17a1dea189ba47e4351012bf43c534
+fixed_basis:
+  story_manifest: {path: final/story-manifest.yaml, sha256: 92b9c80d4afd904689793454e2957f50b2519d9797eeddae513c1760340618e6}
+  story_html: {path: final/story.html, sha256: e354c46236a28fbcdffd91eba7a552cf4130a0a4f4a2882fc17ec89ae6a65a2f, state: current_package_external_review_pending}
+  production_package: {path: production-package.yaml, sha256: 73f1504f4fdd98bba2a749f9635b4e7d8ea8a6fdc12c91704143ecc425d73940}
+  content_checkpoint: {path: content-checkpoint.yaml, sha256: 6f56e8b8ea2bafe5e59c57904ccf6a877a1070f4aabd75845838779dd417dd90}
+  browser_operation: {path: browser-operation.yaml, sha256: 1b9da1197aaf61da57f0181be290633e4826d3c0e30ba05694d7b995ac80bd47}
+  review_package: {path: review-control/final-review-package.md, sha256: 4c072ed79b0852ead0a7f56716740c02f7f9e475e81cfb88998ebb4ab1384289}
+  independent_full_package_review: {path: review-control/independent-final-visual-review-r2.yaml, sha256: 81f8d2ea8b3808ae9401174b74dfd05f2710205319cbc14fc439fcd72ef6fbf9, decision: pass}
+  zcode_text_review: {path: review-control/zcode-final-review-2026-08-10-broken-window.md, sha256: 3f9de550762679e676b285d57838e1bde71c346285e60fde9788502023976a1c, verdict: pass_text_only, visual_axis: not_verified, p2_reconciliation: pass_text_identity}
+hash_direction:
+  rule: final_checkpoint_binds_review_package_one_way
+  review_package_must_not_bind_final_checkpoint: true
+local_gates:
+  seven_card_generation: pass_current_final_sources
+  seven_card_final_selection_locked: pass_local_package_locked
+  seven_card_hash_binding: pass_current_7_of_7
+  seven_card_local_reviews: pass_7_of_7
+  seven_card_independent_visual_reviews: pass_current_r2_full_package_record_old_r1_record_superseded
+  exact_count_and_background_same_kind_checks: pass_card001_r6_crop_candidate
+  cross_card_continuity: pass_card001_r6_only_shoe_pair_on_assistant_feet
+  thumbnail_320px_two_to_three_second_primary_read: pass_card001_r6_two_groups_and_ground_shoes_zero
+  no_text_price_verdict_symbols: pass_specification
+  frozen_text_layer_narrations: pass_7_of_7_current_html
+  html5_static_parser: pass_current_local_package
+  html_local_image_resolution: pass_7_of_7_current_local_package
+  html_remote_resources: 0
+  html_mobile_css_breakpoints: [760px, 360px]
+  html_basis_state: current_package_independent_full_review_pass_external_review_pending
+final_cards:
+  - {card_id: "001", source: card-001-r6-crop-1086x1448.png, final: final/cards/001.png, sha256: bb685a661cbf9d1d91937bf43a86e3fe01ed3ab45fafa2b39957c30d2d8b484c, decision: local_and_derivative_independent_pass_waiting_new_full_package_review, revision_required: false, provider_parent: card-001-r6.png, provider_parent_sha256: 482086a593006d5155fa716a24546e523f5713b52e924f67ebad2eb4252801df, retained_region_ae: 0, no_resubmit: true}
+  - {card_id: "002", source: card-002-candidate.png, final: final/cards/002.png, sha256: 23a53174b4d87cc8391094f7fa954caacbc4db0edd7a0857f51964f240923dd1, state: frozen_unchanged}
+  - {card_id: "003", source: card-003-candidate.png, final: final/cards/003.png, sha256: a9f182db829a6ba32cbe0aee4ce0e0077eed4e21a3c5651cbffe2eb3d1f354e4, state: frozen_unchanged}
+  - {card_id: "004", source: card-004-r4.png, final: final/cards/004.png, sha256: 4569bbeb865a9a287b3180c18b6ecedc9cabe2f8ad20cdbf5aa5f6adb976ac36, state: frozen_unchanged}
+  - {card_id: "005", source: card-005-r2.png, final: final/cards/005.png, sha256: d3382fd4a80488b5f70c66003dd3d19f510e7f04421dad628e615cddb27fe7a0, state: frozen_unchanged}
+  - {card_id: "006", source: card-006-edit-r1.png, final: final/cards/006.png, sha256: f81b1f69639bd4072cf96c8e835e00db8e48abc917d8bc3aa7b4134b50edcfc9, state: frozen_unchanged}
+  - {card_id: "007", source: card-007-candidate.png, final: final/cards/007.png, sha256: 6662e6e358259f786aa27323fd7aa56b01a1b394aeefc99614b931ad6d3d24f6, state: frozen_unchanged}
+card001_history:
+  r1: {decision: revise_historical_failed_evidence_only, no_resubmit: true}
+  r2: {decision: local_and_independent_revise_historical_failed_evidence_only, no_resubmit: true}
+  r3: {decision: revise_320px_thin_dark_gap_not_independently_legible_historical_failed_evidence_only, no_resubmit: true, further_edit: forbidden}
+card001_r4_full_regeneration:
+  operation_id: broken-window-unseen-cost-card001-r4-full-regeneration
+  state: completed_local_and_independent_revise_historical_failed_review_evidence_only
+  mode: full_regeneration_from_refrozen_basis
+  baseline_image: none
+  prompt_path: card-001-r4-full-regeneration-prompt.md
+  prompt_sha256: 95a87e2e82ed98055041f08dc89bb5b16276f78919ec93308d8ad31162028e1a
+  output_file_id: file_000000004a7082068a80ffb49399a5b4
+  output_path: card-001-r4.png
+  output_sha256: 094514936889ff4fb491e8fdf425edc37df12f5aece451353c2884b3e0065b56
+  thumbnail_path: card-001-r4-thumb-320.png
+  thumbnail_sha256: 704a19b9933986f8029d4b91ebea745f0846c2afec6b7d3f6c8df528cba335d5
+  local_review_path: card-001-r4-local-review.yaml
+  local_review_sha256: e59b1ef100ec57259e121ccdd7156b2d5b987114f892bc503ea5654d0ddbbc69
+  local_decision: revise_grouping_and_zero_actual_books_contract_failed
+  independent_visual_review: revise_grouping_actual_books_and_background_rectangles
+  external_send: true
+  host_call_count: 5
+  submitted_once: true
+  formal: false
+card001_r5_full_regeneration:
+  operation_id: broken-window-unseen-cost-card001-r5-full-regeneration
+  state: completed_local_and_independent_revise_historical_failed_review_evidence_only
+  mode: full_regeneration_from_refrozen_basis
+  baseline_image: none
+  prompt_path: card-001-r5-full-regeneration-prompt.md
+  prompt_sha256: 5dcac3aeb988984beef9c06e2d606a497d7bc7937a3e83d4c10a46812024725b
+  output_file_id: file_000000000584820680472d4dffc143c1
+  output_path: card-001-r5.png
+  output_sha256: e850b362ed8c5662a5950df791339adb2dfc1c21b3c87fb8479946cdfb32bd0e
+  thumbnail_path: card-001-r5-thumb-320.png
+  thumbnail_sha256: 54f85f8d393d9fe538a166843f0a1a3746cc5b28af765573e6edcf2fbdb8e99e
+  local_review_path: card-001-r5-local-review.yaml
+  local_review_sha256: c5f0d2b2610e00b2897a5763b85b7d0ec0cdf1ee3f5b098aa013496f4921b26d
+  local_decision: revise_second_worn_shoe_pair_breaks_exact_count_and_identity_continuity
+  independent_visual_review: revise_second_worn_shoe_pair
+  external_send: true
+  host_call_count: 5
+  submitted_once: true
+  never_resend: true
+  formal: false
+card001_r6_full_regeneration:
+  operation_id: broken-window-unseen-cost-card001-r6-full-regeneration
+  state: completed_provider_output_revise_then_mechanical_crop_candidate_pass_local_waiting_independent_visual_review
+  mode: full_regeneration_from_refrozen_basis
+  baseline_image: none
+  prompt_path: card-001-r6-full-regeneration-prompt.md
+  prompt_sha256: 52054e739722c32892d031d83e6aca56d53287e6716fa05cd90bc156837bf4fa
+  shoe_contract: worn_shoe_pairs_1_on_assistant_feet_ground_shoes_0_second_pair_0
+  output_file_id: file_00000000056882098cf6e8e179287639
+  output_path: card-001-r6.png
+  output_sha256: 482086a593006d5155fa716a24546e523f5713b52e924f67ebad2eb4252801df
+  native_dimensions: 1086x1449
+  thumbnail_path: card-001-r6-thumb-320.png
+  thumbnail_sha256: f84d1e878085550fbeed59ea50b1ea9dc79adf30dd8e1a6d2cdacaf7f9efd2bb
+  local_review_path: card-001-r6-local-review.yaml
+  local_review_sha256: 8898b8c58d1899e7b5bfaad006125b53180de02fcbdf0111c0a695e899b78353
+  local_decision: revise_native_height_1449_breaks_exact_canvas_contract
+  independent_visual_review: allowed_bottom_one_pixel_mechanical_crop_no_regeneration
+  external_send: true
+  host_call_count: 5
+  submitted_once: true
+  never_resend: true
+  formal: false
+card001_r6_mechanical_crop_derivative:
+  operation_id: broken-window-unseen-cost-card001-r6-bottom-row-crop
+  state: pass_local_waiting_independent_visual_review
+  parent_path: card-001-r6.png
+  parent_sha256: 482086a593006d5155fa716a24546e523f5713b52e924f67ebad2eb4252801df
+  parent_dimensions: 1086x1449
+  geometry: {x: 0, y: 0, width: 1086, height: 1448, removed: bottom_row_y_1448_only}
+  top_cropped: false
+  scale_resample_redraw_inpaint_color_change: none
+  tool: ImageMagick_7.1.2-19_Q16-HDRI_aarch64
+  child_path: card-001-r6-crop-1086x1448.png
+  child_sha256: bb685a661cbf9d1d91937bf43a86e3fe01ed3ab45fafa2b39957c30d2d8b484c
+  child_dimensions: 1086x1448
+  retained_region_ae: 0
+  thumbnail_path: card-001-r6-crop-thumb-320.png
+  thumbnail_sha256: 1f2828fcee272e0f5b3922d7de3e6c66a007a5b921fe4b6442bbef94c167a79f
+  thumbnail_dimensions: 240x320
+  local_review_path: card-001-r6-crop-local-review.yaml
+  local_review_sha256: 71d19a905c9c9eacf1730f3e9e0faf087ae7cf6ed8a2dfc1e6aae7799fbd1580
+  local_decision: pass_local_mechanical_crop_candidate_waiting_independent_visual_review
+  independent_visual_review: pass
+  formal: false
+independent_full_package_review_history:
+  old_record_path: review-control/independent-final-visual-review.yaml
+  old_record_sha256: 324300396884a74bd782c3d955de17c187b1756e3c3569ebc11db765fa6ece2c
+  old_record_state: superseded_historical_basis_not_reusable
+  current_record: {path: review-control/independent-final-visual-review-r2.yaml, sha256: 81f8d2ea8b3808ae9401174b74dfd05f2710205319cbc14fc439fcd72ef6fbf9, decision: pass}
+revision_required_cards: []
+external_gates:
+  chatgpt_review_control: pending_current_basis_external_review
+  zcode_persistent_session: completed_text_only_pass_visual_not_verified_p2_reconciliation_pass
+formal: false
+formal_package_counted: false
+next_action: ChatGPT Review Control 仍 blocked/pending。formal保持false，不得把独立整包review或 ZCode 文本通过当作最终验收。

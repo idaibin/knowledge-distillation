@@ -1,0 +1,59 @@
+schema_version: story-card-full-package-review/v1
+review_id: riverbend-farm-rule-adaptation-full-package-review-sol-final
+story_id: riverbend-farm-rule-adaptation
+reviewer_task: /root/riverbend_sol_final_review
+reviewer_role: Sol final independent full-package reviewer
+recorded_by: producer
+reviewed_at: "2026-08-10"
+decision: pass
+finding_count: 0
+conclusion: No actionable findings on the fixed seven-card local package.
+reviewed_snapshot:
+  lesson_ir: {path: ../../../../dedao-xue-economics-001-005/lessons/004/knowledge.yaml, sha256: d7c346fbc6b0c9fff93c2db1dbf2331e1d769490e421d0d70a8d57f4c4d011dd}
+  story: {path: ../story.yaml, sha256: 1166db1f328b954abb1b84f2ca62d0bc8a801fe04494761d072f3e326c142a80}
+  text_layer: {path: ../text-layer.yaml, sha256: 79076291318270a6e867d1e17bcf1ac71b5eb0bfece865cc93163eae233a5f7e}
+  storyboard: {path: ../storyboard.yaml, sha256: e9173b637e2f38014f573a75f44cc71e8d228a61d3999a3d663c353b406ce8ad}
+  card_plan: {path: ../card-plan.yaml, sha256: bef716446aa824ac5f3d99666df9b007cbe8c15334f6c6272ddff3cc6b69b1a6}
+  visual_plan: {path: ../visual-plan.yaml, sha256: 4ee32e9e46553d25631a4900a3d4c2d17dfe8add3544ed6f8fe3fbee46518fdc}
+  continuity_ledger: {path: ../continuity-ledger.yaml, sha256: 5daf840796f7c271343e215db7a9ca459cd8ce3f12390c42ec8edd38af99084b}
+  content_checkpoint: {path: ../content-checkpoint.yaml, sha256: 8fced8a2ac16f4c3110e64d59143e82f1c787b4e6967b728fb4e9a1e0a42f9ce}
+  production_package: {path: ../production-package.yaml, sha256: bb6e22d7d6d87c15be11938ba24b44a390624c8398e0b5125c7388f7c090702c}
+  browser_operation: {path: ../browser-operation.yaml, sha256: 18b79bf555de8a2d3478dabbd4cb2e6d8b2c6cb481237eba03a261a89c2f9a60}
+  story_manifest: {path: ../final/story-manifest.yaml, sha256: 9cf12ce1d34d1fc9d9139c174552dd71602a1a0f6289301789b4820a84ab1eb8}
+  story_html: {path: ../final/story.html, sha256: ba544454ca1a11ed2be76a876ed2a39c96ad1285b50b6a8681fa2f00e105444a}
+  narration: {path: ../final/narration.md, sha256: 99122a7703c540274f341f17832698a968ee20f4d531e7925f4c3cddbe6e425d}
+  review_package: {path: final-review-package.md, sha256: f1c33113574fc4323c9070409c376839ec223fcb62c9d495fab4b04c6560ccb5}
+  final_checkpoint: {path: ../final-checkpoint.yaml, sha256: ce45b5106f08f43c3aad4b795e6652759cd0e83d7eb9394fd08308815d48a306}
+  native_images:
+    card-001-r2.png: {path: ../card-001-r2.png, sha256: 5c98eee05626b527ebbd87a11e9ca9e7f95a760b1b859b42632759c358e89fbd, dimensions: 1086x1448}
+    card-002.png: {path: ../card-002.png, sha256: ce0715ab09eca09f2c60f0cd430410332cc8dfeecd693756d990869afb8d5920, dimensions: 1086x1448}
+    card-003.png: {path: ../card-003.png, sha256: aafbeedda77fb330b58d837ed31355d50c7c44c8e260db2f5d3e08214073f6f3, dimensions: 1086x1448}
+    card-004.png: {path: ../card-004.png, sha256: b00fe69db75847d88734695b6baccbf4d152715168c611ddfc5998a2d982e952, dimensions: 1086x1448}
+    card-005-r2.png: {path: ../card-005-r2.png, sha256: ada7d96a16138e410a356cf0b9e4d6cc3af2ad4de2114d6bbf2cafce428062fe, dimensions: 1086x1448}
+    card-006.png: {path: ../card-006.png, sha256: 8d3772cb9770637d5a1d41d628404bc86281a3f90a31925df63fdf4cf3d83617, dimensions: 1086x1448}
+    card-007.png: {path: ../card-007.png, sha256: d452cb6732fe466d202f347ac93c6727c949051460bf92f4d0fcd10f7f3469fd, dimensions: 1086x1448}
+  thumbnail_images:
+    card-001-r2-thumb-320.png: {path: ../card-001-r2-thumb-320.png, sha256: dd14f61d34da325eacaa50fdab4438b1a59ef9a1b8f50563c0d149ed34a86266, dimensions: 240x320}
+    card-002-thumb-320.png: {path: ../card-002-thumb-320.png, sha256: e9d4f3ba4f770241df09dc915fc0d5bb112c386259caba6ad9cd4360ea6e11e1, dimensions: 240x320}
+    card-003-thumb-320.png: {path: ../card-003-thumb-320.png, sha256: 4793a3ba38e759c533f75d412d8b26c93c03b7d01188130306feb515c871dc8b, dimensions: 240x320}
+    card-004-thumb-320.png: {path: ../card-004-thumb-320.png, sha256: 650bab1f8e41489a0e69b965f762da358d56aaacf3b4bdb558b9e186672519b9, dimensions: 240x320}
+    card-005-r2-thumb-320.png: {path: ../card-005-r2-thumb-320.png, sha256: 0f8be4576d76ab3650a45862a8ca45ad435e708e5ba81dcf97efb48c30f8bb27, dimensions: 240x320}
+    card-006-thumb-320.png: {path: ../card-006-thumb-320.png, sha256: 6612ff96359025c6cdd04f74296dbf38b30ae4380422cf3e8b62a882cd7c9847, dimensions: 240x320}
+    card-007-thumb-320.png: {path: ../card-007-thumb-320.png, sha256: 769c3b7798a870ad675292cf218c117472c784d2ca66ecc57cd9108bcc6b3dfc, dimensions: 240x320}
+verification:
+  seven_native_images_and_hashes: pass_7_of_7
+  seven_320px_thumbnails_and_hashes: pass_7_of_7
+  exact_objects_exclusions_adult_rosters_and_continuity: pass_7_of_7
+  arrangement_lifecycle_and_baseline_uncertainty: pass
+  procedural_not_adjudicative_ending: pass
+  text_layer_and_narration: pass_7_of_7
+  html_static_structure: pass_7_cards_7_narrations_0_remote_resources
+  html_visible_narrator_label: pass_0_visible_narrator_labels
+  hash_direction_and_fixed_basis: pass
+scope_boundary:
+  external_review_executed: false
+  pixels_reviewed_locally_by_sol: true
+  live_mobile_render: Not verified
+  formal: false
+  effect: counts_as_one_of_two_required_independent_full_package_reviews
+  next_action: second_current_independent_full_package_review_plus_live_browser_runtime_external_visual_review_required

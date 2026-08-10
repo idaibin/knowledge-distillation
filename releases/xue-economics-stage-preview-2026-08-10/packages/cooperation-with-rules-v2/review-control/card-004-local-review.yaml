@@ -1,0 +1,29 @@
+schema_version: story-card-local-review/v1
+story_id: cooperation-with-rules-v2
+card_id: "004"
+reviewed_at: "2026-08-09"
+basis:
+  prompt_text_sha256: afd4779e05bf62ddd5da40a31ba229518284783c99c800e0f65b7c1bad2c2541
+  image_sha256: 40e2dbcead685f7ae9c7a64c2396c2077fa5af959516d1b44e5afb08c0e6daf9
+  native_dimensions: 1086x1448
+  thumbnail_sha256: a609f2b17eeb4e974b8c0d535c052e6e814c27a2a71a6ad1e94de95a5ac106f2
+  thumbnail_dimensions: 240x320
+checks:
+  exact_two_blank_tags: pass
+  exact_one_rope_coil: pass
+  exact_one_empty_wrench_slot_tray: pass
+  exact_one_bicycle: pass
+  exact_three_adults: pass
+  no_actual_wrench_or_peer_objects: pass
+  no_readable_text_logo_or_verdict_symbol: pass
+  character_contract: pass
+  three_by_four_aspect_ratio: pass
+  two_to_three_second_defense_objects_vs_missing_work_tool_read: pass
+decision: pass_candidate_for_card004
+retro:
+  keep:
+    - 两张浅色吊牌、深色绳卷和浅托盘形成高对比三角关系。
+    - 同色凹陷扳手槽没有实体厚度，结合小禾指向可读成缺失工具。
+  improve_next:
+    - 继续用同色凹陷、无阴影和无厚度判断空槽，避免仅凭轮廓把槽误计为物件。
+  formal_boundary: 本地单卡通过不等于整包正式通过；仍需完成后三卡和双通道审查。

@@ -1,0 +1,53 @@
+story_id: riverbend-farm-rule-adaptation
+version: "0.3-lifecycle-reconciled"
+language: zh-CN
+status: frozen_before_image_generation
+disclosure: 基于经济学机制的原创情景化分析演示
+lifecycle:
+  c1: c1_incident
+  c2: c2_two_candidates_first_appear
+  c3: c3_continuous_fence_first_short_term_pilot_day
+  c4: c4_days_later_continue_short_term_pilot
+  c5: c5_two_candidate_comparison
+  c6: c6_baseline_if_no_trial_original_low_boundary
+  c7: c7_procedural_close
+arrangement_lifecycle:
+  fence_line: c2_candidate_c3_first_short_term_pilot_c4_continue_pilot_c5_c6_comparison
+  buffer_strip: c2_candidate_only_c5_c6_comparison_not_piloted_or_observed
+  baseline: c6_if_no_trial_continuous_fence_not_used_original_low_boundary_retained
+cards:
+  - card: 1
+    title: 两份好意，在同一条边线上相遇
+    narration: 冯澜种菜，顾原赶牛去水槽；一头牛跨过低边界，菜苗被踩。善意目标还没有回答结果会怎样。
+    dialogue: []
+  - card: 2
+    title: 先看相互损害，再找安排
+    narration: 菜地受损，牛群通路也受限。苏青只摆出两种候选安排，不把任何一方直接写成答案。
+    dialogue: []
+  - card: 3
+    title: 规则一变，成本就开始移动
+    narration: 两种候选安排刚摆出，今天先把连续栅栏作为首个短期试行；顾原开始绕行，冯澜补装栅栏杆，维护与绕路成本进入观察。
+    dialogue: []
+  - card: 4
+    title: 人会适应新的边线
+    narration: 数日后连续栅栏仍在短期试行；顾原继续改走石质草坡，冯澜继续把边缘菜畦改种低矮牧草，规则改变带来持续适应。
+    dialogue: []
+  - card: 5
+    title: 两种安排，各有牺牲
+    narration: 已短期试行的栅栏加绕路，与尚未试行的草带加空置菜畦并列；比较要把各自放弃的用途一起看见，不急着选赢家。
+    dialogue: []
+  - card: 6
+    title: 还要和原来的边线比较
+    narration: 若不试行连续栅栏，原低边界会继续保留；把这条基线与短期试行的栅栏并列比较，草带空畦仍只是未试行候选。
+    dialogue: []
+  - card: 7
+    title: 比较程序，不是最终裁决
+    narration: 蹄印、菜苗、栅栏和假设分开核对。这只是分析演示，不是实证、现行法或普遍政策结论。
+    dialogue: []
+proofread:
+  status: pass
+  checks:
+    - 善意、规则、行为响应和结果被明确区分。
+    - 两种安排均是原创候选条件，不被写成现实政策、法律裁决或普遍最优结论。
+    - 菜地和牛群通路均被呈现为相互损害的一部分，不做单方归责。
+    - 不把故事写成对现实效果、法律状态或长期净效果的实证断言。

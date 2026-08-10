@@ -1,0 +1,103 @@
+schema_version: story-card-local-review/v1
+story_id: cooperation-with-rules-v2
+card_id: "007"
+reviewed_at: "2026-08-09"
+basis:
+  prompt_text_sha256: 22b70fa0ebe9f1a3bee42d92b4cf91996d55dc6eb37825c5e02d84252a70772b
+  image_sha256: adc6c801ce3e0a0b5bee5d0f378501e9eea970d8e20bfd7e29a9a18afefeb52d
+  native_dimensions: 1086x1448
+  thumbnail_sha256: 087f2577d88feceb2397cc20aa3cef86e0b1ca93e633326c05905e2075870123
+  thumbnail_dimensions: 240x320
+checks:
+  exact_four_adults: pass
+  exact_one_evidence_tray: pass
+  exact_one_nonround_blank_inspection_stamp: pass
+  exact_one_blank_notice_card: pass
+  exact_one_blank_rule_plaque: pass
+  no_peer_background_objects: pass
+  no_readable_text_logo_price_or_verdict_symbol: pass
+  character_contract: pass
+  three_by_four_aspect_ratio: pass
+  two_to_three_second_neutral_review_read: pass
+  objection_refusal_and_open_exit_read: pass
+  a_heng_not_decision_maker: pass
+decision: pass_r3_after_independent_recheck
+decision_history:
+  - decision: pass_candidate_for_card007
+    basis_image_sha256: adc6c801ce3e0a0b5bee5d0f378501e9eea970d8e20bfd7e29a9a18afefeb52d
+    reason: 原单卡复核认为复核、异议与开放出口均可读；该结论现由整包双尺度复审取代。
+retro:
+  keep:
+    - 托盘、带把手的非圆形检验印和空白通知卡在桌面上各自独立，证据类别没有混用。
+    - 异议者在开放出口举手，小禾陪同，阿衡离开主位，程序与拒绝权在缩略图中可读。
+  improve_next:
+    - 继续用开放空间、站位和动作表达程序边界，不引入法院徽记或最终胜负符号。
+  formal_boundary: 本地七卡全部通过仍不等于整包正式通过；必须完成 HTML 旁白、整包审查和双通道终审。
+independent_package_review:
+  status: revise
+  severity: major
+  reviewed_basis_sha256: adc6c801ce3e0a0b5bee5d0f378501e9eea970d8e20bfd7e29a9a18afefeb52d
+  findings:
+    - 桌前人物延续 Card006 维护者形象并操作相似零件，320px 下更像维修而非中立证据复核。
+    - 通知卡留在桌上，未与提出异议并拒绝签收的人形成明确归属。
+    - 墙牌完全空白，候选规则媒介身份不可辨。
+  revision_prompt: review-control/card-007-r1-edit-prompt.md
+  revision_prompt_sha256: 2a3014a34850a41631be2edceb326c1b14cafbec69c995c867709649f9e598df
+revision_result_r1:
+  candidate_path: review-control/card-007-r1.png
+  image_sha256: b0266824c2e27c9a3ddd358942e570db6495a4ac0e3879cf5c8d51a96824a036
+  thumbnail_path: review-control/card-007-r1-thumb-320.png
+  thumbnail_sha256: acf25a1274750ad8e00c24fac19bbf71b8a794c298cbaae71d66488e7e468c13
+  native_dimensions: 1086x1448
+  thumbnail_dimensions: 240x320
+  decision: reject_wrong_scene_and_counts
+  failed_checks:
+    exact_four_adults: fail_actual_three
+    no_toolboxes: fail_actual_two
+    no_bicycle: fail_actual_one
+    exact_evidence_tray_stamp_notice_and_rule_plaque: fail
+    neutral_review_and_open_exit: fail
+  finding: 编辑输出错误退化为 Card005 式工具箱检验场景，未保留 Card007 基线与对象账本；不得进入 final 或 HTML。
+  next_action: 新建 Card007 r2 完整生成轮次，不重发或覆盖本次 edit operation。
+  required_postconditions:
+    - 复核者与维修参与者视觉区分，动作明确是比对三类证据而非维修。
+    - 通知卡由异议者持有或与其手部直接关联，同时保留举手拒绝和开放出口。
+    - 墙牌有中性无字木刻，且无价格、硬币、法律裁决或胜负含义。
+revision_result_r2:
+  candidate_path: review-control/card-007-r2.png
+  image_sha256: c2fad24826c6fa0ccb4ec49a310d92911798a7884d7b2e399bc80b4c56d49133
+  thumbnail_path: review-control/card-007-r2-thumb-320.png
+  thumbnail_sha256: ea52c56752554fd526750b571eefa9419f3521659a983fdf330f5d8986586f1b
+  native_dimensions: 1086x1448
+  thumbnail_dimensions: 240x320
+  decision: reject_exact_count_and_readability
+  failed_checks:
+    exact_one_blank_notice_card: fail_actual_two
+    two_to_three_second_neutral_review_read: fail
+  finding: 异议者已持有一张通知卡，但桌上仍有第二张空白卡；桌前人物的指向动作仍可读成零件检查，未形成对三类证据的中立比对。
+  next_action: 仅编辑 r2，删除桌面多余卡片并澄清复核动作；不得重发 r2 或把失败图纳入 final/HTML。
+  revision_prompt: review-control/card-007-r3-edit-prompt.md
+revision_result_r3:
+  candidate_path: review-control/card-007-r3.png
+  image_sha256: 5876dbee7c41a3d6f5b59ec52bf213de62ebdcb379a70cb0b726bb81e8061602
+  thumbnail_path: review-control/card-007-r3-thumb-320.png
+  thumbnail_sha256: ee5e32c8a580eb365abe63c544421e2dcec6dae8003b8edaf3720f11c077bf6f
+  native_dimensions: 1086x1448
+  thumbnail_dimensions: 240x320
+  decision: provisional_pass_pending_independent_recheck
+  checks:
+    exact_four_adults: pass
+    exact_one_evidence_tray: pass
+    exact_one_nonround_blank_inspection_stamp: pass
+    exact_one_blank_notice_card_held_by_objector: pass
+    exact_one_pictogram_rule_plaque: pass
+    zero_toolboxes: pass
+    zero_bicycles: pass
+    neutral_open_handed_comparison: pass
+    objection_refusal_and_open_exit_read: pass
+    a_heng_not_decision_maker: pass
+  finding: 桌面第二张通知卡已删除；复核者改为朝向证据托盘与持卡异议者的开放双手比对姿态。本地双尺度暂时通过，仍需独立复核后才能进入 final/HTML。
+independent_recheck_r3:
+  status: pass
+  reviewed_basis_sha256: 5876dbee7c41a3d6f5b59ec52bf213de62ebdcb379a70cb0b726bb81e8061602
+  finding: 4成人、1托盘、1实物非圆形带柄印、1异议者手持空白卡、1墙牌、0箱0自行车精确；320px 中立比对、拒绝与开放出口、阿衡无决定权均清楚。

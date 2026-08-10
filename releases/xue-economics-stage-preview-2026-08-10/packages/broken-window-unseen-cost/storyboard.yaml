@@ -1,0 +1,16 @@
+story_id: broken-window-unseen-cost
+version: "1.1-card001-r6-refrozen"
+status: frozen_before_image_generation
+frames:
+  - {card: 1, main_action: 唯一窗片破裂；唯一磨损鞋对穿在助手双脚且地面零鞋，左袋直接贴近助手脚上鞋，右袋直接位于大尺寸无字空心单本书轮廓计划板下方或旁侧，两组明显分离；板心完全镂空透出连续空墙，背景无书架实体书书状物墙框或矩形面, causal_job: 以320px可读且互不混组的两组计划媒介建立直接损失和资源起点}
+  - {card: 2, main_action: 新窗片进入而两个预算袋移入修窗托盘, causal_job: 建立可见支出}
+  - {card: 3, main_action: 一双旧鞋与一个空书位并列保留, causal_job: 显示未发生替代}
+  - {card: 4, main_action: 玻璃工拿走两袋，助手把旧鞋放在空鞋盒旁；其后方大尺寸无字空心书形占位板透出背景, causal_job: 显示资源转移且鞋书都未获得}
+  - {card: 5, main_action: 两名邻居共同看陈默在唯一临街窗上清洁封边，店主同时指向旧鞋与空书位；画面没有独立玻璃框或窗片, causal_job: 阻断支出等于净收益}
+  - {card: 6, main_action: 两块情景板并列，中间保留一张空白假设卡, causal_job: 披露反事实不确定性}
+  - {card: 7, main_action: 复核者分开摆放证据托盘、两枚替代图块和假设卡, causal_job: 程序性收束}
+no_text_test:
+  viewport: 320px_thumbnail
+  exposure: 2_to_3_seconds
+  pass_question: 未读文字者能否看出两个预算袋从鞋书计划转向修窗，并且鞋书仍未获得？
+  fail_conditions: [只能看出普通修窗, Card001助手脚上不是唯一完整磨损鞋对, Card001地面出现任何鞋或第二鞋对, Card001左袋未直接贴近助手脚上鞋, Card001空心书轮廓计划板不像单本书轮廓或中心未完全镂空, Card001计划板像实际书文字牌价格牌裁决牌或结论, Card001右袋未直接紧邻空心书计划板, Card001两袋彼此靠近或读成同一组, Card001背景出现书架实体书书状物墙框矩形面, Card005工位像独立窗片或第二窗, Card005两名邻居没有共同聚焦唯一临街窗, 空心书形占位板像实际书或文字标牌, 占位板在320px不可辨认, 鞋书像已购买成果, 情景板像必然结论或政策裁决]

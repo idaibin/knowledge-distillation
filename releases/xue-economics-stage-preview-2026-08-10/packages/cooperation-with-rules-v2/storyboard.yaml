@@ -1,0 +1,40 @@
+story_id: cooperation-with-rules-v2
+version: "0.1-frozen"
+status: frozen_before_image_generation
+frames:
+  - card: 1
+    scene: 暴雨后的社区自行车修复站入口
+    main_action: 两双手同时接近唯一未检验蓝色工具箱，待修自行车仍停着
+    causal_job: 建立眼前归属争议
+  - card: 2
+    scene: 修复站内的规则试验工作台
+    main_action: 小禾并排展示两枚木刻条件牌，四位成年人分别观察
+    causal_job: 冻结两种候选规则而不选择结论
+  - card: 3
+    scene: 临时认领区
+    main_action: 三人给三只未完成工具箱挂吊牌并守住，远处装配台空着
+    causal_job: 显示先挂牌规则的即时投入变化
+  - card: 4
+    scene: 次日的材料入口
+    main_action: 后来者带来吊牌和锁绳，缺失工具托盘仍空，待修自行车未动
+    causal_job: 显示后来者对已知规则的适应
+  - card: 5
+    scene: 检验台与交接柜台
+    main_action: 两人组装测试，一只完成箱被封存等待迟到的交接人
+    causal_job: 显示替代规则提高完成投入但产生逾期反例
+  - card: 6
+    scene: 共享工具架与维修工位
+    main_action: 两只完成箱进入共享架，一人保养、一人登记、一人维修自行车
+    causal_job: 分开积累、未来使用与维护成本
+  - card: 7
+    scene: 中立复核桌与开放出口
+    main_action: 复核者查三类证据，一名参与者拒绝签收并提出异议
+    causal_job: 以权利、程序、证据和法域不确定性收束
+no_text_test:
+  viewport: 320px_thumbnail
+  exposure: 2_to_3_seconds
+  pass_question: 未读文字者能否看出规则改变了后来者带来的物品、投入方向或保护行为？
+  fail_conditions:
+    - 只能看出人物开会或摆拍
+    - 木牌像价格牌、法院判决或奖牌
+    - 行为变化必须靠标题才能理解

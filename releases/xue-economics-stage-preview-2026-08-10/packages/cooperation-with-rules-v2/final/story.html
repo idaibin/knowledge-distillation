@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>合作与规则：七张故事卡</title>
+  <style>
+    :root {
+      --ink: #202522;
+      --muted: #676d67;
+      --paper: #f6f0e5;
+      --card: #fffaf1;
+      --navy: #18344a;
+      --clay: #a54e39;
+      --line: #d8ccb9;
+      --shadow: 0 18px 50px rgba(44, 39, 31, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 0%, rgba(165, 78, 57, .09), transparent 32rem),
+        linear-gradient(180deg, #fbf7ef 0%, var(--paper) 100%);
+      font-family: ui-serif, "Songti SC", "STSong", Georgia, serif;
+      line-height: 1.75;
+    }
+    header, main, footer { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
+    header { padding: 72px 0 42px; }
+    .eyebrow { margin: 0 0 8px; color: var(--clay); font: 700 .82rem/1.4 ui-sans-serif, system-ui, sans-serif; letter-spacing: .16em; }
+    h1 { margin: 0; max-width: 14ch; color: var(--navy); font-size: clamp(2.3rem, 7vw, 5.4rem); line-height: 1.05; letter-spacing: -.04em; }
+    .lead { max-width: 44rem; margin: 24px 0 0; font-size: clamp(1.05rem, 2.2vw, 1.35rem); }
+    .disclosure { margin-top: 28px; padding: 14px 18px; border-left: 4px solid var(--clay); background: rgba(255,255,255,.55); color: var(--muted); }
+    nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    nav a { padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; color: var(--navy); background: rgba(255,255,255,.55); font: 650 .86rem/1.2 ui-sans-serif, system-ui, sans-serif; text-decoration: none; }
+    nav a:hover, nav a:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+    .story { display: grid; gap: 56px; padding: 18px 0 88px; }
+    .card { display: grid; grid-template-columns: minmax(0, 3fr) minmax(280px, 2fr); overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: var(--card); box-shadow: var(--shadow); }
+    .card:nth-child(even) .visual { order: 2; }
+    .visual { min-height: 100%; background: #dfd8cb; }
+    .visual img { display: block; width: 100%; height: 100%; min-height: 560px; object-fit: cover; }
+    .copy { align-self: center; padding: clamp(28px, 5vw, 58px); }
+    .number { margin: 0 0 16px; color: var(--clay); font: 750 .8rem/1 ui-sans-serif, system-ui, sans-serif; letter-spacing: .14em; }
+    h2 { margin: 0; color: var(--navy); font-size: clamp(1.65rem, 3vw, 2.7rem); line-height: 1.18; letter-spacing: -.025em; }
+    .narration { margin: 24px 0 0; padding: 18px 20px; border-left: 3px solid var(--navy); background: rgba(24,52,74,.055); }
+    .narration strong { display: block; margin-bottom: 6px; color: var(--muted); font: 700 .78rem/1.2 ui-sans-serif, system-ui, sans-serif; letter-spacing: .12em; }
+    .dialogue { margin: 22px 0 0; padding: 0; list-style: none; }
+    .dialogue li + li { margin-top: 10px; }
+    .speaker { color: var(--clay); font-weight: 700; }
+    .closing { padding: 34px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.64); }
+    .closing h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+    footer { padding: 0 0 60px; color: var(--muted); font-size: .92rem; }
+    @media (max-width: 760px) {
+      header { padding-top: 46px; }
+      .card { grid-template-columns: 1fr; }
+      .card:nth-child(even) .visual { order: 0; }
+      .visual img { min-height: auto; aspect-ratio: 3 / 4; }
+      .copy { padding: 28px 24px 34px; }
+    }
+    @media print {
+      body { background: white; }
+      header, main, footer { width: 100%; }
+      nav { display: none; }
+      .card { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">薛兆丰经济学课 · LESSON 002 情景演绎</p>
+    <h1>合作与规则</h1>
+    <p class="lead">一只工具箱引发争议。阿衡和小禾没有急着选赢家，而是把规则当成可观察的试验：它会奖励什么，又会让后来者把力气花在哪里？</p>
+    <p class="disclosure">基于经济学概念的原创情景化演绎。规则牌只表示试行条件、责任与证明入口，不代表价格、法院判决、现行法或普遍结论。</p>
+    <nav aria-label="七张故事卡导航">
+      <a href="#card-1">01 争议</a><a href="#card-2">02 候选规则</a><a href="#card-3">03 即时变化</a><a href="#card-4">04 后来者适应</a><a href="#card-5">05 反例</a><a href="#card-6">06 积累与成本</a><a href="#card-7">07 程序边界</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="story">
+      <article class="card" id="card-1">
+        <figure class="visual"><img src="cards/001.png" width="1086" height="1448" alt="暴雨后的修复站里，两双手同时接近一只尚未检验的蓝色工具箱。" fetchpriority="high"></figure>
+        <div class="copy"><p class="number">CARD 01 · 眼前争议</p><h2>谁先拿走这只工具箱？</h2><p class="narration"><strong>旁白</strong>暴雨过后，阿衡把零散工具装成一箱；还没检验完，另一只手已经伸了过来。</p><ul class="dialogue"><li><span class="speaker">居民：</span>我先看见，也先认领。</li><li><span class="speaker">阿衡：</span>可组装和检验还没结束。</li></ul></div>
+      </article>
+
+      <article class="card" id="card-2">
+        <figure class="visual"><img src="cards/002.png" width="1086" height="1448" alt="四位成年人围着工作台观察两枚并列的无字候选规则牌。" loading="lazy"></figure>
+        <div class="copy"><p class="number">CARD 02 · 冻结候选</p><h2>先决定规则，再争眼前归属</h2><p class="narration"><strong>旁白</strong>小禾摆出两种试行条件：先挂吊牌，或者完成组装与检验后，在交接窗口内持有。</p><ul class="dialogue"><li><span class="speaker">小禾：</span>先别选赢家，先看每条规则会奖励什么。</li></ul></div>
+      </article>
+
+      <article class="card" id="card-3">
+        <figure class="visual"><img src="cards/003.png" width="1086" height="1448" alt="三只未完成工具箱各挂一张空白吊牌，守箱的人多，远处装配台无人工作。" loading="lazy"></figure>
+        <div class="copy"><p class="number">CARD 03 · 即时激励</p><h2>当“先挂牌”得到奖励</h2><p class="narration"><strong>旁白</strong>吊牌越来越醒目，守箱的人越来越多；真正补工具、做检验的人却少了。</p></div>
+      </article>
+
+      <article class="card" id="card-4">
+        <figure class="visual"><img src="cards/004.png" width="1086" height="1448" alt="后来者带着两张空白吊牌和一卷锁绳进入，空扳手槽与待修自行车仍在。" loading="lazy"></figure>
+        <div class="copy"><p class="number">CARD 04 · 适应规则</p><h2>后来者也会学会适应</h2><p class="narration"><strong>旁白</strong>新来的人带来锁绳和更大的牌子，不是缺失的扳手。规则正在改变他们的投入。</p><ul class="dialogue"><li><span class="speaker">阿衡：</span>大家在保护箱子，却没人把它做完。</li></ul></div>
+      </article>
+
+      <article class="card" id="card-5">
+        <figure class="visual"><img src="cards/005.png" width="1086" height="1448" alt="前景两人组装检验工具箱，后景完成箱与空椅相邻，表示交接人迟到。" loading="lazy"></figure>
+        <div class="copy"><p class="number">CARD 05 · 替代规则与反例</p><h2>换条规则，也不会自动完美</h2><p class="narration"><strong>旁白</strong>完成组装和检验的人开始增加；但有人错过交接，一只工具箱又被长期占住。</p><ul class="dialogue"><li><span class="speaker">小禾：</span>鼓励完成，还要处理逾期和争议。</li></ul></div>
+      </article>
+
+      <article class="card" id="card-6">
+        <figure class="visual"><img src="cards/006.png" width="1086" height="1448" alt="两只完成工具箱存入共享架，四人分别维修、维护、登记与等待。" loading="lazy"></figure>
+        <div class="copy"><p class="number">CARD 06 · 积累与持续成本</p><h2>积累来自行动，也要付出维护成本</h2><p class="narration"><strong>旁白</strong>交接窗口和复核入口明确后，工具箱进入共享架；登记、保养与申诉仍占用时间。</p></div>
+      </article>
+
+      <article class="card" id="card-7">
+        <figure class="visual"><img src="cards/007.png" width="1086" height="1448" alt="复核者检查三类证据，开放出口处参与者举手拒绝，小禾陪同，阿衡不作裁决。" loading="lazy"></figure>
+        <div class="copy"><p class="number">CARD 07 · 权利与程序</p><h2>效率推演不是最终裁决</h2><p class="narration"><strong>旁白</strong>他们核对零件、检验和通知记录，也允许拒绝签收、提出异议，再决定是否继续试行。</p><ul class="dialogue"><li><span class="speaker">小禾：</span>这只是我们的试验，不替任何法律下结论。</li></ul></div>
+      </article>
+
+      <section class="closing" aria-labelledby="closing-title">
+        <h2 id="closing-title">故事留下的问题</h2>
+        <p>规则不只分配眼前的工具箱，也会改变人们之后愿意完成、保护、维护与证明什么。但效率推演只是一种分析入口：反例、交易成本、异议、拒绝与法域差异，仍要在程序中单独处理。</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>《合作与规则》v2 · 七张原创故事卡 · 本地静态 HTML · 2026-08-09</footer>
+</body>
+</html>

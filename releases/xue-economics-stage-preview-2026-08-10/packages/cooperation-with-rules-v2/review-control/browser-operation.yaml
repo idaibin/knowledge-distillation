@@ -1,0 +1,570 @@
+schema_version: browser-operation/v1
+task_key: cooperation-with-rules-v2-production
+surface: codex-in-app-browser
+target:
+  provider: chatgpt
+  project_name: 故事卡片生产｜Pro 生图
+  project_id: g-p-6a700985260881918e3834a43b1e12a6
+  project_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/project
+authorization: external_collaboration_image_generation
+capability_snapshot:
+  snapshot_id: cooperation-with-rules-v2-card001-preflight-20260809
+  authenticated_session: verified_chatgpt_pro_visible
+  project_identity: verified_by_unique_name_project_id_and_stable_project_url
+  clean_composer: verified_empty_with_project_specific_placeholder
+  image_capability: verified_visible_create_image_action
+  tab_control: available
+  dom_accessibility: available
+  response_completion: available
+  download: not_verified
+tab_ledger:
+  - ownership: task_created
+    tab_id: browser-tab-6
+    original_url: null
+    current_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/project
+    purpose: authorized_card001_generation
+    lifecycle: card001_captured_and_locally_reviewed
+    cleanup_disposition: retain_only_until_card001_capture
+round:
+  round_id: cooperation-with-rules-v2-card001-r1
+  relay_turn_id: not-applicable
+  prompt:
+    path: review-control/card-001-prompt.md
+    artifact_sha256: 9ffec5558872a6de110bed10254673c7f6a1d9894c2dcadea5dac98854dd3590
+    sent_text_sha256: ccf7d1114771d196b916b14d70c183e844267a6b644dae91baff11313367ddb3
+    sent_text_chars: 574
+    size_bytes: 1636
+  operations:
+    create_conversation:
+      operation_id: cooperation-with-rules-v2:card001:r1:create-conversation
+      state: completed
+      conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+      conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a783520-bb24-83e8-a94d-a60aafd3cd3b
+      retry_policy: never
+    select_image_capability:
+      operation_id: cooperation-with-rules-v2:card001:r1:select-image-capability
+      state: completed
+      retry_policy: only-if-no-side-effect-proven
+    submit_prompt:
+      operation_id: cooperation-with-rules-v2:card001:r1:submit-prompt
+      state: submitted
+      evidence: prompt visible in bound conversation; provider stop control visible; generation label Creating the repair scene
+      retry_policy: never
+    capture_response:
+      operation_id: cooperation-with-rules-v2:card001:r1:capture-response
+      state: completed
+      provider_completion: verified
+      output_file_id: file_00000000abd08207a387fa2e0061a420
+      native_dimensions: 1086x1448
+      output_count: 1
+      evidence: stop control absent; one unique backend media URL; duplicate img nodes share the same file ID
+      local_path: review-control/card-001-candidate.png
+      sha256: fb50a4066e5b363b20d844d27d023223611b90a997a32f86ffb44cc63e4dbbda
+      retry_policy: read-only-idempotent
+    export_output:
+      operation_id: cooperation-with-rules-v2:card001:r1:export-output
+      state: completed
+      inventory_id: 6072bdda-e06e-4877-a429-1a2092ecbe89
+      asset_id: e8da911bfdb4b6f4
+      bundle_downloaded_count: 1
+      bundle_failed_count: 0
+      local_path: review-control/card-001-candidate.png
+      retry_policy: never
+side_effects:
+  navigation_only: false
+  input: true
+  upload: false
+  conversation_created: true
+  submitted: true
+  ambiguous_submit: false
+  generated_output: true
+  local_binary_captured: true
+  pixel_qa_complete: false
+rounds:
+  - round_id: cooperation-with-rules-v2-card002-r1
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    prompt:
+      path: review-control/card-002-prompt.md
+      artifact_sha256: d5235d3d2366b060592f4513bbba7a427f9f9086e7b6ab1bc4a5bedb0b5fb0d3
+      sent_text_sha256: 4c7c9e42b3c91967610b9a9d63ee7a90bc98538197bb6d2792c4efd3960203b9
+      sent_text_chars: 663
+    operations:
+      select_image_capability:
+        operation_id: cooperation-with-rules-v2:card002:r1:select-image-capability
+        state: completed
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: cooperation-with-rules-v2:card002:r1:submit-prompt
+        state: submitted
+        evidence: prompt visible in the bound conversation and provider stop control visible
+        retry_policy: never
+      capture_response:
+        operation_id: cooperation-with-rules-v2:card002:r1:capture-response
+        state: completed_candidate_revise
+        output_file_id: file_00000000874c8209b3954131df0a82e3
+        native_dimensions: 1086x1448
+        local_path: review-control/card-002-candidate.png
+        sha256: 135577a17687c66984212f76e78f5fc044840e1a74028185993fe1fa84f1157d
+        finding: B牌圆形图示在320像素下像硬币或轴承
+        retry_policy: read-only-idempotent
+      export_output:
+        operation_id: cooperation-with-rules-v2:card002:r1:export-output
+        state: completed
+        inventory_id: 3417f9d0-8cf3-43cc-adca-217443efa943
+        asset_id: 13f8b383f48562b8
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-002-candidate.png
+        retry_policy: never
+  - round_id: cooperation-with-rules-v2-card002-edit-r1
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    baseline:
+      path: review-control/card-002-candidate.png
+      sha256: 135577a17687c66984212f76e78f5fc044840e1a74028185993fe1fa84f1157d
+    prompt:
+      path: review-control/card-002-r1-edit-prompt.md
+      artifact_sha256: 0756d0b6a1f28d0e13e0753ed1a5954da02dfb05e7f1638298905accb1aa448e
+      sent_text_sha256: 24fe872f6e7a14923aa32f2a2e40ebf2a14dc2d1354cc1bacc93dc2cafdb2467
+      sent_text_chars: 336
+    operations:
+      select_baseline:
+        operation_id: cooperation-with-rules-v2:card002:edit-r1:select-baseline
+        state: completed
+        evidence: image editor dialog visibly bound to file_00000000874c8209b3954131df0a82e3 at 1086x1448
+        retry_policy: only-if-no-side-effect-proven
+      submit_edit:
+        operation_id: cooperation-with-rules-v2:card002:edit-r1:submit-edit
+        state: submitted
+        evidence: edit prompt visible in the same conversation and provider analyzing state observed
+        retry_policy: never
+      capture_edit:
+        operation_id: cooperation-with-rules-v2:card002:edit-r1:capture-edit
+        state: completed_after_read_only_reconciliation
+        evidence: no resend; later inspection of the same conversation found exactly one new provider-owned output
+        output_file_id: file_000000008d44820993399461b7bb1437
+        native_dimensions: 1086x1448
+        local_path: review-control/card-002-r1.png
+        sha256: 793182febed06c2f051a9494667aeb4518ea4e07de2cf641ba3efab0e565d668
+        retry_policy: read-only-idempotent
+      export_edit:
+        operation_id: cooperation-with-rules-v2:card002:edit-r1:export-edit
+        state: completed
+        inventory_id: c5616752-099d-444e-a069-ca3dc2e6dbee
+        asset_id: f75827c4dd1dd1e7
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-002-r1.png
+        retry_policy: never
+  - round_id: cooperation-with-rules-v2-card003-r1
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    prompt:
+      path: review-control/card-003-prompt.md
+      artifact_sha256: e9e1aadb446a1697de2e528593c9abdb2535a3e8308309badfab5f333d668f46
+      sent_text_sha256: 32ec94703791b069cf9a259fb631d11a911a00f664701e698970590761d1b255
+      sent_text_chars: 550
+    operations:
+      select_image_capability:
+        operation_id: cooperation-with-rules-v2:card003:r1:select-image-capability
+        state: completed
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: cooperation-with-rules-v2:card003:r1:submit-prompt
+        state: submitted
+        evidence: prompt visible in the bound conversation and provider stop control visible
+        retry_policy: never
+      capture_response:
+        operation_id: cooperation-with-rules-v2:card003:r1:capture-response
+        state: completed_candidate_pass
+        output_file_id: file_0000000024c082119541a875b3095bed
+        native_dimensions: 1086x1448
+        local_path: review-control/card-003-candidate.png
+        sha256: 6f18b77d425c4a49345671c0b557ba6044d1b45111be949b4edfadc7b660157e
+        retry_policy: read-only-idempotent
+      export_output:
+        operation_id: cooperation-with-rules-v2:card003:r1:export-output
+        state: completed
+        inventory_id: f279cab0-0525-4731-a01f-d82280b55e1f
+        asset_id: d99bd52774ee360f
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-003-candidate.png
+        retry_policy: never
+  - round_id: cooperation-with-rules-v2-card004-r1
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    prompt:
+      path: review-control/card-004-prompt.md
+      artifact_sha256: 0c09d55479c69e8b14650b2908dc3cfe54b3ad00803b0812cade46bc0574fe72
+      sent_text_sha256: afd4779e05bf62ddd5da40a31ba229518284783c99c800e0f65b7c1bad2c2541
+      sent_text_chars: 637
+    operations:
+      select_image_capability:
+        operation_id: cooperation-with-rules-v2:card004:r1:select-image-capability
+        state: not_verified
+        evidence: after read-only conversation reload the composer was empty and the Create image pill was not visible; the submitted prompt itself explicitly requested one image
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: cooperation-with-rules-v2:card004:r1:submit-prompt
+        state: submitted
+        evidence: prompt visible in the bound conversation and provider stop control visible
+        retry_policy: never
+      capture_response:
+        operation_id: cooperation-with-rules-v2:card004:r1:capture-response
+        state: completed_candidate_pass
+        capability_postcondition: verified_by_provider_owned_image_output
+        output_file_id: file_00000000829482099b2d5a0af95b9a0a
+        native_dimensions: 1086x1448
+        local_path: review-control/card-004-candidate.png
+        sha256: 40e2dbcead685f7ae9c7a64c2396c2077fa5af959516d1b44e5afb08c0e6daf9
+        retry_policy: read-only-idempotent
+      export_output:
+        operation_id: cooperation-with-rules-v2:card004:r1:export-output
+        state: completed
+        inventory_id: 99f876b8-b348-4365-9cc9-8e63f7face4e
+        asset_id: 2cc5a48b9710bb4d
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-004-candidate.png
+        retry_policy: never
+  - round_id: cooperation-with-rules-v2-card005-r1
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    prompt:
+      path: review-control/card-005-prompt.md
+      artifact_sha256: 210d50de548154365aee98e574c3f3f33e2fe886c43148de9a99ce00ef7d3e1e
+      sent_text_sha256: 5a836517d425af1286c3daf6f5d004ddf5edd126352bf6da3b51648c13936703
+      sent_text_chars: 602
+    operations:
+      select_image_capability:
+        operation_id: cooperation-with-rules-v2:card005:r1:select-image-capability
+        state: completed
+        evidence: exact project conversation reloaded to restore Pro; Create image selected from Add files and more; composer contains data-id=picture_v2 and visible Create image pill
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: cooperation-with-rules-v2:card005:r1:submit-prompt
+        state: submitted
+        submitted_once: true
+        evidence: exactly one enabled Send prompt control clicked after Pro and data-id=picture_v2 verification; composer cleared in the same project conversation
+        retry_policy: never
+      capture_response:
+        operation_id: cooperation-with-rules-v2:card005:r1:capture-response
+        state: completed
+        output_file_id: file_0000000030188207864b352249a13b19
+        local_path: review-control/card-005-candidate.png
+        sha256: 60f2ca5f9b165ab2171ea12372ad7662aaf8d1a348ba9eeb872cac75b2e3ad8b
+        retry_policy: read-only-idempotent
+      export_output:
+        operation_id: cooperation-with-rules-v2:card005:r1:export-output
+        state: completed
+        inventory_id: a57d4ee1-6428-484a-b7d0-868538228af5
+        asset_id: 732ee6dade5a0e02
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-005-candidate.png
+        retry_policy: never
+  - round_id: cooperation-with-rules-v2-card006-r1
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    prompt:
+      path: review-control/card-006-prompt.md
+      artifact_sha256: 5c0dd717fa3dcddd6a25e88fef8bcbe0dd42ad6c0a8abb1891835d53ab933f7c
+      sent_text_sha256: f7d0aa0983178c4046f58ef1deee31315cfe397634b7965f14c7ec9cb0369750
+      sent_text_chars: 685
+    operations:
+      select_image_capability:
+        operation_id: cooperation-with-rules-v2:card006:r1:select-image-capability
+        state: completed
+        evidence: project conversation remained Pro; Create image selected from Add files and more; composer contains data-id=picture_v2 and visible Create image pill
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: cooperation-with-rules-v2:card006:r1:submit-prompt
+        state: submitted
+        submitted_once: true
+        evidence: exactly one enabled Send prompt control clicked after Pro and data-id=picture_v2 verification; composer cleared in the same project conversation
+        retry_policy: never
+      capture_response:
+        operation_id: cooperation-with-rules-v2:card006:r1:capture-response
+        state: completed
+        output_file_id: file_00000000220882069541b6c425f6557f
+        local_path: review-control/card-006-candidate.png
+        sha256: 10df00282ef57a263808d377dddead1b9d6fd47990d1692e05344ab90982219c
+        retry_policy: read-only-idempotent
+      export_output:
+        operation_id: cooperation-with-rules-v2:card006:r1:export-output
+        state: completed
+        inventory_id: 41fbbf7e-3b3d-4900-95f0-b98363076441
+        asset_id: adeb8cce3ebca0c5
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-006-candidate.png
+        retry_policy: never
+  - round_id: cooperation-with-rules-v2-card007-r1
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    prompt:
+      path: review-control/card-007-prompt.md
+      artifact_sha256: d567c2e8434141f1583bf585d638b0c2799ce9635378001b20afb27982ad1ba6
+      sent_text_sha256: 22b70fa0ebe9f1a3bee42d92b4cf91996d55dc6eb37825c5e02d84252a70772b
+      sent_text_chars: 691
+    operations:
+      select_image_capability:
+        operation_id: cooperation-with-rules-v2:card007:r1:select-image-capability
+        state: completed
+        evidence: project conversation remained Pro; composer retained data-id=picture_v2 and visible Create image mode while prompt was typed without clearing the mode pill
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: cooperation-with-rules-v2:card007:r1:submit-prompt
+        state: submitted
+        submitted_once: true
+        evidence: exactly one enabled Send prompt control clicked after Pro and data-id=picture_v2 verification; composer cleared in the same project conversation
+        retry_policy: never
+      capture_response:
+        operation_id: cooperation-with-rules-v2:card007:r1:capture-response
+        state: completed
+        output_file_id: file_00000000bb7482099297509eb6cb3310
+        local_path: review-control/card-007-candidate.png
+        sha256: adc6c801ce3e0a0b5bee5d0f378501e9eea970d8e20bfd7e29a9a18afefeb52d
+        retry_policy: read-only-idempotent
+      export_output:
+        operation_id: cooperation-with-rules-v2:card007:r1:export-output
+        state: completed
+        inventory_id: 204b52e1-bd42-4dd2-8f3d-3f32a9192ab3
+        asset_id: ec5b55b7f44724e8
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-007-candidate.png
+        retry_policy: never
+  - round_id: cooperation-with-rules-v2-card002-edit-r2
+    state: completed_pending_independent_recheck
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    baseline:
+      path: review-control/card-002-r1.png
+      sha256: 793182febed06c2f051a9494667aeb4518ea4e07de2cf641ba3efab0e565d668
+    prompt:
+      path: review-control/card-002-r2-edit-prompt.md
+      artifact_sha256: 57a91807375129801f94e7d79a3b347fc965b755ee00887d34a65af8a0f7e5bf
+      sent_text_sha256: 116d56ac62cad1ce179d1fe5b5a7a8f45dd533f5e3b7209474cf30d864a8c7f5
+      sent_text_chars: 316
+    operations:
+      select_baseline:
+        operation_id: cooperation-with-rules-v2:card002:edit-r2:select-baseline
+        state: completed
+        host_call_count: 1
+        evidence: exact image file_000000008d44820993399461b7bb1437 opened in fullscreen; viewer label Workshop Team Discussing Carved Wooden Panels and dedicated edit composer observed
+        retry_policy: only-if-no-side-effect-proven
+      submit_edit:
+        operation_id: cooperation-with-rules-v2:card002:edit-r2:submit-edit
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_url: https://chatgpt.com/c/WEB:5856a54b-a48d-40bb-855f-2076e77a1fed
+        evidence: one enabled Send prompt control clicked in the exact baseline fullscreen edit composer; transient WEB child route immediately reconciled back to the same project conversation with one attached-baseline user message
+        never_resend: true
+        retry_policy: never
+      capture_edit:
+        operation_id: cooperation-with-rules-v2:card002:edit-r2:capture-edit
+        state: completed
+        host_call_count: 0
+        output_file_id: file_000000007b80821185b2b6640896190c
+        local_path: review-control/card-002-r2.png
+        sha256: a7b04d856847778a1149a49d55006c384fa6e25c4327875c63fbf46c88a6a9e5
+        native_dimensions: 1086x1448
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_edit:
+        operation_id: cooperation-with-rules-v2:card002:edit-r2:export-edit
+        state: completed
+        host_call_count: 1
+        inventory_id: 257f8fe2-c88e-46bd-92e1-e37e58811c3d
+        asset_id: ab56e0c7a9db46f4
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-002-r2.png
+        retry_policy: never
+  - round_id: cooperation-with-rules-v2-card005-edit-r1
+    state: completed_pending_independent_recheck
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    baseline:
+      path: review-control/card-005-candidate.png
+      sha256: 60f2ca5f9b165ab2171ea12372ad7662aaf8d1a348ba9eeb872cac75b2e3ad8b
+    prompt:
+      path: review-control/card-005-r1-edit-prompt.md
+      artifact_sha256: 5a69114c9620bb8c845fbc11920479c1aedf8f4047b4d9766fb9ad6c5887b18c
+      sent_text_sha256: 0b7933b7c3cadffda6c7092b8cd04c824268fbe23ba557abbc219bee1ba8ef36
+      sent_text_chars: 432
+    operations:
+      select_baseline:
+        operation_id: cooperation-with-rules-v2:card005:edit-r1:select-baseline
+        state: completed
+        host_call_count: 1
+        evidence: exact image file_0000000030188207864b352249a13b19 opened in fullscreen; viewer label Collaborative Bicycle Workshop Repairs and dedicated edit composer observed
+        retry_policy: only-if-no-side-effect-proven
+      submit_edit:
+        operation_id: cooperation-with-rules-v2:card005:edit-r1:submit-edit
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6/c/6a783520-bb24-83e8-a94d-a60aafd3cd3b
+        evidence: one enabled Send prompt control clicked in the exact Card005 fullscreen edit composer; same project conversation retained
+        never_resend: true
+        retry_policy: never
+      capture_edit:
+        operation_id: cooperation-with-rules-v2:card005:edit-r1:capture-edit
+        state: completed
+        host_call_count: 0
+        output_file_id: file_000000005b908206a8957bb08cd5c647
+        local_path: review-control/card-005-r1.png
+        sha256: 18b23ae55c69c9fc4b94f3a30ae36526031d0f6ef685aed545ff01544c7430f9
+        native_dimensions: 1086x1448
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_edit:
+        operation_id: cooperation-with-rules-v2:card005:edit-r1:export-edit
+        state: completed
+        host_call_count: 1
+        inventory_id: 12ca5384-9922-4643-afee-98d5627da409
+        asset_id: 9ac21c7df082f2b2
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-005-r1.png
+        retry_policy: never
+  - round_id: cooperation-with-rules-v2-card007-edit-r1
+    state: rejected_after_local_review
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    baseline:
+      path: review-control/card-007-candidate.png
+      sha256: adc6c801ce3e0a0b5bee5d0f378501e9eea970d8e20bfd7e29a9a18afefeb52d
+    prompt:
+      path: review-control/card-007-r1-edit-prompt.md
+      artifact_sha256: 2a3014a34850a41631be2edceb326c1b14cafbec69c995c867709649f9e598df
+      sent_text_sha256: 2dc780429f989c84be4886d501a7c3748f52f23c901a444b015fa821a0aed1e6
+      sent_text_chars: 492
+    operations:
+      select_baseline:
+        operation_id: cooperation-with-rules-v2:card007:edit-r1:select-baseline
+        state: completed
+        host_call_count: 1
+        evidence: exact image file_00000000bb7482099297509eb6cb3310 opened in fullscreen; viewer label Tense Workshop Parts Inspection and dedicated edit composer observed
+        retry_policy: only-if-no-side-effect-proven
+      submit_edit:
+        operation_id: cooperation-with-rules-v2:card007:edit-r1:submit-edit
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6/c/6a783520-bb24-83e8-a94d-a60aafd3cd3b
+        evidence: one enabled Send prompt control clicked in the exact Card007 fullscreen edit composer; same project conversation retained
+        never_resend: true
+        retry_policy: never
+      capture_edit:
+        operation_id: cooperation-with-rules-v2:card007:edit-r1:capture-edit
+        state: completed
+        host_call_count: 0
+        output_file_id: file_00000000ca2882069801745796f54486
+        local_path: review-control/card-007-r1.png
+        sha256: b0266824c2e27c9a3ddd358942e570db6495a4ac0e3879cf5c8d51a96824a036
+        native_dimensions: 1086x1448
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_edit:
+        operation_id: cooperation-with-rules-v2:card007:edit-r1:export-edit
+        state: completed
+        host_call_count: 1
+        inventory_id: eeb724d3-0b14-4189-bc14-2b98d0a7aa3c
+        asset_id: d9fda5696886d430
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-007-r1.png
+        retry_policy: never
+      terminate_rejected_stream:
+        operation_id: cooperation-with-rules-v2:card007:edit-r1:terminate-rejected-stream
+        state: completed
+        host_call_count: 1
+        evidence: after the completed binary was captured, hashed, and locally rejected for wrong scene/counts, the still-visible Stop answering control was clicked once; it disappeared after bounded reconciliation
+        retry_policy: never
+  - round_id: cooperation-with-rules-v2-card007-r2
+    state: rejected_after_local_review
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    prompt:
+      path: review-control/card-007-r2-prompt.md
+      artifact_sha256: c1fb0a3c511650dcaebabd23433949e2babf13f5e80fa938454097337a8777da
+      sent_text_sha256: 7ad91f5b563a39ddb04eb24933763b03fef20a17232eaed07d3d1961d59839f1
+      sent_text_chars: 764
+    operations:
+      select_image_capability:
+        operation_id: cooperation-with-rules-v2:card007:r2:select-image-capability
+        state: completed
+        evidence: same project conversation remained Pro; Create image selected after the rejected edit stream was explicitly terminated; composer contains data-id=picture_v2
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: cooperation-with-rules-v2:card007:r2:submit-prompt
+        state: submitted
+        submitted_once: true
+        submitted_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6/c/6a783520-bb24-83e8-a94d-a60aafd3cd3b
+        evidence: exactly one enabled Send prompt clicked with Pro and retained data-id=picture_v2; one user message begins Create image plus the frozen r2 prompt
+        never_resend: true
+        retry_policy: never
+      capture_response:
+        operation_id: cooperation-with-rules-v2:card007:r2:capture-response
+        state: completed
+        host_call_count: 0
+        output_file_id: file_00000000467081fdac0d8b6a88741b1c
+        local_path: review-control/card-007-r2.png
+        sha256: c2fad24826c6fa0ccb4ec49a310d92911798a7884d7b2e399bc80b4c56d49133
+        native_dimensions: 1086x1448
+        evidence: output captured read-only after the original submit; local review found two blank notice cards and an insufficiently neutral comparison gesture
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_output:
+        operation_id: cooperation-with-rules-v2:card007:r2:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: fd168cd0-9183-4a6b-b8dc-5ce9d7fefc9d
+        asset_id: de3af38063588789
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-007-r2.png
+        retry_policy: never
+  - round_id: cooperation-with-rules-v2-card007-edit-r3
+    state: completed_pending_independent_recheck
+    conversation_id: 6a783520-bb24-83e8-a94d-a60aafd3cd3b
+    baseline:
+      path: review-control/card-007-r2.png
+      sha256: c2fad24826c6fa0ccb4ec49a310d92911798a7884d7b2e399bc80b4c56d49133
+    prompt:
+      path: review-control/card-007-r3-edit-prompt.md
+      artifact_sha256: 120c46a0ddacaf8f48cae63c069dd811eccfb5a8925f1f56aaa3ce767fb00efe
+      sent_text_sha256: 120c46a0ddacaf8f48cae63c069dd811eccfb5a8925f1f56aaa3ce767fb00efe
+      sent_text_chars: 468
+    operations:
+      select_baseline:
+        operation_id: cooperation-with-rules-v2:card007:edit-r3:select-baseline
+        state: completed
+        host_call_count: 1
+        evidence: exact latest Image 14 of 14 with label Tense Workshop Inspection by Open Door opened in fullscreen; dedicated edit composer observed
+        retry_policy: only-if-no-side-effect-proven
+      submit_edit:
+        operation_id: cooperation-with-rules-v2:card007:edit-r3:submit-edit
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_url: https://chatgpt.com/c/6a783520-bb24-83e8-a94d-a60aafd3cd3b
+        evidence: one enabled Send prompt clicked in exact Image 14 of 14 fullscreen edit composer; typed text normalized paragraph separators from 468 file characters to 461 DOM text characters; conversation id remained unchanged although URL temporarily omitted project prefix
+        never_resend: true
+        retry_policy: never
+      capture_edit:
+        operation_id: cooperation-with-rules-v2:card007:edit-r3:capture-edit
+        state: completed
+        host_call_count: 0
+        output_file_id: file_0000000053d881fdb3db4880b5527664
+        local_path: review-control/card-007-r3.png
+        sha256: 5876dbee7c41a3d6f5b59ec52bf213de62ebdcb379a70cb0b726bb81e8061602
+        native_dimensions: 1086x1448
+        evidence: latest edited binary captured read-only; local native and 240x320 review show one held notice card, four adults, one tray, one physical handled stamp, one plaque, open exit, and reviewer using open-handed comparison gesture
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_edit:
+        operation_id: cooperation-with-rules-v2:card007:edit-r3:export-edit
+        state: completed
+        host_call_count: 1
+        inventory_id: 7761a0d7-100e-4d37-adfd-cace8951a89e
+        asset_id: a4b9578f295bbf5d
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: review-control/card-007-r3.png
+        retry_policy: never
+card_pipeline:
+  completed_and_locally_passed: ["001", "002", "003", "004", "005", "006", "007"]
+  revise_pending_external_completion: []
+  not_started: []
+  stop_reason: all_cards_locally_passed_pending_html_and_external_double_review

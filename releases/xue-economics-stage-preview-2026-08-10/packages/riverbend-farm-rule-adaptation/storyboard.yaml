@@ -1,0 +1,33 @@
+story_id: riverbend-farm-rule-adaptation
+version: "0.3-lifecycle-reconciled"
+status: frozen_before_image_generation
+lifecycle:
+  c1: c1_incident
+  c2: c2_two_candidates_first_appear
+  c3: c3_continuous_fence_first_short_term_pilot_day
+  c4: c4_days_later_continue_short_term_pilot
+  c5: c5_two_candidate_comparison
+  c6: c6_baseline_if_no_trial_original_low_boundary
+  c7: c7_procedural_close
+arrangement_lifecycle:
+  fence_line: c2_candidate_c3_first_short_term_pilot_c4_continue_pilot_c5_c6_comparison
+  buffer_strip: c2_candidate_only_c5_c6_comparison_not_piloted_or_observed
+  baseline: c6_if_no_trial_continuous_fence_not_used_original_low_boundary_retained
+frames:
+  - {card: 1, scene: 河湾农场的相邻菜地与草地边缘, main_action: 一头牛跨过唯一低边界踩到菜苗，冯澜与顾原各自停下工作, causal_job: 建立善意目标并不自动避免相互损害}
+  - {card: 2, scene: 边界旁的矮木桌, main_action: 菜苗损伤、通往水槽的牛群路线和两种无字安排模型同时可见, causal_job: 将相互损害和候选安排并列而不归责}
+  - {card: 3, scene: 两种候选安排刚出现后的首个短期试行日, main_action: 两种候选安排刚摆出后，第一天先试连续栅栏；顾原沿较窄绕行草路赶牛，冯澜把一根栅栏杆装回栅栏, causal_job: 显示规则改变的直接维护与绕行成本}
+  - {card: 4, scene: 数日后的石质草坡与边缘菜畦, main_action: 数日后连续栅栏仍在短期试行；顾原继续带牛改走石质草坡，冯澜继续在边缘播下低矮牧草, causal_job: 显示参与者在持续试行中适应而非规则静止}
+  - {card: 5, scene: 户外比较桌, main_action: 苏青并列摆放已短期试行的栅栏绕行模型和未试行的草带空畦候选模型，冯澜与顾原分别观察, causal_job: 比较两种安排的可见牺牲而不作裁决}
+  - {card: 6, scene: 空白工作台, main_action: 明确若不试行连续栅栏就沿用原低边界；两块无字地形板并列展示原低边界与连续栅栏短期试行布置，草带空畦仍只保留为未试行候选，中间留一张不规则空白假设卡, causal_job: 以基线和不确定性约束比较}
+  - {card: 7, scene: 中立复核桌, main_action: 复核者分开查看蹄印泥片、菜苗束、栅栏小段和假设卡，冯澜与顾原在旁等待, causal_job: 用程序而非结论收束}
+no_text_test:
+  viewport: 320px_thumbnail
+  exposure: 2_to_3_seconds
+  pass_question: 未读文字者能否看出牛与菜地的相互限制、规则布置后路线与种植的改变，以及两种安排未被宣告胜负？
+  fail_conditions:
+    - 只能读成普通农场劳动或牧场风景
+    - 人物善意或规则成本必须依赖文字才能成立
+    - 两种安排模型像价格牌、判决牌、投票牌或唯一正确答案
+    - 规则后没有清晰可见的路线或种植调整
+    - 假设卡像结论、奖牌、法庭文书或必然预测

@@ -1,0 +1,59 @@
+story_id: cooperation-with-rules-v2
+version: "0.1-frozen"
+status: frozen_before_image_generation
+canvas: {aspect_ratio: "3:4", target_size: [1086, 1448], mobile_first: true}
+style:
+  baseline_id: economics-story-v1
+  description: 成熟半写实编辑插画，自然成人比例，克制表情，轻纸张与丝网印刷质感。
+  palette: [深海军蓝, 陶土红, 暖黄, 暖白, 低饱和蓝灰]
+characters:
+  a_heng: 较高偏瘦的年轻成年男性，短微卷黑发，深海军蓝外套，浅色内搭，无胡须无眼镜。
+  xiao_he: 略矮的年轻成年女性，深色低发髻与清晰侧分，陶土红上衣，暖白下装。
+  relationship: 平等朋友；两人都能观察、犯错、提出条件、改变主意，不构成老师与学生。
+rule_media:
+  first_tag: 天然木牌，只有手掌触碰吊牌的无字木刻图示；无数字、货币、对错符号或法律徽记。
+  complete_and_handover: 天然木牌，只有扳手、圆形检验印与交接双手的无字木刻图示；圆印无文字且不可像硬币。
+  interpretation_limit: 仅表示试行条件、责任和证明入口，不表示价格、判决、现行法或普遍结论。
+cards:
+  - card: 1
+    shot: medium_dynamic
+    negative_space: 左上雨后灰墙
+    scene: 唯一蓝色工具箱打开在桌面，阿衡扶住箱沿，另一居民伸手认领；唯一待修自行车在背景入口。
+    exact_counts: {blue_toolboxes: 1, bicycles: 1, adults: 3, rule_plaques: 0}
+  - card: 2
+    shot: overhead_oblique_group
+    negative_space: 上方暖白墙
+    scene: 小禾在工作台并排放置两枚不同木刻图示牌，阿衡与两名居民从不同方向观察，没人举牌宣布结果。
+    exact_counts: {blue_toolboxes: 1, bicycles: 0, adults: 4, rule_plaques: 2}
+  - card: 3
+    shot: wide_claim_area
+    negative_space: 右上空墙
+    scene: 三名成年人分别守着三只未完成蓝色工具箱，每箱恰有一个大吊牌；远处唯一装配台无人工作。
+    exact_counts: {blue_toolboxes: 3, claim_tags: 3, adults: 4, empty_assembly_benches: 1}
+  - card: 4
+    shot: entrance_to_workbench
+    negative_space: 上方雨棚布
+    scene: 一名后来者抱着两枚吊牌与一卷锁绳进入；缺失扳手的空托盘和唯一待修自行车保持可见。
+    exact_counts: {new_claim_tags: 2, rope_coils: 1, empty_tool_trays: 1, bicycles: 1, adults: 3}
+  - card: 5
+    shot: deep_focus_test_and_handover
+    negative_space: 右上检验区墙面
+    scene: 阿衡与另一参与者在前景组装并测试一只蓝色工具箱；后景一只已检验箱停在交接柜中，空椅表示交接人迟到。
+    exact_counts: {blue_toolboxes: 2, adults: 3, empty_chairs: 1, rule_plaques: 1}
+  - card: 6
+    shot: wide_shared_rack
+    negative_space: 左上窗光
+    scene: 两只完成工具箱进入共享架；小禾登记，一名居民保养工具，阿衡用另一套工具修唯一自行车。
+    exact_counts: {stored_blue_toolboxes: 2, active_tool_sets: 1, bicycles: 1, adults: 4, maintenance_trays: 1}
+  - card: 7
+    shot: medium_review_exit
+    negative_space: 右上开放出口
+    scene: 一名中立复核者查看零件托盘、无字检验印与通知卡；小禾陪同提出异议的参与者停在出口，阿衡不替其决定。
+    exact_counts: {evidence_trays: 1, inspection_seals: 1, notice_cards: 1, adults: 4, rule_plaques: 1}
+global_negative_prompt:
+  - 任何文字、汉字、英文字母、数字、价格、货币符号、logo或水印
+  - 法槌、法袍、法院徽记、警徽、胜负奖牌、对错勾叉或普遍结论式图示
+  - 课程案件的原人物、原物件、散落物聚集、马车或历史法庭场景
+  - 教师讲台、商务西装、英雄构图、幼态人物、恋爱暗示
+  - 额外同类工具箱、吊牌、木牌、自行车、零件托盘、圆形硬币或重复人物
+

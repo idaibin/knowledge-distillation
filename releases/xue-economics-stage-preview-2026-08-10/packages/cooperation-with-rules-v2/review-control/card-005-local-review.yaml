@@ -1,0 +1,69 @@
+schema_version: story-card-local-review/v1
+story_id: cooperation-with-rules-v2
+card_id: "005"
+reviewed_at: "2026-08-09"
+basis:
+  prompt_text_sha256: 5a836517d425af1286c3daf6f5d004ddf5edd126352bf6da3b51648c13936703
+  image_sha256: 60f2ca5f9b165ab2171ea12372ad7662aaf8d1a348ba9eeb872cac75b2e3ad8b
+  native_dimensions: 1086x1448
+  thumbnail_sha256: ab83122dffc7633ba39b01f0de6fad5d06708de62e35a8ffe49c3358531f832d
+  thumbnail_dimensions: 240x320
+checks:
+  exact_two_blue_toolboxes: pass
+  exact_three_adults: pass
+  exact_one_empty_chair: pass
+  exact_one_blank_wood_plaque: pass
+  no_extra_box_chair_plaque_stamp_receipt_or_price: pass
+  no_readable_text_logo_or_verdict_symbol: pass
+  character_contract: pass
+  three_by_four_aspect_ratio: pass
+  two_to_three_second_more_completion_work_read: pass
+  completed_box_and_empty_chair_delayed_handoff_counterexample: pass
+decision: pass_r1_after_independent_recheck_with_minor_caveat
+decision_history:
+  - decision: pass_candidate_for_card005
+    basis_image_sha256: 60f2ca5f9b165ab2171ea12372ad7662aaf8d1a348ba9eeb872cac75b2e3ad8b
+    reason: 原单卡复核认为后景完成箱与空椅足以表达延迟交接；该结论现由整包双尺度复审取代。
+retro:
+  keep:
+    - 前景打开的工具箱与两人共同检验形成清楚的完成投入动作。
+    - 后景关闭工具箱与唯一空椅相邻，320px 下仍保留延迟交接反例。
+  improve_next:
+    - 后续卡继续让反例媒介与目标物紧密相邻，避免只靠人物表情解释延迟或成本。
+  formal_boundary: 本地单卡通过不等于整包正式通过；仍需完成 Card006–007、HTML 旁白和双通道审查。
+independent_package_review:
+  status: revise
+  severity: major
+  reviewed_basis_sha256: 60f2ca5f9b165ab2171ea12372ad7662aaf8d1a348ba9eeb872cac75b2e3ad8b
+  findings:
+    - 320px、2–3 秒内主要读成前景组装，后景箱与空椅不能唯一表达交接人迟到。
+    - 后景箱缺少 continuity ledger 要求的无字检验封印。
+    - 小禾所持物更像空白认领吊牌，不像完成检验后交接规则牌。
+  revision_prompt: review-control/card-005-r1-edit-prompt.md
+  revision_prompt_sha256: 5a69114c9620bb8c845fbc11920479c1aedf8f4047b4d9766fb9ad6c5887b18c
+revision_result_r1:
+  candidate_path: review-control/card-005-r1.png
+  image_sha256: 18b23ae55c69c9fc4b94f3a30ae36526031d0f6ef685aed545ff01544c7430f9
+  thumbnail_path: review-control/card-005-r1-thumb-320.png
+  thumbnail_sha256: 6a0cad64ea202c93b53916c3b3c5985b774a79f60c33368b321ed405eb4d32b5
+  native_dimensions: 1086x1448
+  thumbnail_dimensions: 240x320
+  checks:
+    exact_two_blue_toolboxes: pass
+    exact_three_adults: pass
+    exact_one_empty_chair: pass
+    exact_one_rule_plaque: pass
+    closed_box_has_wordless_seal_and_pairs_with_empty_chair: pass
+    plaque_has_wrench_stamp_and_handover_pictograms: pass
+    no_readable_text_price_logo_or_verdict_symbol: pass
+    three_by_four_aspect_ratio: pass
+  decision: pass_r1_candidate_pending_independent_recheck
+independent_recheck_r1:
+  status: pass_with_minor_caveat
+  reviewed_basis_sha256: 18b23ae55c69c9fc4b94f3a30ae36526031d0f6ef685aed545ff01544c7430f9
+  finding: 2箱、3成人、1空椅、1规则牌精确；关闭箱、无字封印和空椅足以表达等待交接，但迟到仍依赖空椅推断。
+  retro: 封存箱、无字标记与唯一空椅形成更紧密的后景组，规则牌也不再像空认领吊牌；仍交由独立复核确认2至3秒内迟到交接是否足够明确。
+  required_postconditions:
+    - 后景完成箱、非圆形无字封印与唯一空椅形成紧密迟到交接组。
+    - 唯一规则牌有扳手、非圆形检验印和交接双手图示，不像空吊牌。
+    - 前景动作、全部精确数量和角色连续性保持不变。

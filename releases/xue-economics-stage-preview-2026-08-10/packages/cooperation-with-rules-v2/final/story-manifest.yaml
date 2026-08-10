@@ -1,0 +1,34 @@
+schema_version: story-card-final-manifest/v1
+story_id: cooperation-with-rules-v2
+status: local_final_candidate_ready_for_external_review
+generated_at: "2026-08-09"
+basis:
+  lesson_id: "002"
+  lesson_ir_maturity: validated
+  lesson_ir_sha256: 411159bd9a97b992313620c1675838e3243ca7092923c0445a3fe4ed555a0ec5
+  text_layer: ../text-layer.yaml
+html:
+  path: story.html
+  sha256: 8ba44a30956f95c4e719e85f0e96ee37d13f621637e6976a2a855494b3321e6b
+  basis_state: current
+  external_dependencies: 0
+  card_sections: 7
+  narration_sections: 7
+cards:
+  - {card_id: "001", path: cards/001.png, sha256: fb50a4066e5b363b20d844d27d023223611b90a997a32f86ffb44cc63e4dbbda, dimensions: 1086x1448, local_review: ../review-control/card-001-local-review.yaml}
+  - {card_id: "002", path: cards/002.png, sha256: a7b04d856847778a1149a49d55006c384fa6e25c4327875c63fbf46c88a6a9e5, dimensions: 1086x1448, local_review: ../review-control/card-002-local-review.yaml, decision: independent_recheck_pass}
+  - {card_id: "003", path: cards/003.png, sha256: 6f18b77d425c4a49345671c0b557ba6044d1b45111be949b4edfadc7b660157e, dimensions: 1086x1448, local_review: ../review-control/card-003-local-review.yaml}
+  - {card_id: "004", path: cards/004.png, sha256: 40e2dbcead685f7ae9c7a64c2396c2077fa5af959516d1b44e5afb08c0e6daf9, dimensions: 1086x1448, local_review: ../review-control/card-004-local-review.yaml}
+  - {card_id: "005", path: cards/005.png, sha256: 18b23ae55c69c9fc4b94f3a30ae36526031d0f6ef685aed545ff01544c7430f9, dimensions: 1086x1448, local_review: ../review-control/card-005-local-review.yaml, decision: independent_recheck_pass_with_minor_caveat}
+  - {card_id: "006", path: cards/006.png, sha256: 10df00282ef57a263808d377dddead1b9d6fd47990d1692e05344ab90982219c, dimensions: 1086x1448, local_review: ../review-control/card-006-local-review.yaml}
+  - {card_id: "007", path: cards/007.png, sha256: 5876dbee7c41a3d6f5b59ec52bf213de62ebdcb379a70cb0b726bb81e8061602, dimensions: 1086x1448, local_review: ../review-control/card-007-local-review.yaml, decision: independent_recheck_pass}
+render_validation:
+  basis_state: current_pass
+  html5_tidy_errors: 0
+  browser_card_count: 7
+  browser_narration_count: 7
+  browser_remote_asset_count: 0
+  browser_loaded_image_dimensions: 7_of_7_at_1086x1448
+revision_required_cards: []
+formal_package_counted: false
+formal_boundary: 七卡修订与独立本地复核已通过，HTML 已绑定当前图；仍须重渲染并由 Review Control 与既有 ZCode 会话审查这一精确 basis，才可进入 formal 计数。

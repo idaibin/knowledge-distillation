@@ -1,0 +1,1584 @@
+schema_version: browser-operation/v1
+task_key: broken-window-unseen-cost-card001-production
+surface: chrome_extension_browser
+target:
+  provider: chatgpt
+  project_name: 故事卡片生产｜Pro 生图
+  project_id: g-p-6a700985260881918e3834a43b1e12a6
+  project_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/project
+authorization: external_collaboration_image_generation_one_card
+selected_capability: image-generate
+basis:
+  lesson_id: "003"
+  ir_sha256: f7ee9d8e0aa75a84abddf7ed8c67cc8cfc17a1dea189ba47e4351012bf43c534
+  visual_plan_sha256: 968f4ccdde06fe612c31fe077a6629cec1da1c97add5adbb50c33841622b7ac2
+  card_plan_sha256: ed662333fcf7da7632a271313e875349aae7e9699c9443d835a49f47d1e85255
+  continuity_ledger_sha256: 9cf53d19cf7e44d123b13596f85b206d0c561185ab764af3f42ba23c3f0314fb
+  content_checkpoint_sha256: 0d686ee51abc4b21ba629d9837f1a6154ff2b5455e673186309a4321346a2c3a
+  production_package_sha256: 0a7ab87e37025b967f60f4096a55abc15ecc9744328974aacb0a69bd550b2629
+capability_snapshot:
+  snapshot_id: broken-window-unseen-cost-card001-preflight-20260809
+  authenticated_session: verified_chatgpt_pro_personal_account_visible
+  project_identity: verified_exact_project_heading_url_and_id
+  clean_new_story_composer: verified_empty_project_new_chat_composer
+  image_capability: verified_create_image_active_in_composer
+  model: verified_chatgpt_pro_account_project_image_mode
+  tab_control: verified_owned_agent_task_tab
+  response_completion: verified_stop_control_absent_and_one_final_visible_image
+  page_asset_export: verified_final_attribute_backed_asset_exported
+tab_ledger:
+  ownership: owned_agent_task_tab
+  tab_id: 1565528872
+  original_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/project
+  purpose: authorized_card001_generation_in_new_story_conversation
+  lifecycle: card001_captured_and_locally_reviewed
+  cleanup_disposition: retained_as_deliverable_after_capture_and_local_review
+round:
+  round_id: broken-window-unseen-cost-card001-r1
+  prompt:
+    path: card-001-prompt.md
+    artifact_sha256: 03242ccd5c33310d2099137fa5dc1d1204875f093a4781720f24b53ef30057f8
+    sent_text_sha256: 03242ccd5c33310d2099137fa5dc1d1204875f093a4781720f24b53ef30057f8
+    composed_dom_inner_text_sha256: a2eb35833ed594d449f7a17ca4ffc0a3c3ec06e7f0c74be7c863604c0eddc479
+    composer_normalization: markdown_heading_marker_and_terminal_newline_not_present_in_inner_text
+    size_bytes: 2114
+    character_count: 785
+  target_conversation:
+    policy: create_new_project_conversation_only
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    forbidden_context: [cooperation-with-rules-v2, exchange-without-more, any_existing_story_conversation]
+  operations:
+    create_conversation:
+      operation_id: broken-window-unseen-cost:card001:r1:create-conversation
+      state: completed
+      host_call_count: 1
+      retry_policy: never
+    select_image_capability:
+      operation_id: broken-window-unseen-cost:card001:r1:select-image-capability
+      state: completed
+      host_call_count: 1
+      retry_policy: only-if-no-side-effect-proven
+    submit_prompt:
+      operation_id: broken-window-unseen-cost:card001:r1:submit-prompt
+      state: submitted
+      host_call_count: 1
+      submitted_once: true
+      submitted_at: "2026-08-09T14:41:31.798Z"
+      never_resend: true
+      retry_policy: never
+    capture_response:
+      operation_id: broken-window-unseen-cost:card001:r1:capture-response
+      state: completed_candidate_revise
+      host_call_count: 1
+      provider_completion: verified_stop_control_absent_after_reported_4m37s
+      requested_output_count: 1
+      final_visible_output_count: 1
+      output_file_id: file_000000009db082119223fa48aafb12b4
+      asset_id: 0e6dc55ba5552e24
+      native_dimensions: 1086x1448
+      sha256: 287358a27c9bf644a73b5906e6ed61f633543a4d38e7ea87b889161a0be26aff
+      streaming_resource_file_ids_observed: [file_0000000080c88211ae59b3326f6db63c, file_00000000de50820984b7ad2ea6a05572, file_00000000c3b88211a955c09221e64051]
+      reconciliation: final_DOM_exposed_one_generated_image_and_only_attribute_backed_final_asset_was_retained
+      local_path: card-001-candidate.png
+      retry_policy: read-only-idempotent-after-verified-submit
+    export_output:
+      operation_id: broken-window-unseen-cost:card001:r1:export-output
+      state: completed
+      host_call_count: 1
+      inventory_id: bb77c1a9-68a0-4f2a-a0f1-121f51e8b930
+      bundled_asset_ids: [0e6dc55ba5552e24]
+      bundle_downloaded_count: 1
+      bundle_failed_count: 0
+      retained_local_path: card-001-candidate.png
+      retry_policy: never
+    derive_thumbnail:
+      operation_id: broken-window-unseen-cost:card001:r1:derive-thumbnail
+      state: completed
+      host_call_count: 1
+      local_path: card-001-thumb-320.png
+      dimensions: 240x320
+      sha256: 5947c92b3a2c6d47f84d58e474c09a142442c5eeb16dc4d7ad1be1b99fc803c1
+      retry_policy: never
+side_effects:
+  navigation_only: false
+  input: true
+  conversation_created: true
+  submitted: true
+  ambiguous_submit: false
+  generated_output: true
+  local_binary_captured: true
+  pixel_qa_complete: true
+local_review:
+  path: card-001-local-review.yaml
+  baseline_decision: revise
+  current_decision: card001_r6_mechanical_crop_candidate_pass_local_waiting_independent_visual_review
+  latest_completed_revision_path: card-001-r5-local-review.yaml
+  next_round: blocked_waiting_independent_visual_review_no_auto_revision
+  formal: false
+stop_conditions:
+  - project_identity_or_authenticated_session_not_unique
+  - clean_new_story_composer_not_verified
+  - Create_image_or_Pro_not_live_verified
+  - submit_ambiguous_then_read_only_reconciliation_only
+  - page_asset_export_unavailable_after_verified_completion
+formal_package_counted: false
+revision_rounds:
+  - round_id: broken-window-unseen-cost-card001-edit-r1
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    route_reconciliation:
+      temporary_after_submit: https://chatgpt.com/c/WEB:9b3d976c-9f91-4526-8aa1-f9c765454f9c
+      completed_at_same_conversation_id: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+      interpretation: provider_managed_image_editor_route_returned_to_original_conversation_id_no_resend_or_new_user_created_conversation
+    baseline:
+      path: card-001-candidate.png
+      output_file_id: file_000000009db082119223fa48aafb12b4
+      sha256: 287358a27c9bf644a73b5906e6ed61f633543a4d38e7ea87b889161a0be26aff
+      native_dimensions: 1086x1448
+    prompt:
+      path: card-001-r1-edit-prompt.md
+      artifact_sha256: 4bb55b68c4aa6b7166a2ad695ee9b9ad919bfcf54c5fd2c42ce3a80c4d4d0e8e
+      sent_text_sha256: 4bb55b68c4aa6b7166a2ad695ee9b9ad919bfcf54c5fd2c42ce3a80c4d4d0e8e
+      composed_dom_inner_text_sha256: 20c2b8982436eb6ac51c2c2dab932d70609e23801d1400ef3084f323b9e57f8f
+      composer_normalization: markdown_heading_marker_list_markers_and_terminal_newline_not_present_in_inner_text
+      never_resend: true
+    operations:
+      select_baseline:
+        operation_id: broken-window-unseen-cost:card001:edit-r1:select-baseline
+        state: completed
+        host_call_count: 1
+        evidence: image_editor_dialog_and_attribute_backed_asset_both_bound_to_file_000000009db082119223fa48aafb12b4
+        retry_policy: only-if-no-side-effect-proven
+      submit_edit:
+        operation_id: broken-window-unseen-cost:card001:edit-r1:submit-edit
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T15:04:02.445Z"
+        route_after_submit: https://chatgpt.com/c/WEB:9b3d976c-9f91-4526-8aa1-f9c765454f9c
+        evidence: exact_image_editor_send_clicked_once_then_provider_routed_to_temporary_image_edit_surface_showing_Analyzing
+        never_resend: true
+        retry_policy: never
+      capture_edit:
+        operation_id: broken-window-unseen-cost:card001:edit-r1:capture-edit
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent_after_reported_3m48s
+        final_visible_output_count: 1
+        output_file_id: file_0000000027c482119c79c1175b8cfeb1
+        asset_id: d3d21be85122c36e
+        native_dimensions: 1086x1448
+        local_path: card-001-r1.png
+        sha256: 2f076813522f750d7b10a9b2df04c3df44aa157971dbb5d12c6b3f0870187738
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_edit:
+        operation_id: broken-window-unseen-cost:card001:edit-r1:export-edit
+        state: completed
+        host_call_count: 1
+        inventory_id: 4a861341-c473-403c-b008-49d8744f2bcb
+        asset_id: d3d21be85122c36e
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-001-r1.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card001:edit-r1:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-001-r1-thumb-320.png
+        dimensions: 240x320
+        sha256: 443adca38f6f7876af39dbe935d42e138eab56afb36f251bbfe051c04432c9d7
+        retry_policy: never
+    local_review:
+      path: card-001-r1-local-review.yaml
+      decision: pass_candidate_after_edit_r1
+      formal: false
+    status: completed_candidate_pass_local_only
+  - round_id: broken-window-unseen-cost-card004-edit-r1
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    baseline:
+      path: card-004-candidate.png
+      output_file_id: file_000000002a908211af99d8552ae4fbae
+      sha256: 968c5ad0902c8446f30197cf8b91371765f95caa57b079aa87f3ec6d12e9e0cd
+      native_dimensions: 1086x1448
+    authorized_change:
+      remove_all_actual_books: true
+      one_and_only_one_empty_book_slot_with_visible_back_wall: true
+      preserve_everything_else: true
+    prompt:
+      path: card-004-r1-edit-prompt.md
+      artifact_sha256: 33388f87f6a58268eeb409e02ee27c834a95fe7a74d7a3eb774d8b6caad92038
+      sent_text_sha256: 33388f87f6a58268eeb409e02ee27c834a95fe7a74d7a3eb774d8b6caad92038
+      composed_dom_inner_text_sha256: fd4caf71713ab771ef2029aefbf9848d254e2e6d712b8547cb698d2b41545afc
+      composer_normalization: markdown_heading_marker_and_terminal_newline_not_present_in_inner_text
+      size_bytes: 1583
+      character_count: 591
+      never_resend: true
+    operations:
+      select_baseline:
+        operation_id: broken-window-unseen-cost:card004:edit-r1:select-baseline
+        state: completed
+        host_call_count: 1
+        evidence: image_viewer_dialog_and_attribute_backed_asset_bound_to_file_000000002a908211af99d8552ae4fbae_with_unique_edit_composer_and_send_control
+        retry_policy: only-if-no-side-effect-proven
+      submit_edit:
+        operation_id: broken-window-unseen-cost:card004:edit-r1:submit-edit
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T16:23:43.540Z"
+        route_after_submit: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+        never_resend: true
+        retry_policy: never
+      capture_edit:
+        operation_id: broken-window-unseen-cost:card004:edit-r1:capture-edit
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent
+        final_visible_output_count: 1
+        output_file_id: file_000000005f388209801a0716ec57ffca
+        asset_id: fe8f9342b5391bce
+        native_dimensions: 1086x1448
+        local_path: card-004-r1.png
+        sha256: 6763145fe7ee9887ed827acb78c6877ba4715a2266753ec375fb3115d186af03
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_edit:
+        operation_id: broken-window-unseen-cost:card004:edit-r1:export-edit
+        state: completed
+        host_call_count: 1
+        inventory_id: ddfda1ec-84d7-4675-b59f-050d50c0e641
+        asset_id: fe8f9342b5391bce
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-004-r1.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card004:edit-r1:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-004-r1-thumb-320.png
+        dimensions: 240x320
+        sha256: 5d0514eaeb505abf25c6aa665b2571f0311542f7e937293f1ec2934aedd36b74
+        retry_policy: never
+    local_review:
+      path: card-004-r1-local-review.yaml
+      decision: pass_candidate_after_card004_edit_r1
+      formal: false
+    status: completed_candidate_pass_local_only
+  - round_id: broken-window-unseen-cost-card004-edit-r2
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    baseline:
+      path: card-004-r1.png
+      output_file_id: file_000000005f388209801a0716ec57ffca
+      sha256: 6763145fe7ee9887ed827acb78c6877ba4715a2266753ec375fb3115d186af03
+      native_dimensions: 1086x1448
+    authorized_change:
+      compact_single_book_scale_reserved_slot: true
+      visible_back_wall_and_shelf_slot_cues: true
+      zero_actual_books_and_zero_second_slot: true
+      preserve_everything_else: true
+    prompt:
+      path: card-004-r2-edit-prompt.md
+      artifact_sha256: a5b50b10e93cd3677827f09fab37fa20d22b0dc6643dd8953b17a114d71d8398
+      sent_text_sha256: a5b50b10e93cd3677827f09fab37fa20d22b0dc6643dd8953b17a114d71d8398
+      composed_dom_inner_text_sha256: 1a4e2d569c598f5334d7bb381998ca3bec88d4a69c85dbd8ed5dcc528c192463
+      composer_normalization: markdown_heading_marker_and_terminal_newline_not_present_in_inner_text
+      size_bytes: 1826
+      character_count: 676
+      never_resend: true
+    operations:
+      select_baseline:
+        operation_id: broken-window-unseen-cost:card004:edit-r2:select-baseline
+        state: completed
+        host_call_count: 1
+        evidence: image_viewer_dialog_and_attribute_backed_asset_bound_to_file_000000005f388209801a0716ec57ffca_with_unique_edit_composer_and_send_control
+        retry_policy: only-if-no-side-effect-proven
+      submit_edit:
+        operation_id: broken-window-unseen-cost:card004:edit-r2:submit-edit
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T16:35:10.482Z"
+        route_after_submit: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+        never_resend: true
+        retry_policy: never
+      capture_edit:
+        operation_id: broken-window-unseen-cost:card004:edit-r2:capture-edit
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent
+        final_visible_output_count: 1
+        output_file_id: file_000000009e4482118d110ac4923770b6
+        asset_id: 61d6d15bbf0459ad
+        native_dimensions: 1086x1448
+        local_path: card-004-r2.png
+        sha256: 027437cb8dfccab043dacb48abfda376e2079344cc4e1c102c74585071643c98
+        retry_policy: read-only-idempotent_after_verified_submit
+      export_edit:
+        operation_id: broken-window-unseen-cost:card004:edit-r2:export-edit
+        state: completed
+        host_call_count: 1
+        inventory_id: ba70aaad-10ed-4646-a155-6a6472e0d465
+        asset_id: 61d6d15bbf0459ad
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-004-r2.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card004:edit-r2:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-004-r2-thumb-320.png
+        dimensions: 240x320
+        sha256: 74372a8ab1b2ce1bc9b99e5a3c341598a23073be967e83e616339f892c06c2bc
+        retry_policy: never
+    local_review:
+      path: card-004-r2-local-review.yaml
+      decision: pass_candidate_after_card004_edit_r2
+      formal: false
+    status: completed_candidate_pass_local_only
+  - round_id: broken-window-unseen-cost-card004-edit-r3-final
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    baseline:
+      path: card-004-r2.png
+      output_file_id: file_000000009e4482118d110ac4923770b6
+      sha256: 027437cb8dfccab043dacb48abfda376e2079344cc4e1c102c74585071643c98
+      native_dimensions: 1086x1448
+    authorized_change:
+      one_closed_book_scale_slot_with_all_four_boundaries_visible: true
+      two_thin_l_bookends_with_visible_feet_not_book_spines: true
+      zero_actual_books_and_zero_second_shelf_or_slot: true
+      preserve_everything_else: true
+      final_edit_attempt: true
+    prompt:
+      path: card-004-r3-edit-prompt.md
+      artifact_sha256: ead5ad5031777f4874231c69d9c5da0ee3762a922880b4bdb657028e96b0868f
+      sent_text_sha256: ead5ad5031777f4874231c69d9c5da0ee3762a922880b4bdb657028e96b0868f
+      composed_dom_inner_text_sha256: 1c6c1310f078920e10e9c72d6595738d17a4861375c9fb0872eeab552039e4d0
+      composer_normalization: markdown_heading_marker_and_terminal_newline_not_present_in_inner_text
+      size_bytes: 2077
+      character_count: 767
+      never_resend: true
+    operations:
+      select_baseline:
+        operation_id: broken-window-unseen-cost:card004:edit-r3:select-baseline
+        state: completed
+        host_call_count: 1
+        evidence: image_viewer_dialog_and_attribute_backed_asset_bound_to_file_000000009e4482118d110ac4923770b6_with_unique_edit_composer_and_send_control
+        retry_policy: only-if-no-side-effect-proven
+      submit_edit:
+        operation_id: broken-window-unseen-cost:card004:edit-r3:submit-edit
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T16:51:02.342Z"
+        route_after_submit: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+        never_resend: true
+        retry_policy: never
+      capture_edit:
+        operation_id: broken-window-unseen-cost:card004:edit-r3:capture-edit
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent_after_reported_1m18s
+        final_visible_output_count: 1
+        output_file_id: file_000000003c848211a8363ee02f907b3c
+        asset_id: 29e279c369b4b020
+        native_dimensions: 1086x1448
+        local_path: card-004-r3.png
+        sha256: 5d1f58d106454aaff8940a86c2c5844e01893c9203c032cba31dc6b54685c450
+        retry_policy: read-only-idempotent_after_verified_submit
+      export_edit:
+        operation_id: broken-window-unseen-cost:card004:edit-r3:export-edit
+        state: completed
+        host_call_count: 1
+        inventory_id: 807a840d-2337-4f8a-8214-50594f7d3373
+        asset_id: 29e279c369b4b020
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-004-r3.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card004:edit-r3:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-004-r3-thumb-320.png
+        dimensions: 240x320
+        sha256: a78df40abc43c7668e83ab4ca2e9a332dffbc4554e6193d61a48192141b2c5a8
+        retry_policy: never
+    local_review:
+      path: card-004-r3-local-review.yaml
+      decision: pass_candidate_after_card004_edit_r3_final
+      formal: false
+    stop_rule_if_not_pass:
+      further_card004_edits: forbidden
+      next_action: refreeze_visual_specification_before_any_new_generation
+    status: completed_candidate_pass_local_only_card004_edits_closed
+  - round_id: broken-window-unseen-cost-card006-edit-r1
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    basis:
+      story_sha256: b90046f21498c5b3338f56a4401a5c4aaa50789dfd75c5f742b2fe9de75f6084
+      text_layer_sha256: dab7f37d561500743feec70465b4491ce0db16b8ecbb63f500f15707d90657ea
+      storyboard_sha256: 37be361413b534695a3659bc132b98d0858478e1ba129aeb401a5faefb6d47ec
+      card_plan_sha256: 872f319c4c86cda761e400e124d1e845c336a5de2af145442267fea079f239d4
+      visual_plan_sha256: f755dadae70a1129cbca5d58d0ab5b0ffc17c23ab9b5c287d9f85c7b6e77f914
+      continuity_ledger_sha256: f808aa706c0e6d91f61c792a7a4572dbe8ad6ff17c20c1773d0897710810b0b0
+      production_package_sha256: a015bcff52c3df75ca0f8eb68d98658da0e35d948e327105c27dbb5c7c4b1003
+      content_checkpoint_sha256: cbe365bf9da0d43175b455b2c1329d13824cbfea21b11ef518344942d1910c3a
+      generation_mode: minimal_edit_exact_baseline
+      only_failure_variable: background_rectangular_surfaces_create_third_board_misread
+      frozen_pass: [adults_4, equal_scenario_boards_2, irregular_blank_assumption_card_1, gavels_text_price_verdict_0, primary_read_320px]
+    baseline:
+      path: card-006-candidate.png
+      output_file_id: file_0000000050ac8206a005ac4b080e0cce
+      sha256: a2bf5b834b7e5a62320f296d335c29acd842fc077bfc6297a546bd4fabf38326
+      native_dimensions: 1085x1450
+      exact_baseline_required: true
+    authorized_change:
+      remove_left_empty_frame: true
+      remove_right_cabinet_box_frame: true
+      remove_all_other_background_rectangular_information_surfaces: true
+      preserve_characters_tabletop_two_boards_central_card_and_composition: true
+    prompt:
+      path: card-006-edit-r1-prompt.md
+      artifact_sha256: bf594ba67a584aa181a43f62edd35573d85bac7160bd924540ce356a6db2fcb0
+      sent_text_sha256: bf594ba67a584aa181a43f62edd35573d85bac7160bd924540ce356a6db2fcb0
+      composed_dom_inner_text_sha256: 71a9be0a553138ace101c2aeea9fc24ed64967ae644e57031946e7c6f9214774
+      composer_normalization: markdown_heading_markers_backticks_and_terminal_newline_not_present_in_inner_text
+      size_bytes: 1882
+      character_count: 755
+      never_resend: true
+    operations:
+      select_baseline:
+        operation_id: broken-window-unseen-cost:card006:edit-r1:select-baseline
+        state: completed
+        host_call_count: 1
+        evidence: image_12_of_12_dialog_title_and_attribute_backed_source_exactly_bound_to_file_0000000050ac8206a005ac4b080e0cce_with_unique_edit_composer
+        retry_policy: only-if-no-side-effect-proven
+      submit_edit:
+        operation_id: broken-window-unseen-cost:card006:edit-r1:submit-edit
+        state: submitted_route_changed_by_provider_to_web_conversation
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T18:18:22.216Z"
+        route_after_submit: https://chatgpt.com/c/WEB:e6efe95a-b68c-4bd3-b03c-c43c908c2f66
+        evidence: exact_baseline_dialog_unique_edit_submit_then_provider_navigated_to_temporary_web_conversation_showing_Analyzing
+        reconciliation:
+          state: resolved_to_original_story_conversation_without_resend
+          resolved_url: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+          evidence: provider_automatically_returned_to_original_story_conversation_with_attached_edited_image_prompt_and_single_generating_turn
+        never_resend: true
+        retry_policy: never_after_submit
+      capture_edit:
+        operation_id: broken-window-unseen-cost:card006:edit-r1:capture-edit
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent
+        final_visible_output_count: 1
+        output_file_id: file_00000000b9a482068310926a3c8e702e
+        asset_id: 1d478122c44c2579
+        native_dimensions: 1086x1448
+        local_path: card-006-edit-r1.png
+        sha256: f81b1f69639bd4072cf96c8e835e00db8e48abc917d8bc3aa7b4134b50edcfc9
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_edit:
+        operation_id: broken-window-unseen-cost:card006:edit-r1:export-edit
+        state: completed
+        host_call_count: 1
+        inventory_id: e91f2625-8d17-461a-936f-d280ce8d6ba4
+        asset_id: 1d478122c44c2579
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-006-edit-r1.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card006:edit-r1:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-006-edit-r1-thumb-320.png
+        dimensions: 240x320
+        sha256: f65633c6a03b2592698e8dc74a535503b8194a090a3abcc6c3bb35393eb2535d
+        retry_policy: never
+    local_review:
+      path: card-006-edit-r1-local-review.yaml
+      decision: pass_candidate_after_single_variable_background_cleanup
+      formal: false
+    independent_basis_review:
+      decision: pass
+      authorized_action: unique_submit_same_project_same_story_conversation_exact_baseline_minimal_edit
+    independent_visual_review:
+      decision: pass
+      disposition: historical_frozen_pass_candidate_no_resubmit
+    status: completed_local_and_independent_pass_historical_frozen
+  - round_id: broken-window-unseen-cost-card001-edit-r2
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    status: completed_local_and_independent_revise_historical_failed_review_evidence_only
+    basis:
+      story_sha256: b90046f21498c5b3338f56a4401a5c4aaa50789dfd75c5f742b2fe9de75f6084
+      text_layer_sha256: dab7f37d561500743feec70465b4491ce0db16b8ecbb63f500f15707d90657ea
+      storyboard_sha256: 37be361413b534695a3659bc132b98d0858478e1ba129aeb401a5faefb6d47ec
+      card_plan_sha256: c540a91c0dee805945949da9878cfdb5c332e96f0af04d86e89e3f8955cf247b
+      visual_plan_sha256: b2a1ad52a3e411cb77d32d66fe3ac50dd43bfc4a3e3da2b4f4db95b896067ebd
+      continuity_ledger_sha256: 2bd6f6efc224d8b6f2b88b88b2e7b99d7887e49b32771d3ce6e79f60b680cb48
+      production_package_sha256: deba1c994a518e89b39ffcc6c49da78fe86596cdf42dea1006e633c2bcd9d7d9
+      content_checkpoint_sha256: 0d95d5df2bfd0961a8e8f93d2b4dc00c69260d2fa05f5b34f910a5f2355a1b77
+    baseline:
+      path: card-001-r1.png
+      output_file_id: file_0000000027c482119c79c1175b8cfeb1
+      sha256: 2f076813522f750d7b10a9b2df04c3df44aa157971dbb5d12c6b3f0870187738
+      native_dimensions: 1086x1448
+      prior_disposition: historical_failed_review_evidence_only_no_resubmit
+    authorized_change:
+      only_edit: create_exactly_one_single_book_width_empty_slot_immediately_adjacent_to_right_budget_bag
+      required: [all_four_boundaries_clear, visible_back_wall, right_bag_not_overlapping_or_occluding, zero_second_empty_slot]
+      preserve: [three_adults, broken_window, loose_stone, two_budget_bags, worn_shoe_pair, composition, camera, lighting, palette, style]
+    prompt:
+      path: card-001-r2-edit-prompt.md
+      artifact_sha256: f45b558f96003983e19623d9fe8c8449f651b63fe8a62a592233dca2fa3bec66
+      size_bytes: 1288
+      character_count: 542
+      never_resend: true
+    operations:
+      select_baseline:
+        operation_id: broken-window-unseen-cost:card001:edit-r2:select-baseline
+        state: completed
+        host_call_count: 1
+        evidence: exact_conversation_image_viewer_selected_unique_asset_file_0000000027c482119c79c1175b8cfeb1_and_exposed_empty_edit_composer_with_disabled_send
+        retry_policy: only_after_independent_basis_pass
+      submit_edit:
+        operation_id: broken-window-unseen-cost:card001:edit-r2:submit-edit
+        state: submitted_route_changed_by_provider_to_web_conversation
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T19:14:29.833Z"
+        route_after_submit: https://chatgpt.com/c/WEB:4ac3a4c7-7b23-4578-82b1-dbf8ed09fda3
+        evidence: exact_baseline_dialog_unique_edit_submit_clicked_once_then_provider_temporary_route_showed_Analyzing
+        reconciliation:
+          state: resolved_to_original_story_conversation_without_resend
+          resolved_url: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+          evidence: exact_submitted_prompt_visible_in_original_conversation_with_single_generating_turn_and_stop_control
+        never_resend: true
+        retry_policy: never_after_submit
+      capture_edit:
+        operation_id: broken-window-unseen-cost:card001:edit-r2:capture-edit
+        state: completed_candidate_revise
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent_and_final_attribute_backed_image_visible
+        final_visible_output_count: 1
+        output_file_id: file_00000000bb408206a70d7fe99490012b
+        asset_id: 6cfb9b46b2dbcfe7
+        native_dimensions: 1086x1448
+        local_path: card-001-r2.png
+        sha256: 07a866a6d56d8f00a9e02a46ca808c05af341f5b03c86d2118dfede175c6aa14
+        retry_policy: read_only_idempotent_after_verified_submit
+      export_edit:
+        operation_id: broken-window-unseen-cost:card001:edit-r2:export-edit
+        state: completed
+        host_call_count: 1
+        inventory_id: aed2654e-12ac-4f2a-ad38-d3cb542b9399
+        asset_id: 6cfb9b46b2dbcfe7
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-001-r2.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card001:edit-r2:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-001-r2-thumb-320.png
+        dimensions: 240x320
+        sha256: 9e16ace878bc7f1a929ffde106d0893f6a31d5d75ed55f531bfb86a19d6d0637
+        retry_policy: local_only_after_capture
+    local_review:
+      path: card-001-r2-local-review.yaml
+      state: completed
+      decision: revise_multiple_empty_shelf_bays_and_slot_not_single_book_width
+      formal: false
+    independent_basis_review:
+      decision: pass
+      required_before_any_browser_action: true
+      authorized_action: unique_submit_same_project_same_story_conversation_exact_baseline_minimal_edit
+    independent_visual_review:
+      decision: revise
+      finding: upper_and_lower_two_wide_empty_bays_other_objects_pass
+      disposition: historical_failed_review_evidence_only_no_resubmit
+    side_effects:
+      browser_opened: true
+      external_send: true
+      host_call_count: 5
+    old_round_policy:
+      card001_r1_resubmit: forbidden
+      ambiguous_submit_reconciliation: read_only_never_resend
+    status: completed_local_and_independent_revise_historical_failed_review_evidence_only
+  - round_id: broken-window-unseen-cost-card001-edit-r3
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    status: completed_then_revised_by_package_blind_review_historical_failed_evidence_only
+    basis:
+      story_sha256: b90046f21498c5b3338f56a4401a5c4aaa50789dfd75c5f742b2fe9de75f6084
+      text_layer_sha256: dab7f37d561500743feec70465b4491ce0db16b8ecbb63f500f15707d90657ea
+      storyboard_sha256: 37be361413b534695a3659bc132b98d0858478e1ba129aeb401a5faefb6d47ec
+      card_plan_sha256: ed662333fcf7da7632a271313e875349aae7e9699c9443d835a49f47d1e85255
+      visual_plan_sha256: 968f4ccdde06fe612c31fe077a6629cec1da1c97add5adbb50c33841622b7ac2
+      continuity_ledger_sha256: 9cf53d19cf7e44d123b13596f85b206d0c561185ab764af3f42ba23c3f0314fb
+      production_package_sha256: 0a7ab87e37025b967f60f4096a55abc15ecc9744328974aacb0a69bd550b2629
+      content_checkpoint_sha256: 0d686ee51abc4b21ba629d9837f1a6154ff2b5455e673186309a4321346a2c3a
+    baseline:
+      path: card-001-r2.png
+      output_file_id: file_00000000bb408206a70d7fe99490012b
+      sha256: 07a866a6d56d8f00a9e02a46ca808c05af341f5b03c86d2118dfede175c6aa14
+      native_dimensions: 1086x1448
+      prior_disposition: historical_failed_review_evidence_only_no_resubmit
+    authorized_change:
+      only_edit: retain_exactly_one_lower_tier_single_book_width_empty_slot_and_restore_all_other_bays_to_continuous_book_spines
+      required: [lower_tier_near_right_bag, all_four_boundaries_clear, visible_back_wall, continuous_book_spines_on_both_sides, zero_bag_occlusion, zero_second_empty_slot_or_wide_bay]
+      preserve: [three_adults, broken_window, loose_stone, two_budget_bags, worn_shoe_pair, composition, camera, lighting, palette, style]
+    prompt:
+      path: card-001-r3-edit-prompt.md
+      artifact_sha256: 22a54e679f51df0fb337e4179264af3c6882a5a7c997a164e2de4c5b3f027668
+      size_bytes: 1420
+      character_count: 586
+      never_resend: true
+    operations:
+      select_baseline:
+        operation_id: broken-window-unseen-cost:card001:edit-r3:select-baseline
+        state: completed
+        host_call_count: 1
+        evidence: exact_conversation_image_viewer_selected_unique_asset_file_00000000bb408206a70d7fe99490012b_and_exposed_empty_edit_composer_with_disabled_send
+        retry_policy: only_after_independent_basis_pass
+      submit_edit:
+        operation_id: broken-window-unseen-cost:card001:edit-r3:submit-edit
+        state: submitted_route_changed_by_provider_to_web_conversation
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T19:34:46.172Z"
+        route_after_submit: https://chatgpt.com/c/WEB:fff9bfcc-8a79-475e-a42d-00c6a12b9126
+        evidence: exact_r2_baseline_dialog_unique_edit_submit_clicked_once_then_provider_temporary_route_showed_Analyzing
+        reconciliation:
+          state: resolved_to_original_story_conversation_without_resend
+          resolved_url: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+          evidence: exact_submitted_prompt_visible_in_original_conversation_with_single_generating_turn_and_stop_control
+        never_resend: true
+        retry_policy: never_after_submit
+      capture_edit:
+        operation_id: broken-window-unseen-cost:card001:edit-r3:capture-edit
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent_and_final_attribute_backed_image_visible
+        final_visible_output_count: 1
+        output_file_id: file_000000005c488206be4ec2334801bc2f
+        asset_id: a24711b942f03d61
+        native_dimensions: 1086x1448
+        local_path: card-001-r3.png
+        sha256: 332d1c029286869939c21214799b9b8fb494c0ad51aca65d6138b8583b229830
+        retry_policy: read_only_idempotent_after_verified_submit
+      export_edit:
+        operation_id: broken-window-unseen-cost:card001:edit-r3:export-edit
+        state: completed
+        host_call_count: 1
+        inventory_id: 8f1c2719-604c-4446-b6dd-2837f3b5d586
+        asset_id: a24711b942f03d61
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-001-r3.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card001:edit-r3:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-001-r3-thumb-320.png
+        dimensions: 240x320
+        sha256: 8ee90a19141bb8e0ab8d7f4c2ed95d0c9fe6740c609a7769d4ee61426e74c8fa
+        retry_policy: local_only_after_capture
+    local_review:
+      path: card-001-r3-local-review.yaml
+      state: completed
+      decision: pass_candidate_unique_lower_single_book_width_slot
+      formal: false
+    independent_basis_review:
+      decision: pass
+      required_before_any_browser_action: true
+      authorized_action: unique_submit_same_project_same_story_conversation_exact_r2_baseline_minimal_edit
+    independent_visual_review:
+      decision: revise
+      finding: native_slot_visible_but_at_320px_only_a_thin_dark_gap_not_independently_legible_as_unrealized_book_plan_within_2_to_3_seconds
+      disposition: historical_failed_review_evidence_only_no_resubmit_no_further_edit
+    side_effects:
+      browser_opened: true
+      external_send: true
+      host_call_count: 5
+    old_round_policy:
+      card001_r2_and_earlier_resubmit: forbidden
+      ambiguous_submit_reconciliation: read_only_never_resend
+    final_disposition: completed_then_revised_by_package_blind_review_historical_failed_evidence_only_no_resubmit
+  - round_id: broken-window-unseen-cost-card001-r4-full-regeneration
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    status: completed_candidate_revise_local_only
+    mode: full_regeneration_from_refrozen_basis
+    baseline:
+      path: none
+      output_file_id: none
+      prior_pixel_reuse: forbidden
+      prior_card001_candidates: r1_r2_r3_historical_failed_review_evidence_only_no_resubmit
+    basis:
+      story_sha256: 1c6092be13c48d8ddfa5cd88af1afc74813deba06abec9e625da8321d3289976
+      text_layer_sha256: eb88813eb6e1d52c5393a0704d4b2daf3e42ba85b08373cdddcd73e6a3318111
+      storyboard_sha256: e4e1ec09737ed0351a534b66399d0bce1aedfbca5b1241969276aff3223ec4df
+      card_plan_sha256: 74d17f17e5d8ece20ae4940938903c22d6342bf88aaf62a2c8f00e38d0c8f235
+      visual_plan_sha256: b4a51476c8b5635507c4498f00cd78e2e53a59a0942adf3d6e7f10e072757639
+      continuity_ledger_sha256: 35840582a3b7a1b50564efe821097e84cf5387078d8948a596d7d7db79bfb362
+      production_package_sha256: 2b6e15c57be42040eff3359c611d462d9a7b0bcf172b8d339b4efdc7ab0afc99
+      content_checkpoint_sha256: 2946df2b4cd2a60742d2eaec968e0e7e3fb9149edc1c36018c6fcac22fb9522f
+    prompt:
+      path: card-001-r4-full-regeneration-prompt.md
+      artifact_sha256: 95a87e2e82ed98055041f08dc89bb5b16276f78919ec93308d8ad31162028e1a
+      never_resend: true
+    operations:
+      select_image_capability:
+        operation_id: broken-window-unseen-cost:card001:r4-full-regeneration:select-image-capability
+        state: completed
+        host_call_count: 1
+        retry_policy: only_after_independent_basis_pass
+      submit_prompt:
+        operation_id: broken-window-unseen-cost:card001:r4-full-regeneration:submit-prompt
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T20:12:06.727Z"
+        never_resend: true
+        retry_policy: never_after_submit
+      capture_response:
+        operation_id: broken-window-unseen-cost:card001:r4-full-regeneration:capture-response
+        state: completed_candidate_revise
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent_and_final_attribute_backed_image_visible
+        final_visible_output_count: 1
+        output_file_id: file_000000004a7082068a80ffb49399a5b4
+        asset_id: 56cb7dac0c896362
+        native_dimensions: 1086x1448
+        local_path: card-001-r4.png
+        sha256: 094514936889ff4fb491e8fdf425edc37df12f5aece451353c2884b3e0065b56
+        retry_policy: read_only_idempotent_after_verified_submit
+      export_output:
+        operation_id: broken-window-unseen-cost:card001:r4-full-regeneration:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: 22a63fd0-ee8e-4d25-9e88-b66b8c3ea0c4
+        asset_id: 56cb7dac0c896362
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-001-r4.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card001:r4-full-regeneration:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-001-r4-thumb-320.png
+        dimensions: 240x320
+        sha256: 704a19b9933986f8029d4b91ebea745f0846c2afec6b7d3f6c8df528cba335d5
+        retry_policy: local_only_after_capture
+    side_effects:
+      browser_opened: true
+      external_send: true
+      host_call_count: 5
+    local_review:
+      path: card-001-r4-local-review.yaml
+      decision: revise_grouping_and_zero_actual_books_contract_failed
+      formal: false
+    independent_visual_review:
+      decision: revise
+      finding: two_bags_not_separately_grouped_actual_books_visible_and_upper_right_nested_rectangular_frames
+      disposition: historical_failed_review_evidence_only_no_resubmit_no_edit
+    stop_rule: local_revise_stop_no_auto_edit_or_regeneration
+    formal: false
+  - round_id: broken-window-unseen-cost-card001-r5-full-regeneration
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    status: completed_candidate_revise_local_only
+    mode: full_regeneration_from_refrozen_basis
+    baseline:
+      path: none
+      output_file_id: none
+      prior_pixel_reuse: forbidden
+      prior_card001_candidates: r1_r2_r3_r4_historical_failed_review_evidence_only_no_resubmit_no_edit
+    basis:
+      story_sha256: 26deb3f9049797b87322c30b9b74a5d88a4a0deb81d583f978b9ea7029d52705
+      text_layer_sha256: 51f65d608d7a362b6cda64830ce4ce481a6b291d063e8b8b9568a824ac3f3d02
+      storyboard_sha256: da8e4b7a36a336e0ffa110cb1174b01cc4f2ac773d6871b21a9f4ab720202cf7
+      card_plan_sha256: aeb861dca18fef64e49db31a2c1acf46937f8603c5de3c18647c66db143fd22d
+      visual_plan_sha256: c1cb4c27a19dbd5dc2215bda08eecc91572e5c7dc73c9721f6f74f32d298a687
+      continuity_ledger_sha256: 12edd74d48bdf838c25813d4935753c15026e6281ab81dac7b7c806de9be5c74
+      production_package_sha256: 803a8cedd5863f025b4eec82e3700ee4861a39758df8f4c7c6c7cd66d3441d21
+      content_checkpoint_sha256: e3b41374ddec21bad974d9e08f95a37f318f8f64de53723e7f79c6d9291956c9
+    prompt:
+      path: card-001-r5-full-regeneration-prompt.md
+      artifact_sha256: 5dcac3aeb988984beef9c06e2d606a497d7bc7937a3e83d4c10a46812024725b
+      never_resend: true
+    operations:
+      select_image_capability:
+        operation_id: broken-window-unseen-cost:card001:r5-full-regeneration:select-image-capability
+        state: completed
+        host_call_count: 1
+        retry_policy: only_after_independent_basis_pass
+      submit_prompt:
+        operation_id: broken-window-unseen-cost:card001:r5-full-regeneration:submit-prompt
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T20:31:09.998Z"
+        never_resend: true
+        retry_policy: never_after_submit
+      capture_response:
+        operation_id: broken-window-unseen-cost:card001:r5-full-regeneration:capture-response
+        state: completed_candidate_revise
+        host_call_count: 1
+        provider_completion: final_attribute_backed_image_captured_then_stop_control_absent
+        final_visible_output_count: 1
+        output_file_id: file_000000000584820680472d4dffc143c1
+        asset_id: a2caf3bede337513
+        native_dimensions: 1086x1448
+        local_path: card-001-r5.png
+        sha256: e850b362ed8c5662a5950df791339adb2dfc1c21b3c87fb8479946cdfb32bd0e
+        retry_policy: read_only_idempotent_after_verified_submit
+      export_output:
+        operation_id: broken-window-unseen-cost:card001:r5-full-regeneration:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: 6b06e3ae-eeb4-457a-bf3b-bfe1b6afd9df
+        asset_id: a2caf3bede337513
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-001-r5.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card001:r5-full-regeneration:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-001-r5-thumb-320.png
+        dimensions: 240x320
+        sha256: 54f85f8d393d9fe538a166843f0a1a3746cc5b28af765573e6edcf2fbdb8e99e
+        retry_policy: local_only_after_capture
+    side_effects:
+      browser_opened: true
+      external_send: true
+      host_call_count: 5
+    local_review:
+      path: card-001-r5-local-review.yaml
+      decision: revise_second_worn_shoe_pair_breaks_exact_count_and_identity_continuity
+      formal: false
+    independent_visual_review:
+      decision: revise
+      finding: assistant_wears_one_complete_pair_and_second_complete_pair_is_on_floor_beside_left_bag_actual_two_pairs
+      passed_variables: [three_adults, one_broken_window, one_stone, two_bags_separately_grouped, right_bag_to_hollow_book_board, continuous_blank_wall, zero_shelves_books_wall_frames, wordless]
+      disposition: historical_failed_review_evidence_only_no_resubmit_no_edit
+    stop_rule: independent_revise_frozen_no_resubmit_no_edit
+    formal: false
+  - round_id: broken-window-unseen-cost-card001-r6-full-regeneration
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    status: completed_candidate_revise_local_only_waiting_independent_visual_review
+    mode: full_regeneration_from_refrozen_basis
+    baseline:
+      path: none
+      output_file_id: none
+      prior_pixel_reuse: forbidden
+      prior_card001_candidates: r1_r2_r3_r4_r5_historical_failed_review_evidence_only_no_resubmit_no_edit
+    basis:
+      story_sha256: 70ea8e6292641002e47e18f5ba60db5bff11d6f25a5262e5daab790c96c8d329
+      text_layer_sha256: 9c42a14667ad992b2e811cd23d190fe82ef8fa041b98d4fcb427c8a68432839f
+      storyboard_sha256: 7120b1c7d9724e150eb881b4131109f643aef4abd1e8d461b1d77fc7c77ad8a9
+      card_plan_sha256: cd64c0393e2d88bd946adf1a1ae2cf08237f39e68e85884a243318b08d1f945f
+      visual_plan_sha256: ffbed07087cea1a2e00c7e95892083e6db42f75c0882464016263f3c5ab562b9
+      continuity_ledger_sha256: ae146f6bdd09bfaa5bd4461d9673133958d1eed1aab715b72f079d20f91d20f8
+      production_package_sha256: 132a8503003c81ce9a60639641289b524f569aeb5d9a4d3bc6106c8b5b757326
+      content_checkpoint_sha256: 25babcf7cd5dc3721269acc434ba12b68c721322fe1f75c99d022586dd795151
+    prompt:
+      path: card-001-r6-full-regeneration-prompt.md
+      artifact_sha256: 52054e739722c32892d031d83e6aca56d53287e6716fa05cd90bc156837bf4fa
+      never_resend: true
+    operations:
+      select_image_capability:
+        operation_id: broken-window-unseen-cost:card001:r6-full-regeneration:select-image-capability
+        state: completed
+        host_call_count: 1
+        retry_policy: only_after_independent_basis_pass
+      submit_prompt:
+        operation_id: broken-window-unseen-cost:card001:r6-full-regeneration:submit-prompt
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T20:50:15.860Z"
+        never_resend: true
+        retry_policy: never_after_submit
+      capture_response:
+        operation_id: broken-window-unseen-cost:card001:r6-full-regeneration:capture-response
+        state: completed_candidate_revise
+        host_call_count: 1
+        provider_completion: final_attribute_backed_image_captured_and_stop_control_absent
+        final_visible_output_count: 1
+        output_file_id: file_00000000056882098cf6e8e179287639
+        asset_id: 386e875e8eb45871
+        native_dimensions: 1086x1449
+        local_path: card-001-r6.png
+        sha256: 482086a593006d5155fa716a24546e523f5713b52e924f67ebad2eb4252801df
+        retry_policy: read_only_idempotent_after_verified_submit
+      export_output:
+        operation_id: broken-window-unseen-cost:card001:r6-full-regeneration:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: b76758c0-b942-4619-8155-7ba008aa0824
+        asset_id: 386e875e8eb45871
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-001-r6.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card001:r6-full-regeneration:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-001-r6-thumb-320.png
+        dimensions: 240x320
+        sha256: f84d1e878085550fbeed59ea50b1ea9dc79adf30dd8e1a6d2cdacaf7f9efd2bb
+        retry_policy: local_only_after_capture
+    side_effects:
+      browser_opened: true
+      external_send: true
+      host_call_count: 5
+    independent_basis_review:
+      decision: pass
+    local_review:
+      path: card-001-r6-local-review.yaml
+      decision: revise_native_height_1449_breaks_exact_canvas_contract
+      formal: false
+    independent_visual_review:
+      decision: allowed_bottom_one_pixel_mechanical_crop_no_regeneration
+    local_derivative:
+      operation_id: broken-window-unseen-cost:card001:r6:derive-bottom-row-crop
+      state: completed_local_only
+      external_side_effect: false
+      parent_path: card-001-r6.png
+      parent_sha256: 482086a593006d5155fa716a24546e523f5713b52e924f67ebad2eb4252801df
+      geometry: {x: 0, y: 0, width: 1086, height: 1448, removed: bottom_row_y_1448_only}
+      tool: ImageMagick_7.1.2-19_Q16-HDRI_aarch64
+      child_path: card-001-r6-crop-1086x1448.png
+      child_sha256: bb685a661cbf9d1d91937bf43a86e3fe01ed3ab45fafa2b39957c30d2d8b484c
+      retained_region_ae: 0
+      thumbnail_operation_id: broken-window-unseen-cost:card001:r6:derive-crop-thumbnail
+      thumbnail_path: card-001-r6-crop-thumb-320.png
+      thumbnail_sha256: 1f2828fcee272e0f5b3922d7de3e6c66a007a5b921fe4b6442bbef94c167a79f
+      local_review_path: card-001-r6-crop-local-review.yaml
+      local_review_sha256: 71d19a905c9c9eacf1730f3e9e0faf087ae7cf6ed8a2dfc1e6aae7799fbd1580
+      local_decision: pass_local_mechanical_crop_candidate_waiting_independent_visual_review
+      independent_visual_review: pending
+    stop_rule: local_derivative_pass_stop_wait_independent_review_no_final_replacement
+    formal: false
+production_rounds:
+  - round_id: broken-window-unseen-cost-card002-r1
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    basis:
+      visual_plan_sha256: acc627ce89f6050e737bd4011f17a32c65499c166ed2b46c47118da49d68ef33
+      card_plan_sha256: f091d159937bb750fb99a42731a2f412ffa99eb493fcff0eb10b677cc500819d
+      continuity_ledger_sha256: 4875ca86c09b473e2b5bfbf378e9ef444c44561a686a4163c84f823e0df536c6
+      previous_selected_card001_path: card-001-r1.png
+      previous_selected_card001_sha256: 2f076813522f750d7b10a9b2df04c3df44aa157971dbb5d12c6b3f0870187738
+      continuity_use: character_environment_palette_only_no_pixel_reuse
+    prompt:
+      path: card-002-prompt.md
+      artifact_sha256: b9ec6a55b2981efe418866ecfd0ecfb2689b5d3314a205a5d42230f776da88dd
+      sent_text_sha256: b9ec6a55b2981efe418866ecfd0ecfb2689b5d3314a205a5d42230f776da88dd
+      composed_dom_inner_text_sha256: b3f419de2d5b426f503beee5f7ba20bff92b1f2824436c8ae89f7d01f06538b4
+      composer_normalization: markdown_heading_marker_and_terminal_newline_not_present_in_inner_text
+      size_bytes: 2405
+      character_count: 868
+      never_resend: true
+    operations:
+      select_image_capability:
+        operation_id: broken-window-unseen-cost:card002:r1:select-image-capability
+        state: completed
+        host_call_count: 1
+        evidence: same_conversation_id_project_name_and_ChatGPT_Pro_visible_empty_composer_Create_image_active
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: broken-window-unseen-cost:card002:r1:submit-prompt
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T15:21:08.215Z"
+        never_resend: true
+        retry_policy: never
+      capture_response:
+        operation_id: broken-window-unseen-cost:card002:r1:capture-response
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent_after_reported_1m37s
+        final_visible_output_count: 1
+        output_file_id: file_00000000bfdc8206ba81ac75ce72a07b
+        asset_id: 9a7eec1e09c9039e
+        native_dimensions: 1086x1448
+        local_path: card-002-candidate.png
+        sha256: 23a53174b4d87cc8391094f7fa954caacbc4db0edd7a0857f51964f240923dd1
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_output:
+        operation_id: broken-window-unseen-cost:card002:r1:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: ef2311e0-908e-43c0-9741-12d9068f449f
+        asset_id: 9a7eec1e09c9039e
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-002-candidate.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card002:r1:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-002-thumb-320.png
+        dimensions: 240x320
+        sha256: 44d1ed4e204d53253dbd361098c2896c906349a4c2f1cff2653636c5dcaf8d37
+        retry_policy: never
+    local_review:
+      path: card-002-local-review.yaml
+      decision: pass_candidate_for_card002
+      formal: false
+    status: completed_candidate_pass_local_only
+  - round_id: broken-window-unseen-cost-card003-r1
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    basis:
+      visual_plan_sha256: acc627ce89f6050e737bd4011f17a32c65499c166ed2b46c47118da49d68ef33
+      card_plan_sha256: f091d159937bb750fb99a42731a2f412ffa99eb493fcff0eb10b677cc500819d
+      continuity_ledger_sha256: 4875ca86c09b473e2b5bfbf378e9ef444c44561a686a4163c84f823e0df536c6
+      previous_selected_card002_path: card-002-candidate.png
+      previous_selected_card002_sha256: 23a53174b4d87cc8391094f7fa954caacbc4db0edd7a0857f51964f240923dd1
+      continuity_use: character_environment_palette_only_no_pixel_reuse
+    prompt:
+      path: card-003-prompt.md
+      artifact_sha256: 4a69ee7a2f73c4af550ce818f3f5401cf33d8eb029e1d57cac6ed9e336fc0e8f
+      sent_text_sha256: 4a69ee7a2f73c4af550ce818f3f5401cf33d8eb029e1d57cac6ed9e336fc0e8f
+      composed_dom_inner_text_sha256: 5b8fed206def79cd031392854bf7b778589896f2a7e50af59caf1157f3e9e227
+      composer_normalization: markdown_heading_marker_and_terminal_newline_not_present_in_inner_text
+      size_bytes: 2579
+      character_count: 930
+      never_resend: true
+    operations:
+      select_image_capability:
+        operation_id: broken-window-unseen-cost:card003:r1:select-image-capability
+        state: completed
+        host_call_count: 1
+        evidence: same_conversation_id_project_name_and_ChatGPT_Pro_visible_empty_composer_Create_image_active
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: broken-window-unseen-cost:card003:r1:submit-prompt
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T15:36:22.864Z"
+        never_resend: true
+        retry_policy: never
+      capture_response:
+        operation_id: broken-window-unseen-cost:card003:r1:capture-response
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent
+        final_visible_output_count: 1
+        output_file_id: file_0000000086f481f69e4413b98824dc11
+        asset_id: 049fd12c9a817078
+        native_dimensions: 1086x1448
+        local_path: card-003-candidate.png
+        sha256: a9f182db829a6ba32cbe0aee4ce0e0077eed4e21a3c5651cbffe2eb3d1f354e4
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_output:
+        operation_id: broken-window-unseen-cost:card003:r1:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: f6afd80a-5609-4e9c-8570-1a84383f1fce
+        asset_id: 049fd12c9a817078
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-003-candidate.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card003:r1:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-003-thumb-320.png
+        dimensions: 240x320
+        sha256: 298f65ab0148c19893a4119a85fe9c84df6a3974a11a53af739ed06fa13aee15
+        retry_policy: never
+    local_review:
+      path: card-003-local-review.yaml
+      decision: pass_candidate_for_card003
+      formal: false
+    status: completed_candidate_pass_local_only
+  - round_id: broken-window-unseen-cost-card004-r1
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    basis:
+      visual_plan_sha256: acc627ce89f6050e737bd4011f17a32c65499c166ed2b46c47118da49d68ef33
+      card_plan_sha256: f091d159937bb750fb99a42731a2f412ffa99eb493fcff0eb10b677cc500819d
+      continuity_ledger_sha256: 4875ca86c09b473e2b5bfbf378e9ef444c44561a686a4163c84f823e0df536c6
+      previous_selected_card003_path: card-003-candidate.png
+      previous_selected_card003_sha256: a9f182db829a6ba32cbe0aee4ce0e0077eed4e21a3c5651cbffe2eb3d1f354e4
+      continuity_use: character_environment_palette_only_no_pixel_reuse
+    prompt:
+      path: card-004-prompt.md
+      artifact_sha256: 9c1c2c9add842226c769c3ad375fca0548fc0e266d2f7f829a9f030e613b01ad
+      sent_text_sha256: 9c1c2c9add842226c769c3ad375fca0548fc0e266d2f7f829a9f030e613b01ad
+      composed_dom_inner_text_sha256: 0529eb0817564e33cd9d0d38860ddf0e80dc89c42127687c8b29453508acf4c2
+      composer_normalization: markdown_heading_marker_and_terminal_newline_not_present_in_inner_text
+      size_bytes: 3311
+      character_count: 1178
+      never_resend: true
+    operations:
+      select_image_capability:
+        operation_id: broken-window-unseen-cost:card004:r1:select-image-capability
+        state: completed
+        host_call_count: 1
+        evidence: same_conversation_id_project_name_and_ChatGPT_Pro_visible_empty_composer_no_stop_control_Create_image_active_unique_send_control
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: broken-window-unseen-cost:card004:r1:submit-prompt
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T16:04:18.214Z"
+        never_resend: true
+        retry_policy: never
+      capture_response:
+        operation_id: broken-window-unseen-cost:card004:r1:capture-response
+        state: completed_candidate_revise
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent_after_reported_6m41s
+        final_visible_output_count: 1
+        output_file_id: file_000000002a908211af99d8552ae4fbae
+        asset_id: 4ea0d0e58f63e435
+        native_dimensions: 1086x1448
+        local_path: card-004-candidate.png
+        sha256: 968c5ad0902c8446f30197cf8b91371765f95caa57b079aa87f3ec6d12e9e0cd
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_output:
+        operation_id: broken-window-unseen-cost:card004:r1:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: 914728f0-7eea-456d-9c3a-e4b621182649
+        asset_id: 4ea0d0e58f63e435
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-004-candidate.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card004:r1:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-004-thumb-320.png
+        dimensions: 240x320
+        sha256: 22864a1de71573bc548d828f3397c7f7ad3a4d9dd0aca88936f8abc961b60510
+        retry_policy: never
+    local_review:
+      path: card-004-local-review.yaml
+      decision: revise_candidate_card004_no_auto_revision
+      formal: false
+    status: completed_candidate_revise_local_only
+  - round_id: broken-window-unseen-cost-card004-r4-full-regeneration
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    basis:
+      visual_plan_sha256: 5dbc4da3249854dc8d3e1d10ba9aa81e1562bdec70a9679819bcd76abe8213d4
+      card_plan_sha256: a25b30fb99942a41e140903f02f709af49ee28818a1ac58bf612f96de779ee7f
+      continuity_ledger_sha256: 3f600fc040c01724f1a1dcc9000c704c0ed93912371520ba8e32a34fb213430d
+      content_checkpoint_sha256: 5e49700afb3ff0868ae38b57a0dbf304ed1eb9dc49e58c6222f2fccd86cbf485
+      production_package_sha256: 8a59780b8053ca54f851d8cfe290f9e39d8da4cf13a0e99db8d1209f21534c43
+      continuity_use: character_environment_palette_only_no_pixel_reuse
+      generation_mode: full_regeneration_from_refrozen_basis
+      baseline_image: none
+      prior_card004_candidates: card004_r3_and_earlier_historical_failed_review_evidence_only
+      edit_from_r3: forbidden
+    prompt:
+      path: card-004-r4-full-regeneration-prompt.md
+      artifact_sha256: 0d33148740618e7a486023644125ba912636e0ded1ac9edd914639d27bcb5b4b
+      sent_text_sha256: 0d33148740618e7a486023644125ba912636e0ded1ac9edd914639d27bcb5b4b
+      composed_dom_inner_text_sha256: b96c63c8a6b79c91b67bbbae6db1b053f8aec8b8268597a668e8372c33dae698
+      composer_normalization: markdown_heading_markers_backticks_and_terminal_newline_not_present_in_inner_text
+      character_count: 1425
+      never_resend: true
+    operations:
+      select_image_capability:
+        operation_id: broken-window-unseen-cost:card004:r4-full-regeneration:select-image-capability
+        state: completed
+        host_call_count: 1
+        evidence: exact_project_and_conversation_verified_empty_composer_Create_image_selected_no_baseline_attached_unique_send_control_visible
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: broken-window-unseen-cost:card004:r4-full-regeneration:submit-prompt
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T17:16:41.915Z"
+        route_after_submit: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+        evidence: exact_prompt_visible_as_latest_user_message_and_unique_stop_answer_control_visible
+        never_resend: true
+        retry_policy: never
+      capture_response:
+        operation_id: broken-window-unseen-cost:card004:r4-full-regeneration:capture-response
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent_after_reported_1m31s
+        final_visible_output_count: 1
+        output_file_id: file_000000003f80820983fe954882f23525
+        asset_id: a5495d306f0715c1
+        native_dimensions: 1086x1448
+        local_path: card-004-r4.png
+        sha256: 4569bbeb865a9a287b3180c18b6ecedc9cabe2f8ad20cdbf5aa5f6adb976ac36
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_output:
+        operation_id: broken-window-unseen-cost:card004:r4-full-regeneration:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: 62d9609b-1256-4c9b-ad1a-afb81d2c314a
+        asset_id: a5495d306f0715c1
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-004-r4.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card004:r4-full-regeneration:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-004-r4-thumb-320.png
+        dimensions: 240x320
+        sha256: 049c50ba4fb60c513cd4e723eba45eea0855600f860b336b902848ab329d911f
+        retry_policy: never
+    local_review:
+      path: card-004-r4-local-review.yaml
+      decision: pass_candidate_after_card004_r4_full_regeneration
+      formal: false
+    independent_review:
+      decision: pass
+      disposition: historical_frozen_pass_candidate_no_resubmit
+    status: completed_local_and_independent_pass_historical_frozen
+  - round_id: broken-window-unseen-cost-card005-r1
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    basis:
+      story_sha256: 3164d7ca5c4956596ad61b75667906de92b2fe4cba40538f5619c5d53982c749
+      text_layer_sha256: e4d6248bfe8e0e399b1c5f9da2dc99d321fe4139c8af437f8833f9a842b82b02
+      storyboard_sha256: f9e43fa106697b2066cb1a76147d4af49e5d3ae892bf2f38dc9157fc9ad04f14
+      card_plan_sha256: a25b30fb99942a41e140903f02f709af49ee28818a1ac58bf612f96de779ee7f
+      visual_plan_sha256: 5dbc4da3249854dc8d3e1d10ba9aa81e1562bdec70a9679819bcd76abe8213d4
+      continuity_ledger_sha256: 3f600fc040c01724f1a1dcc9000c704c0ed93912371520ba8e32a34fb213430d
+      generation_mode: full_generation_no_baseline
+      prior_cards: frozen_pass_history_only
+      continuity_use: character_environment_palette_only_no_pixel_reuse
+    prompt:
+      path: card-005-prompt.md
+      artifact_sha256: 342f5e840707f60ca1e662b8fa203c4fd2bd2c83c827382b7ea7001c331be7e4
+      sent_text_sha256: 342f5e840707f60ca1e662b8fa203c4fd2bd2c83c827382b7ea7001c331be7e4
+      composed_dom_inner_text_sha256: ca60eb5bc36db17b1abf4f8470d156506e412a26ad45299b43710a7dc0753648
+      composer_normalization: markdown_heading_markers_backticks_and_terminal_newline_not_present_in_inner_text
+      character_count: 1361
+      never_resend: true
+    operations:
+      select_image_capability:
+        operation_id: broken-window-unseen-cost:card005:r1:select-image-capability
+        state: completed
+        host_call_count: 1
+        evidence: exact_project_same_story_conversation_r4_complete_empty_composer_Create_image_selected_no_baseline_attached_unique_send_control_visible
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: broken-window-unseen-cost:card005:r1:submit-prompt
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T17:25:09.134Z"
+        route_after_submit: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+        evidence: exact_prompt_visible_as_latest_user_message_and_unique_stop_answer_control_visible
+        never_resend: true
+        retry_policy: never
+      capture_response:
+        operation_id: broken-window-unseen-cost:card005:r1:capture-response
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent
+        final_visible_output_count: 1
+        output_file_id: file_00000000c7ac821197b89371c12c6ccc
+        asset_id: ad2c43c7a84435e5
+        native_dimensions: 1086x1448
+        local_path: card-005-candidate.png
+        sha256: a7bf530990c34a5a273e1780234a7ddb8d65cbbf619077bb6abf97995efa6a89
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_output:
+        operation_id: broken-window-unseen-cost:card005:r1:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: d8b3c735-c5e1-49c3-bbc0-6acdcaedae4f
+        asset_id: ad2c43c7a84435e5
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-005-candidate.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card005:r1:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-005-thumb-320.png
+        dimensions: 240x320
+        sha256: a343030e5e88b24f03c99295c4e411c472fb575f484e74c1aee4138b91b80e22
+        retry_policy: never
+    local_review:
+      path: card-005-local-review.yaml
+      prior_local_decision: pass_candidate_for_card005
+      decision: revise_after_independent_review_extra_window_pane_read
+      formal: false
+    independent_review:
+      decision: revise
+      finding: independent_transparent_dark_rectangular_frame_reads_as_extra_window_pane_or_second_window_at_native_and_320px
+      current_candidate_role: historical_failed_review_evidence_only
+      edit_current_candidate: forbidden
+    status: completed_candidate_revise_after_independent_review
+  - round_id: broken-window-unseen-cost-card005-r2-full-regeneration
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    basis:
+      story_sha256: b90046f21498c5b3338f56a4401a5c4aaa50789dfd75c5f742b2fe9de75f6084
+      text_layer_sha256: dab7f37d561500743feec70465b4491ce0db16b8ecbb63f500f15707d90657ea
+      storyboard_sha256: 37be361413b534695a3659bc132b98d0858478e1ba129aeb401a5faefb6d47ec
+      card_plan_sha256: 261a01bae76e82125811ab8fdff284c316ccfca0e29f5793a460a7a15a83d2c9
+      visual_plan_sha256: f755dadae70a1129cbca5d58d0ab5b0ffc17c23ab9b5c287d9f85c7b6e77f914
+      continuity_ledger_sha256: f808aa706c0e6d91f61c792a7a4572dbe8ad6ff17c20c1773d0897710810b0b0
+      content_checkpoint_sha256: 48088293ad0e19b8da95f9553cc2138c9743533d2ee0479254b9ad9e8a40d3cd
+      production_package_sha256: 2119a3bdc694ddaed9426baacd5d904d5cd306a14d4c6e19a69a1a3bdc81dcac
+      generation_mode: full_regeneration_from_refrozen_basis
+      unique_work_surface: same_single_storefront_window
+      baseline_image: none
+      edit_from_card005_r1: forbidden
+      prior_card005_r1_path: card-005-candidate.png
+      prior_card005_r1_role: historical_failed_review_evidence_only
+    prompt:
+      path: card-005-r2-full-regeneration-prompt.md
+      artifact_sha256: 4a1821f9def612896b0529902e28b166de0097fdbd476fd5b4e42b59fa2612b0
+      sent_text_sha256: 4a1821f9def612896b0529902e28b166de0097fdbd476fd5b4e42b59fa2612b0
+      composed_dom_inner_text_sha256: dea674a6db598fddd071c461c33f3225640ba323360f7b425aad9f7cc11d91e7
+      composer_normalization: markdown_heading_markers_backticks_and_terminal_newline_not_present_in_inner_text
+      character_count: 1630
+      never_resend: true
+    operations:
+      select_image_capability:
+        operation_id: broken-window-unseen-cost:card005:r2-full-regeneration:select-image-capability
+        state: completed
+        host_call_count: 1
+        evidence: exact_project_same_story_conversation_card005_r1_complete_empty_composer_Create_image_selected_no_baseline_attached_unique_send_control_visible
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: broken-window-unseen-cost:card005:r2-full-regeneration:submit-prompt
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T17:50:07.596Z"
+        route_after_submit: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+        evidence: exact_prompt_visible_as_latest_user_message_and_unique_stop_answer_control_visible
+        never_resend: true
+        retry_policy: never
+      capture_response:
+        operation_id: broken-window-unseen-cost:card005:r2-full-regeneration:capture-response
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent_after_reported_1m29s
+        final_visible_output_count: 1
+        output_file_id: file_000000003dec8211b7af51430ce8ed8c
+        asset_id: 1b03d1b0e0e22eea
+        native_dimensions: 1086x1448
+        local_path: card-005-r2.png
+        sha256: d3382fd4a80488b5f70c66003dd3d19f510e7f04421dad628e615cddb27fe7a0
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_output:
+        operation_id: broken-window-unseen-cost:card005:r2-full-regeneration:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: c7a336c3-e6f7-4598-a7e8-9184ba0dece5
+        asset_id: 1b03d1b0e0e22eea
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-005-r2.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card005:r2-full-regeneration:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-005-r2-thumb-320.png
+        dimensions: 240x320
+        sha256: 65116cd8cc54d19eef8bc152251d566c87c0608e4baefe8d247d151d4b561c67
+        retry_policy: never
+    local_review:
+      path: card-005-r2-local-review.yaml
+      decision: pass_candidate_for_card005_r2_full_regeneration
+      formal: false
+    independent_review:
+      decision: pass
+      disposition: historical_frozen_pass_candidate_no_resubmit
+    status: completed_local_and_independent_pass_historical_frozen
+  - round_id: broken-window-unseen-cost-card006-r1
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    basis:
+      story_sha256: b90046f21498c5b3338f56a4401a5c4aaa50789dfd75c5f742b2fe9de75f6084
+      text_layer_sha256: dab7f37d561500743feec70465b4491ce0db16b8ecbb63f500f15707d90657ea
+      storyboard_sha256: 37be361413b534695a3659bc132b98d0858478e1ba129aeb401a5faefb6d47ec
+      card_plan_sha256: 3ab6b70cdb013b0004cc014eb6d3025a47bcd05cae6d8e8156a3bba910e5f2b3
+      visual_plan_sha256: f755dadae70a1129cbca5d58d0ab5b0ffc17c23ab9b5c287d9f85c7b6e77f914
+      continuity_ledger_sha256: f808aa706c0e6d91f61c792a7a4572dbe8ad6ff17c20c1773d0897710810b0b0
+      content_checkpoint_sha256: b3f1e65621c97c50a9fd1f09170b3b88abfd2f80f4f3afa2a71eab8de1e50d9c
+      production_package_sha256: 02fdcc5eccb2e8764afd438a4b0fd4c934d46a28612acf8fb162308900e2ad72
+      generation_mode: full_generation_no_baseline
+      prior_cards: card001_through_card005_independent_pass_history_only
+      continuity_use: character_environment_palette_only_no_pixel_reuse
+      baseline_image: none
+    prompt:
+      path: card-006-prompt.md
+      artifact_sha256: 1cdb26718f33ff959218cbc102f6a8c83cb0b3d6fd86e5a195198fe93c6630db
+      sent_text_sha256: 1cdb26718f33ff959218cbc102f6a8c83cb0b3d6fd86e5a195198fe93c6630db
+      composed_dom_inner_text_sha256: ac00ff07faf45dee63329fd28919aa7310f10957c6d110d9f639cb9c211e54a6
+      composer_normalization: markdown_heading_markers_backticks_and_terminal_newline_not_present_in_inner_text
+      character_count: 1519
+      never_resend: true
+    operations:
+      select_image_capability:
+        operation_id: broken-window-unseen-cost:card006:r1:select-image-capability
+        state: completed
+        host_call_count: 1
+        evidence: exact_project_same_story_conversation_card005_r2_complete_empty_composer_Create_image_selected_no_baseline_attached_unique_send_control_visible
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: broken-window-unseen-cost:card006:r1:submit-prompt
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T18:04:10.329Z"
+        route_after_submit: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+        evidence: exact_prompt_visible_as_latest_user_message_and_unique_stop_answer_control_visible
+        never_resend: true
+        retry_policy: never_after_submit
+      capture_response:
+        operation_id: broken-window-unseen-cost:card006:r1:capture-response
+        state: completed_candidate_revise
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent
+        final_visible_output_count: 1
+        output_file_id: file_0000000050ac8206a005ac4b080e0cce
+        asset_id: 980527e6e0de3d2c
+        native_dimensions: 1085x1450
+        local_path: card-006-candidate.png
+        sha256: a2bf5b834b7e5a62320f296d335c29acd842fc077bfc6297a546bd4fabf38326
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_output:
+        operation_id: broken-window-unseen-cost:card006:r1:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: f0ac3b99-e7ba-4511-8676-7d3427f28fc1
+        asset_id: 980527e6e0de3d2c
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-006-candidate.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card006:r1:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-006-thumb-320.png
+        dimensions: 239x320
+        sha256: 6f783781fdac1505e80dab9511e94c0a9c6f2b04bb17843ec08ddcf0599f8a0f
+        retry_policy: never
+    local_review:
+      path: card-006-local-review.yaml
+      decision: revise_background_rectangular_surfaces_violate_third_board_exclusion
+      formal: false
+    independent_review:
+      decision: revise
+      disposition: historical_failed_review_evidence_only_no_resubmit
+    status: completed_local_and_independent_revise_historical_failed_review_evidence_only
+  - round_id: broken-window-unseen-cost-card007-r1
+    conversation_id: 6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+    basis:
+      story_sha256: b90046f21498c5b3338f56a4401a5c4aaa50789dfd75c5f742b2fe9de75f6084
+      text_layer_sha256: dab7f37d561500743feec70465b4491ce0db16b8ecbb63f500f15707d90657ea
+      storyboard_sha256: 37be361413b534695a3659bc132b98d0858478e1ba129aeb401a5faefb6d47ec
+      card_plan_sha256: 9c5a9ba398ffc3c32003fcb3f65ef9b322e8c870bf42f865b50888779468e349
+      visual_plan_sha256: f755dadae70a1129cbca5d58d0ab5b0ffc17c23ab9b5c287d9f85c7b6e77f914
+      continuity_ledger_sha256: f808aa706c0e6d91f61c792a7a4572dbe8ad6ff17c20c1773d0897710810b0b0
+      production_package_sha256: 1d9a866032ab4fa048a46e02c273da5558cd747a27a9ffdcace4c42fe707415a
+      content_checkpoint_sha256: 3f136d6dbefe6baf37694e888834e05aa28b90179bb69f2cf39b32f2742b6d00
+      generation_mode: full_generation_no_baseline
+      prior_cards: card001_through_card006_independent_pass_history_only
+      continuity_use: character_environment_palette_only_no_pixel_reuse
+      baseline_image: none
+    prompt:
+      path: card-007-prompt.md
+      artifact_sha256: 76cf9528f60ce5df172847a1b53809248a4b037e53ebe6354889db25204d42d1
+      sent_text_sha256: 76cf9528f60ce5df172847a1b53809248a4b037e53ebe6354889db25204d42d1
+      composed_dom_inner_text_sha256: 36939b532c917960b850033e7d666483f596b6f54409a0f686351e5a36f99999
+      composer_normalization: markdown_heading_markers_backticks_and_terminal_newline_not_present_in_inner_text
+      size_bytes: 4005
+      character_count: 1495
+      never_resend: true
+    operations:
+      select_image_capability:
+        operation_id: broken-window-unseen-cost:card007:r1:select-image-capability
+        state: completed
+        host_call_count: 1
+        evidence: exact_project_same_story_conversation_card006_edit_r1_complete_empty_composer_Create_image_selected_no_baseline_attached_unique_send_control_visible
+        retry_policy: only-if-no-side-effect-proven
+      submit_prompt:
+        operation_id: broken-window-unseen-cost:card007:r1:submit-prompt
+        state: submitted
+        host_call_count: 1
+        submitted_once: true
+        submitted_at: "2026-08-09T18:29:39.083Z"
+        route_after_submit: https://chatgpt.com/c/6a78919c-7a28-83e8-a4cd-3fa724447d2b
+        evidence: exact_prompt_visible_as_latest_user_message_and_unique_stop_answer_control_visible
+        never_resend: true
+        retry_policy: never_after_submit
+      capture_response:
+        operation_id: broken-window-unseen-cost:card007:r1:capture-response
+        state: completed_candidate_pass
+        host_call_count: 1
+        provider_completion: verified_stop_control_absent
+        final_visible_output_count: 1
+        output_file_id: file_000000004a6c820697f308f03009aa7b
+        asset_id: d0d3bcbc9f74cbed
+        native_dimensions: 1086x1448
+        local_path: card-007-candidate.png
+        sha256: 6662e6e358259f786aa27323fd7aa56b01a1b394aeefc99614b931ad6d3d24f6
+        retry_policy: read-only-idempotent-after-verified-submit
+      export_output:
+        operation_id: broken-window-unseen-cost:card007:r1:export-output
+        state: completed
+        host_call_count: 1
+        inventory_id: f217ce8f-1dcd-4af0-bb4b-3d9e9d77661c
+        asset_id: d0d3bcbc9f74cbed
+        bundle_downloaded_count: 1
+        bundle_failed_count: 0
+        local_path: card-007-candidate.png
+        retry_policy: never
+      derive_thumbnail:
+        operation_id: broken-window-unseen-cost:card007:r1:derive-thumbnail
+        state: completed
+        host_call_count: 1
+        local_path: card-007-thumb-320.png
+        dimensions: 240x320
+        sha256: dbb8ea0ca73a229dfa5e13a191a5d228cd8b343ce8884e733cb21521c54abcdb
+        retry_policy: never
+    local_review:
+      path: card-007-local-review.yaml
+      decision: pass_candidate_for_card007_procedural_close
+      formal: false
+    independent_review:
+      decision: pass
+      disposition: historical_frozen_pass_candidate_no_resubmit
+    status: completed_local_and_independent_pass_historical_frozen

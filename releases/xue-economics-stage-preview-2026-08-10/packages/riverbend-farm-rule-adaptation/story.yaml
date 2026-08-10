@@ -1,0 +1,62 @@
+story_id: riverbend-farm-rule-adaptation
+series_order: 4
+version: "0.3-lifecycle-reconciled"
+status: pass_before_image_generation
+gate: revise
+publication_status: not_for_publication
+disclosure: 基于经济学机制的原创情景化分析演示，不是现实政策实证、现行法说明或普遍结论。
+knowledge_gate:
+  lesson: "004"
+  ir_path: ../../../dedao-xue-economics-001-005/lessons/004/knowledge.yaml
+  ir_maturity: validated
+  ir_sha256: d7c346fbc6b0c9fff93c2db1dbf2331e1d769490e421d0d70a8d57f4c4d011dd
+  allowed_ids: [PR-01, PR-02, FW-01, AP-01]
+primary_mechanism: {id: PR-01, label: 善意目标不能替代对行为响应和最终结果的比较。}
+secondary_mechanism: {id: PR-02, label: 安排改变后，农场参与者会调整路线、种植和防护。}
+framework: {id: FW-01, application: 写清目标，观察参与者适应，比较二阶成本，并与未改变安排的基线比较。}
+lifecycle:
+  c1: c1_incident
+  c2: c2_two_candidates_first_appear
+  c3: c3_continuous_fence_first_short_term_pilot_day
+  c4: c4_days_later_continue_short_term_pilot
+  c5: c5_two_candidate_comparison
+  c6: c6_baseline_if_no_trial_original_low_boundary
+  c7: c7_procedural_close
+arrangement_lifecycle:
+  fence_line: c2_candidate_c3_first_short_term_pilot_c4_continue_pilot_c5_c6_comparison
+  buffer_strip: c2_candidate_only_c5_c6_comparison_not_piloted_or_observed
+  baseline: c6_if_no_trial_continuous_fence_not_used_original_low_boundary_retained
+anti_pattern: {id: AP-01, application: 不因两方都善意就把规则本身当作问题已经解决。}
+original_story:
+  title: 河湾农场的两条边线
+  setting: 完全虚构的河湾小农场；种植者冯澜与养牛者顾原共用相邻草地和菜地边缘，苏青记录两种候选安排，其中只有连续栅栏进行短期试行。
+  candidate_arrangements:
+    - id: fence_line
+      medium: 单段无字木栅栏模型与一小块可通行草地模型。
+      condition: 用连续栅栏把牛群与菜地边缘隔开，同时保留一条较窄的绕行草路。
+    - id: buffer_strip
+      medium: 一条无字草带模型与一小块空置菜畦模型。
+      condition: 留出草带并暂不种植边缘菜畦，让牛群改走草带。
+  arrangement_lifecycle:
+    fence_line: c2_candidate_c3_first_short_term_pilot_c4_continue_pilot_c5_c6_comparison
+    buffer_strip: c2_candidate_only_c5_c6_comparison_not_piloted_or_observed
+    baseline: c6_if_no_trial_continuous_fence_not_used_original_low_boundary_retained
+  choice_warning: 两种安排仅为原创分析演示中的候选条件；不表示价格、裁决、现实政策、现行法律或普遍最优方案。
+  beats:
+    - {card: 1, function: intent, action: 冯澜铺好新菜苗，顾原把牛群赶向水槽；一头牛越过唯一低矮边界踩到菜畦，双方原本都在完成各自工作。}
+    - {card: 2, function: reciprocal_harm, action: 被踩的菜苗、牛群通往水槽的路径和狭窄边界同时可见；苏青把两种无字安排模型并排摆放，不给任何一方定责。}
+    - {card: 3, function: rule_changes_cost, action: 两种候选安排刚摆出后，第一天先试连续栅栏；顾原绕行更远草路，冯澜补装栅栏杆，规则改变后的直接维护与绕行成本出现。}
+    - {card: 4, function: participant_adaptation, action: 数日后连续栅栏仍在短期试行；顾原继续把牛群转向石质草坡，冯澜继续把边缘菜苗换成耐踩的低矮牧草；两人都在适应约束。}
+    - {card: 5, function: compare_arrangements, action: 苏青并列展示已短期试行的栅栏加绕行草路模型与尚未试行的草带加空置菜畦候选模型；两种安排都保留可见牺牲，不宣布赢家。}
+    - {card: 6, function: baseline_uncertainty, action: 明确若不试行连续栅栏就沿用原低边界；两块无字地形板并列展示原低边界与连续栅栏短期试行布置，草带空畦仍只是未试行候选，中间的空白不规则假设卡不预告必然结果。}
+    - {card: 7, function: procedural_close, action: 中立复核桌把蹄印泥片、菜苗束、栅栏小段和空白假设卡分开核对，只确认下一步比较程序。}
+delete_card_test:
+  result: pass
+  rationale: 七卡依次承担意图、相互损害、规则成本、适应、候选比较、基线不确定性和程序边界；删除任何一张都会缺少 FW-01 的必要检查环节。
+copyright_check:
+  paid_course_text_used: false
+  source_passage_reproduced: false
+  course_specific_case_reused: false
+  original_characters_and_setting: true
+  source_specific_title_reused: false
+formal_boundary: 故事不调查欺诈、合谋或违法事实；它不证明任何现实政策、现行法或长期净效果，只展示需进一步用数据验证的分析顺序。

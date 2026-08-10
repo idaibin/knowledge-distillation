@@ -1,0 +1,83 @@
+schema_version: story-card-local-review/v1
+story_id: cooperation-with-rules-v2
+card_id: "002"
+reviewed_at: "2026-08-09"
+basis:
+  prompt_text_sha256: 4c7c9e42b3c91967610b9a9d63ee7a90bc98538197bb6d2792c4efd3960203b9
+  image_sha256: 135577a17687c66984212f76e78f5fc044840e1a74028185993fe1fa84f1157d
+  native_dimensions: 1086x1448
+  thumbnail_sha256: ac48736bf167f801e391df2aa047b75e6319b6e39e2ee44db607e839e6684ec0
+  thumbnail_dimensions: 240x320
+checks:
+  exact_one_closed_blue_toolbox: pass
+  exact_two_rule_plaques: pass
+  exact_four_adults: pass
+  shared_attention_without_verdict_pose: pass
+  character_contract: pass
+  three_by_four_aspect_ratio: pass
+  no_readable_text_or_logo: pass
+  inspection_mark_not_coin_like: fail
+finding:
+  severity: major
+  observation: B牌中央圆形图示在原图和320像素缩略图中均容易读成硬币或轴承，违反规则媒介不得暗示价格的边界。
+decision: pass_r2_after_independent_recheck
+decision_history:
+  - decision: revise_single_variable
+    basis_image_sha256: 135577a17687c66984212f76e78f5fc044840e1a74028185993fe1fa84f1157d
+    reason: 原始候选的圆形图示像硬币或轴承。
+  - decision: pass_revised_candidate_for_card002
+    basis_image_sha256: 793182febed06c2f051a9494667aeb4518ea4e07de2cf641ba3efab0e565d668
+    reason: 单卡复核确认圆印问题已修正；该结论现由整包独立复审的新 finding 取代。
+retro:
+  keep:
+    - 两块候选牌、四位成人、唯一关闭蓝箱、共同视线与构图均冻结。
+  change:
+    - 仅把圆形图示替换为带手柄的矩形无字检验章和不规则印痕。
+  formal_boundary: 修订候选仍需重新做完整数量、角色、无字与320像素动作复核。
+revision_result:
+  candidate_path: review-control/card-002-r1.png
+  image_sha256: 793182febed06c2f051a9494667aeb4518ea4e07de2cf641ba3efab0e565d668
+  thumbnail_sha256: 76cc41803bb444600a917223852bb6d2b9ef9b697835b9ba65a26208cba82af7
+  checks:
+    exact_one_closed_blue_toolbox: pass
+    exact_two_rule_plaques: pass
+    exact_four_adults: pass
+    shared_attention_without_verdict_pose: pass
+    character_contract: pass
+    three_by_four_aspect_ratio: pass
+    no_readable_text_or_logo: pass
+    rectangular_handled_inspection_stamp_not_coin_like: pass
+  decision: pass_revised_candidate_for_card002
+  reconciliation: 原始提交后两次有界核对无新输出；未重发。随后在同一会话只读复核发现延迟完成的唯一修订图并完成导出。
+independent_package_review:
+  status: revise
+  severity: major
+  reviewed_basis_sha256: 793182febed06c2f051a9494667aeb4518ea4e07de2cf641ba3efab0e565d668
+  finding: 冻结 visual-plan 要求 bicycles=0，但修订图背景仍有一辆自行车；原单卡检查漏掉该零计数。
+  revision_prompt: review-control/card-002-r2-edit-prompt.md
+  revision_prompt_sha256: 57a91807375129801f94e7d79a3b347fc965b755ee00887d34a65af8a0f7e5bf
+  required_postconditions:
+    - 背景自行车及残影完全消失，最终 bicycles=0。
+    - 其余人物、箱、两牌、构图与已修正的非硬币检验印保持不变。
+revision_result_r2:
+  candidate_path: review-control/card-002-r2.png
+  image_sha256: a7b04d856847778a1149a49d55006c384fa6e25c4327875c63fbf46c88a6a9e5
+  thumbnail_path: review-control/card-002-r2-thumb-320.png
+  thumbnail_sha256: 7931b384db292933e98870a6fb7ac1b99519f5e5c41581d01ceed47e794d1e37
+  native_dimensions: 1086x1448
+  thumbnail_dimensions: 240x320
+  checks:
+    exact_one_closed_blue_toolbox: pass
+    exact_two_rule_plaques: pass
+    exact_four_adults: pass
+    bicycles_zero: pass
+    shared_attention_without_verdict_pose: pass
+    rectangular_handled_inspection_stamp_not_coin_like: pass
+    no_readable_text_price_logo_or_verdict_symbol: pass
+    three_by_four_aspect_ratio: pass
+  decision: pass_r2_candidate_pending_independent_recheck
+independent_recheck_r2:
+  status: pass
+  reviewed_basis_sha256: a7b04d856847778a1149a49d55006c384fa6e25c4327875c63fbf46c88a6a9e5
+  finding: 1箱、0自行车、4成人、2木牌精确；320px 可读成并列比较两种候选规则，非硬币印保持。
+  retro: 单变量删除背景自行车成功，未恢复硬币式圆印；独立整包复核必须重新确认其余冻结构图未漂移。

@@ -1,0 +1,97 @@
+schema_version: story-card-content-checkpoint/v1
+story_id: broken-window-unseen-cost
+version: "1.1-card001-r6-full-regeneration-refrozen"
+status: local_package_ready_for_new_independent_full_review
+completed_at: "2026-08-09T00:00:00+08:00"
+gate: pass_local_package_only
+knowledge_basis:
+  ir_path: ../../../dedao-xue-economics-001-005/lessons/003/knowledge.yaml
+  ir_sha256: f7ee9d8e0aa75a84abddf7ed8c67cc8cfc17a1dea189ba47e4351012bf43c534
+  maturity: validated
+  consumed_ids: [PR-01, PR-02, FW-01, AP-01]
+checks:
+  knowledge: pass
+  narrative_arc: pass
+  seven_card_alignment: pass_current_local_package
+  seven_card_local_reviews: pass_7_of_7_current_final_sources
+  seven_card_independent_visual_reviews: pending_new_full_package_review_old_r3_basis_superseded
+  exact_counts: pass_card001_r6_crop_candidate
+  continuity_ledger: pass_refrozen_specification
+  budget_bag_start_and_cross_card_continuity: pass_card001_r6_left_bag_to_only_shoes_on_assistant_feet
+  adult_identity_and_neutral_reviewer_contract: pass_specification
+  320px_single_variable_gate_defined: pass_card001_r6_two_groups_and_ground_shoes_zero
+  card004_hollow_book_placeholder_spec: local_and_independent_pass_historical_frozen
+  card004_r4_full_regeneration: independent_pass_history_frozen
+  card005_window_attached_workstation_spec: local_and_independent_pass_historical_frozen
+  card005_r2_full_regeneration: independent_pass_history_frozen
+  card006_core_contract: independent_pass_frozen_for_minimal_edit
+  card006_r1: independent_revise_historical_failed_review_evidence_only
+  card006_background_rectangular_surface_exclusion: pass_after_edit_r1
+  card006_edit_r1_prompt_and_operations: completed_local_and_independent_pass_historical_frozen
+  card007_r1: completed_local_and_independent_pass_historical_frozen
+  card001_r1_package_and_blind_review: revise_historical_failed_evidence_only_no_resubmit
+  card001_edit_r2_prompt_and_operations: completed_local_and_independent_revise_historical_failed_review_evidence_only
+  card001_edit_r3_prompt_and_operations: revise_320px_historical_failed_evidence_only_no_resubmit
+  card001_r4_full_regeneration: completed_local_and_independent_revise_historical_failed_review_evidence_only
+  card001_r5_full_regeneration: completed_local_and_independent_revise_historical_failed_review_evidence_only
+  card001_r6_full_regeneration: provider_output_revise_native_height_1449_historical_parent_retained
+  card001_r6_mechanical_crop_derivative: local_and_independent_pass_selected_for_current_final
+  seven_card_final_hash_binding: pass_current_7_of_7
+  offline_story_html: pass_current_local_package_remote_resources_zero
+  seven_narrations_present: pass
+  remote_resources: zero
+  copyright_boundary: pass
+  empirical_boundary: pass
+  current_law_boundary: pass
+  universal_policy_boundary: pass
+  image_generation: card001_r6_provider_parent_retained_and_mechanical_crop_candidate_local_pass
+  external_review: blocked_until_new_independent_full_package_review_record
+findings:
+  - 七卡按破窗、可见修复、鞋书替代、资源转移、净收益误判、反事实边界和程序结语形成完整 FW-01 链。
+  - 鞋和书仅作为林岚原计划中的替代用途，明确保留是否会实际购买的不确定性。
+  - Card001-r5 将左预算袋直接放在助手完整旧鞋旁、右预算袋直接放在大尺寸无字空心单本书轮廓计划板下方或旁侧，两组明显分离；计划板中心完全镂空透出连续空墙，只表示未发生购书计划。Card2 两袋移入修窗托盘，Card4 由陈默带走；该跨卡单变量已重冻，等待新图逐帧验证。
+  - continuity ledger 已逐卡闭合全部 exact-count 对象、成人身份、owner、holder、transfer_state、form、time 与同类背景排除；neutral reviewer 有独立视觉合同。
+  - 画面与文字排除价格、货币、裁决符号、实证证明、现行法和普遍政策结论。
+  - Card004 的书计划位重编码为唯一一块大尺寸无字空心书形占位板：中心完全镂空、可见背景、不是实际书；其余三名成人、两个预算袋、同一双旧鞋、唯一空鞋盒与窗的连续性不变。
+  - Card005-r1 因独立透明深框在 native 与 320px 均形成额外窗片或第二窗误读而失败；旧图只保留为历史失败证据。
+  - Card005 的唯一工位现冻结为同一扇唯一临街窗上的现场表面清洁与边缘封边动作；禁止独立矩形玻璃框、拆下窗片、透明板、第二窗和独立工作台。四位成人、两名邻居共同聚焦、林岚双手分别指向旧鞋与空书位、零预算袋保持不变。
+  - Card005-r2 已完成全量重生并通过本地与独立复审，现作为历史冻结通过候选；Card005-r1 保留为独立透明深框导致额外窗片误读的失败证据。
+  - Card006-r1 的四位成人、两块等权情景板、中央唯一空白不规则假设卡、零法槌文字价格裁决及320px主读均通过；唯一失败变量是左空画框、右盒框和其他背景矩形表面造成第三板误读。
+  - Card006 edit-r1 基于精确基线 file_0000000050ac8206a005ac4b080e0cce 完成单变量编辑；左空框、右盒框与背景矩形表面已清除，人物、桌面两板、中央假设卡与主读保持，并通过本地与独立图审，现历史冻结且禁止重提。
+  - Card007 的唯一碎片托盘与单块玻璃、鞋图块、书图块、空白假设卡和四位成人均通过本地与独立图审；程序性结语不含价格、裁决、现行法或普遍政策结论，现历史冻结且禁止重提。
+  - Card001-r1 的鞋计划成立，但右袋邻接书架的上下排连续书脊未形成唯一四边清楚、后壁可见且不被袋遮挡的空书位；整包终审与第三独立盲裁一致判 REVISE。
+  - Card001 edit-r2 保持破窗、石块、三位成人、两个袋、完整旧鞋对与无字约束，但把右袋旁书架重绘为上下两层各一个宽空格；唯一单书宽空位与320px主读仍失败，本地判REVISE并停止自动修订。
+  - Card001 edit-r2独立图审确认同一失败变量：上下两层两个宽空格；其余对象通过。r3仅允许保留下层一个单书宽空位，上层和其余空格恢复连续书脊。
+  - Card001 edit-r3 在native可见唯一窄空位，但根线程native+320复核与新整包盲审确认320px仅呈细暗缝，2至3秒不能独立识别购书计划，判REVISE。r1至r3连续证明single-book-width shelf slot媒介不稳定，全部仅作失败历史且禁止重提或继续edit。
+  - Card001-r4 改为baseline none的全量重生：唯一书计划媒介是大尺寸无字空心单本书轮廓计划板，中心完全镂空、透出背景且320px可读；禁止实体书、书架空位、窄暗缝、文字牌、价格牌、裁决牌或结论牌。
+  - Card001-r4 的大尺寸空心单本书轮廓在native与320px均可读，但两个预算袋并排置于前景桌面，未分别与旧鞋及书计划板成组；背景书架出现多本实体书，右上出现嵌套矩形框。本地判REVISE并停止自动修订。
+  - Card001-r4独立图审确认同一失败：两袋归属分组缺失、实体书零计数失败及背景矩形框违规；该轮封存为失败历史，禁止重提或编辑。
+  - Card001-r5保持大尺寸空心书计划板，强制左袋紧邻完整旧鞋、右袋紧邻书计划板且两组明显分离；背景改为连续空墙，书架、实体书、书状物、墙框和矩形背景面均为零。
+  - Card001-r5 新图的两组空间归属、空心书计划板和空墙背景在 native 与 320px 均可读，但助手脚上已有一双鞋，左袋旁又出现第二双完整旧鞋，违反 worn_shoe_pairs=1 及“同一双鞋”的身份连续性，本地判 REVISE。
+  - Card001-r5独立图审确认相同唯一失败变量并封存：助手脚上一双鞋加左袋旁地面第二双，实际为两鞋对；其余三人、破窗、石、两袋分组、右袋书板、连续空墙及零书架实体书墙框均通过。
+  - Card001-r6只重冻鞋的形态与位置：唯一完整磨损鞋对始终穿在助手双脚，ground_shoes=0、second_worn_shoe_pairs=0；左袋直接贴近脚上鞋，右袋邻空心书板，两组明显分离，其余通过变量保持。
+  - Card001-r6新图在native与320px通过三人、破窗、石、两袋、唯一脚上鞋对、地面零鞋、两组分离、空心书板、连续空墙与无字门禁；唯一失败是provider native尺寸1086x1449而非冻结1086x1448，本地判REVISE。
+  - 独立裁定允许只删除Card001-r6最底一行。provider parent原图保持不变；crop x0,y0,w1086,h1448，仅删除y1448，parent rows0..1447与child逐像素AE=0。child为1086x1448，新320px缩略图从child派生，完整本地视觉与exact-count复审PASS。
+decisions:
+  - 内容通过只允许进入后续生图准备，不构成图片、外审、formal 或发布通过。
+  - 本包不复用 Lesson002 的故事、角色、图片、review、provenance 或 provider evidence。
+  - Card006-r1 已提交一次并经本地及独立复审判 revise，仅作失败历史；edit-r1 已独立PASS并历史冻结，两个轮次均禁止重发或继续编辑。
+  - Card001-r3及其final/HTML已因320px整包复审失败解除锁定并标stale；r1/r2/r3均为失败历史且禁止重提。Card002、Card003、Card004-r4、Card005-r2、Card006-edit-r1、Card007保持冻结不变。
+  - Card004-r4 已完成全量重生并通过本地与独立复审，现作为历史冻结通过候选，禁止重复提交；Card004-r3 及更早候选仅保留为历史失败审查证据。
+  - Card005-r2 已通过本地与独立复审并历史冻结，禁止重复提交；Card005-r1 仅为历史失败证据，禁止进入编辑器、作为底图或像素基线。
+  - Card001 edit-r2已唯一提交和捕获，经本地与独立图审均判REVISE，现仅作历史失败证据且禁止重发；不得替换旧final或重建HTML。
+  - Card001-r4 已基于新冻结basis唯一全量重生，经本地与独立图审均判REVISE；现仅作失败历史，不得编辑、重生或重发。
+  - Card001-r6 provider parent因native高度多1像素判REVISE并原样保留；经独立裁定允许的底部1px机械裁剪后，child通过独立图审并成为当前final/cards/001。七图与七段当前旁白已重建。
+  - 旧 independent-final-visual-review 绑定Card001-r3与旧HTML，已标superseded且overall revise不可复用；当前整包独立review记录必须重新生成。
+basis_hashes:
+  story_yaml: 70ea8e6292641002e47e18f5ba60db5bff11d6f25a5262e5daab790c96c8d329
+  text_layer_yaml: 9c42a14667ad992b2e811cd23d190fe82ef8fa041b98d4fcb427c8a68432839f
+  storyboard_yaml: 7120b1c7d9724e150eb881b4131109f643aef4abd1e8d461b1d77fc7c77ad8a9
+  card_plan_yaml: 7d71200639b99c4649fb0b6f93f32aed8df253304336959b2791a442ec774203
+  visual_plan_yaml: ffbed07087cea1a2e00c7e95892083e6db42f75c0882464016263f3c5ab562b9
+  continuity_ledger_yaml: ae146f6bdd09bfaa5bd4461d9673133958d1eed1aab715b72f079d20f91d20f8
+  production_package_yaml: 73f1504f4fdd98bba2a749f9635b4e7d8ea8a6fdc12c91704143ecc425d73940
+formal: false
+formal_package_counted: false
+revision_required_cards: []
+next_action: 在当前七图、七段旁白、story.html与manifest固定basis上生成新的独立整包review记录；通过前不得外审或升级formal。

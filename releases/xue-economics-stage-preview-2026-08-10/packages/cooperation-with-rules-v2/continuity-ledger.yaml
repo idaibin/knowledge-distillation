@@ -1,0 +1,52 @@
+story_id: cooperation-with-rules-v2
+version: "0.1-frozen"
+status: frozen_before_image_generation
+rule: CL-001_quantity_ownership_form_time
+cards:
+  - card: 1
+    assets:
+      blue_toolbox: {count: 1, owner: community_station, holder: a_heng, transfer_state: disputed_before_test, form: open_incomplete, time: storm_aftermath}
+      bicycle: {count: 1, owner: resident, holder: resident, transfer_state: waiting_for_repair, form: visibly_broken, time: same_scene}
+    same_kind_exclusions: [second_blue_toolbox, second_bicycle, background_toolbox, toolbox_pattern]
+  - card: 2
+    assets:
+      blue_toolbox: {count: 1, owner: community_station, holder: nobody, transfer_state: frozen_during_rule_choice, form: closed_unassigned, time: before_pilot}
+      rule_plaques: {count: 2, owner: community_station, holder: xiao_he, transfer_state: candidate_conditions_only, form: two_distinct_wordless_woodcuts, time: simultaneous_comparison}
+    same_kind_exclusions: [third_plaque, price_tag, coin_like_seal, legal_symbol]
+  - card: 3
+    assets:
+      blue_toolboxes: {count: 3, owner: community_station, holder: three_claimants, transfer_state: first_tag_pilot_claimed_incomplete, form: open_incomplete, time: first_pilot_day}
+      claim_tags: {count: 3, owner: claimants, holder: attached_one_per_box, transfer_state: visible_claim, form: oversized_blank_hangtags, time: same_day}
+    same_kind_exclusions: [fourth_box, fourth_tag, hidden_background_box, label_pattern]
+  - card: 4
+    assets:
+      new_claim_tags: {count: 2, owner: later_entrant, holder: later_entrant, transfer_state: intended_for_future_claims, form: blank_hangtags, time: next_day}
+      rope: {count: 1, owner: later_entrant, holder: later_entrant, transfer_state: intended_for_guarding, form: single_coil, time: next_day}
+      empty_tool_tray: {count: 1, owner: community_station, holder: nobody, transfer_state: missing_input_not_replenished, form: one_empty_wrench_slot, time: next_day}
+    same_kind_exclusions: [extra_tags, extra_rope, actual_wrench_in_tray, second_bicycle]
+  - card: 5
+    assets:
+      active_blue_toolbox: {count: 1, owner: community_station, holder: a_heng_and_participant, transfer_state: assembly_and_test_in_progress, form: open_nearly_complete, time: second_pilot}
+      delayed_blue_toolbox: {count: 1, owner: community_station, holder: handover_cabinet, transfer_state: tested_waiting_past_window, form: closed_with_wordless_seal, time: later_same_day}
+    same_kind_exclusions: [third_box, extra_seal, person_in_empty_chair, price_receipt]
+  - card: 6
+    assets:
+      stored_blue_toolboxes: {count: 2, owner: community_station, holder: shared_rack, transfer_state: completed_available_after_review, form: closed_labeled_by_shape_only, time: weeks_later}
+      active_tool_set: {count: 1, owner: community_station, holder: a_heng, transfer_state: checked_out_for_repair, form: tools_outside_box, time: same_scene}
+      maintenance_tray: {count: 1, owner: community_station, holder: maintenance_volunteer, transfer_state: maintenance_in_progress, form: shallow_parts_tray, time: same_scene}
+    same_kind_exclusions: [third_stored_box, second_active_set, second_tray, second_bicycle]
+  - card: 7
+    assets:
+      evidence_tray: {count: 1, owner: community_station, holder: neutral_reviewer, transfer_state: evidence_under_review, form: organized_components, time: end_of_pilot}
+      inspection_seal: {count: 1, owner: community_station, holder: neutral_reviewer, transfer_state: evidence_not_verdict, form: wordless_noncoin_round_stamp, time: end_of_pilot}
+      notice_card: {count: 1, owner: community_station, holder: objector, transfer_state: notice_contested, form: blank_card, time: end_of_pilot}
+      rule_plaque: {count: 1, owner: community_station, holder: wall, transfer_state: pilot_condition_under_review, form: wordless_woodcut, time: end_of_pilot}
+    same_kind_exclusions: [second_tray, second_seal, second_notice, court_documents, gavel]
+checks:
+  owner_holder_separated: pass
+  transfer_state_explicit: pass
+  form_explicit: pass
+  time_explicit: pass
+  same_kind_background_exclusions_per_frame: pass
+  cross_scene_inventory_claim: none_unless_explicit
+  text_layer_frozen_before_generation: pass

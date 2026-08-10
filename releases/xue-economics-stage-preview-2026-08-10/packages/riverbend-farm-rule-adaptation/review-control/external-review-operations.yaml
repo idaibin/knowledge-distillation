@@ -1,0 +1,182 @@
+schema_version: external-review-operation-ledger/v1
+story_id: riverbend-farm-rule-adaptation
+round_id: riverbend-farm-rule-adaptation-review-control-r1
+provider: chatgpt
+surface: project
+project:
+  name: Review Control
+  id: g-p-6a7052bb5bf88191900a8a0c869c5291
+  expected_project_url: https://chatgpt.com/g/g-p-6a7052bb5bf88191900a8a0c869c5291-review-control/project
+route:
+  browser_mode: codex-in-app-browser_then_user-local-browser_fallback
+  account_workspace: personal
+  capability: standard_chat_with_single_image_attachment
+  preflight_evidence: exact Review Control project id/name, personal account category, unique empty project composer, and upload control visible
+  fallback_result: in-app attachment chooser failed before file selection and the browser connection reset; local Chrome was unavailable from the browser runtime
+authorization:
+  external_send: authorized_by_active_goal
+  scope: one_independent_review_of_current_riverbend_fixed_basis
+fixed_basis:
+  final_checkpoint: {path: ../final-checkpoint.yaml, sha256: 693f70b0f255eb2aa986713cf8193855cba861df2103678a5415c580e96780cc}
+  final_manifest: {path: ../final/story-manifest.yaml, sha256: 25ad97c50a8bd7e999ebe5a6f4133f9496a7a6e90617d009317f852370e8c985}
+  story_html: {path: ../final/story.html, sha256: 48994f6d858f48e74ff26f4440824fe63cf8539b5dc6cb552ac2b55852c71bce}
+  narration: {path: ../final/narration.md, sha256: c58ca126ce2918521d5044ef92e749d1525759f4b93e749995f72c91ef48f1f5}
+  contact_sheet: {path: riverbend-contact-sheet.png, sha256: 15ca07bbd9cdd37a1c26b0cc78ab7448218332412981a7b566da1738a6168864, dimensions: 2268x1496}
+  prompt: {path: chatgpt-review-control-prompt.md, sha256: 6f7b08042d603517d995c8a2e174aead417dddfda484b0944a124aecdaad7983}
+operations:
+  create_conversation:
+    operation_id: riverbend-farm-rule-adaptation:review-control:r1:create-conversation
+    state: blocked_before_create
+    host_call_count: 0
+    retry_policy: never_after_created_or_ambiguous
+  attach_contact_sheet:
+    operation_id: riverbend-farm-rule-adaptation:review-control:r1:attach-contact-sheet
+    state: failed_before_submit_no_side_effect_proven
+    attempt: 1
+    host_call_count: 1
+    submitted_once: false
+    retry_policy: only_if_no_attachment_side_effect_proven
+  submit_prompt:
+    operation_id: riverbend-farm-rule-adaptation:review-control:r1:submit-prompt
+    state: prepared
+    host_call_count: 0
+    submitted_once: false
+    never_resend: true
+  capture_response:
+    operation_id: riverbend-farm-rule-adaptation:review-control:r1:capture-response
+    state: prepared
+    host_call_count: 0
+external_send: false
+response_captured: false
+blocker: no controllable built-in or local browser remained available after the pre-submit attachment chooser failure
+chatgpt_preflight_record: {path: chatgpt-review-control-2026-08-10-riverbend.md, sha256: 53cc485e3584e49b25503a92de2ba3b0392f60c2f5c9026d55cd75f797313767}
+formal: false
+zcode_persistent_session:
+  session_id: sess_2dbb632e-fe9c-4669-aba4-0472c446ea99
+  round_id: riverbend-farm-rule-adaptation-zcode-r1
+  capability: independent_review_with_image_attachment
+  request:
+    prompt: Review the attached fixed Riverbend review contract and contact sheet as an independent ZCode reviewer; return the requested verdict and findings only, do not modify files or use tools.
+    contract_path: chatgpt-review-control-prompt.md
+    contract_sha256: 6f7b08042d603517d995c8a2e174aead417dddfda484b0944a124aecdaad7983
+    image_path: riverbend-contact-sheet.png
+    image_sha256: 15ca07bbd9cdd37a1c26b0cc78ab7448218332412981a7b566da1738a6168864
+  submit:
+    operation_id: riverbend-farm-rule-adaptation:zcode:r1:submit-review
+    state: completed_single_submit
+    host_call_count: 1
+    submitted_once: true
+    never_resend: true
+  capture:
+    operation_id: riverbend-farm-rule-adaptation:zcode:r1:capture-response
+    state: completed
+    host_call_count: 1
+    trace_id: d0afc6a6-22da-4299-bad9-338306d1996d
+    turn_id: turn_af210afa-642f-4c81-ad3c-cd162346e349
+    response_path: zcode-final-review-2026-08-10-riverbend.md
+    response_sha256: 4d0fdf6fc10d26a5ef777eeae6fac844eb509f575c3ed0cb972c2a6f38094e48
+  external_send: true
+  response_captured: true
+  verdict: not_verified_no_pixel_input
+  visual_axis: Not verified
+  text_axis: no_actionable_finding_but_no_substantive_pass_verdict
+zcode_text_html_follow_up:
+  session_id: sess_2dbb632e-fe9c-4669-aba4-0472c446ea99
+  round_id: riverbend-farm-rule-adaptation-zcode-text-html-r2
+  capability: bounded_text_html_review_without_image_input
+  basis_before_local_fix:
+    final_checkpoint: {path: ../final-checkpoint.yaml, sha256: 9e2dab660ecf06b318ce7b827da3cdf1e6cdecf7906c1c10113b024d815277fb}
+    final_manifest: {path: ../final/story-manifest.yaml, sha256: 25ad97c50a8bd7e999ebe5a6f4133f9496a7a6e90617d009317f852370e8c985}
+    story_html: {path: ../final/story.html, sha256: 48994f6d858f48e74ff26f4440824fe63cf8539b5dc6cb552ac2b55852c71bce}
+    story: {path: ../story.yaml, sha256: 2a2a784bf04b8e4093bda5bd03f347a46ea9112a2ab5039c8f375a445497254b}
+    text_layer: {path: ../text-layer.yaml, sha256: 9b093d8b04760d18ab32afcbf1d94975f22d9bec4259901f4c5fbb3f2451947d}
+    storyboard: {path: ../storyboard.yaml, sha256: 752dd09d53c093c15452a4cec4438448215bea2ffddd7e11b8581c07be6ca330}
+    card_plan: {path: ../card-plan.yaml, sha256: d2d168cd4ec5bf4f6c8efd1a0925f83cfc53923c04f10aa7315633fc4327d535}
+    visual_plan: {path: ../visual-plan.yaml, sha256: 9bebb2ecf3ef249d3d5b4daa6aa66f7af353d697534a22622e46de1b572b9bc9}
+    continuity_ledger: {path: ../continuity-ledger.yaml, sha256: de5eb1fc807cf2ee199aa971a7a3f6a4548bccdbb9572945cdcdf7034c26320f}
+    image_hashes_unchanged: true
+  request:
+    prompt_path: zcode-text-html-review-2026-08-10-riverbend-prompt.md
+    prompt_sha256: 2c5c06f9a194e4e13f9dfd06d52c8eef6a36a18e6d05b6b6dbfad0fa87673b23
+    image_input: none
+    scope: story_continuity_text_layer_html_static_structure_mobile_css_formal_boundary
+  submit:
+    operation_id: riverbend-farm-rule-adaptation:zcode:r2:text-html:submit-review
+    state: completed_single_submit
+    host_call_count: 1
+    submitted_once: true
+    never_resend: true
+  capture:
+    operation_id: riverbend-farm-rule-adaptation:zcode:r2:text-html:capture-response
+    state: completed
+    host_call_count: 1
+    trace_id: 11d8612d-201d-4655-9309-9c80ed5c21cf
+    turn_id: turn_d76812d4-e32d-463a-a9d8-5d7eb06d4c1f
+    response_path: zcode-text-html-review-2026-08-10-riverbend.md
+    response_sha256: ae1debd95fbf5154732b8fbaf9992483f9039c3f5595b3f3458c9857762d3465
+  reconciliation:
+    path: text-html-reconciliation-2026-08-10.yaml
+    sha256: 093c232680fe27961cfff7a08403841664c183b0a962070126501bf98da512cd
+    html_fix: removed_visible_narrator_label_from_all_seven_cards
+    story_continuity: verified_local_no_finding
+    reviewer_task_label_mismatch: retained_as_historical_provenance_gap
+    planning_hash_candidate: rejected_after_local_rehash
+    image_hashes_unchanged: pass_7_of_7
+  external_send: true
+  response_captured: true
+  verdict: accept_with_conditions_text_html_only
+  visual_axis: Not verified
+  live_mobile_render: Not verified
+  formal: false
+zcode_lifecycle_round2:
+  session_id: sess_2dbb632e-fe9c-4669-aba4-0472c446ea99
+  round_id: riverbend-farm-rule-adaptation-zcode-lifecycle-round2
+  capability: bounded_text_html_reconciliation_without_image_input
+  authorization: attributed_sol_round1_p2_relay_on_fixed_basis
+  basis:
+    story: {path: ../story.yaml, sha256: 1166db1f328b954abb1b84f2ca62d0bc8a801fe04494761d072f3e326c142a80}
+    text_layer: {path: ../text-layer.yaml, sha256: 79076291318270a6e867d1e17bcf1ac71b5eb0bfece865cc93163eae233a5f7e}
+    storyboard: {path: ../storyboard.yaml, sha256: e9173b637e2f38014f573a75f44cc71e8d228a61d3999a3d663c353b406ce8ad}
+    card_plan: {path: ../card-plan.yaml, sha256: bef716446aa824ac5f3d99666df9b007cbe8c15334f6c6272ddff3cc6b69b1a6}
+    visual_plan: {path: ../visual-plan.yaml, sha256: b06cdf9a545852bf88773e13369e20d99864275c84c51945208107ae174a270a}
+    continuity_ledger: {path: ../continuity-ledger.yaml, sha256: 5daf840796f7c271343e215db7a9ca459cd8ce3f12390c42ec8edd38af99084b}
+    narration: {path: ../final/narration.md, sha256: 99122a7703c540274f341f17832698a968ee20f4d531e7925f4c3cddbe6e425d}
+    story_html: {path: ../final/story.html, sha256: ba544454ca1a11ed2be76a876ed2a39c96ad1285b50b6a8681fa2f00e105444a}
+    final_manifest: {path: ../final/story-manifest.yaml, sha256: 5c78942bcb2439c66949e732df3587853aee758977280df1c7d9802a434b4ace}
+    final_checkpoint: {path: ../final-checkpoint.yaml, sha256: 435480734f6630e1abd355e089641da7ba41d7ab2860db082fca61f4462efe92}
+    content_checkpoint: {path: ../content-checkpoint.yaml, sha256: 54a7141dfebe5983f8bdfe63aa8dfaac7fb6633dec506e368ca5f06144da1cf7}
+    production_package: {path: ../production-package.yaml, sha256: 2c19e6d14c881046eb0afc19467a64e42246100a65c57bd8f70e1bfa375d4f84}
+    review_package: {path: final-review-package.md, sha256: ba27c5f2261a1539b1c77a123d8f97dbfb2b96332125d7b1bc70b631258c6d9f}
+    review_a: {path: independent-final-review-a.yaml, sha256: 34452e6f5ea5f37579cc4a3f737c84b2d18398f08434a04dab1aed6cf6ac902e}
+    review_b: {path: independent-final-review-b.yaml, sha256: e64e833c08e703f762317058d200ae527a8b823c5dcb8981a1f1ef461a41011b}
+  request:
+    prompt_path: zcode-lifecycle-round2-2026-08-10-prompt.md
+    prompt_sha256: 4c06a3b790e53957cf96d69d752686bc760a793325ac4c946aac7d4e4398c3e4
+    image_input: none
+    scope: attributed_sol_p2_lifecycle_and_historical_review_count_only
+  submit:
+    operation_id: riverbend-farm-rule-adaptation:zcode:lifecycle-round2:submit-review
+    state: completed_single_submit
+    host_call_count: 1
+    submitted_once: true
+    never_resend: true
+  capture:
+    operation_id: riverbend-farm-rule-adaptation:zcode:lifecycle-round2:capture-response
+    state: completed
+    host_call_count: 1
+    trace_id: 317215da-c794-4264-abc3-fcbc283d15db
+    turn_id: turn_240f09a1-55de-4e61-b8eb-33f12cb7b38c
+    response_path: zcode-lifecycle-round2-2026-08-10-response.md
+    response_sha256: 5849ae43ba4543ba4e571ce23da0e788493ad13fe54431c1fee84a7605277f80
+  reconciliation:
+    finding_1_lifecycle: closed_text_html_axis
+    finding_2_historical_reviews_current_count: closed_0_of_2
+    visible_narrator_label: already_closed_in_prior_round
+    pixels: Not verified
+    live_mobile_render: Not verified
+    formal: false
+  external_send: true
+  response_captured: true
+  verdict: accept_text_html_reconciliation_only
+  visual_axis: Not verified
+  formal: false

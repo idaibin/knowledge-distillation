@@ -1,0 +1,32 @@
+schema_version: story-card-local-review/v1
+story_id: cooperation-with-rules-v2
+card_id: "001"
+reviewed_at: "2026-08-09"
+basis:
+  prompt_text_sha256: ccf7d1114771d196b916b14d70c183e844267a6b644dae91baff11313367ddb3
+  image_sha256: fb50a4066e5b363b20d844d27d023223611b90a997a32f86ffb44cc63e4dbbda
+  native_dimensions: 1086x1448
+  thumbnail_sha256: 142f4bd3ec07ec6d5cae68d6cc5d491018221619c4c97ed3f73401a950950d88
+  thumbnail_dimensions: 240x320
+checks:
+  exact_one_blue_toolbox: pass
+  exact_one_bicycle: pass
+  exact_three_adults: pass
+  zero_rule_plaques: pass
+  no_readable_text_logo_or_verdict_symbol: pass
+  character_contract: pass
+  upper_left_negative_space: pass
+  three_by_four_aspect_ratio: pass
+  two_to_three_second_conflict_read: pass_with_caveat
+finding:
+  severity: minor
+  observation: 两名男性围绕同一只打开的工具箱形成清楚张力，但第二人的动作也可能被读成协助检查；“同时认领”不是完全唯一的解释。
+decision: pass_candidate_for_card001
+retro:
+  keep:
+    - 大面积左上负空间、克制表情、唯一箱和唯一自行车的数量控制有效。
+    - 角色服装与体态在320像素缩略图仍可辨认。
+  improve_next:
+    - 后续卡片把关键动作变成更明确的手持物与投入方向，不依赖表情解释规则影响。
+    - 同类背景物继续显式排除，避免墙上工具或托盘被误读成目标资产。
+  formal_boundary: 本地单卡候选通过不等于整包正式通过；仍需完成其余六卡、文字层、联系图、Review Control、持久ZCode与最终哈希绑定。

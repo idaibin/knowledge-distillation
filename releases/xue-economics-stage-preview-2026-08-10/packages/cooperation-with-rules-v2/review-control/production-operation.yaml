@@ -1,0 +1,35 @@
+schema_version: ask-ai-production-operation/v1
+review_id: cooperation-with-rules-v2-production
+provider: chatgpt
+target_project:
+  name: 故事卡片生产｜Pro 生图
+  project_id: g-p-6a700985260881918e3834a43b1e12a6
+  binding_state: project_visible_but_clean_composer_not_verified
+prompt:
+  path: review-control/production-package.md
+  hash_scheme: prompt-text/v1
+  sha256: 84e9f7c4bac019f05c7b337261c051ae2e0e067aa27421d5f6d6cdecce1c57b0
+operations:
+  - operation_id: cooperation-v2-create-001
+    kind: create-conversation
+    state: blocked
+    host_call_count: 0
+  - operation_id: cooperation-v2-attach-001
+    kind: attach-production-package
+    state: blocked
+    host_call_count: 0
+  - operation_id: cooperation-v2-submit-001
+    kind: submit-initial
+    state: blocked
+    host_call_count: 0
+  - operation_id: cooperation-v2-capture-001
+    kind: capture-response
+    state: blocked
+    host_call_count: 0
+conversation:
+  url: null
+  id: null
+completion:
+  state: no-send
+  images_generated: 0
+blocker: 稳定项目首页 URL、干净项目 Composer 和图片能力未验证；禁止改用旧会话、其他项目或其他生图工具。

@@ -1,0 +1,31 @@
+schema_version: story-card-full-package-review/v1
+review_id: riverbend-farm-rule-adaptation-full-package-review-a
+story_id: riverbend-farm-rule-adaptation
+reviewer_task: /root/review_validate_lesson_005
+reviewed_at: "2026-08-10"
+decision: pass
+conclusion: No actionable findings on the fixed seven-card local package.
+reviewed_snapshot:
+  content_checkpoint: {path: ../content-checkpoint.yaml, sha256: 87c4911896d29b62c100da41bfc63faf9b9155811ff62b55d0c6036659d39800}
+  production_package: {path: ../production-package.yaml, sha256: 6e83eeb596382d7fd1670c7b4f9165b42736d855a29e3c20efbb16ab7cda950c}
+  browser_operation: {path: ../browser-operation.yaml, sha256: 81568368c2ccfbb7c457c12dfc96dcf2410b3dce08b50573ff9ffd5dca3edc14}
+  story_manifest: {path: ../final/story-manifest.yaml, sha256: 0e653cc605555a7492cc1f5bc8cea1b842127baa6e58e6f396515d6e145c41af}
+  story_html: {path: ../final/story.html, sha256: 48994f6d858f48e74ff26f4440824fe63cf8539b5dc6cb552ac2b55852c71bce}
+  narration: {path: ../final/narration.md, sha256: c58ca126ce2918521d5044ef92e749d1525759f4b93e749995f72c91ef48f1f5}
+  review_package: {path: final-review-package.md, sha256: ee5106f7a73aa9d2137b5b8be8eccb3c0ff1d390408d8c81d535e177cd0cfe2d}
+  final_checkpoint: {path: ../final-checkpoint.yaml, sha256: 79da321a921b691a12a2bc476c0644bc17d5969a2bdb29c56e265768e59c09f8}
+verification:
+  seven_native_images_and_hashes: pass_7_of_7
+  seven_320px_thumbnails: pass_7_of_7
+  source_local_independent_review_chains: pass_7_of_7
+  exact_objects_exclusions_adult_rosters_and_continuity: pass_7_of_7
+  arrangement_lifecycle_and_baseline_uncertainty: pass
+  procedural_not_adjudicative_ending: pass
+  text_layer_and_narration: pass_7_of_7
+  html_static_structure: pass_7_cards_7_narrations_0_remote_resources
+  hash_direction_and_fixed_basis: pass
+  live_mobile_render: Not reverified
+scope_boundary:
+  external_review_executed: false
+  formal: false
+  effect: counts_as_one_of_two_required_independent_full_package_reviews

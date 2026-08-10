@@ -1,0 +1,55 @@
+story_id: cooperation-with-rules-v2
+version: "0.1-frozen"
+language: zh-CN
+status: frozen_before_image_generation
+disclosure: 基于经济学概念的情景化演绎
+cards:
+  - card: 1
+    title: 谁先拿走这只工具箱？
+    narration: 暴雨过后，阿衡把零散工具装成一箱；还没检验完，另一只手已经伸了过来。
+    dialogue:
+      - {speaker: 居民, line: 我先看见，也先认领。}
+      - {speaker: 阿衡, line: 可组装和检验还没结束。}
+    visible_char_count: 61
+  - card: 2
+    title: 先决定规则，再争眼前归属
+    narration: 小禾摆出两种试行条件：先挂吊牌，或者完成组装与检验后，在交接窗口内持有。
+    dialogue:
+      - {speaker: 小禾, line: 先别选赢家，先看每条规则会奖励什么。}
+    visible_char_count: 61
+  - card: 3
+    title: 当“先挂牌”得到奖励
+    narration: 吊牌越来越醒目，守箱的人越来越多；真正补工具、做检验的人却少了。
+    dialogue: []
+    visible_char_count: 46
+  - card: 4
+    title: 后来者也会学会适应
+    narration: 新来的人带来锁绳和更大的牌子，不是缺失的扳手。规则正在改变他们的投入。
+    dialogue:
+      - {speaker: 阿衡, line: 大家在保护箱子，却没人把它做完。}
+    visible_char_count: 60
+  - card: 5
+    title: 换条规则，也不会自动完美
+    narration: 完成组装和检验的人开始增加；但有人错过交接，一只工具箱又被长期占住。
+    dialogue:
+      - {speaker: 小禾, line: 鼓励完成，还要处理逾期和争议。}
+    visible_char_count: 59
+  - card: 6
+    title: 积累来自行动，也要付出维护成本
+    narration: 交接窗口和复核入口明确后，工具箱进入共享架；登记、保养与申诉仍占用时间。
+    dialogue: []
+    visible_char_count: 50
+  - card: 7
+    title: 效率推演不是最终裁决
+    narration: 他们核对零件、检验和通知记录，也允许拒绝签收、提出异议，再决定是否继续试行。
+    dialogue:
+      - {speaker: 小禾, line: 这只是我们的试验，不替任何法律下结论。}
+    visible_char_count: 62
+proofread:
+  status: pass
+  checks:
+    - 七张文字分别推进一个剧情功能，不由对白讲授完整定义。
+    - 两种规则始终写作原创试行条件，不写成价格、判决或普遍定论。
+    - 明示长期保护成本、维护成本、反例、异议与拒绝。
+    - 未使用课程标题、课程原句、历史案件人物或原物件。
+

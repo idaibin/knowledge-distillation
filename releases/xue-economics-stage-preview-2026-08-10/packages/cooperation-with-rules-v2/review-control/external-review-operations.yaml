@@ -1,0 +1,39 @@
+schema_version: story-card-external-review-operations/v1
+story_id: cooperation-with-rules-v2
+basis:
+  lesson_ir_sha256: 411159bd9a97b992313620c1675838e3243ca7092923c0445a3fe4ed555a0ec5
+  html_sha256: 8ba44a30956f95c4e719e85f0e96ee37d13f621637e6976a2a855494b3321e6b
+  manifest_sha256: 32ef9f842f3a402d6baae9b73690624c260ca7145efbf6b8ab43e4f410d87e83
+  review_package_sha256: 5075b7e8264cb2fdfaace8c262ac8a4184dddcebd6b424e1a0d737fe64740266
+  card_sha256:
+    "001": fb50a4066e5b363b20d844d27d023223611b90a997a32f86ffb44cc63e4dbbda
+    "002": a7b04d856847778a1149a49d55006c384fa6e25c4327875c63fbf46c88a6a9e5
+    "003": 6f18b77d425c4a49345671c0b557ba6044d1b45111be949b4edfadc7b660157e
+    "004": 40e2dbcead685f7ae9c7a64c2396c2077fa5af959516d1b44e5afb08c0e6daf9
+    "005": 18b23ae55c69c9fc4b94f3a30ae36526031d0f6ef685aed545ff01544c7430f9
+    "006": 10df00282ef57a263808d377dddead1b9d6fd47990d1692e05344ab90982219c
+    "007": 5876dbee7c41a3d6f5b59ec52bf213de62ebdcb379a70cb0b726bb81e8061602
+chatgpt_review_control:
+  project_id: g-p-6a7052bb5bf88191900a8a0c869c5291
+  round_id: cooperation-with-rules-v2-review-control-r1
+  operation_id: cooperation-with-rules-v2:review-control:r1:submit
+  state: prepared
+  host_call_count: 0
+  submitted_once: false
+  never_resend: true
+  prompt_path: chatgpt-review-control-prompt.md
+  prompt_sha256: c1b7e98880c79f42b5b3da20d3cffbf672b2a09a9fb9b49256a9c2b879ef5b7f
+  prompt_chars: 784
+zcode:
+  session_id: sess_2dbb632e-fe9c-4669-aba4-0472c446ea99
+  round_id: cooperation-with-rules-v2-zcode-r1
+  state: completed_revise_text_only
+  turn_id: turn_07f36868-90f4-4a2a-8b6a-e84a870d3667
+  result_path: zcode-final-review-2026-08-09.md
+  result_sha256: 3500bb1f45ee92d2116fb2f3779d784ef078476c8d70b1bb835c2cb8665ebf10
+  verdict: revise
+  text_review: pass
+  visual_review: not_verified_text_only_modality
+  actionable_text_findings: 0
+  never_resend: true
+formal_boundary: 双通道都审查同一固定 basis 且 findings 完成 reconciliation 前，不计 formal。

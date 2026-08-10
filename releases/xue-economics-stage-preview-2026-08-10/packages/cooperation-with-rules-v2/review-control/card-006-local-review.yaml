@@ -1,0 +1,31 @@
+schema_version: story-card-local-review/v1
+story_id: cooperation-with-rules-v2
+card_id: "006"
+reviewed_at: "2026-08-09"
+basis:
+  prompt_text_sha256: f7d0aa0983178c4046f58ef1deee31315cfe397634b7965f14c7ec9cb0369750
+  image_sha256: 10df00282ef57a263808d377dddead1b9d6fd47990d1692e05344ab90982219c
+  native_dimensions: 1086x1448
+  thumbnail_sha256: 15106300fdd958173d870bf8a2571222f55df05b9fb2070e6f1e20d1c5d772fc
+  thumbnail_dimensions: 240x320
+checks:
+  exact_two_stored_blue_toolboxes: pass
+  exact_one_active_tool_set: pass
+  exact_one_bicycle: pass
+  exact_four_adults: pass
+  exact_one_maintenance_tray: pass
+  exact_one_blank_shape_registration_card: pass
+  no_peer_background_objects: pass
+  no_readable_text_logo_or_verdict_symbol: pass
+  character_contract: pass
+  three_by_four_aspect_ratio: pass
+  two_to_three_second_future_use_chain_read: pass
+  registration_and_maintenance_cost_not_free_harvest: pass
+decision: pass_candidate_for_card006
+retro:
+  keep:
+    - 两只封闭工具箱置于同一共享架，阿衡用工具修车，未来使用链在缩略图中明确。
+    - 维护托盘、几何登记卡和等待者同时存在，把积累与持续成本分开表达。
+  improve_next:
+    - 程序收束卡继续让每类证据各有唯一容器，避免一件物品同时承担过多概念。
+  formal_boundary: 本地单卡通过不等于整包正式通过；仍需完成 Card007、HTML 旁白和双通道审查。

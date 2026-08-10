@@ -1,0 +1,43 @@
+story_id: cooperation-with-rules-v2
+version: "0.1-frozen"
+status: pass_before_image_generation
+completed_at: "2026-08-09T00:00:00+08:00"
+gate: revise
+knowledge_basis:
+  ir_path: ../../../../dedao-xue-economics-001-005/lessons/002/knowledge.yaml
+  ir_sha256: 411159bd9a97b992313620c1675838e3243ca7092923c0445a3fe4ed555a0ec5
+  maturity: validated
+  consumed_ids: [PR-01, PR-02, FW-01, AP-01]
+  excluded_from_dramatization: [PR-03]
+checks:
+  knowledge: pass
+  narrative: pass
+  storyboard: pass
+  card_plan: pass
+  visual_plan: pass
+  text: pass
+  continuity_ledger: pass
+  redaction: pass
+  copyright: pass
+  image_generation: blocked_before_image_generation
+  final_checkpoint: pending
+findings:
+  - 七卡按争议、两种候选规则、即时投入、后来者适应、替代规则反例、积累与维护成本、权利程序边界形成完整 FW-01 因果链。
+  - PR-03 历史案件只作为知识边界存在，故事没有复刻案件人物、物件、事实顺序或判决。
+  - 规则木牌只编码条件、责任和证明入口；文字与视觉均排除价格、法院 holding、现行法与普遍最优结论。
+  - CL-001 已逐卡记录 owner、holder、transfer_state、form、time，并列出同类背景物排除项。
+  - 320px/2至3秒无字测试只检验规则公布后投入方向或保护行为是否变化，不以标题替代画面证据。
+decisions:
+  - 内容 checkpoint 通过只允许进入指定 ChatGPT 项目生产；不构成 final、formal pass 或公开发布批准。
+  - 旧 cooperation-with-rules Lesson006 单卡、checkpoint、图片、review 与 provider evidence 全部排除，不纳入任何当前哈希或结论。
+  - 指定项目唯一识别、会话绑定和图片 provenance 未完成前，不允许发送生产提示或生成替代产物。
+blocker:
+  only: 项目名与 project ID 已部分识别，但点击项目首页后 URL 仍停留在 https://chatgpt.com/；未验证稳定项目首页、干净项目 Composer 或图片能力，因此 no-send。
+basis_hashes:
+  story_yaml: 53f39e679ba91cb64b43a6ed0638b6440a83eae75179e88cd7a87e1b8de62359
+  text_layer_yaml: 560a66e434d4ce3aebb6de7f2c97e376bf544be62b0149dd691f9dcbd4cf52c1
+  storyboard_yaml: f4a56e27a67202f8c29dc062d6de87c9f171803399bcfc1badbc0b14a9824900
+  card_plan_yaml: fade64a59889fc8b62148d8bbffd010ad91fec3faaf9df3dac5342620990f2bb
+  visual_plan_yaml: 9c55fd1c1fe2857a9398bd1e8b48c2acdbd3d746253b3996149d17b568881086
+  continuity_ledger_yaml: 6a5adf8557f6e52f0634cda7e8205c5bc9716482e7aa1960b2a67fc01fb43411
+  production_package_md: 84e9f7c4bac019f05c7b337261c051ae2e0e067aa27421d5f6d6cdecce1c57b0

@@ -1,0 +1,73 @@
+story_id: cooperation-with-rules-v2
+series_order: 2
+version: "0.1-frozen"
+status: blocked_before_image_generation
+gate: revise
+publication_status: not_for_publication
+disclosure: 基于经济学概念的原创情景化演绎，不是课程案例还原，也不是法律意见。
+knowledge_gate:
+  lesson: "002"
+  ir_path: ../../../../dedao-xue-economics-001-005/lessons/002/knowledge.yaml
+  ir_maturity: validated
+  ir_sha256: 411159bd9a97b992313620c1675838e3243ca7092923c0445a3fe4ed555a0ec5
+  allowed_ids: [PR-01, PR-02, FW-01, AP-01]
+  excluded_as_story_basis: [PR-03]
+  exclusion_reason: 历史案件仅作来源边界核验；本故事不复刻案件人物、物件、过程或判决。
+primary_mechanism:
+  id: PR-01
+  label: 规则改变后来者创造、标记、维护与防守资源的行为。
+secondary_mechanism:
+  id: PR-02
+  label: 公平判断可考虑长期保护成本与积累，但不能被简化为单一效率指标。
+framework:
+  id: FW-01
+  application: 比较两种候选规则的权利、责任、证明成本、行为反馈、长期成本与程序边界。
+anti_pattern:
+  id: AP-01
+  application: 不停在眼前归属争执，继续观察规则公布后的行为适应。
+original_story:
+  title: 修复站里的两枚木牌
+  setting: 暴雨后的社区自行车修复站；居民把无人认领的散件整理成可供公共维修使用的蓝色工具箱。
+  resource: 由零散工具组成、完成检验后才能安全使用的蓝色维修工具箱。
+  candidate_rules:
+    - id: first_tag
+      medium: 手掌触碰吊牌的木刻图示
+      condition: 谁先挂上认领吊牌，谁先取得工具箱的控制。
+    - id: complete_and_handover
+      medium: 扳手、检验印与交接双手的木刻图示
+      condition: 完成组装与检验的人在约定交接窗口内持有工具箱，并须留下可复核记录。
+  local_choice_warning: 两种规则均为原创试验条件，不表示价格、法院判决、现行法或普遍最优结论。
+beats:
+  - card: 1
+    function: dispute
+    action: 阿衡整理出一只尚未完成检验的蓝色工具箱；另一位居民同时伸手认领，唯一一辆待修自行车仍停在雨棚外。
+  - card: 2
+    function: candidate_rules
+    action: 小禾把两枚不同图示的木牌并排放在工作台上，众人分别指向“先挂吊牌”和“完成检验后交接”两种候选条件。
+  - card: 3
+    function: near_term_incentive
+    action: 试行先挂吊牌后，参与者忙着给未完成工具箱系上大吊牌并守在旁边，真正组装和检验的人手减少。
+  - card: 4
+    function: later_entrant_adaptation
+    action: 后来的参与者带来更多吊牌和锁绳而不是缺失工具；工作台被防守动作占据，待修自行车仍未动。
+  - card: 5
+    function: alternative_rule_and_counterexample
+    action: 改试完成检验后交接，阿衡与新参与者开始组装、测试并登记；但一只已检验工具箱因交接人迟到被长期占住，暴露即时归属并非自动最佳。
+  - card: 6
+    function: accumulation_and_use
+    action: 加入明确交接窗口与逾期复核后，完成的工具箱进入共享架，维修得以继续；画面同时保留维护、记录和申诉成本。
+  - card: 7
+    function: rights_procedure_boundary
+    action: 中立复核桌检查零件记录、检验印与通知过程；小禾允许一名参与者拒绝签收并提出异议，规则继续作为限期试验而非最终裁决。
+delete_card_test:
+  result: pass
+  rationale: 七卡分别承担争议、候选规则、即时激励、后来者适应、反例、积累与程序边界；删除任一卡都会断开 FW-01 的一个必要检查层。
+copyright_check:
+  paid_course_text_used: false
+  course_case_reused: false
+  historical_case_dramatized: false
+  source_specific_title_reused: false
+  raw_licensed_source_allowed: false
+blocker:
+  only: 指定 ChatGPT 项目“故事卡片生产｜Pro 生图”尚未完成唯一识别与生产会话绑定。
+

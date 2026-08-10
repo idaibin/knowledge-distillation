@@ -1,0 +1,28 @@
+story_id: cooperation-with-rules-v2
+version: "0.1-frozen"
+status: frozen_before_image_generation
+planned_cards: 7
+concept_budget:
+  primary: PR-01
+  secondary: PR-02
+  method: FW-01
+  anti_pattern: AP-01
+  excluded_from_dramatization: PR-03
+coverage_matrix:
+  - {card: 1, covers: [FW-01-step-1, AP-01-trigger], does_not_claim: current_law}
+  - {card: 2, covers: [FW-01-step-1], does_not_claim: either_rule_is_correct}
+  - {card: 3, covers: [PR-01, FW-01-step-2], does_not_claim: universal_response}
+  - {card: 4, covers: [PR-01, FW-01-step-2], does_not_claim: empirical_frequency}
+  - {card: 5, covers: [FW-01-step-3], does_not_claim: immediate_assignment_is_always_best}
+  - {card: 6, covers: [PR-02, FW-01-step-3], does_not_claim: efficiency_equals_deservingness}
+  - {card: 7, covers: [FW-01-step-4], does_not_claim: legal_holding_or_jurisdiction_rule}
+single_variable_test:
+  fixed: [character_contract, palette, canvas, text_density, camera_readability]
+  variable: 候选规则公布后，后来者投入从补齐工具转向挂牌防守，或从挂牌防守转向组装检验。
+  metric: 320px无字缩略图暴露2至3秒，观察者能说出投入方向发生变化。
+  forbidden_shortcuts: [价格数字, 货币符号, 法槌, 法院徽记, 对错勾叉, 胜负奖牌, 结论式流程箭头]
+review_route:
+  production: ChatGPT项目“故事卡片生产｜Pro 生图”
+  final_review: Review Control + persistent ZCode session owned by root thread
+  formal_pass_allowed: false
+

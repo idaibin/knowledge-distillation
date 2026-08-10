@@ -1,0 +1,208 @@
+story_id: broken-window-unseen-cost
+version: "1.1-card001-r6-refrozen"
+status: frozen_before_image_generation
+planned_cards: 7
+concept_budget: {primary: PR-01, uncertainty: PR-02, method: FW-01, anti_pattern: AP-01}
+coverage_matrix:
+  - {card: 1, covers: [FW-01-step-1], does_not_claim: all_damage_effects}
+  - {card: 2, covers: [FW-01-step-1, AP-01-trigger], does_not_claim: repair_work_is_fake}
+  - {card: 3, covers: [PR-01, FW-01-step-2], does_not_claim: shoes_and_books_were_certain}
+  - {card: 4, covers: [PR-01, FW-01-step-3], does_not_claim: universal_crowding_out_rate}
+  - {card: 5, covers: [AP-01], does_not_claim: repair_worker_has_no_benefit}
+  - {card: 6, covers: [PR-02, FW-01-step-4], does_not_claim: counterfactual_is_observed_fact}
+  - {card: 7, covers: [FW-01-step-1, FW-01-step-2, FW-01-step-3, FW-01-step-4], does_not_claim: empirical_legal_or_policy_holding}
+single_variable_test:
+  fixed: [character_contract, two_budget_bags, unique_storefront_window, canvas, palette]
+  start_state: Card1 唯一磨损鞋对始终穿在助手双脚，地面鞋为零；左预算袋直接贴近助手脚上鞋，右预算袋直接位于大尺寸无字空心单本书轮廓计划板下方或旁侧；两组明显分离且两袋不得彼此成组。计划板中心完全镂空透出连续空墙，只表示尚未发生的购书计划。
+  variable: 两个预算袋从鞋与书的计划位置转到修窗托盘并由玻璃工带走。
+  metric: 320px无字缩略图暴露2至3秒，观察者能先在Card001看出左袋对应旧鞋、右袋对应空心单本书轮廓计划板，再看出资源去向改变且鞋书仍未获得；Card001与Card004的空心书形媒介都必须读成未发生购书计划，不得读成实际书、文字牌、价格牌、裁决牌或结论。
+  forbidden_shortcuts: [文字数字, 价格货币, 对错勾叉, 法槌徽记, 胜负奖牌, 必然箭头]
+review_route:
+  production: card001_r6_mechanical_crop_candidate_pass_local_waiting_independent_visual_review
+  external_review: not_started
+  formal_pass_allowed: false
+card007_r1:
+  round_id: Card007-r1
+  state: completed_local_and_independent_pass_historical_frozen
+  mode: full_generation_no_baseline
+  output_path: card-007-candidate.png
+  output_sha256: 6662e6e358259f786aa27323fd7aa56b01a1b394aeefc99614b931ad6d3d24f6
+  local_review: pass
+  independent_review: pass
+  external_send: true
+  submitted_once: true
+  resubmit: forbidden
+  formal: false
+card001_edit_r2:
+  round_id: Card001-edit-r2
+  state: completed_local_and_independent_revise_historical_failed_review_evidence_only
+  mode: minimal_edit_exact_baseline
+  baseline_file_id: file_0000000027c482119c79c1175b8cfeb1
+  baseline_path: card-001-r1.png
+  baseline_sha256: 2f076813522f750d7b10a9b2df04c3df44aa157971dbb5d12c6b3f0870187738
+  only_edit: create_one_single_book_width_empty_slot_immediately_adjacent_to_right_budget_bag
+  required_slot: [all_four_boundaries_clear, visible_back_wall, not_occluded_by_bag, zero_second_empty_slot]
+  preserve: [three_adults, broken_window, loose_stone, two_budget_bags, worn_shoe_pair, composition, camera, palette, style]
+  prior_card001_rounds: historical_failed_review_evidence_only_no_resubmit
+  output_file_id: file_00000000bb408206a70d7fe99490012b
+  output_path: card-001-r2.png
+  output_sha256: 07a866a6d56d8f00a9e02a46ca808c05af341f5b03c86d2118dfede175c6aa14
+  local_review: revise
+  independent_review: revise
+  failure_variable: upper_and_lower_two_wide_empty_bays
+  external_send: true
+  host_call_count: 5
+  submitted_once: true
+  resubmit: forbidden
+  formal: false
+card001_edit_r3:
+  round_id: Card001-edit-r3
+  state: completed_then_revised_by_package_blind_review_historical_failed_evidence_only
+  mode: minimal_edit_exact_baseline
+  baseline_file_id: file_00000000bb408206a70d7fe99490012b
+  baseline_path: card-001-r2.png
+  baseline_sha256: 07a866a6d56d8f00a9e02a46ca808c05af341f5b03c86d2118dfede175c6aa14
+  only_edit: retain_exactly_one_lower_tier_single_book_width_empty_slot_and_restore_all_other_bays_to_continuous_book_spines
+  required_slot: [lower_tier_near_right_bag, all_four_boundaries_clear, visible_back_wall, continuous_book_spines_on_both_sides, zero_bag_occlusion, zero_second_empty_slot_or_wide_bay]
+  preserve: [three_adults, broken_window, loose_stone, two_budget_bags, worn_shoe_pair, composition, camera, lighting, palette, style]
+  prior_card001_rounds: r2_and_earlier_historical_failed_review_evidence_only_no_resubmit
+  output_file_id: file_000000005c488206be4ec2334801bc2f
+  output_path: card-001-r3.png
+  output_sha256: 332d1c029286869939c21214799b9b8fb494c0ad51aca65d6138b8583b229830
+  thumbnail_path: card-001-r3-thumb-320.png
+  thumbnail_sha256: 8ee90a19141bb8e0ab8d7f4c2ed95d0c9fe6740c609a7769d4ee61426e74c8fa
+  local_review: pass_candidate_unique_lower_single_book_width_slot
+  independent_review: revise_320px_single_book_width_gap_not_independently_legible
+  external_send: true
+  host_call_count: 5
+  submitted_once: true
+  resubmit: forbidden
+  formal: false
+card001_r4_full_regeneration:
+  round_id: Card001-r4-full-regeneration
+  state: completed_local_and_independent_revise_historical_failed_review_evidence_only
+  mode: full_regeneration_from_refrozen_basis
+  baseline_image: none
+  edit_from_r1_r2_r3: forbidden
+  prior_card001_rounds: r1_r2_r3_historical_failed_review_evidence_only_no_resubmit
+  required_primary_read: left_budget_bag_grouped_with_complete_worn_shoe_pair_and_right_budget_bag_grouped_with_large_wordless_hollow_single_book_outline_plan_board
+  hollow_book_plan_board: [large_at_320px, single_book_outline, fully_open_center_showing_background, clearly_not_actual_book_text_price_verdict_or_conclusion]
+  preserve: [three_adults, one_broken_window, one_loose_stone, two_budget_bags, one_complete_worn_shoe_pair, composition_role, canvas, palette, wordless]
+  output_file_id: file_000000004a7082068a80ffb49399a5b4
+  output_path: card-001-r4.png
+  output_sha256: 094514936889ff4fb491e8fdf425edc37df12f5aece451353c2884b3e0065b56
+  thumbnail_path: card-001-r4-thumb-320.png
+  thumbnail_sha256: 704a19b9933986f8029d4b91ebea745f0846c2afec6b7d3f6c8df528cba335d5
+  local_review: revise_grouping_and_zero_actual_books_contract_failed
+  independent_review: revise_grouping_actual_books_and_background_rectangles
+  external_send: true
+  host_call_count: 5
+  submitted_once: true
+  resubmit: forbidden
+  formal: false
+card001_r5_full_regeneration:
+  round_id: Card001-r5-full-regeneration
+  state: completed_local_and_independent_revise_historical_failed_review_evidence_only
+  mode: full_regeneration_from_refrozen_basis
+  baseline_image: none
+  edit_from_r1_r2_r3_r4: forbidden
+  prior_card001_rounds: r1_r2_r3_r4_historical_failed_review_evidence_only_no_resubmit
+  required_primary_read: left_bag_directly_beside_complete_worn_shoes_and_right_bag_directly_below_or_beside_large_hollow_single_book_plan_board_with_clear_spatial_separation
+  background_contract: continuous_blank_wall_zero_shelf_books_book_like_objects_wall_frames_or_rectangular_surfaces
+  preserve: [three_adults, one_broken_window, one_loose_stone, two_budget_bags, one_complete_worn_shoe_pair, one_large_hollow_single_book_plan_board, canvas, palette, wordless]
+  output_file_id: file_000000000584820680472d4dffc143c1
+  output_path: card-001-r5.png
+  output_sha256: e850b362ed8c5662a5950df791339adb2dfc1c21b3c87fb8479946cdfb32bd0e
+  thumbnail_path: card-001-r5-thumb-320.png
+  thumbnail_sha256: 54f85f8d393d9fe538a166843f0a1a3746cc5b28af765573e6edcf2fbdb8e99e
+  local_review: revise_second_worn_shoe_pair_breaks_exact_count_and_identity_continuity
+  independent_review: revise_second_worn_shoe_pair
+  external_send: true
+  host_call_count: 5
+  submitted_once: true
+  resubmit: forbidden
+  formal: false
+card001_r6_full_regeneration:
+  round_id: Card001-r6-full-regeneration
+  state: completed_provider_output_revise_then_mechanical_crop_candidate_pass_local_waiting_independent_visual_review
+  mode: full_regeneration_from_refrozen_basis
+  baseline_image: none
+  edit_from_r1_r2_r3_r4_r5: forbidden
+  prior_card001_rounds: r1_r2_r3_r4_r5_historical_failed_review_evidence_only_no_resubmit
+  required_primary_read: left_bag_directly_beside_only_worn_shoe_pair_on_assistant_feet_and_right_bag_directly_below_or_beside_large_hollow_single_book_plan_board_with_clear_spatial_separation
+  shoe_contract: [worn_shoe_pairs_1, worn_pair_on_assistant_feet, ground_shoes_0, second_pair_0]
+  background_contract: continuous_blank_wall_zero_shelf_books_book_like_objects_wall_frames_or_rectangular_surfaces
+  preserve: [three_adults, one_broken_window, one_loose_stone, two_budget_bags, one_large_hollow_single_book_plan_board, canvas, palette, wordless]
+  output_file_id: file_00000000056882098cf6e8e179287639
+  output_path: card-001-r6.png
+  output_sha256: 482086a593006d5155fa716a24546e523f5713b52e924f67ebad2eb4252801df
+  native_dimensions: 1086x1449
+  thumbnail_path: card-001-r6-thumb-320.png
+  thumbnail_sha256: f84d1e878085550fbeed59ea50b1ea9dc79adf30dd8e1a6d2cdacaf7f9efd2bb
+  local_review: revise_native_height_1449_breaks_exact_canvas_contract
+  independent_review: allowed_bottom_one_pixel_mechanical_crop_no_regeneration
+  derivative_path: card-001-r6-crop-1086x1448.png
+  derivative_sha256: bb685a661cbf9d1d91937bf43a86e3fe01ed3ab45fafa2b39957c30d2d8b484c
+  derivative_dimensions: 1086x1448
+  derivative_thumbnail_path: card-001-r6-crop-thumb-320.png
+  derivative_thumbnail_sha256: 1f2828fcee272e0f5b3922d7de3e6c66a007a5b921fe4b6442bbef94c167a79f
+  derivative_local_review: pass_local_mechanical_crop_candidate_waiting_independent_visual_review
+  derivative_local_review_path: card-001-r6-crop-local-review.yaml
+  derivative_local_review_sha256: 71d19a905c9c9eacf1730f3e9e0faf087ae7cf6ed8a2dfc1e6aae7799fbd1580
+  derivative_independent_review: pending
+  external_send: true
+  host_call_count: 5
+  submitted_once: true
+  resubmit: forbidden
+  formal: false
+card006_edit_r1:
+  round_id: Card006-edit-r1
+  state: completed_local_and_independent_pass_historical_frozen
+  mode: minimal_edit_exact_baseline
+  baseline_file_id: file_0000000050ac8206a005ac4b080e0cce
+  baseline_path: card-006-candidate.png
+  baseline_sha256: a2bf5b834b7e5a62320f296d335c29acd842fc077bfc6297a546bd4fabf38326
+  frozen_pass: [adults_4, equal_scenario_boards_2, irregular_blank_assumption_card_1, gavels_text_price_verdict_0, primary_read_320px]
+  only_edit: remove_all_background_rectangular_surfaces
+  preserve: [characters, two_tabletop_boards, central_irregular_assumption_card, composition, camera, palette, style]
+  resubmit_original_round: forbidden
+  external_send: true
+  submitted_once: true
+  output_path: card-006-edit-r1.png
+  output_sha256: f81b1f69639bd4072cf96c8e835e00db8e48abc917d8bc3aa7b4134b50edcfc9
+  local_review: pass
+  independent_review: pass
+  resubmit: forbidden
+  formal: false
+card004_refreeze:
+  round_id: Card004-r4-full-regeneration
+  state: completed_local_and_independent_pass_historical_frozen
+  mode: full_regeneration_from_refrozen_basis
+  current_output_path: card-004-r4.png
+  current_output_sha256: 4569bbeb865a9a287b3180c18b6ecedc9cabe2f8ad20cdbf5aa5f6adb976ac36
+  local_review: pass
+  independent_review: pass
+  prior_images: card004_r3_and_earlier_historical_failed_review_evidence_only
+  edit_from_r3: forbidden
+  external_send: true
+  submitted_once: true
+  image_generated: true
+  resubmit: forbidden
+card005_refreeze:
+  round_id: Card005-r2-full-regeneration
+  state: completed_local_and_independent_pass_historical_frozen
+  mode: full_regeneration_from_refrozen_basis
+  unique_work_surface: same_single_storefront_window
+  allowed_action: onsite_window_surface_cleaning_and_edge_sealing
+  forbidden_detached_media: [independent_rectangular_glass_frame, detached_window_pane, transparent_board, second_window, separate_worktable]
+  current_output_path: card-005-r2.png
+  current_output_sha256: d3382fd4a80488b5f70c66003dd3d19f510e7f04421dad628e615cddb27fe7a0
+  local_review: pass
+  independent_review: pass
+  prior_image: card005_r1_historical_failed_review_evidence_only
+  baseline_image: none
+  edit_from_card005_r1: forbidden
+  external_send: true
+  submitted_once: true
+  image_generated: true
+  resubmit: forbidden

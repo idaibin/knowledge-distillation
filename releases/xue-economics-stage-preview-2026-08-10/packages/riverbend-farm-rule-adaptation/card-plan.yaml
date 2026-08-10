@@ -1,0 +1,38 @@
+story_id: riverbend-farm-rule-adaptation
+version: "0.3-lifecycle-reconciled"
+status: frozen_before_image_generation
+lifecycle:
+  c1: c1_incident
+  c2: c2_two_candidates_first_appear
+  c3: c3_continuous_fence_first_short_term_pilot_day
+  c4: c4_days_later_continue_short_term_pilot
+  c5: c5_two_candidate_comparison
+  c6: c6_baseline_if_no_trial_original_low_boundary
+  c7: c7_procedural_close
+arrangement_lifecycle:
+  fence_line: c2_candidate_c3_first_short_term_pilot_c4_continue_pilot_c5_c6_comparison
+  buffer_strip: c2_candidate_only_c5_c6_comparison_not_piloted_or_observed
+  baseline: c6_if_no_trial_continuous_fence_not_used_original_low_boundary_retained
+planned_cards: 7
+concept_budget: {primary: PR-01, secondary: PR-02, method: FW-01, anti_pattern: AP-01}
+coverage_matrix:
+  - {card: 1, covers: [FW-01-step-1, AP-01-trigger], does_not_claim: bad_intent_or_single_party_fault}
+  - {card: 2, covers: [PR-01, FW-01-step-1], does_not_claim: either_arrangement_is_correct}
+  - {card: 3, covers: [PR-02, FW-01-step-2], does_not_claim: all_costs_are_observed_or_equal}
+  - {card: 4, covers: [PR-02, FW-01-step-3], does_not_claim: universal_or_empirical_response}
+  - {card: 5, covers: [PR-01, FW-01-step-3], does_not_claim: one_arrangement_is_automatically_optimal}
+  - {card: 6, covers: [FW-01-step-4], does_not_claim: baseline_is_observed_fact_or_certain_forecast}
+  - {card: 7, covers: [FW-01-step-1, FW-01-step-2, FW-01-step-3, FW-01-step-4, AP-01], does_not_claim: empirical_legal_or_policy_holding}
+single_variable_test:
+  fixed: [character_contract, single_cow_herd_scale, canvas, palette, wordless_media, camera_readability]
+  variable: 候选安排改变后，养牛者的赶牛路线与种植者的边缘地用途发生调整。
+  metric: 320px无字缩略图暴露2至3秒，观察者能从Card003到Card004看出两种候选刚出现后首日先试连续栅栏、数日后仍在试行且牛群继续改走石质草坡、边缘菜畦继续改为低矮牧草；Card005至Card006明确区分已试行栅栏与未试行草带空畦候选，并明确若不试行连续栅栏就沿用原低边界的基线比较。
+  forbidden_shortcuts: [文字数字, 价格货币, 法槌, 裁决印章, 法院徽记, 对错勾叉, 胜负奖牌, 必然箭头]
+review_route:
+  production: no_browser_no_external_send_before_independent_basis_review
+  external_review: not_started
+  formal_pass_allowed: false
+arrangement_state_contract:
+  fence_line: c2_candidate_c3_first_short_term_pilot_c4_continue_pilot_c5_c6_comparison
+  buffer_strip: c2_candidate_only_c5_c6_comparison_not_piloted_or_observed
+  baseline: c6_if_no_trial_continuous_fence_not_used_original_low_boundary_retained

@@ -1,0 +1,628 @@
+schema_version: browser-operation/v1
+task_key: riverbend-farm-rule-adaptation-card001-production
+surface: chrome_extension_browser
+target:
+  provider: chatgpt
+  project_name: 故事卡片生产｜Pro 生图
+  project_id: g-p-6a700985260881918e3834a43b1e12a6
+  project_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/project
+authorization: external_collaboration_image_generation_one_new_conversation_one_card
+selected_capability: image-generate
+basis:
+  lesson_id: "004"
+  ir_sha256: d7c346fbc6b0c9fff93c2db1dbf2331e1d769490e421d0d70a8d57f4c4d011dd
+  story_sha256: 2a2a784bf04b8e4093bda5bd03f347a46ea9112a2ab5039c8f375a445497254b
+  text_layer_sha256: 9b093d8b04760d18ab32afcbf1d94975f22d9bec4259901f4c5fbb3f2451947d
+  storyboard_sha256: 752dd09d53c093c15452a4cec4438448215bea2ffddd7e11b8581c07be6ca330
+  card_plan_sha256: d2d168cd4ec5bf4f6c8efd1a0925f83cfc53923c04f10aa7315633fc4327d535
+  visual_plan_sha256: 9bebb2ecf3ef249d3d5b4daa6aa66f7af353d697534a22622e46de1b572b9bc9
+  continuity_ledger_sha256: de5eb1fc807cf2ee199aa971a7a3f6a4548bccdbb9572945cdcdf7034c26320f
+  content_checkpoint_sha256: 55206a121eb2cc6ef5452a1a8f0978d83ab8f439168eacef1313f9316157d7cc
+  production_package_sha256: 36ddf57d66100fa045eb8aacbb6d5a1ca40bf71dd11d16346a0ca58193ab357f
+r1_historical_capability_snapshot:
+  snapshot_id: riverbend-farm-rule-adaptation-card001-preflight-20260810
+  authenticated_session: visible_personal_account_category_on_current_chatgpt_surface
+  project_identity: verified_unique_active_project_name_and_live_conversation_href_project_id
+  clean_new_story_composer: verified_empty_composer_after_active_project_selection
+  image_capability: verified_create_image_mode_active_before_unique_submit
+  tab_control: verified_owned_agent_task_tab_1565528900
+  response_completion: verified_one_provider_owned_generated_image_visible_and_no_active_generation_control
+  page_asset_export: verified_one_attribute_backed_image_asset_exported
+round:
+  round_id: riverbend-farm-rule-adaptation-card001-r1
+  prompt:
+    path: card-001-prompt.md
+    artifact_sha256: c13d237030375734a47cd544a710d490ea14c8700c2ec8dd10df60402473bddd
+    sent_text_sha256: c13d237030375734a47cd544a710d490ea14c8700c2ec8dd10df60402473bddd
+    composed_dom_inner_text_sha256: bc99a76254276133052ab06905662783ed8e05a91cdbab4b5a331487d29bd4a6
+    composer_normalization: markdown_heading_marker_and_terminal_newline_not_present_in_inner_text
+    size_bytes: 2706
+    character_count: 990
+    frozen: true
+  target_conversation:
+    policy: create_new_project_conversation_only
+    conversation_id: 6a78fddc-52ec-83ee-a42a-b7b353ee75ad
+    conversation_url: https://chatgpt.com/c/6a78fddc-52ec-83ee-a42a-b7b353ee75ad
+    forbidden_context: [broken-window-unseen-cost, Lesson002, any_existing_story_conversation]
+  operations:
+    create_conversation:
+      operation_id: riverbend-farm-rule-adaptation:card001:r1:create-conversation
+      state: completed
+      host_call_count: 1
+      pre_submit_evidence: exact_frozen_prompt_in_unique_empty_project_composer
+      evidence: unique_new_conversation_created_after_single_project_bound_submit
+      retry_policy: never
+    select_image_capability:
+      operation_id: riverbend-farm-rule-adaptation:card001:r1:select-image-capability
+      state: completed
+      host_call_count: 1
+      evidence: active_empty_composer_rendered_create_image_mode_and_unique_enabled_send_control
+      retry_policy: only-if-no-side-effect-proven
+    submit_prompt:
+      operation_id: riverbend-farm-rule-adaptation:card001:r1:submit-prompt
+      state: submitted
+      host_call_count: 1
+      submitted_once: true
+      submitted_at: Not verified
+      evidence: exact_prompt_visible_as_new_user_message_and_provider_owned_generating_image_state_visible
+      never_resend: true
+      retry_policy: never
+    capture_response:
+      operation_id: riverbend-farm-rule-adaptation:card001:r1:capture-response
+      state: completed_candidate_pending_local_review
+      host_call_count: 1
+      provider_completion: one_final_visible_image_after_transient_retry_notice; no_retry_invoked
+      requested_output_count: 1
+      final_visible_output_count: 1
+      output_file_id: file_000000007c6c82099b1b447d651d0f21
+      asset_id: 32263f1697b95958
+      native_dimensions: 1086x1448
+      local_path: card-001-candidate.png
+      sha256: fcfcea735ac21736ce032f88bde669ad37055d6090b8c6ecfc5243521c11390c
+      retry_policy: read-only-idempotent-after-verified-submit
+    export_output:
+      operation_id: riverbend-farm-rule-adaptation:card001:r1:export-output
+      state: completed
+      host_call_count: 1
+      inventory_id: 7db0e405-9ca6-44ce-9687-5813019250f1
+      bundled_asset_ids: [32263f1697b95958]
+      bundle_downloaded_count: 1
+      bundle_failed_count: 0
+      retained_local_path: card-001-candidate.png
+      retry_policy: never
+    derive_thumbnail:
+      operation_id: riverbend-farm-rule-adaptation:card001:r1:derive-thumbnail
+      state: completed
+      host_call_count: 1
+      local_path: card-001-thumb-320.png
+      dimensions: 240x320
+      sha256: a2ab3310761f4a464811f090400b706ed7bed549d16058636df89478111c6fa2
+      retry_policy: never
+pre_submit_self_review:
+  state: pass_no_send
+  exact_counts: pass
+  roster_and_role_contract: pass
+  ledger_owner_holder_transfer_form_time: pass
+  same_kind_exclusions: pass
+  wordless_no_price_currency_gavel_verdict: pass
+  320px_two_to_three_second_action_contract: pass
+  prompt_matches_card001_only: pass
+  frozen_basis_hashes_match_current_files: pass
+  external_send: true
+  browser_opened: true
+  images_generated: 1
+  next_action: complete_local_native_and_320px_review_then_stop_for_independent_review
+side_effects:
+  navigation_only: false
+  input: true
+  conversation_created: true
+  submitted: true
+  ambiguous_submit: false
+  generated_output: true
+  local_binary_captured: true
+  pixel_qa_complete: true
+local_review:
+  path: card-001-local-review.yaml
+  decision: pass_candidate_waiting_independent_visual_review
+  formal: false
+  next_round: blocked_waiting_independent_visual_review_no_auto_revision
+r1_historical_disposition:
+  state: local_pixel_pass_but_project_provenance_failed_ambiguous_historical_candidate
+  conversation_id: 6a78fddc-52ec-83ee-a42a-b7b353ee75ad
+  conversation_url: https://chatgpt.com/c/6a78fddc-52ec-83ee-a42a-b7b353ee75ad
+  prompt_path: card-001-prompt.md
+  prompt_sha256: c13d237030375734a47cd544a710d490ea14c8700c2ec8dd10df60402473bddd
+  output_file_id: file_000000007c6c82099b1b447d651d0f21
+  asset_id: 32263f1697b95958
+  image_path: card-001-candidate.png
+  image_sha256: fcfcea735ac21736ce032f88bde669ad37055d6090b8c6ecfc5243521c11390c
+  thumbnail_path: card-001-thumb-320.png
+  thumbnail_sha256: a2ab3310761f4a464811f090400b706ed7bed549d16058636df89478111c6fa2
+  local_pixel_review: pass
+  independent_image_content_review: pass
+  project_provenance: failed_ambiguous
+  prohibited_actions: [move_again, resend, edit, regenerate_r1, reuse_as_r2_baseline]
+  formal: false
+project_binding_repair:
+  operation_id: riverbend-farm-rule-adaptation:card001:r1:move-existing-conversation-to-project
+  state: ambiguous
+  host_call_count: 1
+  authorization: one_existing_conversation_move_only
+  source_conversation_id: 6a78fddc-52ec-83ee-a42a-b7b353ee75ad
+  source_url: https://chatgpt.com/c/6a78fddc-52ec-83ee-a42a-b7b353ee75ad
+  target_project_id: g-p-6a700985260881918e3834a43b1e12a6
+  target_project_name: 故事卡片生产｜Pro 生图
+  preconditions: [generic_conversation_url_live, exactly_one_move_to_project_menuitem, exactly_one_target_project_menuitem, one_user_prompt, one_final_image, submit_prompt_submitted_once_true]
+  retry_policy: never
+  action: clicked_unique_target_project_menuitem_once
+  side_effect_observed: unknown
+  postcondition_check: generic_conversation_href_count_1_and_target_project_href_count_0_after_2500ms
+  retained_content_check: one_user_prompt_heading_and_one_final_image_button_visible; no_new_submit
+  reconciliation_required: user_or_parent_verifies_provider_move_completion_without_repeating_mutation
+  no_retry: true
+  refresh_reconciliation:
+    state: generic_url_still_rendered_after_one_read_only_refresh
+    source: parent_authorized_refresh_timeline
+    refreshed_at: Not verified
+    observed_url: https://chatgpt.com/c/6a78fddc-52ec-83ee-a42a-b7b353ee75ad
+    target_project_href_count: 0
+    generic_conversation_href_count: 1
+    image_dom: not_seen_in_refreshed_DOM
+    interpretation: does_not_erase_retained_local_binary_or_prior_single_image_capture
+revision_rounds:
+  - round_id: riverbend-farm-rule-adaptation-card001-r2-full-regeneration
+    mode: full_generation_no_baseline
+    status: completed_local_and_independent_pass_historical_frozen
+    basis:
+      story_sha256: 2a2a784bf04b8e4093bda5bd03f347a46ea9112a2ab5039c8f375a445497254b
+      text_layer_sha256: 9b093d8b04760d18ab32afcbf1d94975f22d9bec4259901f4c5fbb3f2451947d
+      storyboard_sha256: 752dd09d53c093c15452a4cec4438448215bea2ffddd7e11b8581c07be6ca330
+      card_plan_sha256: d2d168cd4ec5bf4f6c8efd1a0925f83cfc53923c04f10aa7315633fc4327d535
+      visual_plan_sha256: 7172d21f6a140c25991418e081b916371c8908092059479075ffa963c25ca799
+      continuity_ledger_sha256: 67d9fa188382332879d2dd54c1e93a1c5c610a4e92f8e227414d4f0888425ff8
+      content_checkpoint_sha256: cc2c8a655611ab5f706a58a7738571ed0abb9dd53164fbc3688a985c70ef109d
+    prompt:
+      path: card-001-r2-full-regeneration-prompt.md
+      sha256: 1b5582aea7f2296527a5acc6895034cd8ea3ac0d591a9004546103babef13555
+      size_bytes: 2799
+      character_count: 1045
+      frozen: true
+    target_conversation:
+      policy: create_new_project_scoped_conversation_only
+      conversation_id: 6a790a48-581c-83e8-8879-c29596f23966
+      conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a790a48-581c-83e8-8879-c29596f23966
+      expected_url_pattern: "^/g/g-p-6a700985260881918e3834a43b1e12a6(?:-[^/]+)?/c/[0-9a-f-]+$"
+      forbidden_context: [6a78fddc-52ec-83ee-a42a-b7b353ee75ad, broken-window-unseen-cost, Lesson002, any_existing_story_conversation]
+    operations:
+      create_conversation: {operation_id: "riverbend-farm-rule-adaptation:card001:r2:create-project-scoped-conversation", state: completed, host_call_count: 1, retry_policy: never}
+      select_image_capability: {operation_id: "riverbend-farm-rule-adaptation:card001:r2:select-image-capability", state: completed, host_call_count: 1, retry_policy: only-if-no-side-effect-proven}
+      submit_prompt: {operation_id: "riverbend-farm-rule-adaptation:card001:r2:submit-prompt", state: submitted, host_call_count: 1, submitted_once: true, submitted_at: Not verified, never_resend: true, retry_policy: never}
+      capture_response: {operation_id: "riverbend-farm-rule-adaptation:card001:r2:capture-response", state: completed, host_call_count: 1, requested_output_count: 1, final_visible_output_count: 1, retry_notice_visible_but_not_clicked: true, retry_policy: read-only-idempotent_after_verified_submit}
+      export_output: {operation_id: "riverbend-farm-rule-adaptation:card001:r2:export-output", state: completed, host_call_count: 1, inventory_id: 8046bb4f-c733-4ec0-bfbb-cc06384c6866, asset_id: 25acb6d99fe385fc, output_file_id: file_00000000b218821189daf33f06aa39c0, retry_policy: never}
+      derive_thumbnail: {operation_id: "riverbend-farm-rule-adaptation:card001:r2:derive-thumbnail", state: completed, host_call_count: 1, retry_policy: never}
+    admission_gate:
+      exact_target_project_id: g-p-6a700985260881918e3834a43b1e12a6
+      pre_submit: real_project_scoped_empty_composer_visible_and_unique
+      post_submit: new_conversation_url_must_match_expected_project_scoped_pattern
+      on_failure: block_before_submit_or_mark_ambiguous_without_resend
+    output:
+      baseline_image: none
+      image_path: card-001-r2.png
+      image_sha256: 5c98eee05626b527ebbd87a11e9ca9e7f95a760b1b859b42632759c358e89fbd
+      native_dimensions: 1086x1448
+      thumbnail_path: card-001-r2-thumb-320.png
+      thumbnail_sha256: dd14f61d34da325eacaa50fdab4438b1a59ef9a1b8f50563c0d149ed34a86266
+      thumbnail_dimensions: 240x320
+      local_review_path: card-001-r2-local-review.yaml
+      independent_review_path: card-001-r2-independent-review.yaml
+      independent_review_sha256: c9d48ea8f5336086e3f7b0519c9e26b9c7ef2a2c8a1cce4034fe39cf3618c72b
+      independent_review: pass
+      independent_review_recorded_by: producer
+      independent_reviewer_task: /root/review_validate_lesson_005
+      live_provider: Not reverified
+    external_send: true
+    formal: false
+    prohibited_actions: [resubmit, regenerate, edit, move_conversation, use_as_card002_baseline]
+  - round_id: riverbend-farm-rule-adaptation-card002-r1-full-generation
+    mode: full_generation_no_baseline
+    status: completed_local_and_independent_pass_historical_frozen
+    basis:
+      story_sha256: 2a2a784bf04b8e4093bda5bd03f347a46ea9112a2ab5039c8f375a445497254b
+      text_layer_sha256: 9b093d8b04760d18ab32afcbf1d94975f22d9bec4259901f4c5fbb3f2451947d
+      storyboard_sha256: 752dd09d53c093c15452a4cec4438448215bea2ffddd7e11b8581c07be6ca330
+      card_plan_sha256: d2d168cd4ec5bf4f6c8efd1a0925f83cfc53923c04f10aa7315633fc4327d535
+      visual_plan_sha256: 27d40d40a88241ae0dfb8774a29d6b2e7a71075f22ed343ab39f487edf3f35a3
+      continuity_ledger_sha256: 4cbdf36cf9ca7266d64d66cb0a070cc1b030f92988dddda12a2c459264e9d259
+    prompt:
+      path: card-002-prompt.md
+      sha256: 64a5f3599723767d7b6d7a88acebd5586d16aa88c076af646c548c43d94ee69e
+      sent_text_sha256: 64a5f3599723767d7b6d7a88acebd5586d16aa88c076af646c548c43d94ee69e
+      composed_dom_inner_text_sha256: 26c1e2954b8f110499eb7b1557bac347cf571bbd71edf1c5d3c85d57c1ceec31
+      composer_normalization: markdown_heading_marker_and_terminal_newline_not_present_in_inner_text
+      size_bytes: 2299
+      character_count: 2296
+      frozen: true
+    target_conversation:
+      policy: create_new_project_scoped_conversation_only
+      exact_target_project_id: g-p-6a700985260881918e3834a43b1e12a6
+      expected_url_pattern: "^/g/g-p-6a700985260881918e3834a43b1e12a6(?:-[^/]+)?/c/[0-9a-f-]+$"
+      forbidden_context: [6a78fddc-52ec-83ee-a42a-b7b353ee75ad, 6a790a48-581c-83e8-8879-c29596f23966, broken-window-unseen-cost, any_existing_story_conversation]
+    operations:
+      create_conversation: {operation_id: "riverbend-farm-rule-adaptation:card002:r1:create-project-scoped-conversation", state: completed, host_call_count: 1, pre_submit_evidence: exact_frozen_prompt_in_unique_empty_project_composer, evidence: unique_new_project_scoped_conversation_created_after_single_submit, retry_policy: never}
+      select_image_capability: {operation_id: "riverbend-farm-rule-adaptation:card002:r1:select-image-capability", state: completed, host_call_count: 1, evidence: active_empty_composer_rendered_create_image_mode_and_unique_enabled_send_control, retry_policy: only-if-no-side-effect-proven}
+      submit_prompt: {operation_id: "riverbend-farm-rule-adaptation:card002:r1:submit-prompt", state: submitted, host_call_count: 1, submitted_once: true, submitted_at: Not verified, evidence: exact_prompt_visible_as_new_user_message_and_provider_owned_generating_image_state_visible, never_resend: true, retry_policy: never}
+      capture_response: {operation_id: "riverbend-farm-rule-adaptation:card002:r1:capture-response", state: completed_candidate_pending_local_review, host_call_count: 1, provider_completion: one_final_visible_image_after_transient_retry_notice; no_retry_invoked, requested_output_count: 1, final_visible_output_count: 1, output_file_id: file_00000000970c8209aaa31cbc5db43607, asset_id: 8943a92a6a24ef54, native_dimensions: 1086x1448, local_path: card-002.png, sha256: ce0715ab09eca09f2c60f0cd430410332cc8dfeecd693756d990869afb8d5920, retry_policy: read-only-idempotent_after_verified_submit}
+      export_output: {operation_id: "riverbend-farm-rule-adaptation:card002:r1:export-output", state: completed, host_call_count: 1, inventory_id: f5dc9e29-3b8a-4349-baf4-85a2a7bb03c0, bundled_asset_ids: [8943a92a6a24ef54], output_file_id: file_00000000970c8209aaa31cbc5db43607, bundle_downloaded_count: 1, bundle_failed_count: 0, retained_local_path: card-002.png, retry_policy: never}
+      derive_thumbnail: {operation_id: "riverbend-farm-rule-adaptation:card002:r1:derive-thumbnail", state: completed, host_call_count: 1, local_path: card-002-thumb-320.png, dimensions: 240x320, sha256: e9d4f3ba4f770241df09dc915fc0d5bb112c386259caba6ad9cd4360ea6e11e1, retry_policy: never}
+    admission_gate:
+      pre_submit: real_project_scoped_empty_composer_visible_and_unique
+      post_submit: new_conversation_url_must_match_expected_project_scoped_pattern
+      on_failure: block_before_submit_or_mark_ambiguous_without_resend
+    output:
+      baseline_image: none
+      image_path: card-002.png
+      image_sha256: ce0715ab09eca09f2c60f0cd430410332cc8dfeecd693756d990869afb8d5920
+      native_dimensions: 1086x1448
+      thumbnail_path: card-002-thumb-320.png
+      thumbnail_sha256: e9d4f3ba4f770241df09dc915fc0d5bb112c386259caba6ad9cd4360ea6e11e1
+      thumbnail_dimensions: 240x320
+      output_file_id: file_00000000970c8209aaa31cbc5db43607
+      asset_id: 8943a92a6a24ef54
+    basis_review:
+      decision: pass
+      path: card-002-basis-review.yaml
+      reviewer_task: /root/review_validate_lesson_005
+      recorded_by: producer
+      reviewed_snapshot_sha256: 313fa16fb397675b73193f653aa6324d17c5c801484eed55381265ef9774d1aa
+    external_send: true
+    formal: false
+    local_review:
+      path: card-002-local-review.yaml
+      sha256: 425f36723d8251c290fc6d391b95092ca8b65feafe5dd3208d030b53468fe0c3
+      decision: pass_candidate_waiting_independent_visual_review
+      formal: false
+      next_action: independent_native_and_320px_visual_review_before_card003
+    independent_review:
+      decision: pass
+      path: card-002-independent-review.yaml
+      sha256: d3d4c4b16dccb48cf992d1bf303473e7c4ea0d4e00e5f71fb532bcc7e8f8b6a5
+      reviewer_task: /root/review_validate_lesson_005
+      recorded_by: producer
+      live_provider: Not reverified
+    prohibited_actions: [resubmit, regenerate, edit, move_conversation, card003_to_card007, html, review_control, zcode, formal]
+  - round_id: riverbend-farm-rule-adaptation-card003-r1-full-generation
+    mode: full_generation_no_baseline
+    status: completed_local_and_independent_pass_historical_frozen
+    basis:
+      story_sha256: 2a2a784bf04b8e4093bda5bd03f347a46ea9112a2ab5039c8f375a445497254b
+      text_layer_sha256: 9b093d8b04760d18ab32afcbf1d94975f22d9bec4259901f4c5fbb3f2451947d
+      storyboard_sha256: 752dd09d53c093c15452a4cec4438448215bea2ffddd7e11b8581c07be6ca330
+      card_plan_sha256: d2d168cd4ec5bf4f6c8efd1a0925f83cfc53923c04f10aa7315633fc4327d535
+      visual_plan_sha256: 27d40d40a88241ae0dfb8774a29d6b2e7a71075f22ed343ab39f487edf3f35a3
+      continuity_ledger_sha256: 4cbdf36cf9ca7266d64d66cb0a070cc1b030f92988dddda12a2c459264e9d259
+    prompt:
+      path: card-003-prompt.md
+      sha256: 36992534303af05c1758ee05922a39eb6ce4af3d90b400c19fbbcdce5dbac2ef
+      sent_text_sha256: 36992534303af05c1758ee05922a39eb6ce4af3d90b400c19fbbcdce5dbac2ef
+      composed_dom_inner_text_sha256: 8a723a44e8dfa3b63919b409021625f1db352917ed18229c182bbf6f9b863d25
+      composer_normalization: markdown_heading_marker_and_terminal_newline_not_present_in_inner_text
+      size_bytes: 1951
+      character_count: 1948
+      frozen: true
+    target_conversation:
+      policy: create_new_project_scoped_conversation_only
+      exact_target_project_id: g-p-6a700985260881918e3834a43b1e12a6
+      expected_url_pattern: "^/g/g-p-6a700985260881918e3834a43b1e12a6(?:-[^/]+)?/c/[0-9a-f-]+$"
+      forbidden_context: [6a78fddc-52ec-83ee-a42a-b7b353ee75ad, 6a790a48-581c-83e8-8879-c29596f23966, 6a791490-912c-83ee-b136-eebab536e5ea, any_existing_story_conversation]
+    operations:
+      create_conversation: {operation_id: "riverbend-farm-rule-adaptation:card003:r1:create-project-scoped-conversation", state: completed, host_call_count: 1, pre_submit_evidence: exact_frozen_prompt_in_unique_empty_project_composer, evidence: unique_new_project_scoped_conversation_created_after_single_submit, retry_policy: never}
+      select_image_capability: {operation_id: "riverbend-farm-rule-adaptation:card003:r1:select-image-capability", state: completed, host_call_count: 1, evidence: active_empty_composer_rendered_create_image_mode_and_unique_enabled_send_control, retry_policy: only-if-no-side-effect-proven}
+      submit_prompt: {operation_id: "riverbend-farm-rule-adaptation:card003:r1:submit-prompt", state: submitted, host_call_count: 1, submitted_once: true, submitted_at: Not verified, evidence: exact_prompt_visible_as_new_user_message_and_provider_owned_generating_image_state_visible, never_resend: true, retry_policy: never}
+      capture_response: {operation_id: "riverbend-farm-rule-adaptation:card003:r1:capture-response", state: completed_candidate_pending_local_review, host_call_count: 1, provider_completion: one_final_visible_image_after_transient_retry_notice; no_retry_invoked, requested_output_count: 1, final_visible_output_count: 1, output_file_id: file_0000000079bc82119a669a4927076d28, asset_id: 96ef64ee69630b1c, native_dimensions: 1086x1448, local_path: card-003.png, sha256: aafbeedda77fb330b58d837ed31355d50c7c44c8e260db2f5d3e08214073f6f3, retry_policy: read-only-idempotent_after_verified_submit}
+      export_output: {operation_id: "riverbend-farm-rule-adaptation:card003:r1:export-output", state: completed, host_call_count: 1, inventory_id: a1d4f8ec-a584-4768-a874-0a49af1aa540, bundled_asset_ids: [96ef64ee69630b1c], output_file_id: file_0000000079bc82119a669a4927076d28, bundle_downloaded_count: 1, bundle_failed_count: 0, retained_local_path: card-003.png, retry_policy: never}
+      derive_thumbnail: {operation_id: "riverbend-farm-rule-adaptation:card003:r1:derive-thumbnail", state: completed, host_call_count: 1, local_path: card-003-thumb-320.png, dimensions: 240x320, sha256: 4793a3ba38e759c533f75d412d8b26c93c03b7d01188130306feb515c871dc8b, retry_policy: never}
+    admission_gate:
+      pre_submit: real_project_scoped_empty_composer_visible_and_unique
+      post_submit: new_conversation_url_must_match_expected_project_scoped_pattern
+      on_failure: block_before_submit_or_mark_ambiguous_without_resend
+    output:
+      baseline_image: none
+      image_path: card-003.png
+      image_sha256: aafbeedda77fb330b58d837ed31355d50c7c44c8e260db2f5d3e08214073f6f3
+      native_dimensions: 1086x1448
+      thumbnail_path: card-003-thumb-320.png
+      thumbnail_sha256: 4793a3ba38e759c533f75d412d8b26c93c03b7d01188130306feb515c871dc8b
+      thumbnail_dimensions: 240x320
+      output_file_id: file_0000000079bc82119a669a4927076d28
+      asset_id: 96ef64ee69630b1c
+    basis_review: {decision: pass, path: card-003-basis-review.yaml, sha256: 6590f9b57eea1ecc8ac3741b30573177aa8c78648166bbb852eef1f468f09510, reviewer_task: /root/review_validate_lesson_005, recorded_by: producer}
+    external_send: true
+    formal: false
+    local_review:
+      path: card-003-local-review.yaml
+      sha256: 5f8998204eda4e16f3609d4b95558ee0826991220629fca4c85e32a1704b2f48
+      decision: pass_candidate_waiting_independent_visual_review
+      formal: false
+      next_action: independent_native_and_320px_visual_review_before_card004
+    independent_review: {decision: pass, path: card-003-independent-review.yaml, sha256: 6eb059b9e95220f5507d8afe69e7df03ba42ad80a0d2dbe5c64fb09938a3d90b, reviewer_task: /root/review_validate_lesson_005, recorded_by: producer, live_provider: Not reverified}
+    prohibited_actions: [resubmit, regenerate, edit, move_conversation, card004_to_card007, html, review_control, zcode, formal]
+  - round_id: riverbend-farm-rule-adaptation-card004-r1-full-generation
+    mode: full_generation_no_baseline
+    status: completed_historical_frozen_independent_pass
+    basis:
+      story_sha256: 2a2a784bf04b8e4093bda5bd03f347a46ea9112a2ab5039c8f375a445497254b
+      text_layer_sha256: 9b093d8b04760d18ab32afcbf1d94975f22d9bec4259901f4c5fbb3f2451947d
+      storyboard_sha256: 752dd09d53c093c15452a4cec4438448215bea2ffddd7e11b8581c07be6ca330
+      card_plan_sha256: d2d168cd4ec5bf4f6c8efd1a0925f83cfc53923c04f10aa7315633fc4327d535
+      visual_plan_sha256: 27d40d40a88241ae0dfb8774a29d6b2e7a71075f22ed343ab39f487edf3f35a3
+      continuity_ledger_sha256: 4cbdf36cf9ca7266d64d66cb0a070cc1b030f92988dddda12a2c459264e9d259
+    prompt:
+      path: card-004-prompt.md
+      sha256: 216d4aa8a9744bf7a04ae31604388185e49419804487606e05acb335863c76a5
+      sent_text_sha256: 216d4aa8a9744bf7a04ae31604388185e49419804487606e05acb335863c76a5
+      composed_dom_inner_text_sha256: ca937b2e3cd21644215550f1719032c9cc428c296e6ec99ab0064e8f9295ddbb
+      composer_normalization: markdown_heading_marker_and_terminal_newline_not_present_in_inner_text
+      size_bytes: 1556
+      character_count: 1551
+      frozen: true
+    target_conversation:
+      policy: existing_project_scoped_conversation_only
+      exact_target_project_id: g-p-6a700985260881918e3834a43b1e12a6
+      conversation_id: 6a792083-bd88-83e8-b755-0890a5e7358e
+      conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a792083-bd88-83e8-b755-0890a5e7358e
+      expected_url_pattern: "^/g/g-p-6a700985260881918e3834a43b1e12a6(?:-[^/]+)?/c/[0-9a-f-]+$"
+      forbidden_context: [6a78fddc-52ec-83ee-a42a-b7b353ee75ad, 6a790a48-581c-83e8-8879-c29596f23966, 6a791490-912c-83ee-b136-eebab536e5ea, 6a791a6f-1b98-83ee-8b24-753203e84285, any_existing_story_conversation]
+    operations:
+      create_conversation: {operation_id: "riverbend-farm-rule-adaptation:card004:r1:create-project-scoped-conversation", state: completed, host_call_count: 1, pre_submit_evidence: existing_project_scoped_conversation_with_exact_single_user_prompt, evidence: existing_target_conversation_reconciled_before_read_only_capture, retry_policy: never}
+      select_image_capability: {operation_id: "riverbend-farm-rule-adaptation:card004:r1:select-image-capability", state: completed, host_call_count: 1, evidence: existing_conversation_already_in_create_image_context, retry_policy: never}
+      submit_prompt: {operation_id: "riverbend-farm-rule-adaptation:card004:r1:submit-prompt", state: submitted, host_call_count: 1, submitted_once: true, submitted_at: Not verified, evidence: exact_prompt_visible_as_single_existing_user_message_and_provider_owned_generating_image_state_reconciled, never_resend: true, retry_policy: never}
+      capture_response: {operation_id: "riverbend-farm-rule-adaptation:card004:r1:capture-response", state: completed_candidate_pending_local_review, host_call_count: 1, provider_completion: one_final_visible_image; no_retry_invoked, requested_output_count: 1, final_visible_output_count: 1, output_file_id: file_00000000b21c8211af5dad39c738c4be, asset_id: ce11ee91a2fb2a51, native_dimensions: 1086x1448, local_path: card-004.png, sha256: b00fe69db75847d88734695b6baccbf4d152715168c611ddfc5998a2d982e952, retry_policy: read-only-idempotent_after_verified_submit}
+      export_output: {operation_id: "riverbend-farm-rule-adaptation:card004:r1:export-output", state: completed, host_call_count: 1, inventory_id: a21b3ed1-99e2-48a3-8873-006925aaa13c, bundled_asset_ids: [ce11ee91a2fb2a51], output_file_id: file_00000000b21c8211af5dad39c738c4be, bundle_downloaded_count: 1, bundle_failed_count: 0, retained_local_path: card-004.png, retry_policy: never}
+      derive_thumbnail: {operation_id: "riverbend-farm-rule-adaptation:card004:r1:derive-thumbnail", state: completed, host_call_count: 1, local_path: card-004-thumb-320.png, dimensions: 240x320, sha256: 650bab1f8e41489a0e69b965f762da358d56aaacf3b4bdb558b9e186672519b9, retry_policy: never}
+    output:
+      baseline_image: none
+      image_path: card-004.png
+      image_sha256: b00fe69db75847d88734695b6baccbf4d152715168c611ddfc5998a2d982e952
+      native_dimensions: 1086x1448
+      thumbnail_path: card-004-thumb-320.png
+      thumbnail_sha256: 650bab1f8e41489a0e69b965f762da358d56aaacf3b4bdb558b9e186672519b9
+      thumbnail_dimensions: 240x320
+      output_file_id: file_00000000b21c8211af5dad39c738c4be
+      asset_id: ce11ee91a2fb2a51
+      page_asset_inventory_id: a21b3ed1-99e2-48a3-8873-006925aaa13c
+    external_send: true
+    formal: false
+    local_review:
+      path: card-004-local-review.yaml
+      sha256: 527fe1589ad169b3fef134b7048a85f1af78758f94a693ab09c87735d8a6af70
+      decision: pass_historical_frozen
+      formal: false
+      next_action: none_historical_frozen
+    independent_visual_review: {decision: pass, path: card-004-independent-review.yaml, sha256: ff8b1258e1bdb7444b735ef33ed21bdbe2675899914a06dcedf42c72e0790d9b, reviewer_task: /root/review_validate_lesson_005, recorded_by: producer, live_provider: Not reverified}
+    prohibited_actions: [resubmit, regenerate, edit, move_conversation, use_as_card005_baseline]
+  - round_id: riverbend-farm-rule-adaptation-card005-r1-full-generation
+    mode: full_generation_no_baseline
+    status: historical_failed_frozen_independent_revise_no_resubmit_no_edit
+    basis:
+      story_sha256: 2a2a784bf04b8e4093bda5bd03f347a46ea9112a2ab5039c8f375a445497254b
+      text_layer_sha256: 9b093d8b04760d18ab32afcbf1d94975f22d9bec4259901f4c5fbb3f2451947d
+      storyboard_sha256: 752dd09d53c093c15452a4cec4438448215bea2ffddd7e11b8581c07be6ca330
+      card_plan_sha256: d2d168cd4ec5bf4f6c8efd1a0925f83cfc53923c04f10aa7315633fc4327d535
+      visual_plan_sha256: 27d40d40a88241ae0dfb8774a29d6b2e7a71075f22ed343ab39f487edf3f35a3
+      continuity_ledger_sha256: 4cbdf36cf9ca7266d64d66cb0a070cc1b030f92988dddda12a2c459264e9d259
+      content_checkpoint_sha256: 95aa4790a2d468ad3a80470e08447069d938f3daced905ef05b33124ee7d5482
+      production_package_sha256: debd24c9cb75e8ad2f4201f5fd9cd3cce2150bcd1c26af9e2e0e0420c92ebc8e
+    prompt:
+      path: card-005-prompt.md
+      sha256: 9b9ae41cdb4f88824e66eb9630d7038dc235c6b50e099c92776b8cebf6a4775f
+      frozen: true
+    target_conversation:
+      policy: create_new_project_scoped_conversation_only
+      exact_target_project_id: g-p-6a700985260881918e3834a43b1e12a6
+      expected_url_pattern: "^/g/g-p-6a700985260881918e3834a43b1e12a6(?:-[^/]+)?/c/[0-9a-f-]+$"
+      forbidden_context: [6a78fddc-52ec-83ee-a42a-b7b353ee75ad, 6a790a48-581c-83e8-8879-c29596f23966, 6a791490-912c-83ee-b136-eebab536e5ea, 6a791a6f-1b98-83ee-8b24-753203e84285, 6a792083-bd88-83e8-b755-0890a5e7358e, any_existing_story_conversation]
+      browser_surface: codex_in_app_browser
+      tab_group_policy: one_riverbend_story_group_only
+      pre_submit_evidence: exact_project_url_title_project_id_unique_empty_composer_and_create_image_mode
+    operations:
+      create_conversation: {operation_id: "riverbend-farm-rule-adaptation:card005:r1:create-project-scoped-conversation", state: completed_project_scoped_new_conversation, host_call_count: 1, conversation_created: true, conversation_id: 6a792905-57fc-83ee-90c3-827213230006, conversation_url: "https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a792905-57fc-83ee-90c3-827213230006", retry_policy: never}
+      select_image_capability: {operation_id: "riverbend-farm-rule-adaptation:card005:r1:select-image-capability", state: completed, host_call_count: 1, evidence: create_image_mode_visible_in_empty_project_composer, retry_policy: never}
+      submit_prompt: {operation_id: "riverbend-farm-rule-adaptation:card005:r1:submit-prompt", state: submitted_generating, host_call_count: 1, submitted_once: true, submitted_at: Not verified, evidence: exact_single_user_prompt_and_single_assistant_thinking_turn_with_stop_control, never_resend: true, retry_policy: never}
+      capture_response: {operation_id: "riverbend-farm-rule-adaptation:card005:r1:capture-response", state: completed_candidate_revise, host_call_count: 1, final_visible_output_count: 1, output_file_id: file_000000001c40820983dc451a4c9b5714, asset_id: 14d8d54325544486, native_dimensions: 1085x1449, local_path: card-005.png, sha256: 048acbaf435f2a7381371bd3f3bb8d2ce0e130a64740c10daf4c89e934287fef, retry_policy: read-only-after-verified-submit}
+      export_output: {operation_id: "riverbend-farm-rule-adaptation:card005:r1:export-output", state: completed, host_call_count: 1, inventory_id: c3330f45-d75c-41cd-a7fd-c7ed1d54c2aa, bundled_asset_ids: [14d8d54325544486], output_file_id: file_000000001c40820983dc451a4c9b5714, bundle_downloaded_count: 1, bundle_failed_count: 0, retained_local_path: card-005.png, retry_policy: never}
+      derive_thumbnail: {operation_id: "riverbend-farm-rule-adaptation:card005:r1:derive-thumbnail", state: completed, host_call_count: 1, local_path: card-005-thumb-320.png, dimensions: 240x320, sha256: 0984508e30dc6b3ba8106233a41503f8df1803f41d56304f0c29fc80ad927f12, retry_policy: never}
+    output: {baseline_image: none, image_path: card-005.png, image_sha256: 048acbaf435f2a7381371bd3f3bb8d2ce0e130a64740c10daf4c89e934287fef, native_dimensions: 1085x1449, thumbnail_path: card-005-thumb-320.png, thumbnail_sha256: 0984508e30dc6b3ba8106233a41503f8df1803f41d56304f0c29fc80ad927f12, thumbnail_dimensions: 240x320, output_file_id: file_000000001c40820983dc451a4c9b5714, asset_id: 14d8d54325544486, page_asset_inventory_id: c3330f45-d75c-41cd-a7fd-c7ed1d54c2aa}
+    basis_review: {decision: pass, path: card-005-basis-review.yaml, sha256: abd5202f99e122c4258fab8e049c7cbc2140c477a236391613186bd976660e1f, reviewer_task: /root/review_validate_lesson_005, recorded_by: producer}
+    external_send: true
+    formal: false
+    local_review: {decision: revise, path: card-005-local-review.yaml, sha256: 6a9f8b1c20fdd800f4156427d70a01660a241d6e3be697937537f0a592fdeba8, native_gate: revise, thumbnail_gate: revise}
+    independent_visual_review: {decision: revise, path: card-005-independent-review.yaml, sha256: 819c3f311e7cddedf6405a6c189e36d0766009a3432853702ec9a618cb369d3c, reviewer_task: /root/review_validate_lesson_005, recorded_by: producer}
+    prohibited_actions: [resubmit, regenerate, edit, reuse_as_r2_baseline]
+  - round_id: riverbend-farm-rule-adaptation-card005-r2-full-generation
+    mode: full_generation_no_baseline
+    status: historical_frozen_independent_pass_no_resubmit
+    basis:
+      story_sha256: 2a2a784bf04b8e4093bda5bd03f347a46ea9112a2ab5039c8f375a445497254b
+      text_layer_sha256: 9b093d8b04760d18ab32afcbf1d94975f22d9bec4259901f4c5fbb3f2451947d
+      storyboard_sha256: 752dd09d53c093c15452a4cec4438448215bea2ffddd7e11b8581c07be6ca330
+      card_plan_sha256: d2d168cd4ec5bf4f6c8efd1a0925f83cfc53923c04f10aa7315633fc4327d535
+      visual_plan_sha256: 9bebb2ecf3ef249d3d5b4daa6aa66f7af353d697534a22622e46de1b572b9bc9
+      continuity_ledger_sha256: de5eb1fc807cf2ee199aa971a7a3f6a4548bccdbb9572945cdcdf7034c26320f
+      content_checkpoint_sha256: ec55d43a1c5dd7f5b7f2e48f43e334eeeabbc16fe01dc29c4a81e7f088250a44
+      production_package_sha256: 2c6dacf7df598308f172e4e7f3c70768867e34fad2f004ec9f3648be051d8897
+    prompt: {path: card-005-r2-full-generation-prompt.md, sha256: eb93e64b45364f622f340ac3f409e85625ee55923a16bc9c66405cc683382efa, frozen: true}
+    target_conversation:
+      policy: create_new_project_scoped_conversation_only
+      exact_target_project_id: g-p-6a700985260881918e3834a43b1e12a6
+      expected_url_pattern: "^/g/g-p-6a700985260881918e3834a43b1e12a6(?:-[^/]+)?/c/[0-9a-f-]+$"
+      browser_surface: codex_in_app_browser
+      tab_group_policy: one_riverbend_story_group_only
+      forbidden_context: [6a792905-57fc-83ee-90c3-827213230006, any_prior_story_conversation]
+    operations:
+      create_conversation: {operation_id: "riverbend-farm-rule-adaptation:card005:r2:create-project-scoped-conversation", state: completed_project_scoped_new_conversation, host_call_count: 1, conversation_created: true, conversation_id: 6a792fce-61f4-83e8-954f-ee0e630e6a66, conversation_url: "https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a792fce-61f4-83e8-954f-ee0e630e6a66", retry_policy: never}
+      select_image_capability: {operation_id: "riverbend-farm-rule-adaptation:card005:r2:select-image-capability", state: completed, host_call_count: 1, evidence: create_image_mode_visible_in_empty_project_composer, retry_policy: never}
+      submit_prompt: {operation_id: "riverbend-farm-rule-adaptation:card005:r2:submit-prompt", state: submitted_generating, host_call_count: 1, submitted_once: true, submitted_at: Not verified, evidence: exact_single_user_prompt_single_assistant_thinking_turn_and_stop_control, never_resend: true, retry_policy: never}
+      capture_response: {operation_id: "riverbend-farm-rule-adaptation:card005:r2:capture-response", state: completed_candidate_pass, host_call_count: 1, final_visible_output_count: 1, output_file_id: file_00000000498081f9b2dfa6ddebfb4687, asset_id: d8dca2baddf1f6d2, native_dimensions: 1086x1448, local_path: card-005-r2.png, sha256: ada7d96a16138e410a356cf0b9e4d6cc3af2ad4de2114d6bbf2cafce428062fe, retry_policy: read-only-after-verified-submit}
+      export_output: {operation_id: "riverbend-farm-rule-adaptation:card005:r2:export-output", state: completed, host_call_count: 1, inventory_id: 68cfdb4c-1fe3-4500-9461-ee35c32ce1a8, bundled_asset_ids: [d8dca2baddf1f6d2], output_file_id: file_00000000498081f9b2dfa6ddebfb4687, bundle_downloaded_count: 1, bundle_failed_count: 0, retained_local_path: card-005-r2.png, retry_policy: never}
+      derive_thumbnail: {operation_id: "riverbend-farm-rule-adaptation:card005:r2:derive-thumbnail", state: completed, host_call_count: 1, local_path: card-005-r2-thumb-320.png, dimensions: 240x320, sha256: 0f8be4576d76ab3650a45862a8ca45ad435e708e5ba81dcf97efb48c30f8bb27, retry_policy: never}
+    output: {baseline_image: none, image_path: card-005-r2.png, image_sha256: ada7d96a16138e410a356cf0b9e4d6cc3af2ad4de2114d6bbf2cafce428062fe, native_dimensions: 1086x1448, thumbnail_path: card-005-r2-thumb-320.png, thumbnail_sha256: 0f8be4576d76ab3650a45862a8ca45ad435e708e5ba81dcf97efb48c30f8bb27, thumbnail_dimensions: 240x320, output_file_id: file_00000000498081f9b2dfa6ddebfb4687, asset_id: d8dca2baddf1f6d2, page_asset_inventory_id: 68cfdb4c-1fe3-4500-9461-ee35c32ce1a8}
+    basis_review: {decision: pass, path: card-005-r2-basis-review.yaml, sha256: e5345cc049d8d36243a5cd1b4fc7e72939dbfce090c924cff2d0f162aeb45c89, reviewer_task: /root/review_validate_lesson_005, recorded_by: producer}
+    external_send: true
+    formal: false
+    local_review: {decision: pass_candidate_waiting_independent_visual_review, path: card-005-r2-local-review.yaml, sha256: 289cf9184707b3cdd0d49a6bafa8c492cbcea6dcd2181c9c71d52ec7f9879f56}
+    independent_visual_review: {decision: pass, path: card-005-r2-independent-review.yaml, sha256: 61d69e8321c072bdb606b98ba57903a0fea79a407f99118de8f889c64c3022e2, reviewer_task: /root/review_validate_lesson_005, recorded_by: producer}
+    prohibited_actions: [resubmit, regenerate, edit, reuse_as_card006_baseline]
+  - round_id: riverbend-farm-rule-adaptation-card006-r1-full-generation
+    mode: full_generation_no_baseline
+    status: completed_historical_frozen_independent_pass_no_resubmit
+    basis:
+      story_sha256: 2a2a784bf04b8e4093bda5bd03f347a46ea9112a2ab5039c8f375a445497254b
+      text_layer_sha256: 9b093d8b04760d18ab32afcbf1d94975f22d9bec4259901f4c5fbb3f2451947d
+      storyboard_sha256: 752dd09d53c093c15452a4cec4438448215bea2ffddd7e11b8581c07be6ca330
+      card_plan_sha256: d2d168cd4ec5bf4f6c8efd1a0925f83cfc53923c04f10aa7315633fc4327d535
+      visual_plan_sha256: 9bebb2ecf3ef249d3d5b4daa6aa66f7af353d697534a22622e46de1b572b9bc9
+      continuity_ledger_sha256: de5eb1fc807cf2ee199aa971a7a3f6a4548bccdbb9572945cdcdf7034c26320f
+      content_checkpoint_sha256: cd703c299dd2143b4cbd53b92e172af597d92be3484f955f038c78ce63338b8d
+      production_package_sha256: 9ed9e181353a6867e033721d06c35e7354d510a24167015f95dc46e99c173e63
+    prompt: {path: card-006-prompt.md, sha256: 27a0fca6dfb3876d8dda8e17727761042fcc49d4ff4b82bca5e4abf1cbcd1b8f, frozen: true}
+    basis_review: {decision: pass, path: card-006-basis-review.yaml, sha256: b8916c89e91cfd45853c8c5827f6cd1cd608a5cafb8252d40a93bd901e329ae2, reviewer_task: /root/review_validate_lesson_005, recorded_by: producer}
+    target_conversation: {policy: create_new_project_scoped_conversation_only, exact_target_project_id: g-p-6a700985260881918e3834a43b1e12a6, browser_surface: codex_in_app_browser, tab_group_policy: one_riverbend_story_group_only, forbidden_context: [any_prior_story_conversation]}
+    pre_submit_observation: {state: pass, tab_id: "13", observed_url: "https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/project", project_title: 故事卡片生产｜Pro 生图, unique_empty_project_composer: true, create_image_selected: true, no_baseline_attachment: true}
+    operations:
+      create_conversation: {operation_id: "riverbend-farm-rule-adaptation:card006:r1:create-project-scoped-conversation", state: completed_project_scoped, host_call_count: 1, retry_policy: never, conversation_id: 6a7935b3-5108-83e8-b95a-5d7a4e5c7380, observed_url: "https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a7935b3-5108-83e8-b95a-5d7a4e5c7380"}
+      select_image_capability: {operation_id: "riverbend-farm-rule-adaptation:card006:r1:select-image-capability", state: completed, host_call_count: 1, retry_policy: never}
+      submit_prompt: {operation_id: "riverbend-farm-rule-adaptation:card006:r1:submit-prompt", state: completed_single_submit, host_call_count: 1, submitted_once: true, submitted_at: "2026-08-10T02:21:38.595Z", never_resend: true, retry_policy: never, composer_normalization: markdown_heading_marker_and_terminal_newline_removed_only}
+      capture_response: {operation_id: "riverbend-farm-rule-adaptation:card006:r1:capture-response", state: completed, host_call_count: 1, retry_policy: read-only-after-verified-submit}
+      export_output: {operation_id: "riverbend-farm-rule-adaptation:card006:r1:export-output", state: completed, host_call_count: 1, retry_policy: never}
+      derive_thumbnail: {operation_id: "riverbend-farm-rule-adaptation:card006:r1:derive-thumbnail", state: completed, host_call_count: 1, retry_policy: never}
+    output: {baseline_image: none, image_path: card-006.png, image_sha256: 8d3772cb9770637d5a1d41d628404bc86281a3f90a31925df63fdf4cf3d83617, native_dimensions: 1086x1448, thumbnail_path: card-006-thumb-320.png, thumbnail_sha256: 6612ff96359025c6cdd04f74296dbf38b30ae4380422cf3e8b62a882cd7c9847, thumbnail_dimensions: 240x320, output_file_id: file_00000000f3dc81f6a3b1a9af1ad381c5, asset_id: 5cce521f-f957-4459-9b9a-43aaa3ad8ded, page_asset_inventory_id: 2469c9d2-e0ae-4f0c-be1a-00794321c6f6, page_asset_id: 19f57d86db824ca7, bundle_downloaded_count: 1, bundle_failed_count: 0}
+    local_review: {decision: pass_candidate_waiting_independent_visual_review, path: card-006-local-review.yaml, sha256: b25f36173c89b8a4290f3ea05bb64287f778674054294ca8c8b48b766c0cd6c2}
+    independent_review: {decision: pass, path: card-006-independent-review.yaml, sha256: 490e80827100ec0cbefde6577674e16b964e2fdc4fbfca7a8b1cca1d20875021, reviewer_task: /root/review_validate_lesson_005, recorded_by: producer}
+    external_send: true
+    formal: false
+    prohibited_actions: [reuse_r1_as_baseline, use_prior_image_baseline, resend_after_submit, card007_and_later, html, review_control, zcode, external_review, formal]
+  - round_id: riverbend-farm-rule-adaptation-card007-r1-full-generation
+    mode: full_generation_no_baseline
+    status: completed_historical_frozen_independent_pass_no_resubmit
+    basis:
+      story_sha256: 2a2a784bf04b8e4093bda5bd03f347a46ea9112a2ab5039c8f375a445497254b
+      text_layer_sha256: 9b093d8b04760d18ab32afcbf1d94975f22d9bec4259901f4c5fbb3f2451947d
+      storyboard_sha256: 752dd09d53c093c15452a4cec4438448215bea2ffddd7e11b8581c07be6ca330
+      card_plan_sha256: d2d168cd4ec5bf4f6c8efd1a0925f83cfc53923c04f10aa7315633fc4327d535
+      visual_plan_sha256: 9bebb2ecf3ef249d3d5b4daa6aa66f7af353d697534a22622e46de1b572b9bc9
+      continuity_ledger_sha256: de5eb1fc807cf2ee199aa971a7a3f6a4548bccdbb9572945cdcdf7034c26320f
+      content_checkpoint_sha256: 248fe5283c07ee925ac43fd3fa3977417ae71dc7c8f8585007c345adeb1d81cf
+      production_package_sha256: 075b2455c254b7c8c0265ee6e68c953ab8d31567b99721ae257f78487fc95ccc
+    prompt: {path: card-007-prompt.md, sha256: d944609807ec1fba35a499c169222fe043b85e9fa3c3f599da34a06f434b9c6e, frozen: true}
+    basis_review: {decision: pass, path: card-007-basis-review.yaml, sha256: 67aef1baca8ba5d3ae638b979a8fb484c5f26df95814caf692fd492e872dc102, reviewer_task: /root/review_validate_lesson_005, recorded_by: producer}
+    target_conversation: {policy: create_new_project_scoped_conversation_only, exact_target_project_id: g-p-6a700985260881918e3834a43b1e12a6, browser_surface: codex_in_app_browser, tab_group_policy: one_riverbend_story_group_only, forbidden_context: [any_prior_story_conversation]}
+    pre_submit_observation: {state: pass, tab_id: "13", observed_url: "https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/project", project_title: 故事卡片生产｜Pro 生图, unique_empty_project_composer: true, create_image_selected: true, no_baseline_attachment: true}
+    operations:
+      create_conversation: {operation_id: "riverbend-farm-rule-adaptation:card007:r1:create-project-scoped-conversation", state: completed_project_scoped, host_call_count: 1, retry_policy: never, conversation_id: 6a793b14-e940-83e8-a108-e2d469aedcff, observed_url: "https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a793b14-e940-83e8-a108-e2d469aedcff"}
+      select_image_capability: {operation_id: "riverbend-farm-rule-adaptation:card007:r1:select-image-capability", state: completed, host_call_count: 1, retry_policy: never}
+      submit_prompt: {operation_id: "riverbend-farm-rule-adaptation:card007:r1:submit-prompt", state: completed_single_submit, host_call_count: 1, submitted_once: true, submitted_at: "2026-08-10T02:44:36.244Z", never_resend: true, retry_policy: never, composer_normalization: markdown_heading_marker_and_terminal_newline_removed_only}
+      capture_response: {operation_id: "riverbend-farm-rule-adaptation:card007:r1:capture-response", state: completed, host_call_count: 1, retry_policy: read-only_after_verified_submit}
+      export_output: {operation_id: "riverbend-farm-rule-adaptation:card007:r1:export-output", state: completed, host_call_count: 1, retry_policy: never}
+      derive_thumbnail: {operation_id: "riverbend-farm-rule-adaptation:card007:r1:derive-thumbnail", state: completed, host_call_count: 1, retry_policy: never}
+    output: {baseline_image: none, image_path: card-007.png, image_sha256: d452cb6732fe466d202f347ac93c6727c949051460bf92f4d0fcd10f7f3469fd, native_dimensions: 1086x1448, thumbnail_path: card-007-thumb-320.png, thumbnail_sha256: 769c3b7798a870ad675292cf218c117472c784d2ca66ecc57cd9108bcc6b3dfc, thumbnail_dimensions: 240x320, output_file_id: file_00000000c704820ca3d8c431eb1b7090, asset_id: c9bf438a-9799-461b-a2c6-3dc9c688be3d, page_asset_inventory_id: 34cc8755-4294-4e51-9b86-34d5b825e565, page_asset_id: 7622631ddb89f354, bundle_downloaded_count: 1, bundle_failed_count: 0}
+    local_review: {decision: pass_candidate_waiting_independent_visual_review, path: card-007-local-review.yaml, sha256: 18de7c25c9e8858c974097d0429970d3c5be5102ce827a269375932625a96da3}
+    independent_review: {decision: pass, path: card-007-independent-review.yaml, sha256: 770dabb24717ff46db244fd88610caba648564431b6dcc279da8e447283b9829, reviewer_task: /root/review_validate_lesson_005, recorded_by: producer}
+    external_send: true
+    formal: false
+    prohibited_actions: [use_prior_image_baseline, resend_after_submit, html_before_independent_visual_pass, review_control, zcode, external_review, formal]
+preflight_result:
+  state: r2_completed_in_verified_project_scoped_conversation
+  observed_at: Not verified
+  tab_id: "1565528882"
+  observed_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a790a48-581c-83e8-8879-c29596f23966
+  evidence: project_home_exact_g_p_id_and_unique_empty_project_textbox_then_post_submit_exact_project_scoped_new_conversation_url
+  prior_blocker_reconciliation: prior_blocked_state_had_zero_create_compose_submit_capture_side_effects_and_submit_prompt_submitted_once_false
+  action_taken: r1_historical_project_selection_navigation_and_one_submit; r2_one_project_scoped_full_generation_submit_wait_capture_export_thumbnail
+card002_execution_evidence:
+  state: completed_candidate_pending_independent_visual_review
+  observed_at: "2026-08-10"
+  tab_id: "1565528882"
+  conversation_id: 6a791490-912c-83ee-b136-eebab536e5ea
+  conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a791490-912c-83ee-b136-eebab536e5ea
+  exact_project_id: g-p-6a700985260881918e3834a43b1e12a6
+  prompt_sha256: 64a5f3599723767d7b6d7a88acebd5586d16aa88c076af646c548c43d94ee69e
+  submitted_once: true
+  never_resend: true
+  no_retry_invoked: true
+  final_visible_output_count: 1
+  output_file_id: file_00000000970c8209aaa31cbc5db43607
+  asset_id: 8943a92a6a24ef54
+  page_asset_inventory_id: f5dc9e29-3b8a-4349-baf4-85a2a7bb03c0
+  native_dimensions: 1086x1448
+  image_path: card-002.png
+  image_sha256: ce0715ab09eca09f2c60f0cd430410332cc8dfeecd693756d990869afb8d5920
+  thumbnail_path: card-002-thumb-320.png
+  thumbnail_sha256: e9d4f3ba4f770241df09dc915fc0d5bb112c386259caba6ad9cd4360ea6e11e1
+  thumbnail_dimensions: 240x320
+  page_asset_bundle: {downloaded_count: 1, failed_count: 0}
+  local_review_path: card-002-local-review.yaml
+  local_review_sha256: 425f36723d8251c290fc6d391b95092ca8b65feafe5dd3208d030b53468fe0c3
+  local_review_decision: pass_candidate_waiting_independent_visual_review
+  formal: false
+card003_execution_evidence:
+  state: completed_candidate_pending_independent_visual_review
+  observed_at: "2026-08-10"
+  tab_id: "1565528882"
+  conversation_id: 6a791a6f-1b98-83ee-8b24-753203e84285
+  conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a791a6f-1b98-83ee-8b24-753203e84285
+  exact_project_id: g-p-6a700985260881918e3834a43b1e12a6
+  prompt_sha256: 36992534303af05c1758ee05922a39eb6ce4af3d90b400c19fbbcdce5dbac2ef
+  submitted_once: true
+  never_resend: true
+  no_retry_invoked: true
+  final_visible_output_count: 1
+  output_file_id: file_0000000079bc82119a669a4927076d28
+  asset_id: 96ef64ee69630b1c
+  page_asset_inventory_id: a1d4f8ec-a584-4768-a874-0a49af1aa540
+  native_dimensions: 1086x1448
+  image_path: card-003.png
+  image_sha256: aafbeedda77fb330b58d837ed31355d50c7c44c8e260db2f5d3e08214073f6f3
+  thumbnail_path: card-003-thumb-320.png
+  thumbnail_sha256: 4793a3ba38e759c533f75d412d8b26c93c03b7d01188130306feb515c871dc8b
+  thumbnail_dimensions: 240x320
+  page_asset_bundle: {downloaded_count: 1, failed_count: 0}
+  local_review_path: card-003-local-review.yaml
+  local_review_sha256: 5f8998204eda4e16f3609d4b95558ee0826991220629fca4c85e32a1704b2f48
+  local_review_decision: pass_candidate_waiting_independent_visual_review
+  formal: false
+card004_execution_evidence:
+  state: completed_candidate_pending_independent_visual_review
+  observed_at: "2026-08-10"
+  tab_id: "1565528882"
+  conversation_id: 6a792083-bd88-83e8-b755-0890a5e7358e
+  conversation_url: https://chatgpt.com/g/g-p-6a700985260881918e3834a43b1e12a6-gu-shi-qia-pian-sheng-chan-pro-sheng-tu/c/6a792083-bd88-83e8-b755-0890a5e7358e
+  exact_project_id: g-p-6a700985260881918e3834a43b1e12a6
+  prompt_sha256: 216d4aa8a9744bf7a04ae31604388185e49419804487606e05acb335863c76a5
+  sent_text_sha256: 216d4aa8a9744bf7a04ae31604388185e49419804487606e05acb335863c76a5
+  composed_dom_inner_text_sha256: ca937b2e3cd21644215550f1719032c9cc428c296e6ec99ab0064e8f9295ddbb
+  submitted_once: true
+  never_resend: true
+  no_retry_invoked: true
+  final_visible_output_count: 1
+  output_file_id: file_00000000b21c8211af5dad39c738c4be
+  asset_id: ce11ee91a2fb2a51
+  page_asset_inventory_id: a21b3ed1-99e2-48a3-8873-006925aaa13c
+  native_dimensions: 1086x1448
+  image_path: card-004.png
+  image_sha256: b00fe69db75847d88734695b6baccbf4d152715168c611ddfc5998a2d982e952
+  thumbnail_path: card-004-thumb-320.png
+  thumbnail_sha256: 650bab1f8e41489a0e69b965f762da358d56aaacf3b4bdb558b9e186672519b9
+  thumbnail_dimensions: 240x320
+  page_asset_bundle: {downloaded_count: 1, failed_count: 0}
+  local_review_path: card-004-local-review.yaml
+  local_review_sha256: 527fe1589ad169b3fef134b7048a85f1af78758f94a693ab09c87735d8a6af70
+  local_review_decision: pass_candidate_waiting_independent_visual_review
+  formal: false
+stop_conditions:
+  - project_identity_or_authenticated_session_not_unique
+  - existing_or_forbidden_story_conversation_selected
+  - clean_new_story_composer_not_verified
+  - Create_image_capability_not_live_verified
+  - submit_ambiguous_then_read_only_reconciliation_only
+  - page_asset_export_unavailable_after_verified_completion
+formal_package_counted: false

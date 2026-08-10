@@ -1,0 +1,87 @@
+story_id: riverbend-farm-rule-adaptation
+version: "0.3-lifecycle-reconciled"
+status: frozen_before_image_generation
+lifecycle:
+  c1: c1_incident
+  c2: c2_two_candidates_first_appear
+  c3: c3_continuous_fence_first_short_term_pilot_day
+  c4: c4_days_later_continue_short_term_pilot
+  c5: c5_two_candidate_comparison
+  c6: c6_baseline_if_no_trial_original_low_boundary
+  c7: c7_procedural_close
+arrangement_lifecycle:
+  fence_line: c2_candidate_c3_first_short_term_pilot_c4_continue_pilot_c5_c6_comparison
+  buffer_strip: c2_candidate_only_c5_c6_comparison_not_piloted_or_observed
+  baseline: c6_if_no_trial_continuous_fence_not_used_original_low_boundary_retained
+canvas: {aspect_ratio: "3:4", target_size: [1086, 1448], mobile_first: true}
+style:
+  baseline_id: economics-story-v1
+  description: 成熟半写实编辑插画，自然成人比例，克制表情，轻纸张与丝网印刷质感。
+  palette: [苔藓绿, 陶土红, 暖黄, 河石灰, 暖白]
+characters:
+  feng_lan: 年轻成年女性，深棕短发扎低辫，苔藓绿衬衣与深色工装裤，无帽无眼镜。
+  gu_yuan: 中年成年男性，短黑发，陶土红马甲与暖灰衬衣，无胡须无眼镜。
+  su_qing: 年轻成年女性，黑色短发，暖黄外套与河石灰长裤，无帽无眼镜。
+  neutral_reviewer: 中年成年女性，灰白短发，深海军蓝开衫与暖白内搭，无帽无眼镜。
+  relationship: 平等农场参与者；冯澜、顾原与苏青都能提出条件、观察成本和改变做法，不构成教师与学生。
+role_contract:
+  feng_lan: grower_and_equal_participant
+  gu_yuan: cattle_keeper_and_equal_participant
+  su_qing: candidate_arrangement_recorder_not_adjudicator
+  neutral_reviewer: procedure_reviewer_not_adjudicator
+arrangement_media:
+  fence_line: 无字微缩栅栏、窄草路与一小片草地模型；Card002首次作为候选出现，Card003为首日短期试行，Card004为数日后继续试行，Card005-006用于比较；不表示价格、裁决或法律。
+  buffer_strip: 无字草带、空置菜畦与水槽路径模型；全程只是未试行、未观察的候选安排，不表示价格、裁决或法律。
+arrangement_state_contract:
+  fence_line: c2_candidate_c3_first_short_term_pilot_c4_continue_pilot_c5_c6_comparison
+  buffer_strip: c2_candidate_only_c5_c6_comparison_not_piloted_or_observed
+  baseline: c6_if_no_trial_continuous_fence_not_used_original_low_boundary_retained
+cards:
+  - card: 1
+    shot: medium_dynamic
+    negative_space: 左上暖白天空
+    scene: 一头棕白母牛跨过唯一低矮木边界踩入唯一菜畦；冯澜抱着菜苗盘，顾原牵着通往唯一水槽的绳引，两人都停下。
+    exact_counts: {cows: 1, low_boundaries: 1, vegetable_beds: 1, seedling_trays: 1, water_troughs: 1, adults: 2, fences: 0}
+    adult_identity_roster: [feng_lan, gu_yuan]
+  - card: 2
+    shot: overhead_oblique
+    negative_space: 上方草地
+    scene: 唯一受损菜畦、一条通向画外水槽的唯一草地路径，与唯一矮木桌上两种无字安排模型同框；苏青摆放模型，冯澜与顾原从两侧观察，画面不出现实体水槽。
+    exact_counts: {damaged_vegetable_beds: 1, water_trough_paths: 1, arrangement_models: 2, comparison_tables: 1, adults: 3, water_troughs: 0, cows: 0, gavels: 0}
+    adult_identity_roster: [feng_lan, gu_yuan, su_qing]
+  - card: 3
+    shot: wide_boundary
+    negative_space: 右上天空
+    scene: 两种候选安排刚出现后的首个短期试行日；一段连续栅栏隔开唯一菜畦，顾原沿唯一窄草路牵一头牛绕行，冯澜把唯一栅栏杆装回原处。
+    exact_counts: {continuous_fences: 1, vegetable_beds: 1, narrow_grass_routes: 1, cows: 1, fence_posts: 1, adults: 2}
+    adult_identity_roster: [feng_lan, gu_yuan]
+  - card: 4
+    shot: wide_slope
+    negative_space: 左上天空
+    scene: 数日后连续栅栏仍在短期试行；顾原继续带一头牛走唯一石质草坡，冯澜继续在唯一带低矮牧草的边缘菜畦播种，连续栅栏在远处保持一段。
+    exact_counts: {cows: 1, rocky_grass_slopes: 1, forage_edge_beds: 1, continuous_fences: 1, adults: 2}
+    adult_identity_roster: [feng_lan, gu_yuan]
+  - card: 5
+    shot: medium_comparison_table
+    negative_space: 右上连续暖白农舍墙面留白，不出现天空、开口或田地视野
+    scene: 苏青在连续素色农舍墙前的户外桌上并排放置唯一已试行栅栏绕行模型和唯一未试行草带空畦候选模型；冯澜与顾原分别观察，不指向任何一边；背景不出现真实牛、真实栅栏、真实田地安排或第二信息面。
+    exact_counts: {fence_route_models: 1, buffer_fallow_models: 1, comparison_tables: 1, adults: 3, cows: 0, continuous_fences: 0, real_field_instantiations: 0, gavels: 0, winner_markers: 0}
+    adult_identity_roster: [feng_lan, gu_yuan, su_qing]
+  - card: 6
+    shot: overhead_clear
+    negative_space: 上方暖白桌面
+    scene: 明确若不试行连续栅栏就沿用原低边界；两块同尺寸无字地形板并列，一块为原低边界，一块为连续栅栏短期试行布置；草带空畦仍未试行，仅为候选；中间仅一张不规则空白假设卡，三人共同观察。
+    exact_counts: {terrain_boards: 2, assumption_cards: 1, adults: 3, gavels: 0, verdict_marks: 0}
+    adult_identity_roster: [feng_lan, gu_yuan, su_qing]
+  - card: 7
+    shot: medium_review_table
+    negative_space: 右上开放草地
+    scene: 中立复核者在桌上分开检查唯一蹄印泥片、唯一菜苗束、唯一栅栏小段和唯一空白假设卡；冯澜、顾原与苏青在旁等待。
+    exact_counts: {hoofprint_tiles: 1, seedling_bundles: 1, fence_segments: 1, assumption_cards: 1, evidence_tables: 1, adults: 4, gavels: 0}
+    adult_identity_roster: [feng_lan, gu_yuan, su_qing, neutral_reviewer]
+global_negative_prompt:
+  - 任何文字、汉字、英文字母、数字、价格、货币符号、logo或水印
+  - 法槌、法袍、法院徽记、警徽、裁决印、胜负奖牌、对错勾叉或必然结论图示
+  - 现实农场品牌、课程人物、课程例子、真实政策标识或新闻场景
+  - 教师讲台、商务西装、英雄构图、幼态人物、恋爱暗示
+  - 额外同类牛、边界、菜畦、模型、地形板、假设卡、栅栏、托盘或重复人物

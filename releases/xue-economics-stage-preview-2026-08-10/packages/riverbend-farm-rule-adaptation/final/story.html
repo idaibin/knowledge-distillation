@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="story-basis" content="riverbend-farm-rule-adaptation/lesson004">
+  <title>河湾农场：规则改变之后</title>
+  <style>
+    :root { --ink:#24271f; --muted:#67695f; --paper:#efe9db; --card:#fffaf0; --moss:#485f3d; --terracotta:#a55337; --yellow:#c79739; --stone:#74736c; --line:#d2c6af; --shadow:0 18px 48px rgba(56,47,32,.13); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:radial-gradient(circle at 12% 0%,rgba(199,151,57,.14),transparent 30rem),linear-gradient(180deg,#fbf7ed,var(--paper)); font-family:ui-serif,"Songti SC","STSong",Georgia,serif; line-height:1.75; }
+    header,main,footer { width:min(1120px,calc(100% - 32px)); margin-inline:auto; }
+    header { padding:64px 0 36px; }
+    .eyebrow { margin:0 0 8px; color:var(--terracotta); font:700 .82rem/1.4 ui-sans-serif,system-ui,sans-serif; letter-spacing:.15em; }
+    h1 { margin:0; max-width:16ch; color:var(--moss); font-size:clamp(2.25rem,7vw,5rem); line-height:1.08; letter-spacing:-.04em; }
+    .lead { max-width:48rem; margin:22px 0 0; font-size:clamp(1.04rem,2.2vw,1.3rem); }
+    .boundary { margin-top:24px; padding:14px 18px; border-left:4px solid var(--yellow); background:rgba(255,255,255,.6); color:var(--muted); }
+    nav { display:flex; flex-wrap:wrap; gap:8px; margin-top:26px; }
+    nav a { padding:7px 12px; border:1px solid var(--line); border-radius:999px; color:var(--moss); background:rgba(255,255,255,.62); font:650 .86rem/1.2 ui-sans-serif,system-ui,sans-serif; text-decoration:none; }
+    nav a:focus-visible { outline:3px solid var(--yellow); outline-offset:2px; }
+    .story { display:grid; gap:52px; padding:18px 0 82px; }
+    .card { display:grid; grid-template-columns:minmax(0,3fr) minmax(280px,2fr); overflow:hidden; border:1px solid var(--line); border-radius:24px; background:var(--card); box-shadow:var(--shadow); }
+    .card:nth-child(even) .visual { order:2; }
+    .visual { margin:0; background:#d8d0bd; }
+    .visual img { display:block; width:100%; height:100%; min-height:560px; object-fit:cover; }
+    .copy { align-self:center; padding:clamp(28px,5vw,56px); }
+    .number { margin:0 0 14px; color:var(--terracotta); font:750 .8rem/1 ui-sans-serif,system-ui,sans-serif; letter-spacing:.14em; }
+    h2 { margin:0; color:var(--moss); font-size:clamp(1.6rem,3vw,2.65rem); line-height:1.2; letter-spacing:-.025em; }
+    .narration { margin:22px 0 0; padding:17px 19px; border-left:3px solid var(--moss); background:rgba(72,95,61,.07); }
+    .narration strong { display:block; margin-bottom:6px; color:var(--muted); font:700 .78rem/1.2 ui-sans-serif,system-ui,sans-serif; letter-spacing:.12em; }
+    footer { padding:0 0 54px; color:var(--muted); font-size:.92rem; }
+    @media (max-width:760px) { header { padding-top:42px; } .card { grid-template-columns:1fr; } .card:nth-child(even) .visual { order:0; } .visual img { min-height:auto; aspect-ratio:3/4; } .copy { padding:27px 23px 33px; } }
+    @media (max-width:360px) { header,main,footer { width:min(100% - 20px,1120px); } nav a { padding:6px 9px; } }
+    @media print { body { background:#fff; } header,main,footer { width:100%; } nav { display:none; } .card { break-inside:avoid; box-shadow:none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">LESSON 004 · 原创情景演绎</p>
+    <h1>河湾农场：规则改变之后</h1>
+    <p class="lead">种菜与赶牛都出于善意，却会在同一条边线上相互影响。新的安排不仅改变直接成本，也会改变参与者接下来的做法。</p>
+    <p class="boundary">这是用于比较相互损害、规则成本、行为适应与基线假设的分析故事，不是现实案例复述、实证研究、现行法律判断或普遍政策结论。</p>
+    <nav aria-label="七张故事卡导航"><a href="#card-1">01 相遇</a><a href="#card-2">02 候选安排</a><a href="#card-3">03 成本移动</a><a href="#card-4">04 行为适应</a><a href="#card-5">05 各有牺牲</a><a href="#card-6">06 基线假设</a><a href="#card-7">07 程序边界</a></nav>
+  </header>
+  <main><div class="story">
+    <article class="card" id="card-1"><figure class="visual"><img src="cards/001.png" width="1086" height="1448" alt="一头牛跨过低木边界进入菜畦，冯澜与顾原同时停下。"></figure><div class="copy"><p class="number">CARD 01 · 相遇</p><h2>两份好意，在同一条边线上相遇</h2><p class="narration">冯澜种菜，顾原赶牛去水槽；一头牛跨过低边界，菜苗被踩。善意目标还没有回答结果会怎样。</p></div></article>
+    <article class="card" id="card-2"><figure class="visual"><img src="cards/002.png" width="1086" height="1448" alt="受损菜畦、通往画外水槽的路径与两种未决模型并列。" loading="lazy"></figure><div class="copy"><p class="number">CARD 02 · 候选安排</p><h2>先看相互损害，再找安排</h2><p class="narration">菜地受损，牛群通路也受限。苏青只摆出两种候选安排，不把任何一方直接写成答案。</p></div></article>
+    <article class="card" id="card-3"><figure class="visual"><img src="cards/003.png" width="1086" height="1448" alt="连续栅栏分隔菜地，顾原牵牛绕行，冯澜安装栅栏杆。" loading="lazy"></figure><div class="copy"><p class="number">CARD 03 · 成本移动</p><h2>规则一变，成本就开始移动</h2><p class="narration">两种候选安排刚摆出，今天先把连续栅栏作为首个短期试行；顾原开始绕行，冯澜补装栅栏杆，维护与绕路成本进入观察。</p></div></article>
+    <article class="card" id="card-4"><figure class="visual"><img src="cards/004.png" width="1086" height="1448" alt="顾原带牛改走石质草坡，冯澜在边缘畦播下低矮牧草。" loading="lazy"></figure><div class="copy"><p class="number">CARD 04 · 行为适应</p><h2>人会适应新的边线</h2><p class="narration">数日后连续栅栏仍在短期试行；顾原继续改走石质草坡，冯澜继续把边缘菜畦改种低矮牧草，规则改变带来持续适应。</p></div></article>
+    <article class="card" id="card-5"><figure class="visual"><img src="cards/005.png" width="1086" height="1448" alt="三人中立观察两个微缩安排模型，没有选择赢家。" loading="lazy"></figure><div class="copy"><p class="number">CARD 05 · 各有牺牲</p><h2>两种安排，各有牺牲</h2><p class="narration">已短期试行的栅栏加绕路，与尚未试行的草带加空置菜畦并列；比较要把各自放弃的用途一起看见，不急着选赢家。</p></div></article>
+    <article class="card" id="card-6"><figure class="visual"><img src="cards/006.png" width="1086" height="1448" alt="三人观察两块等权地形板，中间保留一张异形空白假设卡。" loading="lazy"></figure><div class="copy"><p class="number">CARD 06 · 基线假设</p><h2>还要和原来的边线比较</h2><p class="narration">若不试行连续栅栏，原低边界会继续保留；把这条基线与短期试行的栅栏并列比较，草带空畦仍只是未试行候选。</p></div></article>
+    <article class="card" id="card-7"><figure class="visual"><img src="cards/007.png" width="1086" height="1448" alt="中立复核者用开放双手分开核对蹄印泥片、菜苗束、栅栏小段和空白假设卡。" loading="lazy"></figure><div class="copy"><p class="number">CARD 07 · 程序边界</p><h2>比较程序，不是最终裁决</h2><p class="narration">蹄印、菜苗、栅栏和假设分开核对。这只是分析演示，不是实证、现行法或普遍政策结论。</p></div></article>
+  </div></main>
+  <footer>《河湾农场：规则改变之后》· 七张原创故事卡 · 本地静态 HTML · 2026-08-10</footer>
+</body>
+</html>

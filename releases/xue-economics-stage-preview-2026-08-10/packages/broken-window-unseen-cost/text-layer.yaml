@@ -1,0 +1,39 @@
+story_id: broken-window-unseen-cost
+version: "1.1-card001-r6-refrozen"
+language: zh-CN
+status: frozen_before_image_generation
+cards:
+  - card: 1
+    title: 窗碎了，工作也停了一下
+    narration: 飞石打破临街窗。左袋紧邻助手脚上唯一一双旧鞋，右袋紧邻空心书形计划板；两组相隔明显，板中空墙表示购书尚未发生。
+    dialogue: []
+  - card: 2
+    title: 修窗支出最容易被看见
+    narration: 新玻璃、工时和两个预算袋都有清楚去向；修复活动真实发生。
+    dialogue: [{speaker: 邻居, line: 今天这里一下忙起来了。}]
+  - card: 3
+    title: 两个没发生的购买
+    narration: 旧鞋没有更换，参考书也没有添置。它们是原计划，不是已经发生的损失记录。
+    dialogue: []
+  - card: 4
+    title: 同一份资源换了去向
+    narration: 两个预算袋转到修窗，旧鞋放在空鞋盒旁；空心书形占位板仍透出背景，表示书没有买到。
+    dialogue: [{speaker: 林岚, line: 钱没有多出来，只是改了用途。}]
+  - card: 5
+    title: 有支出，不等于有净收益
+    narration: 唯一窗上的维护工作是真的；窗的损失和被挤出的鞋书计划也不能从比较中消失。
+    dialogue: []
+  - card: 6
+    title: 反事实必须写明假设
+    narration: 如果窗没碎，鞋和书是否一定购买仍有不确定性；比较不能把计划写成事实。
+    dialogue: []
+  - card: 7
+    title: 先比较，再保留边界
+    narration: 记录可见损失、替代用途和假设，只是一种分析程序，不是实证、现行法或普遍政策结论。
+    dialogue: []
+proofread:
+  status: pass
+  checks:
+    - 鞋与书始终标记为原计划和反事实，不写成已发生事实。
+    - 修窗工作与收入被承认为真实活动，但不直接等同净财富增加。
+    - 未把寓言写成长期实证、现行法律规则或自动政策结论。

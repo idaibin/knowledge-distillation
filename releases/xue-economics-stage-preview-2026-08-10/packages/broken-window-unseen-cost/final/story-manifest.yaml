@@ -1,0 +1,50 @@
+schema_version: story-card-final-manifest/v1
+story_id: broken-window-unseen-cost
+status: independent_full_review_pass_external_review_pending
+generated_at: "2026-08-10"
+basis:
+  lesson_id: "003"
+  lesson_ir_maturity: validated
+  lesson_ir_path: ../../../../dedao-xue-economics-001-005/lessons/003/knowledge.yaml
+  lesson_ir_sha256: f7ee9d8e0aa75a84abddf7ed8c67cc8cfc17a1dea189ba47e4351012bf43c534
+  text_layer: ../text-layer.yaml
+  text_layer_sha256: 9c42a14667ad992b2e811cd23d190fe82ef8fa041b98d4fcb427c8a68432839f
+  production_package_sha256: 73f1504f4fdd98bba2a749f9635b4e7d8ea8a6fdc12c91704143ecc425d73940
+  content_checkpoint_sha256: 6f56e8b8ea2bafe5e59c57904ccf6a877a1070f4aabd75845838779dd417dd90
+html:
+  path: story.html
+  sha256: e354c46236a28fbcdffd91eba7a552cf4130a0a4f4a2882fc17ec89ae6a65a2f
+  basis_state: current_local_package_independent_full_review_pass_external_review_pending
+  external_review_allowed: true
+  external_dependencies: 0
+  card_sections: 7
+  narration_sections: 7
+cards:
+  - {card_id: "001", final_path: cards/001.png, source_path: ../card-001-r6-crop-1086x1448.png, sha256: bb685a661cbf9d1d91937bf43a86e3fe01ed3ab45fafa2b39957c30d2d8b484c, dimensions: 1086x1448, local_review_path: ../card-001-r6-crop-local-review.yaml, local_review_sha256: 71d19a905c9c9eacf1730f3e9e0faf087ae7cf6ed8a2dfc1e6aae7799fbd1580, decision: local_and_derivative_independent_pass_selected_for_current_final, independent_full_package_review_record: {path: ../review-control/independent-final-visual-review-r2.yaml, sha256: 81f8d2ea8b3808ae9401174b74dfd05f2710205319cbc14fc439fcd72ef6fbf9, decision: pass}, provider_parent_path: ../card-001-r6.png, provider_parent_sha256: 482086a593006d5155fa716a24546e523f5713b52e924f67ebad2eb4252801df, provider_file_id: file_00000000056882098cf6e8e179287639, crop_geometry: x0_y0_w1086_h1448_delete_bottom_y1448, retained_region_ae: 0, no_resubmit: true}
+  - {card_id: "002", final_path: cards/002.png, source_path: ../card-002-candidate.png, sha256: 23a53174b4d87cc8391094f7fa954caacbc4db0edd7a0857f51964f240923dd1, dimensions: 1086x1448, local_review_path: ../card-002-local-review.yaml, local_review_sha256: cdfa60852ea5804616e4e1df1f07c88debfc264756a90b300133479bcf54c2bb, decision: local_and_independent_pass_historical_frozen, independent_full_package_review_record: {path: ../review-control/independent-final-visual-review-r2.yaml, sha256: 81f8d2ea8b3808ae9401174b74dfd05f2710205319cbc14fc439fcd72ef6fbf9, decision: pass}, no_resubmit: true}
+  - {card_id: "003", final_path: cards/003.png, source_path: ../card-003-candidate.png, sha256: a9f182db829a6ba32cbe0aee4ce0e0077eed4e21a3c5651cbffe2eb3d1f354e4, dimensions: 1086x1448, local_review_path: ../card-003-local-review.yaml, local_review_sha256: 4ab7dd699f060e20149de588c2c336d2b8c74eba75a35f863e71d395e82b8aac, decision: local_and_independent_pass_historical_frozen, independent_full_package_review_record: {path: ../review-control/independent-final-visual-review-r2.yaml, sha256: 81f8d2ea8b3808ae9401174b74dfd05f2710205319cbc14fc439fcd72ef6fbf9, decision: pass}, no_resubmit: true}
+  - {card_id: "004", final_path: cards/004.png, source_path: ../card-004-r4.png, sha256: 4569bbeb865a9a287b3180c18b6ecedc9cabe2f8ad20cdbf5aa5f6adb976ac36, dimensions: 1086x1448, local_review_path: ../card-004-r4-local-review.yaml, local_review_sha256: 9179fb2b518cf0bea20cab6a024774f53b4724ab78eb181e4704e0f843d504be, decision: local_and_independent_pass_historical_frozen, independent_full_package_review_record: {path: ../review-control/independent-final-visual-review-r2.yaml, sha256: 81f8d2ea8b3808ae9401174b74dfd05f2710205319cbc14fc439fcd72ef6fbf9, decision: pass}, no_resubmit: true}
+  - {card_id: "005", final_path: cards/005.png, source_path: ../card-005-r2.png, sha256: d3382fd4a80488b5f70c66003dd3d19f510e7f04421dad628e615cddb27fe7a0, dimensions: 1086x1448, local_review_path: ../card-005-r2-local-review.yaml, local_review_sha256: 8519e368d54a56801da3239e5a66dffc58871a7869f0138c69165c6a64aa56f4, decision: local_and_independent_pass_historical_frozen, independent_full_package_review_record: {path: ../review-control/independent-final-visual-review-r2.yaml, sha256: 81f8d2ea8b3808ae9401174b74dfd05f2710205319cbc14fc439fcd72ef6fbf9, decision: pass}, no_resubmit: true}
+  - {card_id: "006", final_path: cards/006.png, source_path: ../card-006-edit-r1.png, sha256: f81b1f69639bd4072cf96c8e835e00db8e48abc917d8bc3aa7b4134b50edcfc9, dimensions: 1086x1448, local_review_path: ../card-006-edit-r1-local-review.yaml, local_review_sha256: 8295da9fb33a2f69be2e64c096132d00066c65408d1404a60d956fae3c888637, decision: local_and_independent_pass_historical_frozen, independent_full_package_review_record: {path: ../review-control/independent-final-visual-review-r2.yaml, sha256: 81f8d2ea8b3808ae9401174b74dfd05f2710205319cbc14fc439fcd72ef6fbf9, decision: pass}, no_resubmit: true}
+  - {card_id: "007", final_path: cards/007.png, source_path: ../card-007-candidate.png, sha256: 6662e6e358259f786aa27323fd7aa56b01a1b394aeefc99614b931ad6d3d24f6, dimensions: 1086x1448, local_review_path: ../card-007-local-review.yaml, local_review_sha256: 1c891320f1f71c11f8918dd36b9732e03ffb3248dfd8469ea6b25122628bbfa6, decision: local_and_independent_pass_historical_frozen, independent_full_package_review_record: {path: ../review-control/independent-final-visual-review-r2.yaml, sha256: 81f8d2ea8b3808ae9401174b74dfd05f2710205319cbc14fc439fcd72ef6fbf9, decision: pass}, no_resubmit: true}
+excluded_history:
+  role: retained_locally_not_in_final_or_html
+  paths: [../card-001-candidate.png, ../card-001-r1.png, ../card-001-r2.png, ../card-001-r3.png, ../card-001-r4.png, ../card-001-r5.png, ../card-001-r6.png, ../card-004-candidate.png, ../card-004-r1.png, ../card-004-r2.png, ../card-004-r3.png, ../card-005-candidate.png, ../card-006-candidate.png]
+render_validation:
+  basis_state: current_local_package_independent_full_review_pass_external_review_pending
+  html5_tidy_errors: 0
+  html5_tidy_warnings: 0
+  static_card_count: 7
+  static_narration_count: 7
+  remote_resource_count: 0
+  local_image_resolution: 7_of_7
+  image_dimensions: 7_of_7_at_1086x1448
+  responsive_breakpoints: [760px, 360px]
+independent_full_package_review:
+  old_record_path: ../review-control/independent-final-visual-review.yaml
+  old_record_sha256: 324300396884a74bd782c3d955de17c187b1756e3c3569ebc11db765fa6ece2c
+  old_record_state: superseded_historical_basis_not_reusable
+  current_record: {path: ../review-control/independent-final-visual-review-r2.yaml, sha256: 81f8d2ea8b3808ae9401174b74dfd05f2710205319cbc14fc439fcd72ef6fbf9, decision: pass}
+revision_required_cards: []
+formal_package_counted: false
+formal_boundary: 当前七图七旁白已通过新的独立整包review；Card001使用通过独立单卡图审的1px机械派生并绑定provider parent/crop lineage。旧r1整包review基于Card001-r3与旧HTML，保持superseded历史证据。当前仅允许外审，formal仍为false。

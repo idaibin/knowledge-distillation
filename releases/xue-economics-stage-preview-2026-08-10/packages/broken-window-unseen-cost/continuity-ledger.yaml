@@ -1,0 +1,89 @@
+story_id: broken-window-unseen-cost
+version: "1.1-card001-r6-refrozen"
+status: frozen_before_image_generation
+rule: CL-001_quantity_ownership_form_time
+role_contract:
+  lin_lan: {identity: shop_owner, visual: black_low_ponytail_mustard_cardigan_navy_apron}
+  chen_mo: {identity: glazier, visual: short_hair_teal_gray_work_jacket_plain_gloves}
+  assistant: {identity: adult_shop_assistant, visual: brick_red_shirt_single_worn_dark_shoe_pair}
+  neighbor_a: {identity: adult_neighbor, visual: beige_jacket}
+  neighbor_b: {identity: adult_neighbor, visual: navy_vest}
+  neutral_reviewer: {identity: independent_adult_reviewer, visual: older_woman_silver_short_hair_warm_gray_vest_open_hands_no_uniform_no_verdict_pose}
+cards:
+  - card: 1
+    adults: {count: 3, identities: [lin_lan, assistant, neighbor_a], holder: self, time: impact_morning}
+    assets:
+      broken_window_panes: {count: 1, owner: lin_lan, holder: storefront, transfer_state: newly_broken, form: single_cracked_pane, time: impact_morning}
+      loose_stones: {count: 1, owner: unknown, holder: floor, transfer_state: impact_evidence_only, form: plain_irregular_stone, time: same_moment}
+      budget_bags: {count: 2, owner: lin_lan, holder: left_bag_directly_beside_only_worn_shoe_pair_on_assistant_feet_and_right_bag_directly_below_or_beside_large_hollow_single_book_outline_plan_board_with_wide_clear_separation_between_groups, transfer_state: reserved_for_shoe_and_book_plans, form: two_distinct_plain_cloth_pouches_that_do_not_touch_or_cluster_with_each_other, time: immediately_before_reassignment}
+      worn_shoe_pairs: {count: 1, owner: assistant, holder: assistant_feet, transfer_state: replacement_planned_not_started, form: one_visibly_worn_complete_pair_worn_on_both_feet, time: impact_morning}
+      ground_shoes: {count: 0, owner: none, holder: none, transfer_state: excluded, form: absent, time: impact_morning}
+      second_worn_shoe_pairs: {count: 0, owner: none, holder: none, transfer_state: excluded, form: absent, time: impact_morning}
+      hollow_book_plan_boards: {count: 1, owner: lin_lan, holder: wall_directly_grouped_with_right_budget_bag, transfer_state: book_purchase_planned_not_started, form: one_large_wordless_hollow_single_book_outline_plan_board_with_fully_open_center_showing_wall_background_legible_at_320px_not_an_actual_book_text_price_verdict_or_conclusion, time: impact_morning}
+      actual_books: {count: 0, owner: none, holder: none, transfer_state: not_purchased, form: absent, time: impact_morning}
+      book_like_objects: {count: 0, owner: none, holder: none, transfer_state: excluded, form: absent, time: impact_morning}
+      shelving_units: {count: 0, owner: none, holder: none, transfer_state: removed_from_scene, form: absent, time: impact_morning}
+      wall_frames: {count: 0, owner: none, holder: none, transfer_state: removed_from_scene, form: absent, time: impact_morning}
+      background_rectangular_surfaces: {count: 0, owner: none, holder: none, transfer_state: excluded, form: continuous_blank_wall_only, time: impact_morning}
+      empty_book_slots: {count: 0, owner: none, holder: none, transfer_state: shelf_slot_encoding_retired_after_r1_r3_instability, form: absent, time: impact_morning}
+      replacement_panes: {count: 0, owner: none, holder: none, transfer_state: not_yet_arrived, form: absent, time: impact_morning}
+    same_kind_exclusions: [second_broken_window_pane, second_stone, third_budget_bag, two_budget_bags_touching_or_clustered, left_bag_not_directly_beside_shoes_on_assistant_feet, any_ground_shoe, second_worn_shoe_pair, right_bag_not_directly_below_or_beside_hollow_book_board, second_hollow_book_plan_board, second_book_outline, any_actual_book, any_book_like_object, any_shelving_unit, any_wall_frame, any_background_rectangular_surface, any_empty_book_slot, shelf_gap, narrow_dark_gap, empty_cabinet_cell, solid_book_shape, book_spine_or_pages, text_sign, price_sign, verdict_sign, conclusion_sign, any_replacement_pane, duplicate_adult]
+  - card: 2
+    adults: {count: 3, identities: [lin_lan, chen_mo, neighbor_a], holder: self, time: later_same_day}
+    assets:
+      broken_window_panes: {count: 1, owner: lin_lan, holder: storefront, transfer_state: awaiting_repair, form: same_single_cracked_pane, time: later_same_day}
+      replacement_panes: {count: 1, owner: chen_mo, holder: chen_mo, transfer_state: arriving_for_repair, form: clear_rectangular_pane, time: later_same_day}
+      budget_bags: {count: 2, owner: lin_lan, holder: repair_tray, transfer_state: moved_from_shoe_and_book_plan_positions_to_window_repair, form: same_two_plain_cloth_pouches, time: before_payment}
+      repair_trays: {count: 1, owner: chen_mo, holder: workbench, transfer_state: receiving_repair_budget, form: one_shallow_plain_tray, time: same_scene}
+    same_kind_exclusions: [second_broken_pane, second_replacement_pane, third_budget_bag, second_repair_tray, money_or_price_mark, duplicate_adult]
+  - card: 3
+    adults: {count: 2, identities: [lin_lan, assistant], holder: self, time: after_repair}
+    assets:
+      repaired_windows: {count: 1, owner: lin_lan, holder: storefront, transfer_state: repair_completed, form: single_clear_repaired_window, time: after_repair}
+      worn_shoe_pairs: {count: 1, owner: assistant, holder: assistant, transfer_state: replacement_not_purchased, form: one_visibly_worn_pair, time: after_repair}
+      empty_shoe_boxes: {count: 1, owner: assistant, holder: floor_beside_assistant, transfer_state: new_shoes_not_purchased, form: visibly_empty_open_box, time: after_repair}
+      empty_book_slots: {count: 1, owner: lin_lan, holder: shelf, transfer_state: planned_books_not_purchased, form: one_empty_reserved_space, time: after_repair}
+    same_kind_exclusions: [second_repaired_window, second_shoe_pair, second_shoe_box, second_empty_book_slot, new_shoes, actual_books, duplicate_adult]
+  - card: 4
+    adults: {count: 3, identities: [lin_lan, chen_mo, assistant], holder: self, time: repair_completion}
+    assets:
+      repaired_windows: {count: 1, owner: lin_lan, holder: storefront, transfer_state: same_repair_completed, form: same_single_clear_repaired_window, time: repair_completion}
+      budget_bags: {count: 2, owner: lin_lan, holder: chen_mo, transfer_state: transferred_for_repair, form: same_two_plain_cloth_pouches, time: repair_completion}
+      worn_shoe_pairs: {count: 1, owner: assistant, holder: floor_beside_empty_shoe_box, transfer_state: still_unreplaced_and_not_inside_box, form: same_worn_pair, time: same_scene}
+      empty_shoe_boxes: {count: 1, owner: assistant, holder: floor_beside_worn_shoes, transfer_state: remains_empty, form: visibly_empty_open_box, time: same_scene}
+      empty_book_slots: {count: 1, owner: lin_lan, holder: wall_at_original_book_plan_position, transfer_state: remains_unfilled_reencoded_for_thumbnail_legibility, form: one_large_wordless_hollow_missing_book_outline_placeholder_board_with_thick_single_book_border_and_fully_open_center_showing_wall_background_not_an_actual_book, time: same_scene}
+      actual_books: {count: 0, owner: none, holder: none, transfer_state: not_purchased, form: absent, time: same_scene}
+    same_kind_exclusions: [second_repaired_window, broken_window, third_budget_bag, second_worn_pair, second_shoe_box, second_empty_book_slot, second_hollow_book_placeholder, solid_book_shape, book_spine_or_pages, new_shoes, any_actual_book, text_sign, price_sign, verdict_sign, duplicate_adult]
+  - card: 5
+    adults: {count: 4, identities: [lin_lan, chen_mo, neighbor_a, neighbor_b], holder: self, time: repair_day}
+    assets:
+      repaired_windows: {count: 1, owner: lin_lan, holder: storefront, transfer_state: same_repair_completed_with_surface_maintenance_visible, form: same_single_clear_storefront_window_no_detached_pane, time: repair_day}
+      repair_workstations: {count: 1, owner: chen_mo, holder: attached_to_same_single_storefront_window, transfer_state: visible_onsite_maintenance_activity, form: hands_and_small_nonrepeated_tools_cleaning_window_surface_and_sealing_frame_edges_no_independent_rectangular_glass_frame_pane_transparent_board_or_worktable, time: repair_day}
+      worn_shoe_pairs: {count: 1, owner: assistant, holder: display_position_indicated_by_lin_lan, transfer_state: still_unreplaced, form: same_worn_pair, time: same_scene}
+      empty_book_slots: {count: 1, owner: lin_lan, holder: shelf, transfer_state: still_unfilled, form: same_empty_reserved_space, time: same_scene}
+      budget_bags: {count: 0, owner: lin_lan, holder: none, transfer_state: already_transferred, form: absent, time: same_scene}
+    same_kind_exclusions: [second_repaired_window, broken_window, detached_window_pane, independent_rectangular_glass_frame, transparent_board, second_workstation, independent_worktable, second_worn_pair, second_empty_book_slot, any_budget_bag, new_shoes, actual_books, duplicate_adult]
+  - card: 6
+    adults: {count: 4, identities: [lin_lan, chen_mo, assistant, neutral_reviewer], holder: self, time: later_review}
+    assets:
+      scenario_boards: {count: 2, owner: lin_lan, holder: review_table, transfer_state: compared_not_decided, form: two_distinct_wordless_boards, time: later_review}
+      assumption_cards: {count: 1, owner: review_group, holder: between_boards, transfer_state: uncertainty_disclosed, form: one_blank_irregular_card, time: same_scene}
+      gavels: {count: 0, owner: none, holder: none, transfer_state: forbidden, form: absent, time: same_scene}
+    same_kind_exclusions: [third_scenario_board, second_assumption_card, any_gavel, vote_box, verdict_symbol, duplicate_adult]
+  - card: 7
+    adults: {count: 4, identities: [lin_lan, assistant, neighbor_a, neutral_reviewer], holder: self, time: closing_review}
+    assets:
+      evidence_trays: {count: 1, owner: lin_lan, holder: neutral_reviewer, transfer_state: direct_loss_recorded, form: one_tray_with_single_glass_fragment, time: closing_review}
+      shoe_tiles: {count: 1, owner: review_group, holder: review_table, transfer_state: counterfactual_option_only, form: one_wordless_shoe_tile, time: same_scene}
+      book_tiles: {count: 1, owner: review_group, holder: review_table, transfer_state: counterfactual_option_only, form: one_wordless_book_tile, time: same_scene}
+      assumption_cards: {count: 1, owner: review_group, holder: neutral_reviewer, transfer_state: uncertainty_retained, form: one_blank_card, time: same_scene}
+    same_kind_exclusions: [second_evidence_tray, second_shoe_tile, second_book_tile, second_assumption_card, law_or_policy_seal, duplicate_adult]
+checks:
+  exact_count_objects_closed_per_card: pass_specification
+  adult_identity_count_closed_per_card: pass_specification
+  owner_holder_separated: pass_specification
+  transfer_state_explicit: pass_specification
+  form_explicit: pass_specification
+  time_explicit: pass_specification
+  same_kind_background_exclusions_per_frame: pass_specification
+  image_verification: pending

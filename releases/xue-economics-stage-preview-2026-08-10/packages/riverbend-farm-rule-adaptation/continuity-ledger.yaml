@@ -1,0 +1,88 @@
+story_id: riverbend-farm-rule-adaptation
+version: "0.3-lifecycle-reconciled"
+status: frozen_before_image_generation
+rule: CL-001_quantity_ownership_form_time
+lifecycle:
+  c1: c1_incident
+  c2: c2_two_candidates_first_appear
+  c3: c3_continuous_fence_first_short_term_pilot_day
+  c4: c4_days_later_continue_short_term_pilot
+  c5: c5_two_candidate_comparison
+  c6: c6_baseline_if_no_trial_original_low_boundary
+  c7: c7_procedural_close
+role_contract:
+  feng_lan: grower_and_equal_participant
+  gu_yuan: cattle_keeper_and_equal_participant
+  su_qing: candidate_arrangement_recorder_not_adjudicator
+  neutral_reviewer: procedure_reviewer_not_adjudicator
+arrangement_lifecycle:
+  fence_line: c2_candidate_c3_first_short_term_pilot_c4_continue_pilot_c5_c6_comparison
+  buffer_strip: c2_candidate_only_c5_c6_comparison_not_piloted_or_observed
+  baseline: c6_if_no_trial_continuous_fence_not_used_original_low_boundary_retained
+cards:
+  - card: 1
+    adult_identity_roster: [feng_lan, gu_yuan]
+    assets:
+      cows: {count: 1, owner: gu_yuan, holder: gu_yuan, transfer_state: guided_toward_water_before_crossing, form: brown_white_adult_cow, time: first_morning}
+      low_boundaries: {count: 1, owner: shared_farm, holder: shared_farm, transfer_state: insufficient_visible_edge, form: short_wooden_boundary, time: first_morning}
+      vegetable_beds: {count: 1, owner: feng_lan, holder: feng_lan, transfer_state: newly_planted_and_trampled, form: rectangular_soil_bed_with_seedlings, time: first_morning}
+      seedling_trays: {count: 1, owner: feng_lan, holder: feng_lan, transfer_state: carried_while_work_stops, form: single_shallow_seedling_tray, time: first_morning}
+      water_troughs: {count: 1, owner: shared_farm, holder: shared_farm, transfer_state: intended_destination, form: stone_trough, time: first_morning}
+    same_kind_exclusions: [second_cow, second_boundary, second_vegetable_bed, second_seedling_tray, second_trough, background_fence]
+  - card: 2
+    adult_identity_roster: [feng_lan, gu_yuan, su_qing]
+    assets:
+      damaged_vegetable_beds: {count: 1, owner: feng_lan, holder: feng_lan, transfer_state: harm_under_observation, form: trampled_seedling_bed, time: same_morning}
+      water_trough_paths: {count: 1, owner: shared_farm, holder: gu_yuan, transfer_state: route_under_constraint, form: visible_grass_path, time: same_morning}
+      arrangement_models: {count: 2, owner: shared_farm, holder: su_qing, transfer_state: candidate_conditions_only, form: one_fence_route_and_one_buffer_fallow_wordless_model, time: same_morning}
+      comparison_tables: {count: 1, owner: shared_farm, holder: su_qing, transfer_state: neutral_candidate_display_surface, form: single_low_wooden_table, time: same_morning}
+    same_kind_exclusions: [second_damaged_bed, second_path, third_model, second_comparison_table, visible_water_trough, price_tag, coin_like_token, legal_symbol, cow]
+  - card: 3
+    adult_identity_roster: [feng_lan, gu_yuan]
+    assets:
+      continuous_fences: {count: 1, owner: shared_farm, holder: feng_lan, transfer_state: fence_line_first_short_term_pilot_day_installed, form: single_continuous_wooden_run, time: first_pilot_day}
+      vegetable_beds: {count: 1, owner: feng_lan, holder: feng_lan, transfer_state: protected_during_short_term_pilot, form: single_planted_soil_bed, time: first_pilot_day}
+      narrow_grass_routes: {count: 1, owner: shared_farm, holder: gu_yuan, transfer_state: accessible_but_longer_route, form: single_narrow_green_strip, time: first_pilot_day}
+      cows: {count: 1, owner: gu_yuan, holder: gu_yuan, transfer_state: rerouted_along_narrow_grass_path, form: brown_white_adult_cow, time: first_pilot_day}
+      fence_posts: {count: 1, owner: shared_farm, holder: feng_lan, transfer_state: maintenance_in_progress, form: detached_single_post_being_installed, time: first_pilot_day}
+    same_kind_exclusions: [second_fence_run, second_vegetable_bed, second_cow, second_route, extra_post, background_fence]
+  - card: 4
+    adult_identity_roster: [feng_lan, gu_yuan]
+    assets:
+      cows: {count: 1, owner: gu_yuan, holder: gu_yuan, transfer_state: adapted_to_rocky_slope_route, form: brown_white_adult_cow, time: later_pilot_day}
+      rocky_grass_slopes: {count: 1, owner: shared_farm, holder: gu_yuan, transfer_state: alternate_grazing_route, form: single_stony_green_slope, time: later_pilot_day}
+      forage_edge_beds: {count: 1, owner: feng_lan, holder: feng_lan, transfer_state: converted_from_seedlings_during_continued_fence_pilot, form: one_edge_bed_with_low_forage, time: later_pilot_day}
+      continuous_fences: {count: 1, owner: shared_farm, holder: shared_farm, transfer_state: fence_line_short_term_pilot_continues_days_later, form: single_distant_continuous_run, time: later_pilot_day}
+    same_kind_exclusions: [second_cow, second_slope, second_forage_edge_bed, second_fence_run, mature_crop_rows, buffer_strip_or_fallow_bed]
+  - card: 5
+    adult_identity_roster: [feng_lan, gu_yuan, su_qing]
+    assets:
+      fence_route_models: {count: 1, owner: shared_farm, holder: su_qing, transfer_state: short_term_pilot_representation_under_comparison, form: wordless_fence_and_narrow_route_model, time: comparison_day}
+      buffer_fallow_models: {count: 1, owner: shared_farm, holder: su_qing, transfer_state: candidate_not_piloted_not_observed, form: wordless_grass_buffer_and_empty_bed_model, time: comparison_day}
+      comparison_tables: {count: 1, owner: shared_farm, holder: su_qing, transfer_state: neutral_display_surface, form: plain_outdoor_table, time: comparison_day}
+    same_kind_exclusions: [second_fence_route_model, second_buffer_fallow_model, third_model, second_comparison_table, full_size_cow, real_continuous_fence, background_fence, real_field_instantiation, actual_buffer_strip, actual_fallow_bed, winner_marker, price_tag, gavel, law_plaque]
+  - card: 6
+    adult_identity_roster: [feng_lan, gu_yuan, su_qing]
+    assets:
+      terrain_boards: {count: 2, owner: shared_farm, holder: su_qing, transfer_state: baseline_if_no_trial_original_low_boundary_vs_fence_line_short_term_pilot_comparison, form: two_equal_wordless_landform_boards, time: comparison_day}
+      assumption_cards: {count: 1, owner: shared_farm, holder: nobody, transfer_state: unresolved_assumption_buffer_strip_remains_candidate_not_piloted, form: irregular_blank_card, time: comparison_day}
+    same_kind_exclusions: [third_terrain_board, second_assumption_card, buffer_strip_as_observed_result, rectangular_notice, gavel, verdict_mark]
+  - card: 7
+    adult_identity_roster: [feng_lan, gu_yuan, su_qing, neutral_reviewer]
+    assets:
+      hoofprint_tiles: {count: 1, owner: shared_farm, holder: neutral_reviewer, transfer_state: evidence_under_review, form: single_clay_tile_with_hoofprint, time: review_day}
+      seedling_bundles: {count: 1, owner: feng_lan, holder: neutral_reviewer, transfer_state: evidence_under_review, form: tied_bundle_of_seedlings, time: review_day}
+      fence_segments: {count: 1, owner: shared_farm, holder: neutral_reviewer, transfer_state: evidence_under_review, form: short_wooden_segment, time: review_day}
+      assumption_cards: {count: 1, owner: shared_farm, holder: neutral_reviewer, transfer_state: assumption_not_verdict_buffer_strip_still_candidate_not_piloted, form: irregular_blank_card, time: review_day}
+      evidence_tables: {count: 1, owner: shared_farm, holder: neutral_reviewer, transfer_state: procedure_in_progress, form: plain_wood_table, time: review_day}
+    same_kind_exclusions: [second_hoofprint_tile, second_seedling_bundle, second_fence_segment, second_assumption_card, second_table, buffer_strip_as_observed_result, court_document, gavel]
+checks:
+  owner_holder_separated: pass
+  transfer_state_explicit: pass
+  form_explicit: pass
+  time_explicit: pass
+  same_kind_background_exclusions_per_frame: pass
+  cross_scene_inventory_claim: none_unless_explicit
+  text_layer_frozen_before_generation: pass
+  adult_roster_matches_visual_exact_count: pass_local_assertion
+  positive_exact_keys_match_ledger_assets: pass_local_assertion

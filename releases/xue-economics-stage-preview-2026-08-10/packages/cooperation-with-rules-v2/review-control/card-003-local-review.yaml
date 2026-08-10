@@ -1,0 +1,29 @@
+schema_version: story-card-local-review/v1
+story_id: cooperation-with-rules-v2
+card_id: "003"
+reviewed_at: "2026-08-09"
+basis:
+  prompt_text_sha256: 32ec94703791b069cf9a259fb631d11a911a00f664701e698970590761d1b255
+  image_sha256: 6f18b77d425c4a49345671c0b557ba6044d1b45111be949b4edfadc7b660157e
+  native_dimensions: 1086x1448
+  thumbnail_sha256: b7ce49eb4d4b14623f339ca72974c51c7eca5688e416d5437c35a3eee13e1be4
+  thumbnail_dimensions: 240x320
+checks:
+  exact_three_blue_toolboxes: pass
+  exact_three_blank_tags: pass
+  exact_four_adults: pass
+  exact_one_empty_assembly_table: pass
+  no_active_assembly_or_inspection: pass
+  no_background_peer_toolboxes: pass
+  no_readable_text_logo_or_verdict_symbol: pass
+  character_contract: pass
+  three_by_four_aspect_ratio: pass
+  two_to_three_second_occupancy_without_work_read: pass
+decision: pass_candidate_for_card003
+retro:
+  keep:
+    - 三人以不同抱持姿势守住三箱，空桌对照在320像素仍清楚。
+    - 大吊牌保持纯空白，数量与箱体一一对应。
+  improve_next:
+    - 后续“后来者带来什么”继续使用可数、形状差异大的物件，避免仅靠视线或表情解释行为改变。
+  formal_boundary: 本地单卡通过不等于整包正式通过；仍需完成其余四卡与双通道整包审查。

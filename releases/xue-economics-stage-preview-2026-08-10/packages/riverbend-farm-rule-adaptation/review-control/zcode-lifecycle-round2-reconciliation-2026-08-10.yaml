@@ -1,0 +1,76 @@
+schema_version: zcode-lifecycle-round2-reconciliation/v1
+story_id: riverbend-farm-rule-adaptation
+reconciled_at: "2026-08-10"
+scope: attributed_sol_p2_lifecycle_and_historical_review_count_only
+formal: false
+provider: ZCode
+session_id: sess_2dbb632e-fe9c-4669-aba4-0472c446ea99
+round_id: riverbend-farm-rule-adaptation-zcode-lifecycle-round2
+turn_id: turn_240f09a1-55de-4e61-b8eb-33f12cb7b38c
+trace_id: 317215da-c794-4264-abc3-fcbc283d15db
+operation_ids:
+  submit: riverbend-farm-rule-adaptation:zcode:lifecycle-round2:submit-review
+  capture: riverbend-farm-rule-adaptation:zcode:lifecycle-round2:capture-response
+prompt:
+  path: zcode-lifecycle-round2-2026-08-10-prompt.md
+  sha256: 4c06a3b790e53957cf96d69d752686bc760a793325ac4c946aac7d4e4398c3e4
+response:
+  path: zcode-lifecycle-round2-2026-08-10-response.md
+  sha256: 5849ae43ba4543ba4e571ce23da0e788493ad13fe54431c1fee84a7605277f80
+  captured_visible_assistant_text: true
+  suspicious_controls: none_detected
+  completion: captured_projection_idle
+  verdict: accept_text_html_reconciliation_only
+  pixels: Not verified
+  live_mobile_render: Not verified
+attributed_peer_findings:
+  - id: sol_round1_p2_lifecycle_uniformity
+    source: Sol_round1_attributed_peer_data
+    status: closed
+    adopted: true
+    evidence:
+      - story.yaml:lifecycle_and_arrangement_lifecycle
+      - text-layer.yaml:lifecycle_and_card_3_4_6_narration
+      - storyboard.yaml:lifecycle_and_card_3_4_6_actions
+      - card-plan.yaml:lifecycle_metric_and_arrangement_state_contract
+      - visual-plan.yaml:lifecycle_media_and_card_3_4_6_scenes
+      - continuity-ledger.yaml:lifecycle_times_and_transfer_states
+      - final/narration.md:card_3_4_6
+      - final/story.html:card_3_4_6
+    local_reconcile: pass
+    zcode_reconcile: closed_text_html_axis
+    residual_risk: frozen_png_visual_depiction_and_live_mobile_render_not_verified
+  - id: sol_round1_p2_historical_full_package_review_count
+    source: Sol_round1_attributed_peer_data
+    status: closed
+    adopted: true
+    evidence:
+      current_completed: 0
+      required: 2
+      historical_records:
+        - {path: review-control/independent-final-review-a.yaml, sha256: 34452e6f5ea5f37579cc4a3f737c84b2d18398f08434a04dab1aed6cf6ac902e, reviewed_html_sha256: 48994f6d858f48e74ff26f4440824fe63cf8539b5dc6cb552ac2b55852c71bce, immutable: true, historical_pre_html_fix: true, counts_as_current_review: false}
+        - {path: review-control/independent-final-review-b.yaml, sha256: e64e833c08e703f762317058d200ae527a8b823c5dcb8981a1f1ef461a41011b, reviewed_html_sha256: 48994f6d858f48e74ff26f4440824fe63cf8539b5dc6cb552ac2b55852c71bce, immutable: true, historical_pre_html_fix: true, counts_as_current_review: false}
+      provenance_gap: historical reviewer_task labels /root/review_validate_lesson_005 and /root/validate_lesson_005 retained; Lesson 004 coverage remains unverified from labels alone
+    local_reconcile: pass
+    zcode_reconcile: closed_text_html_axis
+    residual_risk: immutable records read in isolation still state their original pass/effect; wrappers define current count
+decisions:
+  lifecycle_text_and_html: adopt
+  current_full_package_count: retain_0_of_2
+  old_review_files: preserve_bytes_and_hashes
+  lesson_005_provenance_gap: retain
+  visible_旁白_fix: prior_round_already_adopted
+  image_bytes: unchanged
+local_validation:
+  yaml_parse: pass_12_of_12
+  seven_cards_and_narrations: pass_7_of_7
+  lifecycle_assertions: pass_6_of_6
+  text_layer_narration_html_match: pass_7_of_7
+  visible_narrator_label: absent
+  html_tidy: pass_0_errors_0_warnings
+  remote_resources: 0
+  mobile_css_breakpoints: [760px, 360px]
+  current_review_count: 0_of_2
+  png_hashes_and_dimensions: pass_7_of_7_1086x1448
+  formal: false
+ready_for_sol_final: true

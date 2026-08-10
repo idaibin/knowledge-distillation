@@ -1,0 +1,30 @@
+schema_version: story-card-checkpoint/v1
+story_id: cooperation-with-rules-v2
+stage: final_candidate
+status: pass_local_pending_external_double_review
+knowledge_basis:
+  lesson_id: "002"
+  maturity: validated
+  sha256: 411159bd9a97b992313620c1675838e3243ca7092923c0445a3fe4ed555a0ec5
+local_gates:
+  seven_card_generation: pass
+  seven_card_hash_binding: pass
+  seven_card_local_reviews: pass_after_independent_recheck
+  exact_count_and_background_peer_checks: pass
+  no_text_price_verdict_symbols: pass
+  html_static_render: pass_on_current_image_basis
+  seven_narrations_present: pass
+  independent_visual_package_review: pass_after_revisions
+revision_required_cards: []
+revision_basis:
+  card_002: {sha256: 793182febed06c2f051a9494667aeb4518ea4e07de2cf641ba3efab0e565d668, prompt: review-control/card-002-r2-edit-prompt.md, prompt_sha256: 57a91807375129801f94e7d79a3b347fc965b755ee00887d34a65af8a0f7e5bf}
+  card_005: {sha256: 60f2ca5f9b165ab2171ea12372ad7662aaf8d1a348ba9eeb872cac75b2e3ad8b, prompt: review-control/card-005-r1-edit-prompt.md, prompt_sha256: 5a69114c9620bb8c845fbc11920479c1aedf8f4047b4d9766fb9ad6c5887b18c}
+  card_007: {sha256: adc6c801ce3e0a0b5bee5d0f378501e9eea970d8e20bfd7e29a9a18afefeb52d, prompt: review-control/card-007-r1-edit-prompt.md, prompt_sha256: 2a3014a34850a41631be2edceb326c1b14cafbec69c995c867709649f9e598df}
+html_basis:
+  state: current_pass
+  reason: story.html 已在本地浏览器重载当前 002/005/007；7 卡、7 旁白、7/7 图像 1086x1448、0 远程资源全部通过。
+external_gates:
+  chatgpt_review_control: blocked_before_submit_by_locked_mac_file_chooser
+  zcode_persistent_session: completed_revise_text_pass_visual_not_verified
+formal_package_counted: false
+next_action: 重跑当前 HTML 本地浏览器门禁，随后将同一固定 basis 分别交给 Review Control 与既有 ZCode 会话审查；不得把本地通过升级为 formal。

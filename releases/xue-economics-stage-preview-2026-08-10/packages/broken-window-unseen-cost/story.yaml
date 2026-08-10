@@ -1,0 +1,37 @@
+story_id: broken-window-unseen-cost
+series_order: 3
+version: "1.1-card001-r6-refrozen"
+status: pass_before_image_generation
+gate: revise
+publication_status: not_for_publication
+disclosure: 基于反事实比较机制的原创情景化演绎，不是实证结论、现行法或普遍政策判断。
+knowledge_gate:
+  lesson: "003"
+  ir_path: ../../../dedao-xue-economics-001-005/lessons/003/knowledge.yaml
+  ir_maturity: validated
+  ir_sha256: f7ee9d8e0aa75a84abddf7ed8c67cc8cfc17a1dea189ba47e4351012bf43c534
+  allowed_ids: [PR-01, PR-02, FW-01, AP-01]
+primary_mechanism: {id: PR-01, label: 评价行动要比较资源未被占用时的替代用途。}
+uncertainty_boundary: {id: PR-02, label: 鞋与书只是明确披露的计划性反事实，不是已发生事实。}
+framework: {id: FW-01, application: 分开直接损失、可见修复、替代用途及其不确定性。}
+anti_pattern: {id: AP-01, application: 不把修复支出和忙碌直接记作净财富增加。}
+original_story:
+  title: 那块玻璃之后的两个空位
+  setting: 一间原创街角装裱店；店主林岚原计划用两个预算袋替成年助手换鞋并添置参考书。
+  beats:
+    - {card: 1, function: shock, action: 一块飞石打破唯一临街窗；唯一一双磨损鞋始终穿在助手双脚，地面不得另放鞋，左预算袋直接贴近助手脚上鞋；右预算袋直接放在大尺寸无字空心单本书轮廓计划板下方或旁侧，两组明显分离且不可彼此成组；计划板中心完全镂空透出连续空墙，只表示未发生的购书计划。画面移除整座书架、所有实体书与书状物、墙框和矩形背景面。}
+    - {card: 2, function: visible_spending, action: 玻璃工陈默带来新窗片，林岚把两个无字预算袋移到修窗托盘。}
+    - {card: 3, function: unseen_substitutes, action: 修窗后旧鞋仍在，预留书架仍空；鞋与书没有发生，只是原计划。}
+    - {card: 4, function: resource_transfer, action: 陈默带走两个预算袋，店内助手把旧鞋放在空鞋盒旁；书计划位改用一块大尺寸无字空心书形占位板表示未购，镂空处可见背景且不是实际书。}
+    - {card: 5, function: mistaken_net_gain, action: 陈默只在唯一临街窗表面做现场清洁与封边，两名邻居共同注视这处附着式忙碌；林岚同时指向旧鞋和空书位，拒绝把支出直接算作净收益。}
+    - {card: 6, function: counterfactual_boundary, action: 众人并列查看两个无字情景板，并把假设卡留在两板之间而不选定必然结果。}
+    - {card: 7, function: procedural_close, action: 复核者分开摆放碎玻璃证据、鞋书替代图块与假设卡，只确认分析步骤。}
+delete_card_test:
+  result: pass
+  rationale: 七卡依次承担冲击、可见支出、未发生替代、资源转移、误判、反事实边界和程序结语。
+copyright_check:
+  paid_course_text_used: false
+  source_passage_reproduced: false
+  original_characters_and_setting: true
+  source_specific_title_reused: false
+formal_boundary: 本故事只展示一种有假设的反事实分析，不证明长期净效果，也不自动外推到灾害、技术或政策场景。

@@ -1,0 +1,56 @@
+schema_version: story-card-checkpoint/v1
+story_id: riverbend-farm-rule-adaptation
+stage: lifecycle_reconciled_sol_final_p2_recheck_closed_current_full_package_reviews_2_of_2_text_html_review_reconciled_external_review_incomplete
+status: lifecycle_reconciled_sol_final_p2_recheck_closed_current_full_package_reviews_2_of_2_text_html_review_reconciled_external_review_incomplete
+knowledge_basis:
+  lesson_id: "004"
+  maturity: validated
+  sha256: d7c346fbc6b0c9fff93c2db1dbf2331e1d769490e421d0d70a8d57f4c4d011dd
+fixed_basis:
+  story_manifest: {path: final/story-manifest.yaml, sha256: ce962c83b4d2bf70e78c68074f5397a6b436e752e663e844fd46fcf2802d5b96}
+  story_html: {path: final/story.html, sha256: ba544454ca1a11ed2be76a876ed2a39c96ad1285b50b6a8681fa2f00e105444a}
+  narration: {path: final/narration.md, sha256: 99122a7703c540274f341f17832698a968ee20f4d531e7925f4c3cddbe6e425d}
+  production_package: {path: production-package.yaml, sha256: 88bce97d811958be46f067e6e5126523d2fb3a8020ee702f2994252e60657918}
+  content_checkpoint: {path: content-checkpoint.yaml, sha256: 3081c04851b993ac5c9d5ce81b79e946a884f599d08412f8471c4a979b4f603c}
+  browser_operation: {path: browser-operation.yaml, sha256: 18b79bf555de8a2d3478dabbd4cb2e6d8b2c6cb481237eba03a261a89c2f9a60}
+  review_package: {path: review-control/final-review-package.md, sha256: 2a3183f9764f745f6f39b55b8fe85bb80ba33bc817433a4d5b7c5ffcc362ac5f}
+hash_direction:
+  rule: final_checkpoint_binds_review_package_one_way
+  review_package_must_not_bind_final_checkpoint: true
+local_gates:
+  seven_card_generation: pass
+  seven_card_final_selection_locked: pass
+  seven_card_hash_binding: pass_7_of_7
+  seven_card_local_reviews: pass_7_of_7
+  seven_card_independent_visual_reviews: pass_7_of_7
+  html5_static_parser: pass
+  html_local_image_resolution: pass_7_of_7
+  html_remote_resources: 0
+  html_mobile_css_breakpoints: [760px, 360px]
+  live_mobile_render: Not reverified
+  narration_sections: 7
+independent_full_package_reviews:
+  required: 2
+  completed: 2
+  historical_pre_html_fix_records_retained: true
+  records:
+    - {reviewer_task: /root/review_validate_lesson_005, path: review-control/independent-final-review-a.yaml, sha256: 34452e6f5ea5f37579cc4a3f737c84b2d18398f08434a04dab1aed6cf6ac902e, decision: historical_pre_html_fix, counts_as_current_review: false}
+    - {reviewer_task: /root/validate_lesson_005, path: review-control/independent-final-review-b.yaml, sha256: e64e833c08e703f762317058d200ae527a8b823c5dcb8981a1f1ef461a41011b, decision: historical_pre_html_fix, counts_as_current_review: false}
+    - {reviewer_task: /root/riverbend_sol_final_review, reviewer_role: Sol final independent full-package reviewer, path: review-control/independent-final-review-sol.yaml, sha256: 503b5c046656361a9da90f64b927907b64d9b5b3b166a8f3db61a655f72363e6, decision: pass, recorded_by: producer, pixels_reviewed_locally_by_sol: true, live_mobile_render: Not verified, formal: false, counts_as_current_review: true}
+    - {reviewer_task: /root/riverbend_current_reviewer_b, reviewer_role: Sol independent full-package reviewer B, path: review-control/independent-final-review-sol-b.yaml, sha256: c703b986d070bfc1ebede3ce19478fa43536199a14d25d1508a51d0b05ec733d, decision: pass, recorded_by: producer, pixels_reviewed_locally_by_sol: true, live_mobile_render: Not verified, formal: false, counts_as_current_review: true}
+external_gates:
+  chatgpt_review_control: blocked_before_submit_browser_unavailable
+  zcode_persistent_session: completed_not_verified_no_pixel_input
+  zcode_text_html_follow_up: completed_accept_with_conditions_text_html_only
+  zcode_lifecycle_round2: completed_accept_text_html_only_same_session
+  sol_final_p2_recheck: completed_current_sol_passes_2_of_2
+  sol_current_full_package_reviews: completed_2_of_2_pixels_reviewed_locally_by_sol_live_mobile_not_verified
+external_review_evidence:
+  operations: {path: review-control/external-review-operations.yaml, sha256: 63e185fd4c1fd0cdc05a1780ea409efd76159c03311dfb9ac0c479c10733e540}
+  chatgpt_preflight: {path: review-control/chatgpt-review-control-2026-08-10-riverbend.md, sha256: 53cc485e3584e49b25503a92de2ba3b0392f60c2f5c9026d55cd75f797313767, verdict: blocked_before_submit}
+  zcode_review: {path: review-control/zcode-final-review-2026-08-10-riverbend.md, sha256: 4d0fdf6fc10d26a5ef777eeae6fac844eb509f575c3ed0cb972c2a6f38094e48, verdict: not_verified_no_pixel_input, visual_axis: Not verified}
+  zcode_text_html_review: {path: review-control/zcode-text-html-review-2026-08-10-riverbend.md, sha256: ae1debd95fbf5154732b8fbaf9992483f9039c3f5595b3f3458c9857762d3465, verdict: accept_with_conditions_text_html_only, visual_axis: Not verified}
+  zcode_lifecycle_round2: {path: review-control/zcode-lifecycle-round2-reconciliation-2026-08-10.yaml, sha256: 45efac3015b99b4857574bf7f560e07746261476f847058067f2771567e4361d, verdict: accept_text_html_reconciliation_only, visual_axis: Not verified}
+formal: false
+formal_package_counted: false
+next_action: restore_review_control_live_browser_runtime_external_visual_review_route; current_full_package_reviews_complete_2_of_2; formal_remains_false; never resend any completed ZCode turn

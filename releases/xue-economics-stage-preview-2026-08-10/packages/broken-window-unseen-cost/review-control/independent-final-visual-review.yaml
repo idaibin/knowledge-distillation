@@ -1,0 +1,98 @@
+schema_version: independent-final-visual-review/v1
+story_id: broken-window-unseen-cost
+reviewer_task: write_broken_independent_review
+reviewed_at: "2026-08-10"
+status: superseded_historical_basis_not_reusable_for_current_final
+scope: historical_card001_r3_final_basis_read_only_blind_visual_review
+applicability:
+  current_final_basis: false
+  superseded_by_card001_source: ../card-001-r6-crop-1086x1448.png
+  superseded_by_card001_sha256: bb685a661cbf9d1d91937bf43a86e3fe01ed3ab45fafa2b39957c30d2d8b484c
+  current_required_action: rerun_independent_full_package_review_on_new_seven_card_html_and_manifest_basis
+  reuse_old_overall_revise: forbidden
+basis:
+  html:
+    path: ../final/story.html
+    sha256: bfdd59ebe6fd14121eda4e6a6a2c607faea2ed9d2fd70946ac6eeb84ee890939
+  final_images:
+    - {card_id: "001", path: ../final/cards/001.png, sha256: 332d1c029286869939c21214799b9b8fb494c0ad51aca65d6138b8583b229830, dimensions: 1086x1448, thumbnail_path: ../card-001-r3-thumb-320.png, thumbnail_sha256: 8ee90a19141bb8e0ab8d7f4c2ed95d0c9fe6740c609a7769d4ee61426e74c8fa, thumbnail_dimensions: 240x320}
+    - {card_id: "002", path: ../final/cards/002.png, sha256: 23a53174b4d87cc8391094f7fa954caacbc4db0edd7a0857f51964f240923dd1, dimensions: 1086x1448, thumbnail_path: ../card-002-thumb-320.png, thumbnail_sha256: 44d1ed4e204d53253dbd361098c2896c906349a4c2f1cff2653636c5dcaf8d37, thumbnail_dimensions: 240x320}
+    - {card_id: "003", path: ../final/cards/003.png, sha256: a9f182db829a6ba32cbe0aee4ce0e0077eed4e21a3c5651cbffe2eb3d1f354e4, dimensions: 1086x1448, thumbnail_path: ../card-003-thumb-320.png, thumbnail_sha256: 298f65ab0148c19893a4119a85fe9c84df6a3974a11a53af739ed06fa13aee15, thumbnail_dimensions: 240x320}
+    - {card_id: "004", path: ../final/cards/004.png, sha256: 4569bbeb865a9a287b3180c18b6ecedc9cabe2f8ad20cdbf5aa5f6adb976ac36, dimensions: 1086x1448, thumbnail_path: ../card-004-r4-thumb-320.png, thumbnail_sha256: 049c50ba4fb60c513cd4e723eba45eea0855600f860b336b902848ab329d911f, thumbnail_dimensions: 240x320}
+    - {card_id: "005", path: ../final/cards/005.png, sha256: d3382fd4a80488b5f70c66003dd3d19f510e7f04421dad628e615cddb27fe7a0, dimensions: 1086x1448, thumbnail_path: ../card-005-r2-thumb-320.png, thumbnail_sha256: 65116cd8cc54d19eef8bc152251d566c87c0608e4baefe8d247d151d4b561c67, thumbnail_dimensions: 240x320}
+    - {card_id: "006", path: ../final/cards/006.png, sha256: f81b1f69639bd4072cf96c8e835e00db8e48abc917d8bc3aa7b4134b50edcfc9, dimensions: 1086x1448, thumbnail_path: ../card-006-edit-r1-thumb-320.png, thumbnail_sha256: f65633c6a03b2592698e8dc74a535503b8194a090a3abcc6c3bb35393eb2535d, thumbnail_dimensions: 240x320}
+    - {card_id: "007", path: ../final/cards/007.png, sha256: 6662e6e358259f786aa27323fd7aa56b01a1b394aeefc99614b931ad6d3d24f6, dimensions: 1086x1448, thumbnail_path: ../card-007-thumb-320.png, thumbnail_sha256: dbb8ea0ca73a229dfa5e13a191a5d228cd8b343ce8884e733cb21521c54abcdb, thumbnail_dimensions: 240x320}
+review_method:
+  native_and_320px_visual_check: true
+  checked: [exact_counts, character_continuity, primary_mechanism_read, no_text_price_or_verdict_symbols, seven_card_sequence, html_narrations, remote_resources, lesson003_boundary]
+cards:
+  - card_id: "001"
+    final_image_path: ../final/cards/001.png
+    image_sha256: 332d1c029286869939c21214799b9b8fb494c0ad51aca65d6138b8583b229830
+    thumbnail_path: ../card-001-r3-thumb-320.png
+    thumbnail_sha256: 8ee90a19141bb8e0ab8d7f4c2ed95d0c9fe6740c609a7769d4ee61426e74c8fa
+    decision: revise
+    finding: unique_empty_book_slot_not_visually_verifiable
+    evidence: "At native size and 240x320 thumbnail, the shelf near the right budget bag does not show one independently countable, single-book-width empty slot with four visible boundaries; this violates Card001 empty_book_slots: 1 and its non-occlusion contract."
+  - card_id: "002"
+    final_image_path: ../final/cards/002.png
+    image_sha256: 23a53174b4d87cc8391094f7fa954caacbc4db0edd7a0857f51964f240923dd1
+    thumbnail_path: ../card-002-thumb-320.png
+    thumbnail_sha256: 44d1ed4e204d53253dbd361098c2896c906349a4c2f1cff2653636c5dcaf8d37
+    decision: pass
+    finding: none
+    evidence: "One broken pane, one replacement pane, one tray with two bags, and three continuous adult roles remain distinct; the repair allocation reads immediately without text."
+  - card_id: "003"
+    final_image_path: ../final/cards/003.png
+    image_sha256: a9f182db829a6ba32cbe0aee4ce0e0077eed4e21a3c5651cbffe2eb3d1f354e4
+    thumbnail_path: ../card-003-thumb-320.png
+    thumbnail_sha256: 298f65ab0148c19893a4119a85fe9c84df6a3974a11a53af739ed06fa13aee15
+    decision: pass
+    finding: none
+    evidence: "The repaired window, one worn pair, one empty shoe box, and one empty book slot are legible with exactly two adults and no unpurchased object shown as acquired."
+  - card_id: "004"
+    final_image_path: ../final/cards/004.png
+    image_sha256: 4569bbeb865a9a287b3180c18b6ecedc9cabe2f8ad20cdbf5aa5f6adb976ac36
+    thumbnail_path: ../card-004-r4-thumb-320.png
+    thumbnail_sha256: 049c50ba4fb60c513cd4e723eba45eea0855600f860b336b902848ab329d911f
+    decision: pass
+    finding: none
+    evidence: "Three roles, two carried bags, one worn pair beside one empty box, one repaired window, and one hollow wordless book-outline absence are distinguishable; no actual book, price, or verdict symbol is visible."
+  - card_id: "005"
+    final_image_path: ../final/cards/005.png
+    image_sha256: d3382fd4a80488b5f70c66003dd3d19f510e7f04421dad628e615cddb27fe7a0
+    thumbnail_path: ../card-005-r2-thumb-320.png
+    thumbnail_sha256: 65116cd8cc54d19eef8bc152251d566c87c0608e4baefe8d247d151d4b561c67
+    decision: pass
+    finding: none
+    evidence: "One worker performs maintenance on the single visible storefront window while two neighbors attend and Lin Lan points to one worn pair and one empty slot; the image shows activity without a net-gain verdict."
+  - card_id: "006"
+    final_image_path: ../final/cards/006.png
+    image_sha256: f81b1f69639bd4072cf96c8e835e00db8e48abc917d8bc3aa7b4134b50edcfc9
+    thumbnail_path: ../card-006-edit-r1-thumb-320.png
+    thumbnail_sha256: f65633c6a03b2592698e8dc74a535503b8194a090a3abcc6c3bb35393eb2535d
+    decision: pass
+    finding: none
+    evidence: "Four adults jointly inspect two visually equal wordless scenario boards with one blank irregular assumption card; no vote, gavel, winner, or legal authority is shown."
+  - card_id: "007"
+    final_image_path: ../final/cards/007.png
+    image_sha256: 6662e6e358259f786aa27323fd7aa56b01a1b394aeefc99614b931ad6d3d24f6
+    thumbnail_path: ../card-007-thumb-320.png
+    thumbnail_sha256: dbb8ea0ca73a229dfa5e13a191a5d228cd8b343ce8884e733cb21521c54abcdb
+    decision: pass
+    finding: none
+    evidence: "The neutral reviewer separates one fragment tray, one shoe tile, one book tile, and one blank assumption card with four adults; the closing action remains procedural rather than a ruling."
+package_checks:
+  sequence_and_mechanism: pass_except_card001_finding
+  html_card_sections: 7
+  html_narration_sections: 7
+  html_remote_resources: 0
+  lesson003_boundary: pass
+  no_text_price_or_verdict_symbols: pass
+overall:
+  decision: superseded_historical_revise_not_reusable
+  finding_count: 1
+  blocking_finding: Card001 unique empty book slot is not visually verifiable at native or 320px.
+  formal: false
+  external_final_review: pending
+  required_next_action: rerun_independent_full_package_review_on_current_card001_r6_crop_fixed_basis
