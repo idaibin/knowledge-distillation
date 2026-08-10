@@ -6,22 +6,27 @@ access: private
 sync_status: verified
 metadata_readback: verified
 connector_single_file_limit_bytes: 104857600
+stage_archive_basis:
+  commit: 096c4cf32c2828557c3b556b4c5f877206ebd6ff
+  tree: e8a5b5abf7de6ccc3750355f8b029d852dbc1009
+  member_files: 97
+  member_bytes: 54241825
 assets:
-  - asset_id: xue-economics.stage-release.v02.archive
+  - asset_id: xue-economics.stage-release.v03.archive
     logical_folder_path: "AI Engineering Lab/40-Exports/Review-Packages/xue-economics/2026-08-10-stage-preview"
-    filename: knowledge-distillation__release__xue-economics-stage-preview__2026-08-10__v02.tar.gz
-    bytes: 53375543
-    sha256: 88132896471a88af5dfbee4cb456443433772a8afb8528fe168e377b0a695739
+    filename: knowledge-distillation__release__xue-economics-stage-preview__2026-08-10__v03.tar.gz
+    bytes: 53420865
+    sha256: 1e0497bc2924b19fc463340c52c94bfeabc175395f1b3c849d74885b854a8f94
     storage: google_drive
     access: private
     sync_status: verified
     metadata_readback: verified
     observed_at: "2026-08-10"
-  - asset_id: xue-economics.stage-release.v02.sha256
+  - asset_id: xue-economics.stage-release.v03.sha256
     logical_folder_path: "AI Engineering Lab/40-Exports/Review-Packages/xue-economics/2026-08-10-stage-preview"
     filename: STAGE-RELEASE-SHA256SUMS
     bytes: 151
-    sha256: 2fa1d1eac56365210e1ffa227132acc6200f7c1b692d8981a8ca626139ec880a
+    sha256: 4e29da63fa4d733e758f069b91614dde63acd52f7888da9966d027f77b5ed1bc
     storage: google_drive
     access: private
     sync_status: verified

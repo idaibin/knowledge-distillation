@@ -33,7 +33,7 @@
 - AI Engineering Lab/40-Exports/Review-Packages/xue-economics/2026-08-10-stage-preview
 - AI Engineering Lab/90-Archive/xue-economics/2026-08-10-full-assets
 
-v02 本地归档和索引已完成尺寸、SHA-256、成员集合审计；Drive 中原 v01 文件已原位替换为 v02，未创建重复项，11 个文件均已通过名称、字节数、父目录和目录计数 readback，索引状态为 verified。
+full-assets 9 项为通过尺寸、SHA-256 与成员集合审计的 v02，stage 2 项为绑定固定 commit 的 v03；未创建重复项，11 个文件均已通过名称、字节数、父目录和目录计数 readback，索引状态为 verified。
 
 ## Verify source snapshot
 
@@ -46,17 +46,17 @@ v02 本地归档和索引已完成尺寸、SHA-256、成员集合审计；Drive 
 
 ## Verify v02 archives with Python tarfile
 
-下面的验收命令同时检查 full 与 stage：regular member 集合、字节总和、AppleDouble (._*)、绝对路径、.. 路径，以及 stage 每个 member 的字节是否等于 git show HEAD:path。它是主要验收，不以 tar | wc 作为集合证明。
+下面的验收命令同时检查 full 与 stage：regular member 集合、字节总和、AppleDouble (._*)、绝对路径、.. 路径，以及 stage 每个 member 的字节是否等于固定 basis commit。它是主要验收，不以 tar | wc 作为集合证明。
 
-    python3 - /path/to/xue-economics-drive-upload <<'PY'
+    XUE_ASSET_UPLOAD_DIR=drive-upload-dir python3 - <<'PY'
     import hashlib
+    import os
     from pathlib import Path
     import subprocess
-    import sys
     import tarfile
 
     repo = Path.cwd()
-    out = Path(sys.argv[1]).resolve()
+    out = Path(os.environ["XUE_ASSET_UPLOAD_DIR"]).resolve()
 
     def safe_members(tf):
         members = tf.getmembers()
@@ -102,10 +102,11 @@ v02 本地归档和索引已完成尺寸、SHA-256、成员集合审计；Drive 
                 assert hashlib.sha256(payload).hexdigest() == expected_sha, member.name
     print(f"full PASS regular={len(source_files)} bytes={source_bytes}")
 
+    stage_basis = "096c4cf32c2828557c3b556b4c5f877206ebd6ff"
     stage_git = "releases/xue-economics-stage-preview-2026-08-10"
     stage_root = "xue-economics-stage-preview-2026-08-10/"
     tracked = subprocess.check_output(
-        ["git", "ls-tree", "-r", "--name-only", "HEAD", stage_git],
+        ["git", "ls-tree", "-r", "--name-only", stage_basis, stage_git],
         cwd=repo,
         text=True,
     ).splitlines()
@@ -113,7 +114,7 @@ v02 本地归档和索引已完成尺寸、SHA-256、成员集合审计；Drive 
         stage_root + p.removeprefix(stage_git + "/")
         for p in tracked
     }
-    stage = out / "knowledge-distillation__release__xue-economics-stage-preview__2026-08-10__v02.tar.gz"
+    stage = out / "knowledge-distillation__release__xue-economics-stage-preview__2026-08-10__v03.tar.gz"
     with tarfile.open(stage, "r:gz") as tf:
         members = safe_members(tf)
         regular = {m.name for m in members if m.isfile()}
@@ -122,14 +123,14 @@ v02 本地归档和索引已完成尺寸、SHA-256、成员集合审计；Drive 
             if member.isfile():
                 git_path = stage_git + "/" + member.name.removeprefix(stage_root)
                 expected = subprocess.check_output(
-                    ["git", "show", f"HEAD:{git_path}"],
+                    ["git", "show", f"{stage_basis}:{git_path}"],
                     cwd=repo,
                 )
                 assert tf.extractfile(member).read() == expected, git_path
-    print(f"stage PASS regular={len(stage_files)} HEAD byte matches={len(stage_files)}")
+    print(f"stage PASS regular={len(stage_files)} basis byte matches={len(stage_files)}")
     PY
 
-预期：full PASS regular=790 bytes=494670096；stage PASS regular=91 HEAD byte matches=91。
+预期：full PASS regular=790 bytes=494670096；stage PASS regular=97 basis byte matches=97。
 
 ## Reassemble Drive parts
 
@@ -150,10 +151,11 @@ v02 本地归档和索引已完成尺寸、SHA-256、成员集合审计；Drive 
 
 ## Stage release upload
 
-阶段 release 归档只包含 Git HEAD 中的 91 个 release 文件，不包含本说明和其他新增清单：
+阶段 release 归档固定绑定 commit `096c4cf32c2828557c3b556b4c5f877206ebd6ff`，包含该提交中的 97 个 release 文件：
 
-- 文件名：knowledge-distillation__release__xue-economics-stage-preview__2026-08-10__v02.tar.gz
-- 大小：53,375,543 B / 50.902884 MiB
-- SHA-256：88132896471a88af5dfbee4cb456443433772a8afb8528fe168e377b0a695739
+- 文件名：knowledge-distillation__release__xue-economics-stage-preview__2026-08-10__v03.tar.gz
+- 基线内容：97 files / 54,241,825 B
+- 归档大小：53,420,865 B / 50.946107 MiB
+- SHA-256：1e0497bc2924b19fc463340c52c94bfeabc175395f1b3c849d74885b854a8f94
 
-该文件满足 100 MiB 单文件限制；Drive v01 文件已原位替换为 v02，并以 STAGE-RELEASE-SHA256SUMS 完成校验。
+该文件满足 100 MiB 单文件限制；Drive 中原 stage 文件已原位替换为 v03，并以 STAGE-RELEASE-SHA256SUMS 完成校验。
