@@ -2,7 +2,7 @@
 
 ## 来源边界
 
-- 源仓库：`/Users/daibin/Codex/repos/knowledge-distillation`，当前快照源目录：`.codex/artifacts/dedao-xue-economics-course-system/card-production/<story>/`。
+- 源仓库：`idaibin/knowledge-distillation`，当前快照源目录：`.codex/artifacts/dedao-xue-economics-course-system/card-production/<story>/`。
 - 本 release 只从三个故事目录复制：`broken-window-unseen-cost`、`cooperation-with-rules-v2`、`riverbend-farm-rule-adaptation`。
 - 每包复制 `final/` 完整目录、根级 `final-checkpoint.yaml`、存在的 `content-checkpoint.yaml` / `production-package.yaml`、story/text/storyboard/card-plan/visual-plan/continuity-ledger/browser-operation 等 basis，以及 `review-control/` 下支持当前状态的 `.md` / `.yaml`。候选图、缩略图、contact sheet、prompt 和其它历史大图不在 release。
 - `broken-window-unseen-cost/browser-operation.source.txt` 保留源 `.codex/.../browser-operation.yaml` 的原始字节，不改内容、不改 SHA。该上游账本在同一 mapping 内重复出现同值 `status` 键，strict unique-key YAML loader 会拒绝；因此 release 以 `.source.txt` 标记为原样 provenance，而不是创建 wrapper 或声称其可解析。复制的 `final-checkpoint.yaml` / manifest 保留上游原路径和原字节；release 不宣称可直接重跑原 hash chain，原始账本实际文件名以 `.source.txt` 为准。

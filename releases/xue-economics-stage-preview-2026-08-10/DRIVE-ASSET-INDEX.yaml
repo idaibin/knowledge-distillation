@@ -1,0 +1,119 @@
+schema: xue-economics-drive-asset-index/v1
+observed_at: "2026-08-10"
+logical_root: "AI Engineering Lab"
+storage: google_drive
+access: private
+sync_status: verified
+metadata_readback: verified
+connector_single_file_limit_bytes: 104857600
+assets:
+  - asset_id: xue-economics.stage-release.v02.archive
+    logical_folder_path: "AI Engineering Lab/40-Exports/Review-Packages/xue-economics/2026-08-10-stage-preview"
+    filename: knowledge-distillation__release__xue-economics-stage-preview__2026-08-10__v02.tar.gz
+    bytes: 53375543
+    sha256: 88132896471a88af5dfbee4cb456443433772a8afb8528fe168e377b0a695739
+    storage: google_drive
+    access: private
+    sync_status: verified
+    metadata_readback: verified
+    observed_at: "2026-08-10"
+  - asset_id: xue-economics.stage-release.v02.sha256
+    logical_folder_path: "AI Engineering Lab/40-Exports/Review-Packages/xue-economics/2026-08-10-stage-preview"
+    filename: STAGE-RELEASE-SHA256SUMS
+    bytes: 151
+    sha256: 2fa1d1eac56365210e1ffa227132acc6200f7c1b692d8981a8ca626139ec880a
+    storage: google_drive
+    access: private
+    sync_status: verified
+    metadata_readback: verified
+    observed_at: "2026-08-10"
+  - asset_id: xue-economics.full-assets.v02.part-01-of-06
+    logical_folder_path: "AI Engineering Lab/90-Archive/xue-economics/2026-08-10-full-assets"
+    filename: knowledge-distillation__assets__xue-economics-local__2026-08-10__v02.part-01-of-06
+    bytes: 94371840
+    sha256: ef2041a4c37a1386247bf5e1469c8f1c7c71f74104abb11281782ae5cc12bd0b
+    storage: google_drive
+    access: private
+    sync_status: verified
+    metadata_readback: verified
+    observed_at: "2026-08-10"
+  - asset_id: xue-economics.full-assets.v02.part-02-of-06
+    logical_folder_path: "AI Engineering Lab/90-Archive/xue-economics/2026-08-10-full-assets"
+    filename: knowledge-distillation__assets__xue-economics-local__2026-08-10__v02.part-02-of-06
+    bytes: 94371840
+    sha256: 7f4cac950ea78b388207ae902aa71e3b552a78360f48e52bedc8e35539e42c6d
+    storage: google_drive
+    access: private
+    sync_status: verified
+    metadata_readback: verified
+    observed_at: "2026-08-10"
+  - asset_id: xue-economics.full-assets.v02.part-03-of-06
+    logical_folder_path: "AI Engineering Lab/90-Archive/xue-economics/2026-08-10-full-assets"
+    filename: knowledge-distillation__assets__xue-economics-local__2026-08-10__v02.part-03-of-06
+    bytes: 94371840
+    sha256: fe2af06e9656f0bee76bb4044c4801d584e42b818a6d0af1a1c5b7661ee8ccfc
+    storage: google_drive
+    access: private
+    sync_status: verified
+    metadata_readback: verified
+    observed_at: "2026-08-10"
+  - asset_id: xue-economics.full-assets.v02.part-04-of-06
+    logical_folder_path: "AI Engineering Lab/90-Archive/xue-economics/2026-08-10-full-assets"
+    filename: knowledge-distillation__assets__xue-economics-local__2026-08-10__v02.part-04-of-06
+    bytes: 94371840
+    sha256: 411c84f4a97b2a1f428dfe30016ab7e9f7fb3b549dc4e8b210805e5b2a874332
+    storage: google_drive
+    access: private
+    sync_status: verified
+    metadata_readback: verified
+    observed_at: "2026-08-10"
+  - asset_id: xue-economics.full-assets.v02.part-05-of-06
+    logical_folder_path: "AI Engineering Lab/90-Archive/xue-economics/2026-08-10-full-assets"
+    filename: knowledge-distillation__assets__xue-economics-local__2026-08-10__v02.part-05-of-06
+    bytes: 94371840
+    sha256: ba809be743f3921d73cf1e438f6ac1409b088e1b267117eba84e757465046bbb
+    storage: google_drive
+    access: private
+    sync_status: verified
+    metadata_readback: verified
+    observed_at: "2026-08-10"
+  - asset_id: xue-economics.full-assets.v02.part-06-of-06
+    logical_folder_path: "AI Engineering Lab/90-Archive/xue-economics/2026-08-10-full-assets"
+    filename: knowledge-distillation__assets__xue-economics-local__2026-08-10__v02.part-06-of-06
+    bytes: 17386824
+    sha256: 55c2c1e5a88bea4cfb9ce5dc12306c2261b0e90f8996afc23d744ec981477dfc
+    storage: google_drive
+    access: private
+    sync_status: verified
+    metadata_readback: verified
+    observed_at: "2026-08-10"
+  - asset_id: xue-economics.full-assets.v02.parts-sha256
+    logical_folder_path: "AI Engineering Lab/90-Archive/xue-economics/2026-08-10-full-assets"
+    filename: FULL-ASSET-PARTS-SHA256SUMS
+    bytes: 894
+    sha256: e78d5d8973e8de80b3eeb37e6f4d5b98823122428d2a9d1bf2e8528f05677bc9
+    storage: google_drive
+    access: private
+    sync_status: verified
+    metadata_readback: verified
+    observed_at: "2026-08-10"
+  - asset_id: xue-economics.full-assets.v02.source-manifest
+    logical_folder_path: "AI Engineering Lab/90-Archive/xue-economics/2026-08-10-full-assets"
+    filename: SOURCE-ASSET-SHA256.tsv
+    bytes: 134113
+    sha256: b50916b74a76dda2c0316b0c77552ea602bd144f1f697268c7a369814fb26577
+    storage: google_drive
+    access: private
+    sync_status: verified
+    metadata_readback: verified
+    observed_at: "2026-08-10"
+  - asset_id: xue-economics.full-assets.v02.archive-sha256
+    logical_folder_path: "AI Engineering Lab/90-Archive/xue-economics/2026-08-10-full-assets"
+    filename: ARCHIVE-SHA256SUMS
+    bytes: 142
+    sha256: 6d98b6c742da12b3f89b2d2a1608e0ef01b463e5f845156f1bcac0fddd61b2e8
+    storage: google_drive
+    access: private
+    sync_status: verified
+    metadata_readback: verified
+    observed_at: "2026-08-10"

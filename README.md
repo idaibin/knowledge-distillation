@@ -77,6 +77,8 @@ examples/                   Multi-domain proofs of concept
 evals/basic/                Reusable behavioral evaluation cases
 ```
 
+Canonical course-card pipeline: [references/course-card-pipeline.md](references/course-card-pipeline.md).
+
 ## Maturity Model
 
 - `draft`: extracted but not independently checked.

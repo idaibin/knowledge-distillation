@@ -87,9 +87,11 @@
 
 ## Release 实际占用（含文档与 SHA256SUMS）
 
-本 release 最终为 **91 files / 54,092,336 B / 51.586472 MiB**（其中 `SHA256SUMS` 自身 11,912 B；它不参与自身哈希）。文件系统分配占用为 **52,988 KiB**（`du -sk`，约 52M），与 stat 逻辑字节不同。三包目录合计为 86 files / 54,059,856 B；`.gitattributes`、README、ASSET-INVENTORY、PROVENANCE 和 SHA256SUMS 共同增加 5 files / 32,480 B。
+阶段 release 归档的内容基线（Git HEAD 中的三包与既有元数据）为 **91 files / 54,092,336 B / 51.586472 MiB**；本次新增的全量归档说明、源资产清单、分卷清单、归档校验和阶段归档校验均为 Git 可跟踪元数据，不纳入该阶段归档。
 
-release 内可按 strict unique-key loader 解析的 YAML 为 **49 files**；上游重复键账本 `packages/broken-window-unseen-cost/browser-operation.source.txt` 保留原字节但不计入 YAML。
+当前 release 目录含新增元数据后为 **97 files / 54,241,825 B / 51.729035 MiB**（`SHA256SUMS` 自身 12,459 B；它不参与自身哈希）。文件系统分配占用为 **53,152 KiB**（`du -sk`，约 52M），与 stat 逻辑字节不同。三包目录仍为 86 files / 54,059,856 B；其余 11 个根级文件合计 181,969 B。
+
+release 内可按 strict unique-key loader 解析的 YAML 为 **50 files**；上游重复键账本 `packages/broken-window-unseen-cost/browser-operation.source.txt` 保留原字节但不计入 YAML。
 
 复算命令：
 
@@ -98,3 +100,7 @@ find releases/xue-economics-stage-preview-2026-08-10 -type f -print0 \
   | xargs -0 stat -f '%z' | awk '{n+=1; b+=$1} END {printf "%d files / %d B / %.6f MiB\n", n, b, b/1024/1024}'
 du -sk releases/xue-economics-stage-preview-2026-08-10
 ```
+
+## Drive 上传盘点
+
+v01 的 Drive 文件已原位替换为通过 exact-set、byte-match 和 SHA-256 审计的 v02；未创建重复项，stage 目录保持 2 项、full-assets 目录保持 9 项，全部通过 metadata readback。逻辑路径以 [DRIVE-ASSET-INDEX.yaml](DRIVE-ASSET-INDEX.yaml) 为准：40-Exports 为 AI Engineering Lab/40-Exports/Review-Packages/xue-economics/2026-08-10-stage-preview，90-Archive 为 AI Engineering Lab/90-Archive/xue-economics/2026-08-10-full-assets。每个分卷低于连接器 100 MiB 限制；完整约 467 MiB tar.gz 仍保留本地，未作为单文件上传。
