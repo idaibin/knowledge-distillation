@@ -1,0 +1,169 @@
+metadata:
+  id: image-first-ui-delivery
+  title: Image-First UI Delivery With Implementation Closure
+  domain: ai-engineering
+  ir_version: "0.1"
+  created_at: "2026-08-13"
+status:
+  maturity: draft
+sources:
+  - id: impeccable
+    type: repository
+    reference: https://github.com/pbakaus/impeccable/tree/d14711ae3d1a1dd62dee61a358d27f107c51ccd0
+    authors: [Paul Bakaus and contributors]
+    access: public
+  - id: neo-mirai-case
+    type: article
+    reference: https://impeccable.style/cases/neo-mirai/
+    authors: [Paul Bakaus]
+    access: public
+  - id: garden-web-design-engineer
+    type: repository
+    reference: https://github.com/ConardLi/garden-skills/tree/aaf9a82f5efd73e87cc0998edc398e75bfc35901/skills/web-design-engineer
+    authors: [Conard Li and contributors]
+    access: public
+usage:
+  purpose: product_development
+  visibility: public
+  source_retention: transformed_notes
+  publication_review: required
+  publication_constraints: [no_source_text, no_source_substitute_positioning]
+  notes: The sources document first-party workflows and examples. They do not independently prove improvement in a target product or compatibility with its component library.
+boundary:
+  include:
+    - Turning an approved visual direction into responsive product UI
+    - Keeping local UI specifications and prompts as versioned task inputs
+    - Separating provider originals, derived previews, implementation, and browser evidence
+    - Preserving an existing product component system during visual redesign
+  exclude:
+    - Treating a generated screenshot as production UI
+    - Copying the Neo Mirai visual language into unrelated products
+    - Promoting this framework into a mandatory Skill from one case
+    - Using repository stars or first-party case studies as independent quality proof
+principles:
+  - id: PR-01
+    name: The image is a direction, not the contract
+    statement: A generated image can resolve composition, hierarchy, palette, and asset direction, but the local UI specification remains the implementation contract.
+    evidence:
+      - type: inference
+        source_ref: neo-mirai-case
+        locator: Sections “Hi-fi north star” and “The mock did not become a screenshot”
+        verification_status: source_supported
+  - id: PR-02
+    name: Static composition needs implementation closure
+    statement: Delivery requires translating the approved direction into semantic components, responsive layout, real states, and browser-verified behavior.
+    evidence:
+      - type: citation
+        source_ref: neo-mirai-case
+        locator: Sections “Composition matching”, “Asset regeneration”, and “Browser iteration”
+        verification_status: source_supported
+  - id: PR-03
+    name: Existing product semantics outrank visual novelty
+    statement: In an established application, the current component library, interaction owners, accessibility rules, and product states constrain the redesign.
+    evidence:
+      - type: inference
+        source_ref: impeccable
+        locator: README.md — init, document, extract, audit, polish, adapt, and harden commands
+        verification_status: source_supported
+      - type: inference
+        source_ref: garden-web-design-engineer
+        locator: SKILL.md — extension, preserve, and overhaul redesign modes
+        verification_status: source_supported
+  - id: PR-04
+    name: Original and derivative assets are different evidence
+    statement: Preserve the provider-returned original with its dimensions and hash; record any resized or padded derivative separately and never label it as the original requested canvas.
+    evidence:
+      - type: observation
+        source_ref: neo-mirai-case
+        locator: The case distinguishes a generated north-star mock from the implemented responsive page.
+        verification_status: source_supported
+frameworks:
+  - id: FW-01
+    name: Image-first UI delivery loop
+    problem: Use generated visual exploration without losing component realism, responsive behavior, provenance, or implementation accountability.
+    steps:
+      - id: 1
+        action: Freeze the product task, target viewports, component-system constraints, real content, exclusions, and acceptance states in a local UI specification.
+        check: The specification can reject an attractive image that invents capabilities, violates the component system, or uses the wrong canvas.
+      - id: 2
+        action: Derive and version one complete image prompt from the local specification before any provider submission.
+        check: The prompt identifies the local basis, exact canvas, required composition, prohibited elements, and single-round stop condition.
+      - id: 3
+        action: Submit once through the authorized provider route and preserve operation identity, conversation attribution, completion evidence, original dimensions, and original hash.
+        check: An interruption triggers read-only reconciliation of the original operation, never an untracked resend.
+      - id: 4
+        action: Review the returned image against hierarchy, density, typography, component realism, accessibility implications, product truth, and exact dimensions.
+        check: Approval records explicit accepted and rejected decisions; an upscaled derivative cannot satisfy a native-canvas requirement.
+      - id: 5
+        action: Update the local UI specification and prompt before requesting another image round.
+        check: Provider conversation history is not the only record of the current design direction.
+      - id: 6
+        action: Implement the approved direction using the target application's existing components, tokens, data states, and responsive owners.
+        check: Generated pixels are translated into maintainable component composition rather than traced into decorative custom controls.
+      - id: 7
+        action: Verify the running UI at every fixed viewport and critical state, then record screenshots, functional checks, deviations from the image, and unresolved risks.
+        check: Image quality, source/static evidence, build results, browser behavior, and production evidence remain separate statuses.
+    boundaries:
+      - Generated-image quality does not prove responsive, interactive, accessible, or runtime behavior.
+      - A marketing-site case can teach workflow without defining an administration console's visual style.
+      - Another image round begins only after the local specification and prompt change.
+      - Provider originals, local derivatives, accepted specifications, source changes, and runtime screenshots must remain distinguishable.
+    evidence:
+      - type: inference
+        source_ref: neo-mirai-case
+        locator: Full case sequence — Visualize, Shape, Ship, and browser iteration
+        verification_status: source_supported
+      - type: inference
+        source_ref: impeccable
+        locator: README.md — init, shape, craft, audit, polish, adapt, harden, and live
+        verification_status: source_supported
+      - type: inference
+        source_ref: garden-web-design-engineer
+        locator: SKILL.md — design decisions, early draft, build, and acceptance workflow
+        verification_status: source_supported
+anti_patterns:
+  - id: AP-01
+    name: Screenshot equals specification
+    symptom: The team implements directly from a generated image while product states, components, dimensions, and responsive transformations remain implicit.
+    correction: Keep a local specification authoritative and use the image only as an approved visual reference.
+    evidence:
+      - type: inference
+        source_ref: neo-mirai-case
+        locator: “The mock did not become a screenshot”
+        verification_status: source_supported
+  - id: AP-02
+    name: Upscaled canvas claim
+    symptom: A smaller provider image is resized to the requested dimensions and reported as a native exact-canvas design.
+    correction: Preserve and label the original dimensions; derivatives are delivery conveniences, not provider-original evidence.
+    evidence:
+      - type: observation
+        source_ref: neo-mirai-case
+        locator: Generated mock and responsive implementation are presented as different artifacts.
+        verification_status: source_supported
+  - id: AP-03
+    name: Style transfer without product transfer
+    symptom: A visually successful marketing example is copied into a dense operational application without reconciling tasks, components, states, or accessibility.
+    correction: Transfer the workflow and craft checks, then design inside the target product's existing semantic system.
+    evidence:
+      - type: inference
+        source_ref: impeccable
+        locator: README.md — product versus brand setup and project-context workflow
+        verification_status: source_supported
+  - id: AP-04
+    name: Provider conversation as source of truth
+    symptom: Design adjustments exist only as follow-up chat messages, so the accepted specification and next prompt drift apart.
+    correction: Modify the local UI specification and complete prompt before every new provider submission.
+    evidence:
+      - type: inference
+        source_ref: garden-web-design-engineer
+        locator: SKILL.md — declare design decisions before implementation and preserve major revisions
+        verification_status: source_supported
+open_questions:
+  - Does this workflow measurably reduce visual rework on a real Ant Design administration surface?
+  - Which visual-review rubric best predicts successful implementation without rewarding marketing-site novelty?
+  - What second heterogeneous product family is needed before considering a reusable executable Skill?
+artifact:
+  requested_level: auto
+  selected_level: level_3
+  rationale: The sources support a traceable decision framework and one detailed first-party case, but no controlled cross-product evaluation establishes repeatable lift or justifies a mandatory executable Skill.
+  render_targets: [model, framework]

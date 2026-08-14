@@ -100,6 +100,8 @@ Maturity describes evidence, not confidence or writing quality.
 
 v0.1 focuses on the Knowledge IR contract, deterministic validation, representative examples, and basic behavioral evals.
 
+Current engineering example: [Image-First UI Delivery With Implementation Closure](examples/engineering/image-first-ui-delivery/artifact/framework.md). It keeps generated visual direction, provider originals, local UI specifications, implementation, and browser evidence as separate artifacts.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
