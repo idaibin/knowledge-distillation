@@ -25,7 +25,7 @@
 | 5. Native + 320 review | 选定 native 图、320px 缩略图、card basis | 每卡 native 与 320px 主读检查均通过；检查文字、构图、角色/物件数量、连续性、视觉功能、版权与移动可读性；记录 review 文件及 hash | 回到单卡生图或 card basis；旧候选保持不可变历史 |
 | 6. HTML | final 图片、冻结 text-layer/narration、story manifest | 本地 HTML 静态检查通过：卡片数、图片数、narration 数一致；所有图片为包内引用；远程资源为 0；响应式断点和移动字号已检查；生成 `final/story-manifest.yaml` | 回到 HTML 组装；HTML 改动会使 final checkpoint 与整包复审失效 |
 | 7. Full-package review | final HTML、manifest、所有 final 图片、content checkpoint | 至少两份独立整包复审绑定当前 basis；复核知识保真、叙事连贯、视觉/角色一致性、native/320 结果、移动排版、累计替代风险和学习记录；生成 `final-checkpoint.yaml` | 进入 revision；历史复审保留并标为 `historical_pre_html_fix` 或相应状态，不计入当前通过数 |
-| 8. External review | 去版权化的 IR 摘要、story/text/manifest、必要图像和固定 basis | 按 `ZCode → 本地执行/协调 → Sol 独立复审` 处理；若有修订，再按 `ZCode follow-up → 本地执行/协调 → Sol final review` 收口。只发送 transformed artifacts，不发送付费正文、账户数据、浏览器状态或凭据 | 外部会话/视觉证据缺失时保持 `Not verified`；不得把 text-only 或本地像素审查写成 live visual pass |
+| 8. External review | 去版权化的 IR 摘要、story/text/manifest、必要图像和固定 basis | 按 evaluation-rules 的触发条件，由 ChatGPT 与 Gemini 各自独立审查同一 basis，再由本地负责人对照核实并实施已授权修订；修改后重新取得两方对最终 basis 的结果。只发送 transformed artifacts，不发送付费正文、账户数据、浏览器状态或凭据 | 外部会话/视觉证据缺失时保持 `Not verified`；不得把 text-only 或本地像素审查写成 live visual pass |
 | 9A. Formal mapping | validated IR、内容/最终 checkpoint、逐卡与整包复审、外部证据、版权结论、学习记录 | 所有必需门禁均为 pass；review record 的 `gate.result=pass`；才可更新 `formally_mapped` 或正式计数 | 维持 `formal=false`、`formally_mapped=0`；记录具体 blocker |
 | 9B. Stage release | 已锁定 final 的完整包、审查证据、清单、状态报告 | 选择规则通过；release 仅收录最小可追踪集合；生成 SHA256 清单和 release README；记录 base/head commit、tree、文件数、总字节数和未验证项。9A 未通过时允许生成明确标为 `formal: false` 的阶段预览，但不得正式发布或计数 | 不发布该阶段版本；在本地/Drive 历史区保留候选，修复后从新 basis 重新开始 |
 
@@ -71,12 +71,12 @@ formal gate / stage release manifest / SHA256SUMS
 
 ## 审查顺序与证据边界
 
-审查必须按固定 basis 运行，并记录 `repository + base/head commit + scope + exclusions`。推荐的课程卡顺序是：
+审查必须按固定 basis 运行，并记录 `repository + base/head commit + scope + exclusions`。课程卡的必需外审提供方统一为 ChatGPT 与 Gemini；触发条件由 evaluation-rules 维护。顺序为：
 
-1. ZCode：文本、HTML、生命周期与审查问题发现。
-2. 本地执行/协调：只实施已确认的窄范围修订；执行代理具体模型/角色 metadata 不可见时写 `Not verified`。
-3. Sol：独立整包复审，检查知识、叙事、视觉函数、native/320、移动排版和版权边界。
-4. 如需修订，重复 ZCode follow-up → 本地执行/协调 → Sol final review；只有最终 basis 的记录计入当前通过数。
+1. 在已有外发授权内，将同一固定版本的最小审查材料分别交给 ChatGPT 与 Gemini；两方独立检查知识、叙事、文本/HTML、视觉函数、native/320、移动排版和版权边界。
+2. 本地负责人核实两方结果，只实施已授权的窄范围修订；具体模型/角色 metadata 不可见时写 `Not verified`。
+3. 如需修订，冻结新 basis，再取得 ChatGPT 与 Gemini 的最终结果；只有对应最终 basis 的记录计入当前通过数，不沿用旧版本批准。轮次和费用仍受本次授权限制，不无限重复。
+4. 一方缺失时保留相应缺口，不用本地审查或其他提供方替代，也不把配置存在当成审查已完成。
 
 External review 的最小 payload 是 batch manifest、去版权化 lesson summary、IR decisions、story/text/manifest 和必要图片。不得发送原始付费课程文本、完整浏览器状态、cookie、token、password、Bearer/API secret 或可复用授权材料。
 
