@@ -43,16 +43,24 @@ Use $knowledge-distillation to turn these course notes into a traceable
 Knowledge IR and select the highest fully supported knowledge level.
 ```
 
+For development and the complete contract suite, use Python 3.10 or newer and
+install both required validation dependencies in a virtual environment:
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements-dev.txt
+```
+
 Validate an IR instance locally:
 
 ```bash
 python3 scripts/validate_ir.py schemas/knowledge.example.yaml
 ```
 
-Optionally run the standards-based JSON Schema validator installed with Homebrew:
+Run the independent standards-based JSON Schema validator:
 
 ```bash
-brew install check-jsonschema
 check-jsonschema --schemafile schemas/knowledge.schema.yaml schemas/knowledge.example.yaml
 ```
 
@@ -62,7 +70,11 @@ Run deterministic positive and negative contract cases:
 python3 scripts/run_basic_evals.py
 ```
 
-The repository validator uses Python 3 and PyYAML for semantic guards. `check-jsonschema` independently verifies the JSON Schema 2020-12 contract expressed as YAML.
+The standalone repository validator uses PyYAML for semantic guards.
+`check-jsonschema` independently verifies the JSON Schema 2020-12 contract expressed
+as YAML and is required for `run_basic_evals.py`, including its cross-validator case.
+A missing or unusable cross-validator blocks the full suite with a nonzero exit;
+it is not a passing or skipped check.
 
 ## Repository Layout
 

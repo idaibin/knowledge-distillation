@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import copy
+import json
 import shutil
 import subprocess
 import sys
@@ -38,17 +39,48 @@ def mutate(data: dict, name: str) -> None:
         raise ValueError(f"unknown mutation: {name}")
 
 
-def schema_rejects(path: Path) -> tuple[bool, str]:
+def schema_rejects(path: Path) -> tuple[bool | None, str]:
+    """Return rejection, acceptance, or None when the cross-check is blocked."""
     checker = shutil.which("check-jsonschema")
     if checker is None:
-        return False, "check-jsonschema is required for cross-validator cases"
-    result = subprocess.run(
-        [checker, "--schemafile", str(SCHEMA), str(path)],
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    return result.returncode != 0, result.stdout + result.stderr
+        return None, (
+            "check-jsonschema is required for cross-validator cases; "
+            "install requirements-dev.txt in an activated virtual environment"
+        )
+    try:
+        result = subprocess.run(
+            [checker, "--output-format", "JSON", "--verbose",
+             "--schemafile", str(SCHEMA), str(path)],
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+    except OSError as exc:
+        return None, f"could not run check-jsonschema: {exc}"
+    detail = (result.stdout + "\n" + result.stderr).strip()
+    try:
+        report = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        return None, f"check-jsonschema returned no valid JSON report (exit {result.returncode}): {detail}"
+    if isinstance(report, dict):
+        if result.returncode == 0 and report.get("status") == "ok" and report.get("errors") == []:
+            return False, detail
+        errors = report.get("errors")
+        if (
+            result.returncode == 1
+            and report.get("status") == "fail"
+            and report.get("parse_errors") == []
+            and isinstance(errors, list)
+            and errors
+            and all(
+                isinstance(error, dict)
+                and error.get("filename") == str(path)
+                and isinstance(error.get("message"), str)
+                for error in errors
+            )
+        ):
+            return True, detail
+    return None, f"check-jsonschema could not establish schema validation (exit {result.returncode}): {detail}"
 
 
 def main() -> int:
@@ -87,7 +119,9 @@ def main() -> int:
                 failures.append(f"{case['name']}: invalid mutation passed validation")
             if case.get("cross_validator") == "check-jsonschema":
                 rejected, detail = schema_rejects(Path(handle.name))
-                if not rejected:
+                if rejected is None:
+                    failures.append(f"{case['name']}: cross-validator blocked: {detail}")
+                elif not rejected:
                     failures.append(f"{case['name']}: check-jsonschema accepted invalid mutation: {detail}")
 
     if failures:
